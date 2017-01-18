@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [[ -x "$JAVA_HOME" ]]; then exit 1; fi
+if [[ -x "$JC_HOME" ]]; then exit 1; fi
+export PATH=$PATH:$JC_HOME/bin
+export PATH=$PATH:$JC_HOME/bin
+export PKG_AID=0xA0:0x00:0x00:0x04:0x76:0x50:0x49:0x58:0x45:0x4C:0x42:0x4F:0x4F:0x54:0x00:0x00
+export APP_AID=0xA0:0x00:0x00:0x04:0x76:0x50:0x49:0x58:0x45:0x4C:0x42:0x4F:0x4F:0x54:0x01:0x00
+
+sh $JC_HOME/bin/converter \
+  -exportpath $JC_HOME/api_export_files \
+  -applet $APP_AID com.android.verifiedboot.bootstorage.BootStorage  \
+  com.android.verifiedboot.bootstorage $PKG_AID 1.0 && \
+ln -sf ./com/android/verifiedboot/bootstorage/javacard/bootstorage.cap .
+
+
