@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9548bd2c_331a85f6",
+        "filename": "apps/avb_storage/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-01-31T20:42:59Z",
+      "side": 1,
+      "message": "Nit: exceeds 80-char column limit (makes it hard to read in gerrit and possibly in some editors).",
+      "revId": "6c8bd8cc8a658410af8d3fd7cf2dae73767d7e00",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40f13ae0_98ce3930",
+        "filename": "apps/avb_storage/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-01-31T20:42:59Z",
+      "side": 1,
+      "message": "This is like PCRs in TPMs, right?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "6c8bd8cc8a658410af8d3fd7cf2dae73767d7e00",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1200adf_fd4405ae",
+        "filename": "apps/avb_storage/card/com/android/verifiedboot/bootstorage/BootStorage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-01-31T20:42:59Z",
+      "side": 1,
+      "message": "Explain that we\u0027ll override install() and process() and remind the reader of basic life-cycle (e.g. when these methods are called). OK to point to documentation so it\u0027s possible for the reader to educate himself about all the javacard.* stuff.",
+      "range": {
+        "startLine": 33,
+        "startChar": 33,
+        "endLine": 33,
+        "endChar": 39
+      },
+      "revId": "6c8bd8cc8a658410af8d3fd7cf2dae73767d7e00",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "633eac3b_02d3bb51",
+        "filename": "apps/avb_storage/card/com/android/verifiedboot/bootstorage/BootStorage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-01-31T20:42:59Z",
+      "side": 1,
+      "message": "With the caveat that I don\u0027t really know how javacard.framework.Applet works, I\u0027m guessing that install() runs only once and the above code is to allocate space to back |{configuration,storage,bound}_register| members and then the framework handles persistence of these?",
+      "revId": "6c8bd8cc8a658410af8d3fd7cf2dae73767d7e00",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
