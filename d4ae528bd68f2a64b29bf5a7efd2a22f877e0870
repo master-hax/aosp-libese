@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69188d1f_58e0c731",
+        "filename": "libese-teq1/include/ese/teq1.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-07T16:55:29Z",
+      "side": 1,
+      "message": "Bit-packing is compiler specific / not portable so if this is something you\u0027re going to send over the wire to another implementation (or the same, built with another toolchain or even another version) you might be in trouble... in reality, though, gcc/clang will do what you intend.. so maybe just leave a TODO about that you may need serialization/deserialization?",
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
