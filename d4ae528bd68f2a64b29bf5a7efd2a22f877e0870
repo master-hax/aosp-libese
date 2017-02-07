@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "153a416a_f62db8c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1076138
+      },
+      "writtenOn": "2017-02-07T21:32:59Z",
+      "side": 1,
+      "message": "This would probably benefit from a simple diagram explaining how the different pieces fit together.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 61
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "520eaa67_bc1b87fc",
+        "filename": "README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1076138
+      },
+      "writtenOn": "2017-02-07T21:32:59Z",
+      "side": 1,
+      "message": "This might be a good place for a simple ASCII-art diagram",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fb2d098_8473df79",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1076138
+      },
+      "writtenOn": "2017-02-07T21:32:59Z",
+      "side": 1,
+      "message": "\"built\"?  It\u0027s unclear what this is referring to.",
+      "range": {
+        "startLine": 25,
+        "startChar": 29,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "69188d1f_58e0c731",
         "filename": "libese-teq1/include/ese/teq1.h",
         "patchSetId": 6
