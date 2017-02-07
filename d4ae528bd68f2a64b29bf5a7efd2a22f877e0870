@@ -16,6 +16,23 @@
       "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "973ff981_2bf990dd",
+        "filename": "tools/ese_relay/ese_relay.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-07T19:46:55Z",
+      "side": 1,
+      "message": "Should probably handle EINTR.\n\nCasual drive-by readers would also want to assure themselves that EAGAIN/EWOULDBLOCK is not returned. Code comment is sufficient for that.\n\nAlso, what about partial reads? I think you need to handle that too.\n\nDitto below for other uses of read(2)/write(2).",
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
