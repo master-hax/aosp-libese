@@ -15,24 +15,22 @@
 //
 
 cc_library {
-    name: "libese",
+    name: "libese-sysdeps",
     host_supported: true,
 
-    srcs: [
-        "ese.c",
-    ],
+    srcs: [],
 
     local_include_dirs: [
        "include",
     ],
 
-    // Ensure that only explicitly exported symbols are visible.
-    cflags: ["-fvisibility=internal"],
+    cflags: [],
     debug:  {
         cflags: ["-DLOG_NDEBUG=0"],
      },
     target: {
         android: {
+          srcs: [ "android-sysdeps.c" ],
         },
 
         darwin: {
@@ -40,6 +38,7 @@ cc_library {
         },
 
         linux: {
+          srcs: [ "android-sysdeps.c" ],
         },
 
         windows: {
@@ -47,8 +46,6 @@ cc_library {
         },
     },
 
-    shared_libs: ["libese-sysdeps", "liblog"],
+    shared_libs: [],
     export_include_dirs: ["include"],
 }
-
-subdirs = ["tests"]

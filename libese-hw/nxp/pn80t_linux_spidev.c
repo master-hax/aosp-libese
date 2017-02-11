@@ -12,19 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Linux SPIdev hw support.
  */
 
-/* No guard is intentional given the definition below. */
-#include <ese/hw/nxp/spi_board.h>
+#include "pn80t_common.c"
 
-static const struct NxpSpiBoard nxp_boards_hikey_spidev = {
-  .dev_path = "/dev/spidev0.0",
-  .gpios = {
-    488, /* kBoardGpioEseRst = GPIO2_0 */
-    490, /* kBoardGpioEseSvddPwrReq = GPIO2_2 */
-    -1,  /* kBoardGpioNfcVen = unused */
-  },
-  .mode = 0,
-  .bits = 8,
-  .speed = 1000000L,
+extern struct Pn80tPlatform kPn80tLinuxSpidevPlatform;
+static const struct EseOperations ops = {
+    .name = "NXP PN80T/PN81A (PN553)",
+    .open = &nxp_pn80t_open,
+    .hw_receive = &nxp_pn80t_receive,
+    .hw_transmit = &nxp_pn80t_transmit,
+    .hw_reset = &nxp_pn80t_reset,
+    .transceive = &nxp_pn80t_transceive,
+    .poll = &nxp_pn80t_poll,
+    .close = &nxp_pn80t_close,
+    .opts = &kPn80tLinuxSpidevPlatform,
 };
+ESE_DEFINE_HW_OPS(ESE_HW_NXP_PN80T_SPIDEV, ops);
+ESE_DEFINE_HW_ERRORS(ESE_HW_NXP_PN80T_SPIDEV, kErrorMessages);

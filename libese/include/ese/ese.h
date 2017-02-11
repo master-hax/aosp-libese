@@ -17,10 +17,8 @@
 #ifndef ESE_H_
 #define ESE_H_ 1
 
-#include <stdint.h>
-#include <stdint.h>
-
-#include "ese_hw_api.h"
+#include <ese/ese_hw_api.h>
+#include <ese/sysdeps.h>
 
 #ifdef __cplusplus
 extern "C" {
