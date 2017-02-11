@@ -18,7 +18,7 @@ cc_library {
     name: "libese-hw-fake",
     srcs: ["ese_hw_fake.c"],
     host_supported: true,
-    cflags: ["-DLOG_NDEBUG=0"],
+    cflags: ["-DLOG_NDEBUG=0", "-std=c99"],
     shared_libs: ["liblog", "libese"],
 }
 

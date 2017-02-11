@@ -36,7 +36,7 @@ test_libraries = [
 cc_test {
     name: "ese_unittests",
     defaults: ["libese_tests_default"],
-    srcs: ["ese_unittests.cpp"],
+    srcs: ["ese_unittests.cpp", "bitspec_unittests.cpp"],
     host_supported: true,
     shared_libs: test_libraries,
 }

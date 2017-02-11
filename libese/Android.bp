@@ -27,7 +27,7 @@ cc_library {
     ],
 
     // Ensure that only explicitly exported symbols are visible.
-    cflags: ["-fvisibility=internal"],
+    cflags: ["-fvisibility=internal", "-std=c99"],
     debug:  {
         cflags: ["-DLOG_NDEBUG=0"],
      },
@@ -47,7 +47,7 @@ cc_library {
         },
     },
 
-    shared_libs: ["liblog"],
+    shared_libs: ["libese-sysdeps", "liblog"],
     export_include_dirs: ["include"],
 }
 
