@@ -27,7 +27,7 @@ cc_library {
     debug: {
       cflags: ["-DLOG_NDEBUG=0"],
     },
-    shared_libs: ["liblog", "libese"],
+    shared_libs: ["liblog", "libese", "libese-sysdeps"],
     export_include_dirs: ["include"],
 }
 
@@ -39,7 +39,7 @@ cc_library {
   local_include_dirs: ["include"],
 
   // Ensure that only explicitly exported symbols are visible.
-  shared_libs: ["liblog", "libese"],
+  shared_libs: ["liblog", "libese", "libese-sysdeps"],
   export_include_dirs: ["include", "."],
 }
 
