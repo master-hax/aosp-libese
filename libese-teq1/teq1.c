@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include <string.h>
 
 #include <ese/ese.h>
 #include <ese/teq1.h>
@@ -94,10 +93,9 @@ const char *teq1_pcb_to_name(uint8_t pcb) {
   }
 }
 
-int teq1_transmit(struct EseInterface *ese, struct Teq1Frame *frame) {
-  /* Set during ese_open() by teq1_init. */
-  const struct Teq1ProtocolOptions *opts = ese->ops->opts;
-
+int teq1_transmit(struct EseInterface *ese,
+                  const struct Teq1ProtocolOptions *opts,
+                  struct Teq1Frame *frame) {
   /* Set correct node address. */
   frame->header.NAD = opts->node_address;
 
@@ -116,7 +114,7 @@ int teq1_transmit(struct EseInterface *ese, struct Teq1Frame *frame) {
    * Begins transmission and ignore errors.
    * Failed transmissions will result eventually in a resync then reset.
    */
-  teq1_trace_transmit(frame->header.PCB.val, frame->header.LEN);
+  teq1_trace_transmit(frame->header.PCB, frame->header.LEN);
   ese->ops->hw_transmit(ese, frame->val,
                         sizeof(frame->header) + frame->header.LEN + 1, 1);
   /* Even though in practice any WTX BWT extension starts when the above
@@ -126,9 +124,9 @@ int teq1_transmit(struct EseInterface *ese, struct Teq1Frame *frame) {
   return 0;
 }
 
-int teq1_receive(struct EseInterface *ese, float timeout,
+int teq1_receive(struct EseInterface *ese,
+                 const struct Teq1ProtocolOptions *opts, float timeout,
                  struct Teq1Frame *frame) {
-  const struct Teq1ProtocolOptions *opts = ese->ops->opts;
   /* Poll the bus until we see the start of frame indicator, the interface NAD.
    */
   if (ese->ops->poll(ese, opts->host_address, timeout, 0) < 0) {
@@ -152,7 +150,7 @@ int teq1_receive(struct EseInterface *ese, float timeout,
    */
   ese->ops->hw_receive(ese, (uint8_t *)(&(frame->INF[0])),
                        frame->header.LEN + 1, 1);
-  teq1_trace_receive(frame->header.PCB.val, frame->header.LEN);
+  teq1_trace_receive(frame->header.PCB, frame->header.LEN);
 
   /*
    * If the card does something weird, like expect an CRC/LRC based on a
@@ -170,13 +168,13 @@ uint8_t teq1_fill_info_block(struct Teq1State *state, struct Teq1Frame *frame) {
   uint32_t inf_len = INF_LEN;
   if (state->ifs < inf_len)
     inf_len = state->ifs;
-  switch (frame->header.PCB.type) {
+  switch (bs_get(PCB.type, frame->header.PCB)) {
   case kPcbTypeInfo0:
   case kPcbTypeInfo1: {
     uint32_t len = state->app_data.tx_len;
     if (len > inf_len)
       len = inf_len;
-    memcpy(frame->INF, state->app_data.tx_buf, len);
+    ese_memcpy(frame->INF, state->app_data.tx_buf, len);
     frame->header.LEN = (len & 0xff);
     ALOGV("Copying %x bytes of app data for transmission", frame->header.LEN);
     /* Incrementing here means the caller MUST handle retransmit with prepared
@@ -184,9 +182,9 @@ uint8_t teq1_fill_info_block(struct Teq1State *state, struct Teq1Frame *frame) {
     state->app_data.tx_len -= len;
     state->app_data.tx_buf += len;
     /* Perform chained transmission if needed. */
-    frame->header.PCB.I.more_data = 0;
+    bs_assign(&frame->header.PCB, PCB.I.more_data, 0);
     if (state->app_data.tx_len > 0)
-      frame->header.PCB.I.more_data = 1;
+      frame->header.PCB |= bs_mask(PCB.I.more_data, 1);
     return len;
   }
   case kPcbTypeSupervisory:
@@ -198,14 +196,14 @@ uint8_t teq1_fill_info_block(struct Teq1State *state, struct Teq1Frame *frame) {
 }
 
 void teq1_get_app_data(struct Teq1State *state, struct Teq1Frame *frame) {
-  switch (frame->header.PCB.type) {
+  switch (bs_get(PCB.type, frame->header.PCB)) {
   case kPcbTypeInfo0:
   case kPcbTypeInfo1: {
     uint8_t len = frame->header.LEN;
     /* TODO(wad): Some data will be left on the table. Should this error out? */
     if (len > state->app_data.rx_len)
       len = state->app_data.rx_len;
-    memcpy(state->app_data.rx_buf, frame->INF, len);
+    ese_memcpy(state->app_data.rx_buf, frame->INF, len);
     /* The original caller must retain the starting pointer to determine
      * actual available data.
      */
@@ -227,7 +225,7 @@ uint8_t teq1_frame_error_check(struct Teq1State *state,
                                struct Teq1Frame *rx_frame) {
   uint8_t lrc = 0;
   int chained = 0;
-  if (rx_frame->header.PCB.val == 255)
+  if (rx_frame->header.PCB == 255)
     return R(0, 1, 0); /* Other error */
 
   lrc = teq1_compute_LRC(rx_frame);
@@ -238,20 +236,21 @@ uint8_t teq1_frame_error_check(struct Teq1State *state,
   }
 
   /* Check if we were chained and increment the last sent sequence. */
-  switch (tx_frame->header.PCB.type) {
+  switch (bs_get(PCB.type, tx_frame->header.PCB)) {
   case kPcbTypeInfo0:
   case kPcbTypeInfo1:
-    chained = tx_frame->header.PCB.I.more_data;
-    state->card_state->seq.interface = tx_frame->header.PCB.I.send_seq;
+    chained = bs_get(PCB.I.more_data, tx_frame->header.PCB);
+    state->card_state->seq.interface =
+        bs_get(PCB.I.send_seq, tx_frame->header.PCB);
   }
 
   /* Check if we've gone down an easy to catch error hole. The rest will turn up
    * on the
    * txrx switch.
    */
-  switch (rx_frame->header.PCB.type) {
+  switch (bs_get(PCB.type, rx_frame->header.PCB)) {
   case kPcbTypeSupervisory:
-    if (rx_frame->header.PCB.val != S(RESYNC, RESPONSE) &&
+    if (rx_frame->header.PCB != S(RESYNC, RESPONSE) &&
         rx_frame->header.LEN != 1)
       return R(0, 1, 0);
     break;
@@ -271,13 +270,15 @@ uint8_t teq1_frame_error_check(struct Teq1State *state,
   case kPcbTypeInfo0:
   case kPcbTypeInfo1:
     /* I-blocks must always alternate for each endpoint. */
-    if (rx_frame->header.PCB.I.send_seq == state->card_state->seq.card) {
-      ALOGV("Got seq %d expected %d", rx_frame->header.PCB.I.send_seq,
+    if ((bs_get(PCB.I.send_seq, rx_frame->header.PCB)) ==
+        state->card_state->seq.card) {
+      ALOGV("Got seq %d expected %d",
+            bs_get(PCB.I.send_seq, rx_frame->header.PCB),
             state->card_state->seq.card);
       return R(0, 1, 0);
     }
     /* Update the card's last I-block seq. */
-    state->card_state->seq.card = rx_frame->header.PCB.I.send_seq;
+    state->card_state->seq.card = bs_get(PCB.I.send_seq, rx_frame->header.PCB);
   default:
     break;
   };
@@ -291,16 +292,16 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
   /* 0 = TX, 1 = RX */
   /* msb = tx pcb, lsb = rx pcb */
   /* BUG_ON(!rx_frame && !tx_frame && !next_tx); */
-  uint16_t txrx = TEQ1_RULE(tx_frame->header.PCB.val, rx_frame->header.PCB.val);
-  struct PCB R_err;
+  uint16_t txrx = TEQ1_RULE(tx_frame->header.PCB, rx_frame->header.PCB);
+  uint8_t R_err;
 
   while (1) {
     /* Timeout errors come like invalid frames: 255. */
-    if ((R_err.val = teq1_frame_error_check(state, tx_frame, rx_frame)) != 0) {
+    if ((R_err = teq1_frame_error_check(state, tx_frame, rx_frame)) != 0) {
       ALOGV("incoming frame failed the error check");
       state->last_error_message = "Invalid frame received";
       /* Mark the frame as bad for our rule evaluation. */
-      txrx = TEQ1_RULE(tx_frame->header.PCB.val, 255);
+      txrx = TEQ1_RULE(tx_frame->header.PCB, 255);
       state->errors++;
       /* Rule 6.4 */
       if (state->errors >= 6) { /* XXX: Review error count lifetime. */
@@ -309,7 +310,7 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
       /* Rule 7.4.2 */
       if (state->errors >= 3) {
         /* Rule 7.4.1: state should start with error count = 2 */
-        next_tx->header.PCB.val = S(RESYNC, REQUEST);
+        next_tx->header.PCB = S(RESYNC, REQUEST);
         /* Resync result in a fresh session, so we should just continue here. */
         return kRuleResultContinue;
       }
@@ -336,16 +337,17 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     case TEQ1_RULE(I(1, 0), I(1, 1)):
       /* Prep R(N(S)) */
       teq1_get_app_data(state, rx_frame);
-      next_tx->header.PCB.val = TEQ1_R(!rx_frame->header.PCB.I.send_seq, 0, 0);
+      next_tx->header.PCB =
+          TEQ1_R(!bs_get(PCB.I.send_seq, rx_frame->header.PCB), 0, 0);
       next_tx->header.LEN = 0;
       return kRuleResultContinue;
 
     /*** Rule 2.2, Rule 5: Chained transmission ***/
     case TEQ1_RULE(I(0, 1), R(1, 0, 0)):
     case TEQ1_RULE(I(1, 1), R(0, 0, 0)):
-      /* Send next block */
-      next_tx->header.PCB.val = I(0, 0);
-      next_tx->header.PCB.I.send_seq = rx_frame->header.PCB.R.next_seq;
+      /* Send next block -- error-checking assures the R seq is our next seq. */
+      next_tx->header.PCB =
+          TEQ1_I(bs_get(PCB.R.next_seq, rx_frame->header.PCB), 0);
       teq1_fill_info_block(state, next_tx); /* Sets M-bit and LEN. */
       return kRuleResultContinue;
 
@@ -358,7 +360,7 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
       case TEQ1_RULE(I(1, 1), S(WTX, REQUEST)):
       */
       /* Send S(WTX, RESPONSE) with same INF */
-      next_tx->header.PCB.val = S(WTX, RESPONSE);
+      next_tx->header.PCB = S(WTX, RESPONSE);
       next_tx->header.LEN = 1;
       next_tx->INF[0] = rx_frame->INF[0];
       state->wait_mult = rx_frame->INF[0];
@@ -377,7 +379,7 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     /* Don't support a IFS_REQUEST if we sent an error R-block. */
     case TEQ1_RULE(R(0, 0, 0), S(IFS, REQUEST)):
     case TEQ1_RULE(R(1, 0, 0), S(IFS, REQUEST)):
-      next_tx->header.PCB.val = S(IFS, RESPONSE);
+      next_tx->header.PCB = S(IFS, RESPONSE);
       next_tx->header.LEN = 1;
       next_tx->INF[0] = rx_frame->INF[0];
       state->ifs = rx_frame->INF[0];
@@ -393,7 +395,9 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     case TEQ1_RULE(R(1, 0, 0), I(1, 1)):
       /* Chaining continued; consume partial data and send R(N(S)) */
       teq1_get_app_data(state, rx_frame);
-      next_tx->header.PCB.val = TEQ1_R(!rx_frame->header.PCB.I.send_seq, 0, 0);
+      /* The card seq bit will be tracked/validated earlier. */
+      next_tx->header.PCB =
+          TEQ1_R(!bs_get(PCB.I.send_seq, rx_frame->header.PCB), 0, 0);
       return kRuleResultContinue;
 
     /* Rule 6: Interface can send a RESYNC */
@@ -414,10 +418,11 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     case TEQ1_RULE(I(1, 0), 255):
     case TEQ1_RULE(I(0, 1), 255):
     case TEQ1_RULE(I(1, 1), 255):
-      next_tx->header.PCB.val = R_err.val;
-      next_tx->header.PCB.R.next_seq = tx_frame->header.PCB.I.send_seq;
+      next_tx->header.PCB = R_err;
+      bs_assign(&next_tx->header.PCB, PCB.R.next_seq,
+                bs_get(PCB.I.send_seq, tx_frame->header.PCB));
       ALOGV("Rule 7.1,7.5,7.6: bad rx - sending error R: %x = %s",
-            next_tx->header.PCB.val, teq1_pcb_to_name(next_tx->header.PCB.val));
+            next_tx->header.PCB, teq1_pcb_to_name(next_tx->header.PCB));
       return kRuleResultSingleShot; /* So we still can retransmit the original.
                                        */
 
@@ -430,10 +435,10 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     case TEQ1_RULE(I(1, 0), R(0, 0, 1)):
     case TEQ1_RULE(I(1, 0), R(0, 1, 0)):
     case TEQ1_RULE(I(1, 0), R(0, 1, 1)):
-      next_tx->header.PCB.val = R(0, 0, 0);
-      next_tx->header.PCB.R.next_seq = tx_frame->header.PCB.I.send_seq;
+      next_tx->header.PCB =
+          TEQ1_R(bs_get(PCB.I.send_seq, tx_frame->header.PCB), 0, 0);
       ALOGV("Rule 7.1,7.5,7.6: weird rx - sending error R: %x = %s",
-            next_tx->header.PCB.val, teq1_pcb_to_name(next_tx->header.PCB.val));
+            next_tx->header.PCB, teq1_pcb_to_name(next_tx->header.PCB));
       return kRuleResultSingleShot;
 
     /* Rule 7.2: Retransmit the _same_ R-block. */
@@ -499,7 +504,7 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
     case TEQ1_RULE(R(1, 0, 1), S(ABORT, REQUEST)):
     case TEQ1_RULE(R(1, 1, 0), S(ABORT, REQUEST)):
     case TEQ1_RULE(R(1, 1, 1), S(ABORT, REQUEST)):
-      next_tx->header.PCB.val = S(ABORT, REQUEST);
+      next_tx->header.PCB = S(ABORT, REQUEST);
       return kRuleResultContinue; /* Takes over prior flow. */
     case TEQ1_RULE(S(ABORT, RESPONSE), 255):
       return kRuleResultRetransmit;
@@ -515,9 +520,9 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
      * For supported flows: If an operation was paused to
      * send it, the caller may then switch to that state and resume.
      */
-    if (rx_frame->header.PCB.val != 255) {
+    if (rx_frame->header.PCB != 255) {
       ALOGV("Unexpected frame. Marking error and re-evaluating.");
-      rx_frame->header.PCB.val = 255;
+      rx_frame->header.PCB = 255;
       continue;
     }
 
@@ -532,6 +537,7 @@ enum RuleResult teq1_rules(struct Teq1State *state, struct Teq1Frame *tx_frame,
  */
 
 API size_t teq1_transceive(struct EseInterface *ese,
+                           const struct Teq1ProtocolOptions *opts,
                            const uint8_t *const tx_buf, size_t tx_len,
                            uint8_t *rx_buf, size_t rx_len) {
   struct Teq1Frame tx_frame[2];
@@ -541,41 +547,45 @@ API size_t teq1_transceive(struct EseInterface *ese,
   int active = 0;
   int done = 0;
   enum RuleResult result = kRuleResultComplete;
-  const struct Teq1ProtocolOptions *opts = ese->ops->opts;
   struct Teq1CardState *card_state = (struct Teq1CardState *)(&ese->pad[0]);
   struct Teq1State init_state =
       TEQ1_INIT_STATE(tx_buf, tx_len, rx_buf, rx_len, card_state);
   struct Teq1State state =
       TEQ1_INIT_STATE(tx_buf, tx_len, rx_buf, rx_len, card_state);
 
+  /* Build assertion using div-by-0 to check wire structs. */
+  1 / (!!(TEQ1HEADER_SIZE == sizeof(struct Teq1Header)));
+  1 / (!!(TEQ1FRAME_SIZE == sizeof(struct Teq1Frame)));
+
   /* First I-block is always I(0, M). After that, modulo 2. */
-  tx->header.PCB.val = TEQ1_I(!card_state->seq.interface, 0);
+  tx->header.PCB = TEQ1_I(!card_state->seq.interface, 0);
   teq1_fill_info_block(&state, tx);
 
   teq1_trace_header();
   while (!done) {
     /* Populates the node address and LRC prior to attempting to transmit. */
-    teq1_transmit(ese, tx);
+    teq1_transmit(ese, opts, tx);
 
     /* If tx was pointed to the inactive frame for a single shot, restore it
      * now. */
     tx = &tx_frame[active];
 
     /* Clear the RX frame. */
-    memset(&rx_frame, 0xff, sizeof(rx_frame));
+    ese_memset(&rx_frame, 0xff, sizeof(rx_frame));
 
     /* -1 indicates a timeout or failure from hardware. */
-    if (teq1_receive(ese, opts->bwt * (float)state.wait_mult, &rx_frame) < 0) {
+    if (teq1_receive(ese, opts, opts->bwt * (float)state.wait_mult, &rx_frame) <
+        0) {
       /* TODO(wad): If the ese_error(ese) == 1, should this go ahead and fail?
        */
       /* Failures are considered invalid blocks in the rule engine below. */
-      rx_frame.header.PCB.val = 255;
+      rx_frame.header.PCB = 255;
     }
     /* Always reset |wait_mult| once we have calculated the timeout. */
     state.wait_mult = 1;
 
     /* Clear the inactive frame header for use as |next_tx|. */
-    memset(&tx_frame[!active].header, 0, sizeof(tx_frame[!active].header));
+    ese_memset(&tx_frame[!active].header, 0, sizeof(tx_frame[!active].header));
 
     result = teq1_rules(&state, tx, &rx_frame, &tx_frame[!active]);
     ALOGV("[ %s ]", teq1_rule_result_to_name(result));
@@ -587,12 +597,12 @@ API size_t teq1_transceive(struct EseInterface *ese,
       /* TODO(wad) Find a clean way to move into teq1_rules(). */
       if (state.retransmits++ < 3)
         continue;
-      if (tx->header.PCB.val == S(RESYNC, REQUEST)) {
+      if (tx->header.PCB == S(RESYNC, REQUEST)) {
         ese_set_error(ese, TEQ1_ERROR_HARD_FAIL);
         return 0;
       }
       /* Fall through */
-      tx_frame[!active].header.PCB.val = S(RESYNC, REQUEST);
+      tx_frame[!active].header.PCB = S(RESYNC, REQUEST);
     case kRuleResultContinue:
       active = !active;
       tx = &tx_frame[active];
@@ -625,9 +635,9 @@ API size_t teq1_transceive(struct EseInterface *ese,
       state = init_state;
       TEQ1_INIT_CARD_STATE(state.card_state);
       /* Reset the active frame. */
-      memset(tx, 0, sizeof(*tx));
+      ese_memset(tx, 0, sizeof(*tx));
       /* Load initial I-block. */
-      tx->header.PCB.val = I(0, 0);
+      tx->header.PCB = I(0, 0);
       teq1_fill_info_block(&state, tx);
       continue;
     }

@@ -102,8 +102,13 @@ enum RuleResult {
 
 const char *teq1_rule_result_to_name(enum RuleResult result);
 const char *teq1_pcb_to_name(uint8_t pcb);
-int teq1_transmit(struct EseInterface *ese, struct Teq1Frame *frame);
-int teq1_receive(struct EseInterface *ese, float timeout, struct Teq1Frame *frame);
+int teq1_transmit(struct EseInterface *ese,
+                  const struct Teq1ProtocolOptions *opts,
+                  struct Teq1Frame *frame);
+int teq1_receive(struct EseInterface *ese,
+                 const struct Teq1ProtocolOptions *opts,
+                 float timeout,
+                 struct Teq1Frame *frame);
 uint8_t teq1_fill_info_block(struct Teq1State *state, struct Teq1Frame *frame);
 void teq1_get_app_data(struct Teq1State *state, struct Teq1Frame *frame);
 uint8_t teq1_frame_error_check(struct Teq1State *state,

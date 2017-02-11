@@ -33,7 +33,7 @@ struct EchoState {
   int recvd;
 };
 
-#define ECHO_STATE(ese) (*(struct EchoState **)(&ese->pad[0]))
+#define ECHO_STATE(ese) (*(struct EchoState **)(&ese->pad[1]))
 
 static int echo_open(struct EseInterface *ese, void *hw_opts) {
   struct EchoState *es = hw_opts; /* shorter than __attribute */
@@ -46,7 +46,7 @@ static int echo_open(struct EseInterface *ese, void *hw_opts) {
           sizeof(struct EchoState *));
     return -1;
   }
-  es_ptr = (struct EchoState **)(&ese->pad[0]);
+  es_ptr = (struct EchoState **)(&ese->pad[1]);
   *es_ptr = malloc(sizeof(struct EchoState));
   if (!*es_ptr)
     return -1;
@@ -62,6 +62,8 @@ static int echo_close(struct EseInterface *ese) {
   if (!ese)
     return -1;
   es = ECHO_STATE(ese);
+  if (!es)
+    return -1;
   free(es);
   return 0;
 }
@@ -142,7 +144,7 @@ int echo_preprocess(const struct Teq1ProtocolOptions *const opts,
   return 0;
 }
 
-static const struct Teq1ProtocolOptions teq1_options = {
+static const struct Teq1ProtocolOptions kTeq1Options = {
     .host_address = 0xAA,
     .node_address = 0xBB,
     .bwt = 3.14152f,
@@ -150,15 +152,20 @@ static const struct Teq1ProtocolOptions teq1_options = {
     .preprocess = &echo_preprocess,
 };
 
+size_t echo_transceive(struct EseInterface *ese, const uint8_t *const tx_buf,
+                       size_t tx_len, uint8_t *rx_buf, size_t rx_len) {
+  return teq1_transceive(ese, &kTeq1Options, tx_buf, tx_len, rx_buf, rx_len);
+}
+
 static const struct EseOperations ops = {
     .name = "eSE Echo Hardware (fake)",
     .open = &echo_open,
     .hw_receive = &echo_receive,
     .hw_transmit = &echo_transmit,
-    .transceive = &teq1_transceive,
+    .transceive = &echo_transceive,
     .poll = &echo_poll,
     .close = &echo_close,
-    .opts = &teq1_options,
+    .opts = &kTeq1Options,
 };
 ESE_DEFINE_HW_OPS(ESE_HW_ECHO, ops);
 

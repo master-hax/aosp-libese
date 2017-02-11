@@ -17,8 +17,7 @@
 #ifndef ESE_HW_API_H_
 #define ESE_HW_API_H_ 1
 
-#include <stddef.h>
-#include <stdint.h>
+#include <ese/sysdeps.h>
 
 #ifdef __cplusplus
 extern "C" {
