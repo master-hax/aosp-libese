@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "08a2273e_7592f6d0",
+        "filename": "NOTICE",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "bump to 2017",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 18
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "520eaa67_bc1b87fc",
         "filename": "README.md",
         "patchSetId": 6
@@ -71,6 +94,75 @@
     },
     {
       "key": {
+        "uuid": "fc4ae35b_65cd6fed",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "The docs say this is only an error if it is negative, not any non-zero value. (This is done in this file and the ese_relay)",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 16
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a385a53e_d87542a8",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Very C89 ;)",
+      "range": {
+        "startLine": 97,
+        "startChar": 5,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "914f5fde_d20e7b9a",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "No error handling.\n\nI\u0027m not normally very keen on finaliser functions returning error codes because most of the time there isn\u0027t much you can do about it. But I guess there might be some implementation that needs ETRYAGAIN or similar.",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "69188d1f_58e0c731",
         "filename": "libese-teq1/include/ese/teq1.h",
         "patchSetId": 6
@@ -88,6 +180,190 @@
     },
     {
       "key": {
+        "uuid": "3b1d60e2_800b04d9",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Missing braces. Should probably brace everything after seeing it go so wrong in that SSL bug. (Here and elsewhere)",
+      "range": {
+        "startLine": 112,
+        "startChar": 22,
+        "endLine": 113,
+        "endChar": 22
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c93d056_be8308d1",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "3 and 6 come from the protocol?",
+      "range": {
+        "startLine": 306,
+        "startChar": 27,
+        "endLine": 310,
+        "endChar": 28
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "429f8c63_97b86253",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Unreachable duplication",
+      "range": {
+        "startLine": 330,
+        "startChar": 6,
+        "endLine": 332,
+        "endChar": 33
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac08b0c6_5c8ee662",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Magic 255. Is this UINT8_MAX or a protocol value?",
+      "range": {
+        "startLine": 518,
+        "startChar": 36,
+        "endLine": 518,
+        "endChar": 39
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34a229ba_57f2a787",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "We really need this header!",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be0704d7_ab6c226b",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Should/can this be a `const uint8_t*`?",
+      "range": {
+        "startLine": 74,
+        "startChar": 45,
+        "endLine": 74,
+        "endChar": 66
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb5ea0a1_65345227",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Could this be passed the the implementation\u0027s open function? That would reduce coupling and the need to have this in the API.",
+      "range": {
+        "startLine": 81,
+        "startChar": 5,
+        "endLine": 81,
+        "endChar": 18
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63854332_0dc2f34e",
+        "filename": "libese/include/ese/ese_hw_api.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "Move to the implementation files?",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 65
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "973ff981_2bf990dd",
         "filename": "tools/ese_relay/ese_relay.c",
         "patchSetId": 6
@@ -102,6 +378,29 @@
       "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e85e893_c9e71310",
+        "filename": "tools/ese_relay/ese_relay_fake.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-02-17T14:39:40Z",
+      "side": 1,
+      "message": "This could use ese_init",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 47
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
