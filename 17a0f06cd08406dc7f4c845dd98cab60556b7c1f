@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d38bbaa2_8b88b872",
+        "filename": "libese-hw/ese_hw_echo.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "Should this be \u0026ECHO_STATE(ese)?",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e2bbf41_d5baa739",
+        "filename": "libese-hw/nxp/include/ese/hw/nxp/pn80t/platform.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "Nit: consistency // vs /* */",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9dcde1f_2a6691fe",
+        "filename": "libese-hw/nxp/platforms/linux_spidev.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "Nit: it\u0027s a style/religion thing but goto-out would make this shorter and more robust.",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eae10a9_938f9b4f",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "static_assert?",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79de219b_c6c3cd2a",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "#define for this magic constant 13? (also elsewhere)",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2fda5cb_ba368b9d",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-02-21T15:54:10Z",
+      "side": 1,
+      "message": "static_assert instead?",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
