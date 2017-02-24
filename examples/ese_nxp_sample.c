@@ -22,9 +22,7 @@
 #include <unistd.h>
 
 #include <ese/ese.h>
-/* Note, the struct could be build just as well. */
-#include <ese/hw/nxp/pn80t/boards/hikey-spidev.h>
-ESE_INCLUDE_HW(ESE_HW_NXP_PN80T_SPIDEV);
+ESE_INCLUDE_HW(ESE_HW_NXP_PN80T_NQ_NCI);
 
 /* APDU: CLA INS P1-P2 Lc Data Le */
 struct Apdu {
@@ -79,13 +77,13 @@ const struct ApduSession *kSessions[] = {
 };
 
 int main() {
-  struct EseInterface ese = ESE_INITIALIZER(ESE_HW_NXP_PN80T_SPIDEV);
+  struct EseInterface ese = ESE_INITIALIZER(ESE_HW_NXP_PN80T_NQ_NCI);
   size_t s = 0;
   for (; s < sizeof(kSessions) / sizeof(kSessions[0]); ++s) {
     int recvd;
     size_t apdu_index = 0;
     uint8_t rx_buf[1024];
-    if (ese_open(&ese, (void *)(&nxp_boards_hikey_spidev))) {
+    if (ese_open(&ese, NULL)) {
       printf("Cannot open hw\n");
       if (ese_error(&ese))
         printf("eSE error (%d): %s\n", ese_error_code(&ese),

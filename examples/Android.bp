@@ -20,7 +20,7 @@ example_shared_libraries = [
     "liblog",
     "libese",
     "libese-teq1",
-    "libese-hw-nxp-pn80t-spidev",
+    "libese-hw-nxp-pn80t-nq-nci",
 ]
 
 cc_binary {

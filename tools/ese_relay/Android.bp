@@ -20,8 +20,16 @@ relay_shared_libraries = [
 ]
 
 cc_binary {
-    name: "ese-relay-pn80t",
-    srcs: ["ese_relay.c", "ese_relay_pn80t.c"],
+    name: "ese-relay-pn80t-nq-nci",
+    srcs: ["ese_relay.c", "ese_relay_pn80t_nq_nci.c"],
+    host_supported: false,
+    shared_libs: ["libese-hw-nxp-pn80t-nq-nci", "libese-teq1"] +
+                 relay_shared_libraries,
+}
+
+cc_binary {
+    name: "ese-relay-pn80t-spidev",
+    srcs: ["ese_relay.c", "ese_relay_pn80t_spidev.c"],
     host_supported: false,
     shared_libs: ["libese-hw-nxp-pn80t-spidev", "libese-teq1"] +
                  relay_shared_libraries,

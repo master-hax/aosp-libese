@@ -18,7 +18,6 @@
 
 #include <ese/ese.h>
 #include <ese/hw/nxp/pn80t/platform.h>
-#include <ese/hw/nxp/spi_board.h>
 #include <ese/teq1.h>
 #define LOG_TAG "libese-hw"
 #include <ese/log.h>
@@ -29,11 +28,10 @@
 
 /* Card state is _required_ to be at the front of eSE pad. */
 struct NxpState {
-  struct Teq1CardState card_state;
-  struct NxpSpiBoard *board;
   void *handle;
 };
-#define NXP_PN80T_STATE(ese) ((struct NxpState *)(&ese->pad[0]))
+/* pad[0] is reserved for T=1. Just go to the middle. */
+#define NXP_PN80T_STATE(ese) ((struct NxpState *)(&ese->pad[ESE_INTERFACE_STATE_PAD/2]))
 
 int nxp_pn80t_preprocess(const struct Teq1ProtocolOptions *const opts,
                          struct Teq1Frame *frame, int tx) {
@@ -76,7 +74,7 @@ int nxp_pn80t_open(struct EseInterface *ese, void *board) {
   }
   platform = ese->ops->opts;
   ns = NXP_PN80T_STATE(ese);
-  TEQ1_INIT_CARD_STATE((&ns->card_state));
+  TEQ1_INIT_CARD_STATE((struct Teq1CardState *)(&ese->pad[0]));
 
   ns->handle = platform->initialize(board);
   if (!ns->handle) {
@@ -176,7 +174,7 @@ int nxp_pn80t_poll(struct EseInterface *ese, uint8_t poll_for, float timeout,
   int intervals = (int)(0.5f + timeout / (7.0f * kTeq1Options.etu));
   uint8_t byte = 0xff;
   ALOGV("interface polling for start of frame/host node address: %x", poll_for);
-  /* If we weren't using spidev, we could just get notified by the driver. */
+  /* If we had interrupts, we could just get notified by the driver. */
   do {
     /*
      * In practice, if complete=true, then no transmission
