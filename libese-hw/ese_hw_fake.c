@@ -16,7 +16,7 @@
  * Minimal functions that only validate arguments.
  */
 
-#include <ese/ese.h>
+#include "../libese/include/ese/ese.h"
 
 static int fake_open(struct EseInterface *ese,
                      void *hw_opts __attribute__((unused))) {

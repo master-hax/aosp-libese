@@ -15,11 +15,11 @@
  */
 
 
-#include <ese/ese.h>
-#include <ese/teq1.h>
+#include "../libese/include/ese/ese.h"
+#include "include/ese/teq1.h"
 
 #define LOG_TAG "ESE_T=1"
-#include <ese/log.h>
+#include "../libese/include/ese/log.h"
 
 #include "teq1_private.h"
 

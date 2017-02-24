@@ -16,11 +16,11 @@
  * Support SPI communication with NXP PN553/PN80T secure element.
  */
 
-#include <ese/ese.h>
-#include <ese/hw/nxp/pn80t/platform.h>
-#include <ese/teq1.h>
+#include "../../libese/include/ese/ese.h"
+#include "include/ese/hw/nxp/pn80t/platform.h"
+#include "../../libese-teq1/include/ese/teq1.h"
 #define LOG_TAG "libese-hw"
-#include <ese/log.h>
+#include "../../libese/include/ese/log.h"
 
 #ifndef INT_MAX
 #define INT_MAX 2147483647
