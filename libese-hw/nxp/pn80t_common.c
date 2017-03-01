@@ -16,12 +16,11 @@
  * Support SPI communication with NXP PN553/PN80T secure element.
  */
 
-#include <ese/ese.h>
-#include <ese/hw/nxp/pn80t/platform.h>
-#include <ese/hw/nxp/spi_board.h>
-#include <ese/teq1.h>
+#include "../../libese-teq1/include/ese/teq1.h"
+#include "../../libese/include/ese/ese.h"
+#include "include/ese/hw/nxp/pn80t/platform.h"
 #define LOG_TAG "libese-hw"
-#include <ese/log.h>
+#include "../../libese/include/ese/log.h"
 
 #ifndef INT_MAX
 #define INT_MAX 2147483647
@@ -29,11 +28,11 @@
 
 /* Card state is _required_ to be at the front of eSE pad. */
 struct NxpState {
-  struct Teq1CardState card_state;
-  struct NxpSpiBoard *board;
   void *handle;
 };
-#define NXP_PN80T_STATE(ese) ((struct NxpState *)(&ese->pad[0]))
+/* pad[0] is reserved for T=1. Just go to the middle. */
+#define NXP_PN80T_STATE(ese)                                                   \
+  ((struct NxpState *)(&ese->pad[ESE_INTERFACE_STATE_PAD / 2]))
 
 int nxp_pn80t_preprocess(const struct Teq1ProtocolOptions *const opts,
                          struct Teq1Frame *frame, int tx) {
@@ -76,7 +75,7 @@ int nxp_pn80t_open(struct EseInterface *ese, void *board) {
   }
   platform = ese->ops->opts;
   ns = NXP_PN80T_STATE(ese);
-  TEQ1_INIT_CARD_STATE((&ns->card_state));
+  TEQ1_INIT_CARD_STATE((struct Teq1CardState *)(&ese->pad[0]));
 
   ns->handle = platform->initialize(board);
   if (!ns->handle) {
@@ -84,18 +83,6 @@ int nxp_pn80t_open(struct EseInterface *ese, void *board) {
     ese_set_error(ese, 4);
     return -1;
   }
-  return 0;
-}
-
-int nxp_pn80t_close(struct EseInterface *ese) {
-  struct NxpState *ns;
-  const struct Pn80tPlatform *platform = ese->ops->opts;
-  if (!ese)
-    return -1;
-  ns = NXP_PN80T_STATE(ese);
-  platform->toggle_power_req(ns->handle, 0);
-  platform->release(ns->handle);
-  ns->handle = NULL;
   return 0;
 }
 
@@ -119,7 +106,7 @@ size_t nxp_pn80t_receive(struct EseInterface *ese, uint8_t *buf, size_t len,
     ALOGV("RX[%zu]: %.2X", recvd, buf[recvd]);
   if (complete) {
     ALOGV("card sent a frame");
-    /* XXX: cool off the bus for 1ms [t_3] */
+    /* Note, the platform should cool off the bus for 1ms [t_3]. */
   }
   return recvd;
 }
@@ -161,8 +148,7 @@ size_t nxp_pn80t_transmit(struct EseInterface *ese, const uint8_t *buf,
   ALOGV("interface sent %zu bytes", len);
   if (complete) {
     ALOGV("interface sent a frame");
-    /* TODO(wad): Remove this once we have live testing. */
-    platform->wait(ns->handle, 1000); /* t3 = 1ms */
+    /* Note, the platform should cool off the bus for 1ms [t_3]. */
   }
   return recvd;
 }
@@ -171,12 +157,19 @@ int nxp_pn80t_poll(struct EseInterface *ese, uint8_t poll_for, float timeout,
                    int complete) {
   struct NxpState *ns = NXP_PN80T_STATE(ese);
   const struct Pn80tPlatform *platform = ese->ops->opts;
+  if (platform->poll != NULL) {
+    int ret = platform->poll(ns->handle, poll_for, timeout, complete);
+    if (ret < 0) {
+      ese_set_error(ese, 3);
+    }
+    return ret;
+  }
   /* Attempt to read a 8-bit character once per 8-bit character transmission
    * window (in seconds). */
   int intervals = (int)(0.5f + timeout / (7.0f * kTeq1Options.etu));
   uint8_t byte = 0xff;
   ALOGV("interface polling for start of frame/host node address: %x", poll_for);
-  /* If we weren't using spidev, we could just get notified by the driver. */
+  /* If we had interrupts, we could just get notified by the driver. */
   do {
     /*
      * In practice, if complete=true, then no transmission
@@ -206,6 +199,41 @@ size_t nxp_pn80t_transceive(struct EseInterface *ese,
                             const uint8_t *const tx_buf, size_t tx_len,
                             uint8_t *rx_buf, size_t rx_len) {
   return teq1_transceive(ese, &kTeq1Options, tx_buf, tx_len, rx_buf, rx_len);
+}
+
+uint32_t nxp_send_cooldown(struct EseInterface *ese) {
+  struct NxpState *ns;
+  const struct Pn80tPlatform *platform = ese->ops->opts;
+  const uint8_t kCooldown[] = {0xa5, 0xc5, 0x00, 0xc5};
+  uint8_t rx_buf[8];
+  uint32_t *res = (uint32_t *)(&rx_buf[3]);
+  if (!ese)
+    return 0;
+  ns = NXP_PN80T_STATE(ese);
+  platform->transmit(ns->handle, kCooldown, sizeof(kCooldown), 1);
+  nxp_pn80t_poll(ese, kTeq1Options.host_address, 5.0f, 0);
+  platform->receive(ns->handle, rx_buf, sizeof(rx_buf), 1);
+  if (rx_buf[2] == 4) {
+    ALOGE("Cooldown value is %u", *res);
+    return *res;
+  } else {
+    ALOGE("Cooldown value unavailable");
+  }
+  return 0;
+}
+
+int nxp_pn80t_close(struct EseInterface *ese) {
+  struct NxpState *ns;
+  const struct Pn80tPlatform *platform = ese->ops->opts;
+  if (!ese)
+    return -1;
+  ALOGV("%s: called", __func__);
+  ns = NXP_PN80T_STATE(ese);
+  nxp_send_cooldown(ese);
+  platform->toggle_power_req(ns->handle, 0);
+  platform->release(ns->handle);
+  ns->handle = NULL;
+  return 0;
 }
 
 static const char *kErrorMessages[] = {

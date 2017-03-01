@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#include <ese/ese.h>
-#include <ese/log.h>
+#include "include/ese/ese.h"
+#include "include/ese/log.h"
 
 #include "ese_private.h"
 

@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-
-#include <ese/ese.h>
-#include <ese/teq1.h>
+#include "include/ese/teq1.h"
+#include "../libese/include/ese/ese.h"
 
 #define LOG_TAG "ESE_T=1"
-#include <ese/log.h>
+#include "../libese/include/ese/log.h"
 
 #include "teq1_private.h"
 
@@ -129,15 +128,19 @@ int teq1_receive(struct EseInterface *ese,
                  struct Teq1Frame *frame) {
   /* Poll the bus until we see the start of frame indicator, the interface NAD.
    */
-  if (ese->ops->poll(ese, opts->host_address, timeout, 0) < 0) {
+  int bytes_consumed = ese->ops->poll(ese, opts->host_address, timeout, 0);
+  if (bytes_consumed < 0 || bytes_consumed > 1) {
     /* Timed out or comm error. */
+    ALOGV("%s: comm error: %d", __func__, bytes_consumed);
     return -1;
   }
-  /* We polled for the NAD above. */
-  frame->header.NAD = opts->host_address;
+  /* We polled for the NAD above -- if it was consumed, set it here. */
+  if (bytes_consumed) {
+    frame->header.NAD = opts->host_address;
+  }
   /* Get the remainder of the header, but keep the line &open. */
-  ese->ops->hw_receive(ese, (uint8_t *)(&frame->header.PCB),
-                       sizeof(frame->header) - 1, 0);
+  ese->ops->hw_receive(ese, (uint8_t *)(&frame->header.NAD + bytes_consumed),
+                       sizeof(frame->header) - bytes_consumed, 0);
   if (frame->header.LEN == 255) {
     ALOGV("received invalid LEN of 255");
     /* Close the receive window and return failure. */
@@ -554,8 +557,8 @@ API size_t teq1_transceive(struct EseInterface *ese,
       TEQ1_INIT_STATE(tx_buf, tx_len, rx_buf, rx_len, card_state);
 
   /* Build assertion using div-by-0 to check wire structs. */
-  1 / (!!(TEQ1HEADER_SIZE == sizeof(struct Teq1Header)));
-  1 / (!!(TEQ1FRAME_SIZE == sizeof(struct Teq1Frame)));
+  done = !(1 / (!!(TEQ1HEADER_SIZE == sizeof(struct Teq1Header))));
+  done = !(1 / (!!(TEQ1FRAME_SIZE == sizeof(struct Teq1Frame))));
 
   /* First I-block is always I(0, M). After that, modulo 2. */
   tx->header.PCB = TEQ1_I(!card_state->seq.interface, 0);

@@ -23,6 +23,7 @@ typedef int (pn80t_platform_release_t)(void *);
 typedef int (pn80t_platform_toggle_t)(void *, int);
 typedef int (pn80t_platform_transmit_t)(void *, const uint8_t *buf, int32_t len, int done);
 typedef int (pn80t_platform_receive_t)(void *, const uint8_t *buf, int32_t len, int done);
+typedef int (pn80t_platform_poll_t)(void *, uint8_t poll_for, float timeout, int done);
 typedef int (pn80t_platform_wait_t)(void *, long usec);
 
 struct Pn80tPlatform {
@@ -34,6 +35,7 @@ struct Pn80tPlatform {
   pn80t_platform_transmit_t *const transmit;
   pn80t_platform_receive_t *const receive;
   pn80t_platform_wait_t *const wait;
+  pn80t_platform_poll_t *const poll;
 };
 
 #endif

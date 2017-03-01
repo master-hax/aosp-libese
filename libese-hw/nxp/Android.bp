@@ -25,3 +25,15 @@ cc_library {
     shared_libs: ["liblog", "libese", "libese-teq1"],
     export_include_dirs: ["include"]
 }
+
+cc_library {
+    name: "libese-hw-nxp-pn80t-nq-nci",
+    host_supported: true,
+    debug: {
+      cflags: ["-DLOG_NDEBUG=0"],
+    },
+    srcs: ["pn80t_nq_nci.c", "platforms/nq_nci.c"],
+    local_include_dirs: ["include"],
+    shared_libs: ["liblog", "libese", "libese-teq1"],
+    export_include_dirs: ["include"]
+}

@@ -22,9 +22,9 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <ese/ese.h>
-#include <ese/log.h>
-#include <ese/teq1.h>
+#include "../libese-teq1/include/ese/teq1.h"
+#include "../libese/include/ese/ese.h"
+#include "../libese/include/ese/log.h"
 
 struct EchoState {
   struct Teq1Frame frame;

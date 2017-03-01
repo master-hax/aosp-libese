@@ -17,7 +17,7 @@
 #ifndef ESE_HW_API_H_
 #define ESE_HW_API_H_ 1
 
-#include <ese/sysdeps.h>
+#include "../../../libese-sysdeps/include/ese/sysdeps.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +53,7 @@ typedef size_t (ese_hw_transmit_op_t)(struct EseInterface *, const uint8_t *, si
 typedef int (ese_hw_reset_op_t)(struct EseInterface *);
 /* Implements wire protocol transceiving and will likely also then require locking. */
 typedef size_t (ese_transceive_op_t)(struct EseInterface *, const uint8_t *, size_t, uint8_t *, size_t);
-/* Returns 0 on timeout, 1 on byte seen, -1 on error. */
+/* Returns -1 or error or timeout, 1 or 0 if poll byte was consumed. */
 typedef int (ese_poll_op_t)(struct EseInterface *, uint8_t, float, int);
 typedef int (ese_open_op_t)(struct EseInterface *, void *);
 typedef int (ese_close_op_t)(struct EseInterface *);

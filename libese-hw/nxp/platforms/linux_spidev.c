@@ -214,4 +214,5 @@ const struct Pn80tPlatform kPn80tLinuxSpidevPlatform = {
     .transmit = &platform_transmit,
     .receive = &platform_receive,
     .wait = &platform_wait,
+    .poll = NULL,
 };
