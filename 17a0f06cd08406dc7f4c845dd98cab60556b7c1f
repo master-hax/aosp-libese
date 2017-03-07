@@ -165,6 +165,24 @@
     },
     {
       "key": {
+        "uuid": "47461121_1846ee56",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T17:32:25Z",
+      "side": 1,
+      "message": "I\u0027m not sure what toolchains bootloaders will have.",
+      "parentUuid": "a93f0fe3_a0f3ad79",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79de219b_c6c3cd2a",
         "filename": "libese-hw/nxp/pn80t_common.c",
         "patchSetId": 1

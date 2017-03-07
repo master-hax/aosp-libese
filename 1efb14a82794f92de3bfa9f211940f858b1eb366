@@ -22,6 +22,30 @@
       "revId": "1efb14a82794f92de3bfa9f211940f858b1eb366",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11098c2b_ae502a33",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T17:32:25Z",
+      "side": 1,
+      "message": "Doh!",
+      "parentUuid": "7afd7c8d_8cef679f",
+      "range": {
+        "startLine": 338,
+        "startChar": 6,
+        "endLine": 344,
+        "endChar": 33
+      },
+      "revId": "1efb14a82794f92de3bfa9f211940f858b1eb366",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
