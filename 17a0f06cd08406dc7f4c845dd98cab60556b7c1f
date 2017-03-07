@@ -147,6 +147,24 @@
     },
     {
       "key": {
+        "uuid": "a93f0fe3_a0f3ad79",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-07T16:48:32Z",
+      "side": 1,
+      "message": "Why not? The Android build tools already default to C11 and the big compilers support it.",
+      "parentUuid": "8e0190c7_c1a45ede",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79de219b_c6c3cd2a",
         "filename": "libese-hw/nxp/pn80t_common.c",
         "patchSetId": 1
