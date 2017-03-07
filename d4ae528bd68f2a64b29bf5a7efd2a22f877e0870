@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "e5ecd295_41335c0a",
+        "filename": "NOTICE",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08a2273e_7592f6d0",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 18
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "520eaa67_bc1b87fc",
         "filename": "README.md",
         "patchSetId": 6
@@ -59,6 +83,30 @@
       "writtenOn": "2017-02-07T21:32:59Z",
       "side": 1,
       "message": "This might be a good place for a simple ASCII-art diagram",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c90d12e7_1a17eb8a",
+        "filename": "README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "I\u0027ll add one :)",
+      "parentUuid": "520eaa67_bc1b87fc",
       "range": {
         "startLine": 1,
         "startChar": 2,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "599505ff_7c2497b2",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fb2d098_8473df79",
+      "range": {
+        "startLine": 25,
+        "startChar": 29,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc4ae35b_65cd6fed",
         "filename": "examples/ese_nxp_sample.c",
         "patchSetId": 6
@@ -105,6 +177,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "The docs say this is only an error if it is negative, not any non-zero value. (This is done in this file and the ese_relay)",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 16
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5affb5f3_fe5b9ea4",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc4ae35b_65cd6fed",
       "range": {
         "startLine": 88,
         "startChar": 8,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "84eb0b89_53b56b32",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a385a53e_d87542a8",
+      "range": {
+        "startLine": 97,
+        "startChar": 5,
+        "endLine": 97,
+        "endChar": 15
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "914f5fde_d20e7b9a",
         "filename": "examples/ese_nxp_sample.c",
         "patchSetId": 6
@@ -151,6 +271,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "No error handling.\n\nI\u0027m not normally very keen on finaliser functions returning error codes because most of the time there isn\u0027t much you can do about it. But I guess there might be some implementation that needs ETRYAGAIN or similar.",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b568737_2df4e68f",
+        "filename": "examples/ese_nxp_sample.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Agreed (think close(2)).  I supported a value initially since no opaque data was passed into the ese_open().  Since it is supplied, if an integrator needs status about any freed/closed resources or other errors, they can be returned via the passed in data which they could assume to be safe to verify after a call to close.",
+      "parentUuid": "914f5fde_d20e7b9a",
       "range": {
         "startLine": 124,
         "startChar": 4,
@@ -180,6 +324,24 @@
     },
     {
       "key": {
+        "uuid": "c0e5b26f_a94e8882",
+        "filename": "libese-teq1/include/ese/teq1.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "True enough!  Initially, I was anticipating pairing bitfields with bitmask validation in build-time _tests_ to ensure compiler compliance (so I still get nice accessors and storage properties).\n\nHowever, since I\u0027m now anticipating some third party integration where I can\u0027t be certain the tests will be run, I\u0027ll put in a TODO to rework on the next change if that sounds sane?",
+      "parentUuid": "69188d1f_58e0c731",
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3b1d60e2_800b04d9",
         "filename": "libese-teq1/teq1.c",
         "patchSetId": 6
@@ -191,6 +353,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "Missing braces. Should probably brace everything after seeing it go so wrong in that SSL bug. (Here and elsewhere)",
+      "range": {
+        "startLine": 112,
+        "startChar": 22,
+        "endLine": 113,
+        "endChar": 22
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6712d131_5e1800fc",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b1d60e2_800b04d9",
       "range": {
         "startLine": 112,
         "startChar": 22,
@@ -295,6 +481,30 @@
     },
     {
       "key": {
+        "uuid": "4e331c35_89359f0f",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Just in case the first one doesn\u0027t stick!",
+      "parentUuid": "34a229ba_57f2a787",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "be0704d7_ab6c226b",
         "filename": "libese/include/ese/ese.h",
         "patchSetId": 6
@@ -306,6 +516,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "Should/can this be a `const uint8_t*`?",
+      "range": {
+        "startLine": 74,
+        "startChar": 45,
+        "endLine": 74,
+        "endChar": 66
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7406f023_1db3ab88",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Should be.",
+      "parentUuid": "be0704d7_ab6c226b",
       "range": {
         "startLine": 74,
         "startChar": 45,
@@ -341,6 +575,30 @@
     },
     {
       "key": {
+        "uuid": "b410e525_e0497024",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "What do you have in mind?  This is really only API for the implementations not for the outside consumer. So I can move this one into ese_hw_api.h, but I don\u0027t know if it makes sense to make the implementation manage a fn pointer for a error setter.\n\nAm I misunderstanding?",
+      "parentUuid": "cb5ea0a1_65345227",
+      "range": {
+        "startLine": 81,
+        "startChar": 5,
+        "endLine": 81,
+        "endChar": 18
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "63854332_0dc2f34e",
         "filename": "libese/include/ese/ese_hw_api.h",
         "patchSetId": 6
@@ -352,6 +610,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "Move to the implementation files?",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 65
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88b5717b_10f75085",
+        "filename": "libese/include/ese/ese_hw_api.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63854332_0dc2f34e",
       "range": {
         "startLine": 38,
         "startChar": 3,
@@ -381,6 +663,24 @@
     },
     {
       "key": {
+        "uuid": "2b5fae18_3ea3b925",
+        "filename": "tools/ese_relay/ese_relay.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Eh sure :)\n\nThis is a dev tool so I was less concerned.  EAGAIN/WOULDBLOCK can\u0027t happen here, but partial reads and EINTR should be handled!\n\nI will clean it up!",
+      "parentUuid": "973ff981_2bf990dd",
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e85e893_c9e71310",
         "filename": "tools/ese_relay/ese_relay_fake.c",
         "patchSetId": 6
@@ -392,6 +692,30 @@
       "writtenOn": "2017-02-17T14:39:40Z",
       "side": 1,
       "message": "This could use ese_init",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 47
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6066a26c_26c26ed4",
+        "filename": "tools/ese_relay/ese_relay_fake.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e85e893_c9e71310",
       "range": {
         "startLine": 28,
         "startChar": 2,
