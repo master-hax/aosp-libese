@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e55e1f3_7db68401",
+        "filename": "libese-hw/ese_hw_echo.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d38bbaa2_8b88b872",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e2bbf41_d5baa739",
         "filename": "libese-hw/nxp/include/ese/hw/nxp/pn80t/platform.h",
         "patchSetId": 1
@@ -30,6 +48,47 @@
       "writtenOn": "2017-02-21T15:54:10Z",
       "side": 1,
       "message": "Nit: consistency // vs /* */",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09cba95a_46ef217e",
+        "filename": "libese-hw/nxp/include/ese/hw/nxp/pn80t/platform.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e2bbf41_d5baa739",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa5939d5_f02cb0ba",
+        "filename": "libese-hw/nxp/platforms/linux_spidev.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "note this is NOT for production",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 38
+      },
       "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
@@ -70,6 +129,24 @@
     },
     {
       "key": {
+        "uuid": "8e0190c7_c1a45ede",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "Not added until c11, and I don\u0027t want to explicitly encumber with a c11 toolchain :/",
+      "parentUuid": "4eae10a9_938f9b4f",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79de219b_c6c3cd2a",
         "filename": "libese-hw/nxp/pn80t_common.c",
         "patchSetId": 1
@@ -87,6 +164,24 @@
     },
     {
       "key": {
+        "uuid": "adda79b0_937bb456",
+        "filename": "libese-hw/nxp/pn80t_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "Good call",
+      "parentUuid": "79de219b_c6c3cd2a",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2fda5cb_ba368b9d",
         "filename": "libese-teq1/teq1.c",
         "patchSetId": 1
@@ -98,6 +193,24 @@
       "writtenOn": "2017-02-21T15:54:10Z",
       "side": 1,
       "message": "static_assert instead?",
+      "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18d71600_dca8b26b",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-07T16:13:05Z",
+      "side": 1,
+      "message": "_Static_assert() is in C11. I could use a different trick, but this one seems portable enough for a one off. \nWDYT?",
+      "parentUuid": "c2fda5cb_ba368b9d",
       "revId": "17a0f06cd08406dc7f4c845dd98cab60556b7c1f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
