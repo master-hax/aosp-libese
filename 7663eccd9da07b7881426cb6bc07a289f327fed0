@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "9314a40a_d905863b",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2017-03-08T16:28:40Z",
+      "side": 1,
+      "message": "FWIW, libavb - which will be built along with this - requires C99 and is using things like stdbool.h, stdint.h, stddef.h (along with keywords true/false for use with bool). My rationale is that if the OEM (or bootloader vendor or whoever) doesn\u0027t have a toolchain supporting this 17 old standard then they\u0027re free to patch the source-code themselves to make things work...",
+      "parentUuid": "e74ac9ea_fdd5a8ee",
+      "range": {
+        "startLine": 555,
+        "startChar": 2,
+        "endLine": 555,
+        "endChar": 5
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dfd7850_c8430dce",
         "filename": "libese-teq1/teq1.c",
         "patchSetId": 5
