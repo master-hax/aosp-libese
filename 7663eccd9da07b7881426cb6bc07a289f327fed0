@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0dace9b_8f3b8a73",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "This feels like an unnecessary C hack. Can\u0027t it just be malloc\u0027d? It won\u0027t be that much overhead.",
+      "range": {
+        "startLine": 76,
+        "startChar": 9,
+        "endLine": 76,
+        "endChar": 25
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce896c92_ca636e1b",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "write only sets errno if it returns -1 and could return \u003c len successfully. Maybe not with this driver but the driver could change.",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 106,
+        "endChar": 17
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7807ef68_7b96cbbd",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "Similar comment as for `write` above.",
+      "range": {
+        "startLine": 141,
+        "startChar": 12,
+        "endLine": 141,
+        "endChar": 16
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ad9575e_cb823ace",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "nit: reflow",
+      "range": {
+        "startLine": 110,
+        "startChar": 9,
+        "endLine": 111,
+        "endChar": 11
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e74ac9ea_fdd5a8ee",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "stdbool.h? Or might they not even have C99?\n\nEither way, if you are trying to stick to an old standard it is probably worth adding a -std\u003dc?? to the build flags so the compiler can keep us in check.",
+      "range": {
+        "startLine": 555,
+        "startChar": 2,
+        "endLine": 555,
+        "endChar": 5
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6dfd7850_c8430dce",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "You could use a macro to make it look like you\u0027re being modern and also make it easier to upgrade / change\n\n#define static_assert(what, why) { while (!(1 / (!!(what)))); }",
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceb78c56_ae185fd5",
+        "filename": "libese/ese.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-08T12:31:11Z",
+      "side": 1,
+      "message": "Why a loop? All paths seem to break.\n\nOh, I think I see now. I feel like giving in to the else or goto done would be more expected.",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
