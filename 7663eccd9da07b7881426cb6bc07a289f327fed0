@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bb5b3945_6ae02c51",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "Not much overhead, but it feels absurd to replace a cast with an 4 byte (8 aligned + bookkeeping data) which is then pointed to by the 8 byte register on call and needs error checking during init.\n\nAnyway - added it in!",
+      "parentUuid": "c0dace9b_8f3b8a73",
+      "range": {
+        "startLine": 76,
+        "startChar": 9,
+        "endLine": 76,
+        "endChar": 25
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ce896c92_ca636e1b",
         "filename": "libese-hw/nxp/pn80t/nq_nci.c",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-08T12:31:11Z",
       "side": 1,
       "message": "write only sets errno if it returns -1 and could return \u003c len successfully. Maybe not with this driver but the driver could change.",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 106,
+        "endChar": 17
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a41f185f_91cf4ad2",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "True!  This was a victim of cargo culting. I\u0027ll add proper accounting here.",
+      "parentUuid": "ce896c92_ca636e1b",
       "range": {
         "startLine": 106,
         "startChar": 12,
@@ -82,6 +130,30 @@
       "writtenOn": "2017-03-08T12:31:11Z",
       "side": 1,
       "message": "nit: reflow",
+      "range": {
+        "startLine": 110,
+        "startChar": 9,
+        "endLine": 111,
+        "endChar": 11
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a98024f_9900c4ff",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad9575e_cb823ace",
       "range": {
         "startLine": 110,
         "startChar": 9,
@@ -141,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "bff3a29f_33c95812",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "adding -std\u003dc99. \n\nStyle-wise, we used to stdbool.h avoid it in portable code because some compilers didn\u0027t bother even when being c99 compliant in other ways.  That said, I can just slap it in sysdeps and if it isn\u0027t there, typedef/defines are trivial to add.",
+      "parentUuid": "e74ac9ea_fdd5a8ee",
+      "range": {
+        "startLine": 555,
+        "startChar": 2,
+        "endLine": 555,
+        "endChar": 5
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dfd7850_c8430dce",
         "filename": "libese-teq1/teq1.c",
         "patchSetId": 5
@@ -176,6 +272,24 @@
     },
     {
       "key": {
+        "uuid": "fb9bbabe_7ed2e7f2",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b98246ac_5d539bd1",
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ceb78c56_ae185fd5",
         "filename": "libese/ese.c",
         "patchSetId": 5
@@ -187,6 +301,30 @@
       "writtenOn": "2017-03-08T12:31:11Z",
       "side": 1,
       "message": "Why a loop? All paths seem to break.\n\nOh, I think I see now. I feel like giving in to the else or goto done would be more expected.",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "7663eccd9da07b7881426cb6bc07a289f327fed0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ee42d81_90e26091",
+        "filename": "libese/ese.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-08T17:25:34Z",
+      "side": 1,
+      "message": "I prefer goto for clean, centralized error handling in these cases, but while loops were de rigeur when goto was explicitly banned.\n\nAnyway, this was wonky. Cleaned up for readability!",
+      "parentUuid": "ceb78c56_ae185fd5",
       "range": {
         "startLine": 88,
         "startChar": 2,
