@@ -22,6 +22,30 @@
       "revId": "5359f551f3e585a915c08d95b033da75e7962691",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "613787da_5bfd775c",
+        "filename": "examples/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:39:25Z",
+      "side": 1,
+      "message": "I was just being careful :)  Would you prefer I remove this now?",
+      "parentUuid": "981aca8f_5538e529",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "5359f551f3e585a915c08d95b033da75e7962691",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
