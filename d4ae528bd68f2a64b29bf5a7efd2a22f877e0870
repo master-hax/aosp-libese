@@ -542,6 +542,30 @@
     },
     {
       "key": {
+        "uuid": "987535b9_a5bc3bb7",
+        "filename": "libese-hw/nxp/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-03-09T21:17:53Z",
+      "side": 1,
+      "message": "Yeah, eventually we want to have a way to turn on/off debug per-module (or perhaps for everything compiled into a specific binary, etc)",
+      "parentUuid": "8d151ca9_860d72b4",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 6
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7b4d481_706dfdfe",
         "filename": "libese-hw/tests/Android.bp",
         "patchSetId": 6
