@@ -46,6 +46,30 @@
       "revId": "5359f551f3e585a915c08d95b033da75e7962691",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e97a7760_a700224b",
+        "filename": "examples/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-03-09T21:41:01Z",
+      "side": 1,
+      "message": "I figured :)\n\nIt could always happen in the other cleanup change you mentioned, the build needs to be fixed soon (the policy now is actually revert first)",
+      "parentUuid": "613787da_5bfd775c",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "5359f551f3e585a915c08d95b033da75e7962691",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
