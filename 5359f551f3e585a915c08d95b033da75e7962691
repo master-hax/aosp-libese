@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "981aca8f_5538e529",
+        "filename": "examples/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2017-03-09T21:36:27Z",
+      "side": 1,
+      "message": "windows is disabled by default (and we always cross-compile from linux, so this is easy to test on a linux box)",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "5359f551f3e585a915c08d95b033da75e7962691",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
