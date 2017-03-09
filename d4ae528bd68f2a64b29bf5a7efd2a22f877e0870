@@ -142,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "a20df21c_892c160b",
+        "filename": "examples/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "Left over cruft.",
+      "parentUuid": "ba484bc5_b832ece5",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b126619_3ae463ab",
         "filename": "examples/Android.bp",
         "patchSetId": 6
@@ -165,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "1c66b4c5_ab160b98",
+        "filename": "examples/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "To make multiple build targets easier",
+      "parentUuid": "8b126619_3ae463ab",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "28515f1a_924a99c9",
         "filename": "examples/Android.bp",
         "patchSetId": 6
@@ -176,6 +224,30 @@
       "writtenOn": "2017-03-09T21:10:44Z",
       "side": 1,
       "message": "This is the default, it doesn\u0027t need to be specified",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4cd0616_d2dd56cb",
+        "filename": "examples/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "Cool.",
+      "parentUuid": "28515f1a_924a99c9",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -399,6 +471,30 @@
     },
     {
       "key": {
+        "uuid": "325558c5_86f212e5",
+        "filename": "libese-hw/nxp/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "Cool!",
+      "parentUuid": "0818c016_bd8c7707",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3791465_3dc80675",
         "filename": "libese-hw/nxp/Android.bp",
         "patchSetId": 6
@@ -410,6 +506,30 @@
       "writtenOn": "2017-03-09T21:10:44Z",
       "side": 1,
       "message": "Warning: debug doesn\u0027t currently do anything",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 6
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d151ca9_860d72b4",
+        "filename": "libese-hw/nxp/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "Aha. Will that change?",
+      "parentUuid": "a3791465_3dc80675",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -445,6 +565,30 @@
     },
     {
       "key": {
+        "uuid": "a771dba6_8a1b3aea",
+        "filename": "libese-hw/tests/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "Nope, I\u0027ll pull it. I was cargo culting from system core .bps!",
+      "parentUuid": "a7b4d481_706dfdfe",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5546da48_9f718033",
         "filename": "libese-hw/tests/Android.bp",
         "patchSetId": 6
@@ -456,6 +600,30 @@
       "writtenOn": "2017-03-09T21:10:44Z",
       "side": 1,
       "message": "Why wouldn\u0027t you just include this below?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "d4ae528bd68f2a64b29bf5a7efd2a22f877e0870",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d9e3d35_ecc60420",
+        "filename": "libese-hw/tests/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T21:15:30Z",
+      "side": 1,
+      "message": "No reason not to until more targets appear.",
+      "parentUuid": "5546da48_9f718033",
       "range": {
         "startLine": 30,
         "startChar": 0,
