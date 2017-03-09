@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a6db8a07_ab43a42d",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T19:07:12Z",
+      "side": 1,
+      "message": "Done!\n\nNo Google history here -- just overriding ingrained habits!\n\nBut maybe I\u0027ll just leave this here: https://lkml.org/lkml/2012/4/12/18\n;)\n\n(FWIW, I don\u0027t like the block of variable declarations at the top in general, so this is a welcome relief in c99-onward.)",
+      "parentUuid": "71baf6a8_9c80ab41",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 147,
+        "endChar": 8
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "36855516_649c62c6",
         "filename": "libese-hw/nxp/pn80t/nq_nci.c",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-09T17:27:48Z",
       "side": 1,
       "message": "Probably worth logging errno for debugging, same for the `write` above.",
+      "range": {
+        "startLine": 157,
+        "startChar": 6,
+        "endLine": 157,
+        "endChar": 69
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bed5ab5_80f240f8",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T19:07:12Z",
+      "side": 1,
+      "message": "Done. Also I had the wrong variable -- bytes instead of ret.",
+      "parentUuid": "36855516_649c62c6",
       "range": {
         "startLine": 157,
         "startChar": 6,
@@ -82,6 +130,54 @@
       "writtenOn": "2017-03-09T17:27:48Z",
       "side": 1,
       "message": "bool",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 3
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88d52fb9_a96517fb",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T19:07:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aecd85dc_07ca2f5d",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 33
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "445e7546_a113f80e",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-09T19:07:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ad23f84_34ba7573",
       "range": {
         "startLine": 74,
         "startChar": 0,
