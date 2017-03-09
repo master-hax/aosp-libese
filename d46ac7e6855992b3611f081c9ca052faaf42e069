@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71baf6a8_9c80ab41",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-09T17:27:48Z",
+      "side": 1,
+      "message": "Not a blocker for landing, but if we are going with C99 then places like this can have their variable declarations brought down from the top of the block and then they can be made `const` too.\n\nI\u0027m looking forward to another history lesson if you\u0027ve got one for this :)",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 147,
+        "endChar": 8
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36855516_649c62c6",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-09T17:27:48Z",
+      "side": 1,
+      "message": "Probably worth logging errno for debugging, same for the `write` above.",
+      "range": {
+        "startLine": 157,
+        "startChar": 6,
+        "endLine": 157,
+        "endChar": 69
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aecd85dc_07ca2f5d",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-09T17:27:48Z",
+      "side": 1,
+      "message": "`const  struct EseInterface*` for these error inspectors and `ese_name`?",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 33
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ad23f84_34ba7573",
+        "filename": "libese/include/ese/ese.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-09T17:27:48Z",
+      "side": 1,
+      "message": "bool",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 3
+      },
+      "revId": "d46ac7e6855992b3611f081c9ca052faaf42e069",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
