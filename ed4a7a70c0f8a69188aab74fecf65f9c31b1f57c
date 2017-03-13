@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd21413c_864d7ac7",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-13T15:27:06Z",
+      "side": 1,
+      "message": "I think these strings are out of sync with the error numbers. I see the log\n\nlibese  : platform initialization failed\n\nbut got the message \"failed to read\"\n\nLooking at common.h, there should be a string for kNxpPn80tError at the start.",
+      "range": {
+        "startLine": 194,
+        "startChar": 31,
+        "endLine": 194,
+        "endChar": 62
+      },
+      "revId": "ed4a7a70c0f8a69188aab74fecf65f9c31b1f57c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a2164de_3b02ff75",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-13T15:27:06Z",
+      "side": 1,
+      "message": "These log levels aren\u0027t very useful as they don\u0027t show up in logcat, they should at least have WARNING priority if not ERROR.\n\nAlso, there are other paths without logs or explanation string through ese_error_message() e.g. if the device isn\u0027t opened (that\u0027s what my problem was)",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 9
+      },
+      "revId": "ed4a7a70c0f8a69188aab74fecf65f9c31b1f57c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
