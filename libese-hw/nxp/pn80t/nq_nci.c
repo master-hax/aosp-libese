@@ -74,7 +74,7 @@ void *platform_init(void *hwopts) {
 
   struct PlatformHandle *handle = calloc(1, sizeof(*handle));
   if (!handle) {
-    ALOGV("%s: unable to allocate memory for handle", __func__);
+    ALOGE("%s: unable to allocate memory for handle", __func__);
     return NULL;
   }
   handle->fd = open(kDevicePath, O_RDWR);
