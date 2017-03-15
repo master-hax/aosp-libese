@@ -103,11 +103,14 @@ int nxp_pn80t_reset(struct EseInterface *ese) {
     ese_set_error(ese, kNxpPn80tErrorResetToggle);
     return -1;
   }
-  platform->wait(ns->handle, 1000);
+  /* Let it settle. */
+  platform->wait(ns->handle, 10000);
   if (platform->toggle_reset(ns->handle, 1) < 0) {
     ese_set_error(ese, kNxpPn80tErrorResetToggle);
     return -1;
   }
+  /* Let it boot. */
+  platform->wait(ns->handle, 5100);
   return 0;
 }
 

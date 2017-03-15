@@ -34,6 +34,9 @@ extern size_t kAtrLength;
 extern void *kEseOpenData;
 void ese_relay_init(struct EseInterface *ese);
 
+/* TODO(wad) move to extern per device. */
+static const uint8_t kInlineResetCmd[] = {0xff, 0x01, 0x00, 0x00};
+
 /*
  * Aligned with vpcd.h in
  * https://frankmorgner.github.io/vsmartcard/virtualsmartcard
@@ -135,6 +138,7 @@ int main() {
         data_read += bytes;
       }
       /* Finally, we can transcieve. */
+      rx_len = 0;
       if (tx_len) {
         uint32_t i;
         printf("Sending %u bytes to card\n", tx_len);
@@ -144,17 +148,33 @@ int main() {
         printf("\n");
       }
 
+      /* Support an inlined reset. */
+      if (tx_len == sizeof(kInlineResetCmd) &&
+          memcmp(tx_buf, kInlineResetCmd, sizeof(kInlineResetCmd)) == 0) {
+        tx_len = 1;
+        tx_buf[0] = CMD_RESET;
+        /* Inline a APDU response. */
+        rx_buf[0] = 0x90;
+        rx_buf[1] = 0x00;
+        rx_len = 2;
+      }
+
       if (tx_len == 1) { /* Control request */
         printf("Received a control request: %x\n", tx_buf[0]);
-        rx_len = 0;
         switch (tx_buf[0]) {
+        case CMD_RESET:
         case CMD_POWER_OFF:
-          ese.ops->hw_reset(&ese);
+          /* Don't use hw_reset as it won't guarantee protocol reset. */
+          ese_close(&ese);
+          if (ese_open(&ese, kEseOpenData) < 0) {
+            printf("Failed to reset eSE.\n");
+            if (ese_error(&ese)) {
+              printf("eSE error: %s\n", ese_error_message(&ese));
+            }
+            connected = 0;
+          }
           break;
         case CMD_POWER_ON:
-          break;
-        case CMD_RESET:
-          ese.ops->hw_reset(&ese);
           break;
         case CMD_ATR:
           /* Send a dummy ATR for another JCOP card */
@@ -166,6 +186,7 @@ int main() {
         default:
           ALOGE("Unknown control byte seen: %x", tx_buf[0]);
         }
+        /* If no response is needed (default), just continue. */
         if (!rx_len)
           continue;
       } else {

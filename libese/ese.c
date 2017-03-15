@@ -42,6 +42,7 @@ API int ese_open(struct EseInterface *ese, void *hw_opts) {
     return -1;
   }
   ALOGV("opening interface '%s'", ese_name(ese));
+  ese->error.is_err = false;
   if (ese->ops->open) {
     return ese->ops->open(ese, hw_opts);
   }
@@ -101,6 +102,7 @@ API int ese_transceive(struct EseInterface *ese, const uint8_t *tx_buf,
     return ese_error(ese) ? -1 : recvd;
   }
 
+  ALOGE("No working transceive implementation.");
   ese_set_error(ese, kEseGlobalErrorNoTransceive);
   return -1;
 }
