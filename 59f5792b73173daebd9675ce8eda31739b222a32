@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "25d2e372_7f5f3805",
+        "filename": "esed/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-22T17:13:43Z",
+      "side": 1,
+      "message": "I moved it to the deafults which are used by all the targets",
+      "parentUuid": "0eefa99d_88a50567",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "59f5792b73173daebd9675ce8eda31739b222a32",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f76065b_4fbff73d",
         "filename": "esed/esed.cpp",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-22T17:01:02Z",
       "side": 1,
       "message": "I\u0027d be tempted to do a backoff :)",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 43
+      },
+      "revId": "59f5792b73173daebd9675ce8eda31739b222a32",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4b00f10_df227099",
+        "filename": "esed/esed.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-22T17:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f76065b_4fbff73d",
       "range": {
         "startLine": 54,
         "startChar": 40,
