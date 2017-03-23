@@ -1,0 +1,9 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+2: Will Drewry <drewry@google.com>
+Verified+1: Andrew Scull <ascull@google.com>
+Autosubmit+1: Andrew Scull <ascull@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 23 Mar 2017 18:01:36 +0000
+Reviewed-on: https://android-review.googlesource.com/355336
+Project: platform/external/libese
+Branch: refs/heads/master
