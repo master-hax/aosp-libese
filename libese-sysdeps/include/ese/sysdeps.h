@@ -19,10 +19,23 @@
 #include <stdbool.h> /* bool */
 #include <stdint.h> /* uint*_t */
 
+#define ESE_UINT32_MAX (4294967295U)
+
 #ifndef NULL
 #define NULL ((void *)(0))
 #endif
 
+/* Set visibility for exported functions. */
+#ifndef API
+#define API __attribute__ ((visibility("default")))
+#endif  /* API */
+
+/* Mimic C11 _Static_assert behavior for a C99 world. */
+#ifndef _static_assert
+#define _static_assert(what, why) { while (!(1 / (!!(what)))); }
+#endif
+
+extern void ese_abort(int code, const char *message);
 extern void *ese_memcpy(void *__dest, const void *__src, uint64_t __n);
 extern void *ese_memset(void *__s, int __c, uint64_t __n);
 
