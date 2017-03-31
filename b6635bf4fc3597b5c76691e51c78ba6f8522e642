@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a783952e_e9d20232",
+        "filename": "libese-hw/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-31T12:57:26Z",
+      "side": 1,
+      "message": "Yeah - I want debug logging on always for the fake and echo targets.",
+      "parentUuid": "eeb3bff5_819ebc82",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "b6635bf4fc3597b5c76691e51c78ba6f8522e642",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7310c0ef_afb68910",
         "filename": "libese/Android.bp",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-31T08:11:00Z",
       "side": 1,
       "message": "Could add the `proprietary` field here too any maybe the Darwin exclusion bits?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "b6635bf4fc3597b5c76691e51c78ba6f8522e642",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96bc8463_77fddc47",
+        "filename": "libese/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-03-31T12:57:26Z",
+      "side": 1,
+      "message": "I don\u0027t want to add Darwin here since I hadn\u0027t excluded every target from Darwin.  Perhaps I should have? I didn\u0027t want to touch it again without a darwin host to test on :/",
+      "parentUuid": "7310c0ef_afb68910",
       "range": {
         "startLine": 17,
         "startChar": 0,
