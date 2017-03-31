@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeb3bff5_819ebc82",
+        "filename": "libese-hw/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-31T08:11:00Z",
+      "side": 1,
+      "message": "Is this still needed? And below.",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "b6635bf4fc3597b5c76691e51c78ba6f8522e642",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7310c0ef_afb68910",
+        "filename": "libese/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-03-31T08:11:00Z",
+      "side": 1,
+      "message": "Could add the `proprietary` field here too any maybe the Darwin exclusion bits?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "b6635bf4fc3597b5c76691e51c78ba6f8522e642",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
