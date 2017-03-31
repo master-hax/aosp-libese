@@ -15,6 +15,7 @@
  */
 
 #include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
 
 void *ese_memcpy(void *__dest, const void *__src, uint64_t __n) {
