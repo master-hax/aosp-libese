@@ -13,14 +13,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+// Format of the data to be hashed and stored for Carrier(Un)Lock.
+syntax = "proto2";
 
-subdirs = [
-    "libese-sysdeps",
-    "libese",
-    "libese-teq1",
-    "libese-hw",
-    "apps",
-    "examples",
-    "tools",
-    "esed",
-]
+package simlock;
+
+message DeviceUnlockData {
+  required string brand = 1;
+  required string device = 2;
+  required string product = 3;
+  required string serialno = 4;
+  repeated string modem_id = 5; // sorted lexically.
+  required string manufacturer = 6;
+  required string model = 7;
+};
