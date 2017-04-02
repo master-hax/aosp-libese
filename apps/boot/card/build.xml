@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2017 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Ant XML for out of band building the applet.
+     Ensure any additional dependencies are under src/ and point a local symlink to the jc304_kit checkout.
+  -->
+<project basedir="." default="bootstate" name="applet build">
+<get src="https://github.com/martinpaljak/ant-javacard/releases/download/v1.7/ant-javacard.jar" dest="." skipexisting="true"/>
+<taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="ant-javacard.jar"/>
+<target name="bootstate">
+<javacard jckit="jc304_kit">
+  <cap aid="A0000004765049584C424F4F54000100" package="com.android.verifiedboot.bootstate" version="0.1" output="bootstate.cap" sources="src" export="export">
+    <applet class="com.android.verifiedboot.bootstate.BootState" aid="A0000004765049584C424F4F54000101"/>
+   </cap>
+</javacard>
+</target>
+</project>
