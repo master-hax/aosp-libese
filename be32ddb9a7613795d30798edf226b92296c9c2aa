@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d38fbb7b_91f0316d",
+        "filename": "libese-sysdeps/include/ese/sysdeps.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "nit: UINT32_MAX from stdint.h? Or 0xffffffff might be clearer that it is all 1s",
+      "range": {
+        "startLine": 22,
+        "startChar": 24,
+        "endLine": 22,
+        "endChar": 35
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90d92c7a_71cb614e",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "Need to early return an error?",
+      "range": {
+        "startLine": 196,
+        "startChar": 6,
+        "endLine": 197,
+        "endChar": 31
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf4697e3_a356b6ba",
+        "filename": "libese/ese.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "This suggests the base field should be a const pointer. I don\u0027t think that should cause too much pain, especially as in C99 can declare variables anywhere so avoid having to assign to the field.",
+      "range": {
+        "startLine": 87,
+        "startChar": 14,
+        "endLine": 87,
+        "endChar": 25
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "300b3021_1c9588fb",
+        "filename": "libese/ese.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "Would you say this is the preferred way to build an APDU? E.g., when adding a Weaver key into the command, just point to that buffer rather than copying it into a staging buffer that gets passed to ese_transceive.",
+      "range": {
+        "startLine": 95,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 29
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a48bdc27_bde9e4dc",
+        "filename": "libese/ese_sg.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "Do compilers pay attention to this? I though they optimise based on analysis rather than untrustworthy programmer hints",
+      "range": {
+        "startLine": 19,
+        "startChar": 7,
+        "endLine": 19,
+        "endChar": 13
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46a8b81c_887e36e4",
+        "filename": "libese/ese_sg.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "very nit: I\u0027m not a fan of this C-ism for `cnt \u003d\u003d 0` as it obscures the reason for the test",
+      "range": {
+        "startLine": 24,
+        "startChar": 16,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e01a3cd_e7634a2e",
+        "filename": "libese/include/ese/ese_sg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "nit: should comment sg \u003d scatter/gather",
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ec304a2_912c948e",
+        "filename": "libese/include/ese/ese_sg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "Naming nit: when I read this I though it was just an accessor function (like the ese interface has) rather than computing the total length, maybe a comment is enough.",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c9df22e_f1c0c85f",
+        "filename": "libese/tests/ese_unittests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T10:51:54Z",
+      "side": 1,
+      "message": "Ideally we should be testing the combinations of NULL and 0 as there are two way to signal nothing.",
+      "range": {
+        "startLine": 107,
+        "startChar": 38,
+        "endLine": 107,
+        "endChar": 54
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
