@@ -22,6 +22,30 @@
       "revId": "b502e59c5325769d28f2f6f41050e36255b84738",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58273f13_b760dc41",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:02:19Z",
+      "side": 1,
+      "message": "Yeah - 0xa5 is the host/interface node address and 5a is the card.  My first cut of the cooldown instruction was just wrong.",
+      "parentUuid": "5c8e1e50_2bcb1476",
+      "range": {
+        "startLine": 159,
+        "startChar": 46,
+        "endLine": 159,
+        "endChar": 50
+      },
+      "revId": "b502e59c5325769d28f2f6f41050e36255b84738",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
