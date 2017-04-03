@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13edbb4b_19e1ce64",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/bootstate/BootState.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T11:09:53Z",
+      "side": 1,
+      "message": "Instructions can\u0027t be odd or be 0x6_ or 0x9_ according to ISO 7816-4",
+      "range": {
+        "startLine": 48,
+        "startChar": 47,
+        "endLine": 48,
+        "endChar": 51
+      },
+      "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
