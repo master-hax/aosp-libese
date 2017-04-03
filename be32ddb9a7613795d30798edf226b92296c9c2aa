@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b7e333f5_6dcc36ff",
+        "filename": "libese-sysdeps/include/ese/sysdeps.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Yeah - I\u0027ll use UINT32_MAX from stdint.h No idea why I thought it wasn\u0027t in there!",
+      "parentUuid": "d38fbb7b_91f0316d",
+      "range": {
+        "startLine": 22,
+        "startChar": 24,
+        "endLine": 22,
+        "endChar": 35
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "90d92c7a_71cb614e",
         "filename": "libese-teq1/teq1.c",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-03T10:51:54Z",
       "side": 1,
       "message": "Need to early return an error?",
+      "range": {
+        "startLine": 196,
+        "startChar": 6,
+        "endLine": 197,
+        "endChar": 31
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f22f86cd_83cc3583",
+        "filename": "libese-teq1/teq1.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Yeah I think so. Thanks!",
+      "parentUuid": "90d92c7a_71cb614e",
       "range": {
         "startLine": 196,
         "startChar": 6,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "15df6445_dd69132a",
+        "filename": "libese/ese.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Hrm yeah - thoughts on this new one (union). It captures intent, splits on the mutable v non-mutable calls but doesn\u0027t require contortions either way. *shrug*",
+      "parentUuid": "cf4697e3_a356b6ba",
+      "range": {
+        "startLine": 87,
+        "startChar": 14,
+        "endLine": 87,
+        "endChar": 25
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "300b3021_1c9588fb",
         "filename": "libese/ese.c",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2017-04-03T10:51:54Z",
       "side": 1,
       "message": "Would you say this is the preferred way to build an APDU? E.g., when adding a Weaver key into the command, just point to that buffer rather than copying it into a staging buffer that gets passed to ese_transceive.",
+      "range": {
+        "startLine": 95,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 29
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09a3ad3e_06c40b5a",
+        "filename": "libese/ese.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Exactly what I was thinking. Since the transceive implementation is already doing framing where it copies, we end up with a lot of potentially larger buffers being copies of each other for no great reason.\n\nIn general, I don\u0027t think it\u0027s a huge deal, but it makes the bootloader integration easier if I don\u0027t now need to add a sysdep for malloc/free (though it could cross-depend on avb\u0027s sysdep for that!)/",
+      "parentUuid": "300b3021_1c9588fb",
       "range": {
         "startLine": 95,
         "startChar": 12,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "4af59851_6f94f8f4",
+        "filename": "libese/ese_sg.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "They used to :)  In general, it\u0027s more of an annotation of intent -- no need for an extra symbol here.",
+      "parentUuid": "a48bdc27_bde9e4dc",
+      "range": {
+        "startLine": 19,
+        "startChar": 7,
+        "endLine": 19,
+        "endChar": 13
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "46a8b81c_887e36e4",
         "filename": "libese/ese_sg.c",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2017-04-03T10:51:54Z",
       "side": 1,
       "message": "very nit: I\u0027m not a fan of this C-ism for `cnt \u003d\u003d 0` as it obscures the reason for the test",
+      "range": {
+        "startLine": 24,
+        "startChar": 16,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1b66932_1d09b6f0",
+        "filename": "libese/ese_sg.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46a8b81c_887e36e4",
       "range": {
         "startLine": 24,
         "startChar": 16,
@@ -157,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "cbc89f7c_0cb28060",
+        "filename": "libese/include/ese/ese_sg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e01a3cd_e7634a2e",
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7ec304a2_912c948e",
         "filename": "libese/include/ese/ese_sg.h",
         "patchSetId": 3
@@ -180,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "f69870c8_4acdbf21",
+        "filename": "libese/include/ese/ese_sg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Sure! Happy to change it to imply computation/calculation, but I can start with a comment.",
+      "parentUuid": "7ec304a2_912c948e",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2c9df22e_f1c0c85f",
         "filename": "libese/tests/ese_unittests.cpp",
         "patchSetId": 3
@@ -191,6 +377,30 @@
       "writtenOn": "2017-04-03T10:51:54Z",
       "side": 1,
       "message": "Ideally we should be testing the combinations of NULL and 0 as there are two way to signal nothing.",
+      "range": {
+        "startLine": 107,
+        "startChar": 38,
+        "endLine": 107,
+        "endChar": 54
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1a01d55_233efcef",
+        "filename": "libese/tests/ese_unittests.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-03T13:41:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c9df22e_f1c0c85f",
       "range": {
         "startLine": 107,
         "startChar": 38,
