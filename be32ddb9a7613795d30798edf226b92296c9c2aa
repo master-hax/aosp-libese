@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "3006d39d_380e8051",
+        "filename": "libese/ese.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-03T14:17:17Z",
+      "side": 1,
+      "message": "I was thinking about a const pointer not a pointer to const, I\u0027ve got it straight in my head now. I think we need a ConstEseSgBuffer to do this properly but that will have it\u0027s own problems. Let\u0027s go with this for now though.",
+      "parentUuid": "15df6445_dd69132a",
+      "range": {
+        "startLine": 87,
+        "startChar": 14,
+        "endLine": 87,
+        "endChar": 25
+      },
+      "revId": "be32ddb9a7613795d30798edf226b92296c9c2aa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "300b3021_1c9588fb",
         "filename": "libese/ese.c",
         "patchSetId": 3
