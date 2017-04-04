@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a17daa13_b3ba89d3",
+        "filename": "tools/ese_replay/main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-04T09:32:48Z",
+      "side": 1,
+      "message": "Can the errors be printed to the terminal too, on stderr? Would make it much easier to see what\u0027s gone wrong.",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 110,
+        "endChar": 11
+      },
+      "revId": "b58a25fef0ec50c4a32615ab4e681b30ef3cbdae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
