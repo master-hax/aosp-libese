@@ -1,0 +1,504 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb632bf4_d2537648",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "I changed the design so that these flags are independent of each other rather than cascading. I didn\u0027t see signs of cascading in the applet but I\u0027ll check with you.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 34
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0975c328_f5e0b962",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "nit: long line",
+      "range": {
+        "startLine": 88,
+        "startChar": 100,
+        "endLine": 88,
+        "endChar": 104
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6434732_41b953f8",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Does this update need to be transactional. Currently it only seems to be called from install() so maybe it doesn\u0027t",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 41
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79238d06_b91b3fc1",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "It seems to be saving the meta data if there was any, what is it meant to do?",
+      "range": {
+        "startLine": 183,
+        "startChar": 7,
+        "endLine": 183,
+        "endChar": 50
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bab842e_bee4ef79",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "This is fun!",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 6
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "860670a4_ab933921",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Why do this rather than letting the exception fail the applet install?\n\n(Does install() only get called in the factory or during applet update?)",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb8afb14_64b50ddc",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "nit: long line",
+      "range": {
+        "startLine": 160,
+        "startChar": 100,
+        "endLine": 160,
+        "endChar": 104
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b6f6b9e_7fff25a0",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Are errors code preferred to exceptions? If no, this can just return the byte.",
+      "range": {
+        "startLine": 175,
+        "startChar": 12,
+        "endLine": 175,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ff4cce5_a82e4759",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Does it?",
+      "range": {
+        "startLine": 203,
+        "startChar": 15,
+        "endLine": 203,
+        "endChar": 21
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a16aa56d_4a98ed7c",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Is the endianness of the nonce agreed? Might be worth commenting / naming accordingly.\n\nHow about extracting this to something like `boolean longLessThanLittleEndian(...)`",
+      "range": {
+        "startLine": 281,
+        "startChar": 15,
+        "endLine": 281,
+        "endChar": 20
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "173db02b_103543df",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "+1, and the other return values :)",
+      "range": {
+        "startLine": 328,
+        "startChar": 15,
+        "endLine": 328,
+        "endChar": 38
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa736d5c_e8e08b4c",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Means unlocked? Another opportunity for a constant",
+      "range": {
+        "startLine": 333,
+        "startChar": 25,
+        "endLine": 333,
+        "endChar": 28
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a015f9aa_2d22fb41",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Ok to clear even when the transaction fails?",
+      "range": {
+        "startLine": 359,
+        "startChar": 17,
+        "endLine": 359,
+        "endChar": 35
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67bcbb41_a73fe29f",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "These look the wrong way round. verifyUnlock takes device data first.",
+      "range": {
+        "startLine": 392,
+        "startChar": 28,
+        "endLine": 393,
+        "endChar": 80
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc0ebce2_0f2a807a",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "nit: double indent line continuation",
+      "range": {
+        "startLine": 135,
+        "startChar": 12,
+        "endLine": 135,
+        "endChar": 14
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70938e99_92dab686",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "nit: long line",
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4c12678_855ecd1d",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Should these be instance properties?",
+      "range": {
+        "startLine": 64,
+        "startChar": 12,
+        "endLine": 64,
+        "endChar": 18
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20ad2bd4_14d926fe",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "This matrix is hard to understand. Can the arguments be named?",
+      "range": {
+        "startLine": 95,
+        "startChar": 43,
+        "endLine": 97,
+        "endChar": 66
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbb166ee_5e8f8e06",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "nit: move into loop header?",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3161df94_7efdddd5",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Minimise scopes :)",
+      "range": {
+        "startLine": 152,
+        "startChar": 8,
+        "endLine": 152,
+        "endChar": 15
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f56fa31e_44511d8e",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "Calling throwIt seems to send the data and set an error response code. Not sure whether the spec says that is standard or not though, I haven\u0027t found anything explicit about it.",
+      "range": {
+        "startLine": 157,
+        "startChar": 15,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b82eabea_57910fc8",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T13:38:40Z",
+      "side": 1,
+      "message": "make final with ternary assignment",
+      "range": {
+        "startLine": 364,
+        "startChar": 8,
+        "endLine": 367,
+        "endChar": 9
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
