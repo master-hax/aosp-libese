@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "84d957c8_6dce9dbd",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0975c328_f5e0b962",
+      "range": {
+        "startLine": 88,
+        "startChar": 100,
+        "endLine": 88,
+        "endChar": 104
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6434732_41b953f8",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
         "patchSetId": 2
@@ -83,6 +107,30 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "Does this update need to be transactional. Currently it only seems to be called from install() so maybe it doesn\u0027t",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 41
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e98b6ed_7f35450d",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Yeah that was my thought, but happy to slap a transaction around it.",
+      "parentUuid": "c6434732_41b953f8",
       "range": {
         "startLine": 89,
         "startChar": 8,
@@ -118,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "9023155b_b94da05c",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79238d06_b91b3fc1",
+      "range": {
+        "startLine": 183,
+        "startChar": 7,
+        "endLine": 183,
+        "endChar": 50
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6bab842e_bee4ef79",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -129,6 +201,30 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "This is fun!",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 6
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e11bfdc_a1c2c2ff",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Woo. This is just my local test key. Need to roll it over to a real one still.",
+      "parentUuid": "6bab842e_bee4ef79",
       "range": {
         "startLine": 37,
         "startChar": 4,
@@ -164,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "37792079_acc80dc4",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "update or factory - as update reinstalls. (Working through the weird update docs now.)\n\nI had mostly wanted to be able to debug things like mis-copying the PK_MOD without blocking the install itself.  For debugging, we can walk all the lock.initialized() values with a GET_STATE call.\n\nWDYT?",
+      "parentUuid": "860670a4_ab933921",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fb8afb14_64b50ddc",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -175,6 +295,30 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "nit: long line",
+      "range": {
+        "startLine": 160,
+        "startChar": 100,
+        "endLine": 160,
+        "endChar": 104
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b8ba3ab_b11cefde",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb8afb14_64b50ddc",
       "range": {
         "startLine": 160,
         "startChar": 100,
@@ -210,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "a5683d99_ba597853",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "While we can pass any short as an exception, it ends up at the end of the payload.  This is useful for an error during streaming (kinda..) but having a reliable two bytes at the front for applet-specific codes has made my life simpler.  I was going to roll back through and reconcile them a bit, but even now, it is easy to look at ALOGE then figure out exactly what failed.  (I *think* the available range of exceptions is large enough. Perhaps I should try retrofitting with them...)",
+      "parentUuid": "8b6f6b9e_7fff25a0",
+      "range": {
+        "startLine": 175,
+        "startChar": 12,
+        "endLine": 175,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6ff4cce5_a82e4759",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -233,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "dd7c7e24_bc003e31",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Nope :)\n\nDone",
+      "parentUuid": "6ff4cce5_a82e4759",
+      "range": {
+        "startLine": 203,
+        "startChar": 15,
+        "endLine": 203,
+        "endChar": 21
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a16aa56d_4a98ed7c",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -244,6 +436,30 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "Is the endianness of the nonce agreed? Might be worth commenting / naming accordingly.\n\nHow about extracting this to something like `boolean longLessThanLittleEndian(...)`",
+      "range": {
+        "startLine": 281,
+        "startChar": 15,
+        "endLine": 281,
+        "endChar": 20
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de3115da_24e84e1c",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Yes - SGTM",
+      "parentUuid": "a16aa56d_4a98ed7c",
       "range": {
         "startLine": 281,
         "startChar": 15,
@@ -302,6 +518,30 @@
     },
     {
       "key": {
+        "uuid": "2be6ce3f_76c9fdde",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa736d5c_e8e08b4c",
+      "range": {
+        "startLine": 333,
+        "startChar": 25,
+        "endLine": 333,
+        "endChar": 28
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a015f9aa_2d22fb41",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -313,6 +553,30 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "Ok to clear even when the transaction fails?",
+      "range": {
+        "startLine": 359,
+        "startChar": 17,
+        "endLine": 359,
+        "endChar": 35
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f885e5e_d6f30181",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "No. arrayFill() comes in 3.0.5, but I don\u0027t think our devices support it.\n\nWe need to delete the data if we\u0027re unlocked, but if we delete it before we unlock, it\u0027s a problem.  Would it make more sense to move the fill after the transacation and then check and re-call it on any get if unlocked?",
+      "parentUuid": "a015f9aa_2d22fb41",
       "range": {
         "startLine": 359,
         "startChar": 17,
@@ -348,6 +612,54 @@
     },
     {
       "key": {
+        "uuid": "599fc746_e7f05367",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Found that out the hard way -- thanks :)",
+      "parentUuid": "67bcbb41_a73fe29f",
+      "range": {
+        "startLine": 392,
+        "startChar": 28,
+        "endLine": 393,
+        "endChar": 80
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ada7b797_f90bb9d0",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Yup - found that out the hard way :)",
+      "parentUuid": "67bcbb41_a73fe29f",
+      "range": {
+        "startLine": 392,
+        "startChar": 28,
+        "endLine": 393,
+        "endChar": 80
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc0ebce2_0f2a807a",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
         "patchSetId": 2
@@ -371,6 +683,30 @@
     },
     {
       "key": {
+        "uuid": "1fbb04e1_58013c2b",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc0ebce2_0f2a807a",
+      "range": {
+        "startLine": 135,
+        "startChar": 12,
+        "endLine": 135,
+        "endChar": 14
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "70938e99_92dab686",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
         "patchSetId": 2
@@ -382,6 +718,24 @@
       "writtenOn": "2017-04-05T13:38:40Z",
       "side": 1,
       "message": "nit: long line",
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3d03f00_ec8c155e",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/GlobalStateImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70938e99_92dab686",
       "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
@@ -537,6 +891,30 @@
       "writtenOn": "2017-04-05T18:39:07Z",
       "side": 1,
       "message": "Don\u0027t need to fix but tip: auto is great for iterators, esp so you don\u0027t have to write/remember all this and to get a const_iterator there is cbegin()",
+      "range": {
+        "startLine": 64,
+        "startChar": 7,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14a09fe1_1876cc1f",
+        "filename": "apps/boot/ese_boot_tool.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-05T22:06:15Z",
+      "side": 1,
+      "message": "Done. Aaaahhhh",
+      "parentUuid": "6bc69735_717ff5d2",
       "range": {
         "startLine": 64,
         "startChar": 7,
