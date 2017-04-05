@@ -523,6 +523,29 @@
       "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bc69735_717ff5d2",
+        "filename": "apps/boot/ese_boot_tool.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T18:39:07Z",
+      "side": 1,
+      "message": "Don\u0027t need to fix but tip: auto is great for iterators, esp so you don\u0027t have to write/remember all this and to get a const_iterator there is cbegin()",
+      "range": {
+        "startLine": 64,
+        "startChar": 7,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }

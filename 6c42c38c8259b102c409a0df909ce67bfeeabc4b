@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "ce42c26f_681cc2ff",
+        "filename": "apps/boot/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T18:39:07Z",
+      "side": 1,
+      "message": "proprietary: true?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 1
+      },
+      "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2f9d164_c0088c9a",
+        "filename": "apps/boot/boot.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T18:39:07Z",
+      "side": 1,
+      "message": "If these are the INS bytes, they\u0027re out of date",
+      "range": {
+        "startLine": 31,
+        "startChar": 35,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "13edbb4b_19e1ce64",
         "filename": "apps/boot/card/src/com/android/verifiedboot/bootstate/BootState.java",
         "patchSetId": 1
@@ -18,6 +64,52 @@
         "startChar": 47,
         "endLine": 48,
         "endChar": 51
+      },
+      "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65ec1992_ed03e3e4",
+        "filename": "apps/boot/tests/ese_operations_wrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T18:39:07Z",
+      "side": 1,
+      "message": "I didn\u0027t think names initialisers were allowed in c++",
+      "range": {
+        "startLine": 64,
+        "startChar": 2,
+        "endLine": 64,
+        "endChar": 7
+      },
+      "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cbc63c5_4b6ee82f",
+        "filename": "apps/boot/tests/ese_operations_wrapper.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-05T18:39:07Z",
+      "side": 1,
+      "message": "c++11 tip: `{}` -\u003e `\u003d default`",
+      "range": {
+        "startLine": 38,
+        "startChar": 34,
+        "endLine": 38,
+        "endChar": 37
       },
       "revId": "6c42c38c8259b102c409a0df909ce67bfeeabc4b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
