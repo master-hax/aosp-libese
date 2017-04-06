@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "2e945197_da4e005d",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "Sounds like the only reason not to fail the install is for debugging.\n\nMaybe this could throw and have the applet handle it to give some debug info. That way we keep the debug stuff in one place and make it easy to toggle on and off.",
+      "parentUuid": "37792079_acc80dc4",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fb8afb14_64b50ddc",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
         "patchSetId": 2
@@ -366,6 +390,30 @@
       "side": 1,
       "message": "While we can pass any short as an exception, it ends up at the end of the payload.  This is useful for an error during streaming (kinda..) but having a reliable two bytes at the front for applet-specific codes has made my life simpler.  I was going to roll back through and reconcile them a bit, but even now, it is easy to look at ALOGE then figure out exactly what failed.  (I *think* the available range of exceptions is large enough. Perhaps I should try retrofitting with them...)",
       "parentUuid": "8b6f6b9e_7fff25a0",
+      "range": {
+        "startLine": 175,
+        "startChar": 12,
+        "endLine": 175,
+        "endChar": 26
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "397f1d26_c39e6a14",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "I\u0027m only guessing this will work, but we could create our own checked exception which we have to handle to avoid it becoming the APDU response code. You can still add a reason in the response if you want but the code would be more Java-y and you won\u0027t need to allocate one byte arrays.\n\nThis isn\u0027t blocking for Friday as it is implementation that can be changed.",
+      "parentUuid": "a5683d99_ba597853",
       "range": {
         "startLine": 175,
         "startChar": 12,
@@ -577,6 +625,30 @@
       "side": 1,
       "message": "No. arrayFill() comes in 3.0.5, but I don\u0027t think our devices support it.\n\nWe need to delete the data if we\u0027re unlocked, but if we delete it before we unlock, it\u0027s a problem.  Would it make more sense to move the fill after the transacation and then check and re-call it on any get if unlocked?",
       "parentUuid": "a015f9aa_2d22fb41",
+      "range": {
+        "startLine": 359,
+        "startChar": 17,
+        "endLine": 359,
+        "endChar": 35
+      },
+      "revId": "a66a07b825eb2d2520956a5cbfb1425605d39e94",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "740ac9fc_43359d19",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "If it goes in the transaction, it could be cleared while unlock fails \u003d\u003e bad\nIf it goes after the transaction, it could unlock and not clear \u003d\u003e bad\n\nHow about using arrayCopy from a buffer, or manually fill the array?",
+      "parentUuid": "6f885e5e_d6f30181",
       "range": {
         "startLine": 359,
         "startChar": 17,

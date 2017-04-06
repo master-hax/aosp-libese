@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0d38b92_726dcbd1",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "Just checking, you can\u0027t change this from fastboot otherwise it is worthless as you could OEM unlock without booting to the OS to toggle the lock.\n\nIn future we could even tie this to the credential in a similar way to keymaster.",
+      "range": {
+        "startLine": 141,
+        "startChar": 38,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5455327a_fa789ceb",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "nit: local reference variables would make this cleaner",
+      "range": {
+        "startLine": 148,
+        "startChar": 9,
+        "endLine": 148,
+        "endChar": 36
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f4e176e_b1fdcb4d",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "Nice :)",
+      "range": {
+        "startLine": 137,
+        "startChar": 8,
+        "endLine": 157,
+        "endChar": 61
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3059edc_b0ff608f",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "This is important from the Java Card security model point of view",
+      "range": {
+        "startLine": 180,
+        "startChar": 37,
+        "endLine": 180,
+        "endChar": 41
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c40c8407_60718edf",
+        "filename": "apps/boot/ese_boot_tool.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-06T10:59:55Z",
+      "side": 1,
+      "message": "There\u0027s also cend() ;)",
+      "range": {
+        "startLine": 77,
+        "startChar": 45,
+        "endLine": 77,
+        "endChar": 48
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
