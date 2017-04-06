@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a3fbd631_bc9d1008",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-06T18:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0d38b92_726dcbd1",
+      "range": {
+        "startLine": 141,
+        "startChar": 38,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5455327a_fa789ceb",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-06T10:59:55Z",
       "side": 1,
       "message": "nit: local reference variables would make this cleaner",
+      "range": {
+        "startLine": 148,
+        "startChar": 9,
+        "endLine": 148,
+        "endChar": 36
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d70ed633_d481eb1a",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-06T18:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5455327a_fa789ceb",
       "range": {
         "startLine": 148,
         "startChar": 9,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c719bb0e_4cc1f683",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-06T18:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f4e176e_b1fdcb4d",
+      "range": {
+        "startLine": 137,
+        "startChar": 8,
+        "endLine": 157,
+        "endChar": 61
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e3059edc_b0ff608f",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "c92f4ccb_3d460bb3",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-06T18:53:14Z",
+      "side": 1,
+      "message": "globalState allows clients to register for notifications. It\u0027s the LSBackup that would be worth checking, however, because it actually gets an instance of the applet.  \n\nSplitting this into another object _and_ checking aid.",
+      "parentUuid": "e3059edc_b0ff608f",
+      "range": {
+        "startLine": 180,
+        "startChar": 37,
+        "endLine": 180,
+        "endChar": 41
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c40c8407_60718edf",
         "filename": "apps/boot/ese_boot_tool.cpp",
         "patchSetId": 4
@@ -105,6 +201,30 @@
       "writtenOn": "2017-04-06T10:59:55Z",
       "side": 1,
       "message": "There\u0027s also cend() ;)",
+      "range": {
+        "startLine": 77,
+        "startChar": 45,
+        "endLine": 77,
+        "endChar": 48
+      },
+      "revId": "72327f0f25fd13468f64869a3371d246e2f25f06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe425590_d442118c",
+        "filename": "apps/boot/ese_boot_tool.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-06T18:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c40c8407_60718edf",
       "range": {
         "startLine": 77,
         "startChar": 45,
