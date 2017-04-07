@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "449b9fb7_de12ee72",
+        "filename": "libese-hw/nxp/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T10:06:47Z",
+      "side": 1,
+      "message": "This inherits proprietary from the default already but we can clean this up later :)",
+      "range": {
+        "startLine": 20,
+        "startChar": 14,
+        "endLine": 20,
+        "endChar": 33
+      },
+      "revId": "51f5210914b30b2af0104492257fdc91e9b7906d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
