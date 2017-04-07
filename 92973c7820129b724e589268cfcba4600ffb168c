@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "092483aa_113c7501",
+        "filename": "apps/boot/boot.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "How important is this?",
+      "range": {
+        "startLine": 493,
+        "startChar": 2,
+        "endLine": 493,
+        "endChar": 54
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9552fad1_f760ab6f",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "Cache locally for multiple uses",
+      "range": {
+        "startLine": 74,
+        "startChar": 23,
+        "endLine": 75,
+        "endChar": 27
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1eef18ed_0c3b6308",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "I think it\u0027s more Java-y to call this setRequireHLOS(boolean)",
+      "range": {
+        "startLine": 109,
+        "startChar": 16,
+        "endLine": 109,
+        "endChar": 27
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c61ac6b3_27ed2d2e",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "More idiomatic would be to call the methods {iget/s}Production() and drop the test to true.\n\nTesting a boolean to a boolean literal feels odd to me ;)",
+      "range": {
+        "startLine": 252,
+        "startChar": 12,
+        "endLine": 252,
+        "endChar": 44
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "644a2275_235c951a",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/CarrierLock.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "Need to update the key today?",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acf7669e_089d2935",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/JcopBackupImpl.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "How important is this?",
+      "range": {
+        "startLine": 126,
+        "startChar": 7,
+        "endLine": 126,
+        "endChar": 65
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da1ed773_8791ee96",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-07T11:15:26Z",
+      "side": 1,
+      "message": "I was hoping they would have their own names `final BasicLock bootLock \u003d ...` ;)",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 15
+      },
+      "revId": "92973c7820129b724e589268cfcba4600ffb168c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
