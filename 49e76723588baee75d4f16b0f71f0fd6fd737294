@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "35087fcc_e582a1d3",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "I\u0027m don\u0027t know what a backup involves or when it happens. If this applet loses its data then the credential will no longer work so you won\u0027t be able to unlock. Does it sound like we need to handle backup here?",
+      "parentUuid": "e0120a1e_94b35323",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 71
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "73f99b97_935d20b0",
         "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6714d28b_4f3c7fc0",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "You mean so you can request that this applet deletes it\u0027s data?\n\nThat isn\u0027t necessary as the keys should be high enough entropy that they can sit around safely. But it would be cleaner and also safer to hook that up. I had the ERASE_ALL command for clearing out but didn\u0027t know what would call it. Looks like you\u0027re saying it would be the avb_storage applet so there is no need to the APDU command.",
+      "parentUuid": "73f99b97_935d20b0",
+      "range": {
+        "startLine": 45,
+        "startChar": 34,
+        "endLine": 45,
+        "endChar": 67
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "61a81e77_13f396a2",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a0d6038c_0dd1e238",
+      "range": {
+        "startLine": 87,
+        "startChar": 17,
+        "endLine": 87,
+        "endChar": 23
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c056f031_2aead48a",
         "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
         "patchSetId": 2
@@ -105,6 +177,30 @@
       "writtenOn": "2017-04-17T13:11:44Z",
       "side": 1,
       "message": "nit: Util.setShort(buffer, (short) 0, (short) 0); ?",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 14
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91c7da89_66ad94a5",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c056f031_2aead48a",
       "range": {
         "startLine": 122,
         "startChar": 8,
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "aecea477_60b594bc",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1dddaf0f_b80d253b",
+      "range": {
+        "startLine": 1,
+        "startChar": 31,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da94061d_5079bf11",
         "filename": "apps/weaver/weaver.c",
         "patchSetId": 2
@@ -186,6 +306,30 @@
     },
     {
       "key": {
+        "uuid": "ef21d436_07fb8920",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m being lazy ATM, sorry.",
+      "parentUuid": "da94061d_5079bf11",
+      "range": {
+        "startLine": 50,
+        "startChar": 13,
+        "endLine": 50,
+        "endChar": 30
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c870a3a_ee9839f7",
         "filename": "apps/weaver/weaver.c",
         "patchSetId": 2
@@ -197,6 +341,30 @@
       "writtenOn": "2017-04-17T13:11:44Z",
       "side": 1,
       "message": "same here -- we should probably have done a standard libese-terminal to base these on to get \"free\" channel management :)  [later]",
+      "range": {
+        "startLine": 71,
+        "startChar": 21,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecc8a79_1c1c151c",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-17T14:01:16Z",
+      "side": 1,
+      "message": "+1, good call",
+      "parentUuid": "4c870a3a_ee9839f7",
       "range": {
         "startLine": 71,
         "startChar": 21,
