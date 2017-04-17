@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "871eb1a0_eb9acd08",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T15:38:14Z",
+      "side": 1,
+      "message": "I think it is a non-goal (so let\u0027s skip it), but paulcrowley@ should answer definitively :)\n\n(FWIW, I have support in the avb_storage app, though I have not had the chance to _exercise_ it yet without LS tools.)",
+      "parentUuid": "35087fcc_e582a1d3",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 71
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "73f99b97_935d20b0",
         "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
         "patchSetId": 2
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "You mean so you can request that this applet deletes it\u0027s data?\n\nThat isn\u0027t necessary as the keys should be high enough entropy that they can sit around safely. But it would be cleaner and also safer to hook that up. I had the ERASE_ALL command for clearing out but didn\u0027t know what would call it. Looks like you\u0027re saying it would be the avb_storage applet so there is no need to the APDU command.",
       "parentUuid": "73f99b97_935d20b0",
+      "range": {
+        "startLine": 45,
+        "startChar": 34,
+        "endLine": 45,
+        "endChar": 67
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38655f71_58007ce7",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T15:38:14Z",
+      "side": 1,
+      "message": "Yeah - the flow is\n- Grab the globalstate.OwnerInterface from the avb_storage app (returns GlobalStateImpl) at creation time.\n- Call notifyOnDataClear(false) to register your AID.\n- on a getShareable call, return a globalstate.CallbackInterface which is how notification comes in (CallbackInterface.clearData())\n- On each process(), check with the ownerInterface.dataClearNeeded() to see if there was an interrupted data clear.\n- When completed, call ownerInterface.reportDataCleared().\n\nOf course.... I just realized I did not implement a call to triggerDataClear() in avb_storage! So I need to add an APDU there. I would keep ERASE_ALL and we can cut over to unifying as needed after  since I didn\u0027t wire up the actual APDU for triggering a clear!  As is, the caller has to clear each field as they see fit on the storage app.\n\nIf you\u0027d prefer, I can wire up a FACTORY_CLEAR call as well as the necessary checks during process() to ensure that all applets _have_ completed a clear before continuing a boot.\n\nI will look at that shortly but I don\u0027t think it is a hard requirement if you have ERASE_ALL. Let\u0027s just get the key stuff down right away and go from there!",
+      "parentUuid": "6714d28b_4f3c7fc0",
       "range": {
         "startLine": 45,
         "startChar": 34,
