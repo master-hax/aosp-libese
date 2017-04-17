@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0120a1e_94b35323",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "I assume you don\u0027t need any LSBackup stuff here? E.g., we don\u0027t expect to preserve data on a applet backup?",
+      "range": {
+        "startLine": 31,
+        "startChar": 65,
+        "endLine": 31,
+        "endChar": 71
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73f99b97_935d20b0",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "Is there any interest in the data wipe sio coming out of the avb_storage applet?  It\u0027s not required, but it is potentially a nice enough way to trigger factory-reset via one applet interface. Same with checking on the gpio (which, of course, is difficult to test right now).",
+      "range": {
+        "startLine": 45,
+        "startChar": 34,
+        "endLine": 45,
+        "endChar": 67
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a455ae9c_d75ad017",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "Cross-check that this is exactly the behavior you want. I ended up tweaking this slightly in https://android.googlesource.com/platform/external/libese/+/master/apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 28
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0d6038c_0dd1e238",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "wrapping these  up in a class is nice -- thanks!",
+      "range": {
+        "startLine": 87,
+        "startChar": 17,
+        "endLine": 87,
+        "endChar": 23
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c056f031_2aead48a",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "nit: Util.setShort(buffer, (short) 0, (short) 0); ?",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 14
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6f66010_f932da58",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "Is it worth noting the official endianness then?",
+      "range": {
+        "startLine": 234,
+        "startChar": 36,
+        "endLine": 234,
+        "endChar": 40
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1dddaf0f_b80d253b",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "boilerplate plz",
+      "range": {
+        "startLine": 1,
+        "startChar": 31,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da94061d_5079bf11",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "Guessing the applet support libs should be unified later :)",
+      "range": {
+        "startLine": 50,
+        "startChar": 13,
+        "endLine": 50,
+        "endChar": 30
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c870a3a_ee9839f7",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-17T13:11:44Z",
+      "side": 1,
+      "message": "same here -- we should probably have done a standard libese-terminal to base these on to get \"free\" channel management :)  [later]",
+      "range": {
+        "startLine": 71,
+        "startChar": 21,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "49e76723588baee75d4f16b0f71f0fd6fd737294",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
