@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86450317_ff640215",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-18T19:43:22Z",
+      "side": 1,
+      "message": "should this implement the ExtendedLength interface as well to ensure it handles the receive lengths as shorts, etc?",
+      "range": {
+        "startLine": 28,
+        "startChar": 28,
+        "endLine": 28,
+        "endChar": 34
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d077a6ea_eab63d5d",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-18T19:43:22Z",
+      "side": 1,
+      "message": "I should do the same in avb storage.",
+      "range": {
+        "startLine": 172,
+        "startChar": 28,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "878f7ff6_13a3b0d5",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-18T19:43:22Z",
+      "side": 1,
+      "message": "nit: s/thrity/thirty/g",
+      "range": {
+        "startLine": 195,
+        "startChar": 24,
+        "endLine": 195,
+        "endChar": 51
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0165339d_c4b4004f",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-18T19:43:22Z",
+      "side": 1,
+      "message": "How do we expect a factory reset to go?",
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
