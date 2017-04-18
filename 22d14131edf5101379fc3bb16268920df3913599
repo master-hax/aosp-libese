@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66da0f0e_76a5fd85",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-18T22:21:43Z",
+      "side": 1,
+      "message": "Making these separate objects consumes a fair amount of extra storage. The JavaCard way would be to allocate flat arrays and index into them. I guess we\u0027re not too concerned about space.",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 34
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1a60588_c177e363",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-18T22:21:43Z",
+      "side": 1,
+      "message": "arrayCopyNonAtomic and arrayCopy are identical for transient arrays. I wouldn\u0027t change it, just FYI.",
+      "range": {
+        "startLine": 134,
+        "startChar": 21,
+        "endLine": 134,
+        "endChar": 39
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebe18e83_095a4d1c",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-18T22:21:43Z",
+      "side": 1,
+      "message": "I think it should be safe to eliminate this initial write, to reduce wear, and instead to always do a write transaction after the comparison. There should be no way for an attacker to distinguish between a successful or failed comparison until after the write succeeds.",
+      "range": {
+        "startLine": 141,
+        "startChar": 10,
+        "endLine": 148,
+        "endChar": 41
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44695c15_5292425b",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-18T22:21:43Z",
+      "side": 1,
+      "message": "This function still sucks. It should be more aggressive. Sigh.",
+      "range": {
+        "startLine": 180,
+        "startChar": 22,
+        "endLine": 180,
+        "endChar": 33
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
