@@ -175,6 +175,24 @@
       "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0b5b20a_d4cab3ee",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-18T20:19:31Z",
+      "side": 1,
+      "message": "I would think it\u0027d be from whatever does the factory reset normally --- the recovery image I\u0027d think. if we have the library and interface, we could wire up a simple cmdline driver which includes erase all and look at connecting it up if we need it.\n\nAlso, is there a consideration of calling erase all if everything gets throttled insanely?",
+      "parentUuid": "5814b93b_139380d4",
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
