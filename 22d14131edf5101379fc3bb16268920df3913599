@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "89ee4245_c4a4426e",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T23:20:40Z",
+      "side": 1,
+      "message": "We have a lot of space for what we\u0027re doing so I don\u0027t think we need to worry.",
+      "parentUuid": "66da0f0e_76a5fd85",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 34
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c1a60588_c177e363",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-18T22:21:43Z",
       "side": 1,
       "message": "arrayCopyNonAtomic and arrayCopy are identical for transient arrays. I wouldn\u0027t change it, just FYI.",
+      "range": {
+        "startLine": 134,
+        "startChar": 21,
+        "endLine": 134,
+        "endChar": 39
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a9b470a_32b841e7",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T23:20:40Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c1a60588_c177e363",
       "range": {
         "startLine": 134,
         "startChar": 21,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "98fa037f_c9f22db0",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T23:20:40Z",
+      "side": 1,
+      "message": "Addressed in https://android-review.googlesource.com/c/375352/",
+      "parentUuid": "ebe18e83_095a4d1c",
+      "range": {
+        "startLine": 141,
+        "startChar": 10,
+        "endLine": 148,
+        "endChar": 41
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "44695c15_5292425b",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 6
@@ -82,6 +154,30 @@
       "writtenOn": "2017-04-18T22:21:43Z",
       "side": 1,
       "message": "This function still sucks. It should be more aggressive. Sigh.",
+      "range": {
+        "startLine": 180,
+        "startChar": 22,
+        "endLine": 180,
+        "endChar": 33
+      },
+      "revId": "22d14131edf5101379fc3bb16268920df3913599",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7cc882f_35b2232d",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T23:20:40Z",
+      "side": 1,
+      "message": "The decision was to copy the gatekeeper function which noone from security seems to like but at least it is consistent.",
+      "parentUuid": "44695c15_5292425b",
       "range": {
         "startLine": 180,
         "startChar": 22,
