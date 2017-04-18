@@ -136,34 +136,34 @@ class CoreSlots implements Slots {
                 return Consts.READ_BACK_OFF;
             }
 
-            // Assume this to be a failed attempt until proven otherwise. This means losing power
-            // midway cannot be abused for extra attempts.
-            JCSystem.beginTransaction();
-            if (mFailureCount != 0x7fff) {
-                mFailureCount += 1;
-            }
-            throttle(sRemainingBackoff, (short) 0, mFailureCount);
-            //mBackoffTimer.startTimer(
-            //        sRemainingBackoff, (short) 0, DSTimer.DST_POWEROFFMODE_FALLBACK);
-            JCSystem.commitTransaction();
-
             // Check the key matches and copy out the value if it does
+            byte result = Consts.READ_WRONG_KEY;
             if (Util.arrayCompare(
-                    keyBuffer, keyOffset, mKey, (short) 0, Consts.SLOT_KEY_BYTES) != 0) {
+                    keyBuffer, keyOffset, mKey, (short) 0, Consts.SLOT_KEY_BYTES) == 0) {
+                return Consts.READ_SUCCESS;
+            }
+
+            JCSystem.beginTransaction();
+            if (result == Consts.READ_WRONG_KEY) {
+                if (mFailureCount != 0x7fff) {
+                    mFailureCount += 1;
+                }
+                if (throttle(sRemainingBackoff, (short) 0, mFailureCount)) {
+                    //mBackoffTimer.startTimer(
+                    //        sRemainingBackoff, (short) 0, DSTimer.DST_POWEROFFMODE_FALLBACK);
+                }
                 Util.arrayCopyNonAtomic(
                         sRemainingBackoff, (short) 0, outBuffer, outOffset, (byte) 4);
-                return Consts.READ_WRONG_KEY;
+            } else {
+                // This attempt was successful so reset the failures
+                mFailureCount = 0;
+                //mBackoffTimer.stopTimer();
+                Util.arrayCopyNonAtomic(
+                        mValue, (short) 0, outBuffer, outOffset, Consts.SLOT_VALUE_BYTES);
             }
-
-            // This attempt was successful so reset the failures
-            JCSystem.beginTransaction();
-            mFailureCount = 0;
-            //mBackoffTimer.stopTimer();
             JCSystem.commitTransaction();
 
-            Util.arrayCopyNonAtomic(
-                    mValue, (short) 0, outBuffer, outOffset, Consts.SLOT_VALUE_BYTES);
-            return Consts.READ_SUCCESS;
+            return result;
         }
 
         /**
@@ -187,8 +187,10 @@ class CoreSlots implements Slots {
          * [140, inf) -> 1 day
          *
          * The 32-bit millisecond timeout is written to the array.
+         *
+         * @return Whether there is any throttle time.
          */
-        private static void throttle(byte[] bArray, short bOff, short failureCount) {
+        private static boolean throttle(byte[] bArray, short bOff, short failureCount) {
             short highWord = 0;
             short lowWord = 0;
 
@@ -219,6 +221,8 @@ class CoreSlots implements Slots {
             // Write the value to the buffer
             Util.setShort(bArray, bOff, highWord);
             Util.setShort(bArray, (short) (bOff + 2), lowWord);
+
+            return highWord != 0 || lowWord != 0;
         }
     }
 }
