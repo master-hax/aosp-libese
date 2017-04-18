@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a7457b61_af7bb9a1",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T19:49:13Z",
+      "side": 1,
+      "message": "I don\u0027t think it is needed for this applet. The key/value size is fixed at 16 bytes and the longest data it takes totals 16+16+4\u003d36 bytes so still small.",
+      "parentUuid": "86450317_ff640215",
+      "range": {
+        "startLine": 28,
+        "startChar": 28,
+        "endLine": 28,
+        "endChar": 34
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d077a6ea_eab63d5d",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-18T19:43:22Z",
       "side": 1,
       "message": "I should do the same in avb storage.",
+      "range": {
+        "startLine": 172,
+        "startChar": 28,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2cc142_04764d3c",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T19:49:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d077a6ea_eab63d5d",
       "range": {
         "startLine": 172,
         "startChar": 28,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e0aaecd3_084fc25a",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T19:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "878f7ff6_13a3b0d5",
+      "range": {
+        "startLine": 195,
+        "startChar": 24,
+        "endLine": 195,
+        "endChar": 51
+      },
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0165339d_c4b4004f",
         "filename": "apps/weaver/weaver.c",
         "patchSetId": 5
@@ -82,6 +154,24 @@
       "writtenOn": "2017-04-18T19:43:22Z",
       "side": 1,
       "message": "How do we expect a factory reset to go?",
+      "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5814b93b_139380d4",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-18T19:49:13Z",
+      "side": 1,
+      "message": "One option is to do nothing as they data is still protected by the high entropy keys.\n\nThe other option is to call the erase all APDU but I don\u0027t know where that would happen from, can you shed light on this?",
+      "parentUuid": "0165339d_c4b4004f",
       "revId": "2e6423c216a04ab3967c63faab1acf49c2f9fb81",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
