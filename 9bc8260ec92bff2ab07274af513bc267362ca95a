@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8fc50640_c6741496",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-19T13:25:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2da22380_35fd8afb",
+      "range": {
+        "startLine": 145,
+        "startChar": 11,
+        "endLine": 148,
+        "endChar": 13
+      },
+      "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e6cc69a_9ac8a286",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-19T13:11:38Z",
       "side": 1,
       "message": "I think you do want a transaction around this. Otherwise I think mFailureCount could be left in an indeterminate state in the event of tear-off.",
+      "range": {
+        "startLine": 152,
+        "startChar": 11,
+        "endLine": 161,
+        "endChar": 13
+      },
+      "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a570e6c0_f67b3a6b",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-19T13:25:36Z",
+      "side": 1,
+      "message": "Just around the updating of mFailureCount?\n\nThere is only one write and, IIUC, individual operations like that are atomic. Am I misunderstanding?",
+      "parentUuid": "9e6cc69a_9ac8a286",
       "range": {
         "startLine": 152,
         "startChar": 11,
