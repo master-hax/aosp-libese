@@ -93,6 +93,30 @@
       "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe5e6e85_790964d1",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-19T16:15:35Z",
+      "side": 1,
+      "message": "No, you\u0027re right.\n\nFrom the spec \"The Java Card platform guarantees that any update to a single persistent object or class field will be atomic.\"",
+      "parentUuid": "a570e6c0_f67b3a6b",
+      "range": {
+        "startLine": 152,
+        "startChar": 11,
+        "endLine": 161,
+        "endChar": 13
+      },
+      "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
