@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2da22380_35fd8afb",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-19T13:11:38Z",
+      "side": 1,
+      "message": "Good. I\u0027d have expected that arrayCompare is constant-time, but http://ce-publications.et.tudelft.nl/publications/736_reverse_engineering_of_java_card_applets_using_power_analysi.pdf shows that there\u0027s at least one card on the market that doesn\u0027t have a constant-time arrayCompare.",
+      "range": {
+        "startLine": 145,
+        "startChar": 11,
+        "endLine": 148,
+        "endChar": 13
+      },
+      "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e6cc69a_9ac8a286",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-19T13:11:38Z",
+      "side": 1,
+      "message": "I think you do want a transaction around this. Otherwise I think mFailureCount could be left in an indeterminate state in the event of tear-off.",
+      "range": {
+        "startLine": 152,
+        "startChar": 11,
+        "endLine": 161,
+        "endChar": 13
+      },
+      "revId": "9bc8260ec92bff2ab07274af513bc267362ca95a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}

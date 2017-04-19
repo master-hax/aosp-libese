@@ -46,6 +46,30 @@
       "revId": "d46abbe7f431a9973f45b8322538b774f2bd877d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fdcf433_b8a9b855",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2017-04-19T13:11:38Z",
+      "side": 1,
+      "message": "It only needs to be constant-time up to updating the number of failures. Once that update has been made, the attacker can gain nothing by cutting power (once the timer code is in place at the top), so starting the timer possibly being non-constant doesn\u0027t matter.",
+      "parentUuid": "a401bf54_04c38ccd",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 75
+      },
+      "revId": "d46abbe7f431a9973f45b8322538b774f2bd877d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
