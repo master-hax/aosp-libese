@@ -22,6 +22,30 @@
       "revId": "d46abbe7f431a9973f45b8322538b774f2bd877d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a401bf54_04c38ccd",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-19T07:03:19Z",
+      "side": 1,
+      "message": "I have removed the transaction. Now:\n 1. the number of failures is updated\n 2. the timer is started if needed (there is a possible time difference here, I don\u0027t know the implementation)\n 3. value is copied out (constant time but that doesn\u0027t really matter as the interesting stuff has happened)",
+      "parentUuid": "b4fd3821_68d2c387",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 75
+      },
+      "revId": "d46abbe7f431a9973f45b8322538b774f2bd877d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
