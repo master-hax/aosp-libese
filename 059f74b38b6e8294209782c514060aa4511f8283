@@ -85,6 +85,47 @@
       "revId": "059f74b38b6e8294209782c514060aa4511f8283",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28717721_ca59c868",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-21T19:51:09Z",
+      "side": 1,
+      "message": "not sure I understand what you mean here",
+      "parentUuid": "0caad6b2_45edd0a3",
+      "revId": "059f74b38b6e8294209782c514060aa4511f8283",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "592cf0c9_cf5d82dc",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-21T19:51:09Z",
+      "side": 1,
+      "message": "Should this send `reset` or `end of apdu`?\n\nBefore this CL, it sent `end of apdu` but that looks like it might be a mistake.",
+      "range": {
+        "startLine": 249,
+        "startChar": 33,
+        "endLine": 249,
+        "endChar": 62
+      },
+      "revId": "059f74b38b6e8294209782c514060aa4511f8283",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }

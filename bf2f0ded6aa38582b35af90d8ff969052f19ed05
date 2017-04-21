@@ -46,6 +46,30 @@
       "revId": "bf2f0ded6aa38582b35af90d8ff969052f19ed05",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3de2fdf_0c7f21db",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-04-21T19:51:09Z",
+      "side": 0,
+      "message": "Would not sending kResetSession prevent the timer from counting down?",
+      "parentUuid": "5219f446_f39b9130",
+      "range": {
+        "startLine": 169,
+        "startChar": 27,
+        "endLine": 169,
+        "endChar": 40
+      },
+      "revId": "bf2f0ded6aa38582b35af90d8ff969052f19ed05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
