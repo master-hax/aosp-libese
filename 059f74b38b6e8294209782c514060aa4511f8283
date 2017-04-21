@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "49be1468_debe588c",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-21T20:39:47Z",
+      "side": 1,
+      "message": "Actually - ignore me. This is supposed to call hw_reset().",
+      "parentUuid": "28717721_ca59c868",
+      "revId": "059f74b38b6e8294209782c514060aa4511f8283",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "592cf0c9_cf5d82dc",
         "filename": "libese-hw/nxp/pn80t/common.c",
         "patchSetId": 1
@@ -117,6 +135,30 @@
       "writtenOn": "2017-04-21T19:51:09Z",
       "side": 1,
       "message": "Should this send `reset` or `end of apdu`?\n\nBefore this CL, it sent `end of apdu` but that looks like it might be a mistake.",
+      "range": {
+        "startLine": 249,
+        "startChar": 33,
+        "endLine": 249,
+        "endChar": 62
+      },
+      "revId": "059f74b38b6e8294209782c514060aa4511f8283",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d810e00_da79ec8f",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-21T20:39:47Z",
+      "side": 1,
+      "message": "This should send reset since it was invoking with end\u003dfalse.\n\nnxp_pn80t_close() was calling with end\u003dtrue.  The if(end) clause was _supposed_ to change it but I failed to change line 173:\n\n\n    ese-\u003eops-\u003ehw_transmit(ese, kEndofApduSession, sizeof(kEndofApduSession), 1);\n\nShould\u0027ve used message and an extra value for the sizeof(k*) that is in used for message. I just failed to actually connect it all up :/",
+      "parentUuid": "592cf0c9_cf5d82dc",
       "range": {
         "startLine": 249,
         "startChar": 33,
