@@ -68,6 +68,23 @@
       "revId": "059f74b38b6e8294209782c514060aa4511f8283",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0caad6b2_45edd0a3",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-21T19:01:33Z",
+      "side": 1,
+      "message": "this should send the other cooldown _and_ clear card state.",
+      "revId": "059f74b38b6e8294209782c514060aa4511f8283",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
