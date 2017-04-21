@@ -70,6 +70,30 @@
       "revId": "bf2f0ded6aa38582b35af90d8ff969052f19ed05",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "901441f6_2efe306c",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-21T19:58:31Z",
+      "side": 0,
+      "message": "kResetSession allows collection  of cooldown info without stopping the current session. Sending EndOfApdu tells the chip we\u0027re done and it can sleep or not.  The latter is only important for our ese_close case. (The former may be used to proactively collect info, but we\u0027d need to add support to clear the T\u003d1 Card State since I think it\u0027d reset the  frame seq #s.)",
+      "parentUuid": "b3de2fdf_0c7f21db",
+      "range": {
+        "startLine": 169,
+        "startChar": 27,
+        "endLine": 169,
+        "endChar": 40
+      },
+      "revId": "bf2f0ded6aa38582b35af90d8ff969052f19ed05",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
