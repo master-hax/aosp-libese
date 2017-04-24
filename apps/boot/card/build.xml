@@ -32,18 +32,6 @@
 
 <target name="shared_interfaces">
 <javacard jckit="jc303_kit">
-  <!-- Build the JCOPX jar file. AID and cap file are not used. exps either. -->
-  <cap aid="A000000FFFFFFFFFFFFFFFFFFFFFFF" package="com.nxp.id.jcopx.security"  version="0.1"
-       output="jcopx-security.cap" sources="jcopx/src/com/nxp/id/jcopx/security" export="export-jcopx/security">
-       <!-- Only use the exports for dummy cap creation -->
-       <import exps="export-jcopx/security"/>
-  </cap>
-  <cap aid="A000000FFFFFFFFFFFFFFFFFFFFFFF" package="com.nxp.id.jcopx.util"  version="0.1"
-       output="jcopx-util.cap" sources="jcopx/src/com/nxp/id/jcopx/util" export="export-jcopx/util">
-       <!-- Only use the exports for dummy cap creation -->
-       <import exps="export-jcopx/util"/>
-       <import exps="export-jcopx/security" jar="export-jcopx/security.jar"/>
-  </cap>
   <!-- CallbackInterface -->
   <cap aid="A000000476424F4F54525354300000" package="com.android.verifiedboot.globalstate.callback"  version="0.1"
        output="globalstate-callback.cap" sources="src/com/android/verifiedboot/globalstate/callback" export="export/callback">
@@ -62,8 +50,8 @@
   <!-- CallbackInterface -->
   <cap aid="A0000004765049584C424F4F54000100" package="com.android.verifiedboot.storage" version="0.1"
        output="avb_storage.cap" sources="src/com/android/verifiedboot" export="export">
-    <!-- Use supplied exp and build interface jar. -->
-    <import exps="jcopx" jar="export-jcopx/util/util.jar"/>
+    <!-- Use supplied exp and build interface jar from the eclipse plugin targetpack. -->
+    <import exps="jcopx/apis/jcopx-4.0-R2" jar="jcopx/apis/jcopx-4.0-R2/api-jcopx-4.0-R2.jar"/>
     <!-- Requires ls_library to be on the device already. -->
     <import exps="loaderservice" jar="loaderservice/ls_library_v02.00.jar"/>
     <!-- Grab the other interfaces from export/ -->
