@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41604328_5b21755c",
+        "filename": "apps/boot/card/build.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1060907
+      },
+      "writtenOn": "2017-04-25T19:06:43Z",
+      "side": 1,
+      "message": "Shouldn\u0027t have left this bit in sorry!",
+      "revId": "e8f5a266e8f225f442da6bd491da616b37a99cb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
