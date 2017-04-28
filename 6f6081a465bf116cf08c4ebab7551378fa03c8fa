@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dd1257f1_6617771c",
+        "filename": "apps/boot/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-28T21:02:30Z",
+      "side": 1,
+      "message": "Two trailing whitespaces should indicate a line continuation!",
+      "parentUuid": "47e57878_0159f670",
+      "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08ed5311_8ccc62bc",
         "filename": "apps/boot/README.md",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8a9978b9_3f02959a",
+        "filename": "apps/boot/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-28T21:02:30Z",
+      "side": 1,
+      "message": "Good point I\u0027ll tweak it.",
+      "parentUuid": "08ed5311_8ccc62bc",
+      "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cdcc5ed2_bd5df7e3",
         "filename": "apps/boot/README.md",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2017-04-28T20:15:15Z",
       "side": 1,
       "message": "Nit: normally I use `name_of_func()` - makes it stand out and then you don\u0027t need to escape the underscores. (I\u0027m relatively new to Markdown so I could be wrong on what\u0027s normal here.)",
+      "range": {
+        "startLine": 326,
+        "startChar": 4,
+        "endLine": 326,
+        "endChar": 39
+      },
+      "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0bbbfdab_eb5b747d",
+        "filename": "apps/boot/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-28T21:02:30Z",
+      "side": 1,
+      "message": "Nice - I\u0027ll do that everywhere.",
+      "parentUuid": "cdcc5ed2_bd5df7e3",
       "range": {
         "startLine": 326,
         "startChar": 4,
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "cb25fefb_1c42244f",
+        "filename": "apps/boot/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-28T21:02:30Z",
+      "side": 1,
+      "message": "Both are accurate, but in other documentation we\u0027d been using indices, so now we just have both :). I will rephrase to avoid using it at all.",
+      "parentUuid": "cadcf260_e49fe044",
+      "range": {
+        "startLine": 330,
+        "startChar": 3,
+        "endLine": 330,
+        "endChar": 19
+      },
+      "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "246a4695_2d05ece8",
         "filename": "apps/boot/README.md",
         "patchSetId": 1
@@ -93,6 +177,24 @@
       "writtenOn": "2017-04-28T20:15:15Z",
       "side": 1,
       "message": "Maybe use a code-block and C-ish sample code?",
+      "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0dd325bd_55d44480",
+        "filename": "apps/boot/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-04-28T21:02:30Z",
+      "side": 1,
+      "message": "Trying it...",
+      "parentUuid": "246a4695_2d05ece8",
       "revId": "6f6081a465bf116cf08c4ebab7551378fa03c8fa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
