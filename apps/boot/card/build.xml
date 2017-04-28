@@ -66,12 +66,12 @@
 <target name="shared_interfaces" depends="dependencies">
 <javacard jckit="jc303_kit">
   <!-- CallbackInterface -->
-  <cap aid="A000000476424F4F54525354300000" package="com.android.verifiedboot.globalstate.callback"  version="0.1"
+  <cap aid="A0000004765049584C475343000000" package="com.android.verifiedboot.globalstate.callback"  version="0.1"
        output="globalstate-callback.cap" sources="src/com/android/verifiedboot/globalstate/callback" export="export/callback">
        <import exps="export/callback"/>
   </cap>
   <!-- OwnerInterface -->
-  <cap aid="A000000476424F4F54524547300000" package="com.android.verifiedboot.globalstate.owner"  version="0.1"
+  <cap aid="A0000004765049584C47534F000000" package="com.android.verifiedboot.globalstate.owner"  version="0.1"
        output="globalstate-owner.cap" sources="src/com/android/verifiedboot/globalstate/owner" export="export/owner">
        <import exps="export/owner"/>
   </cap>
@@ -85,8 +85,7 @@
         <fileset dir="${apidir}" includes="*.exp"/>
     </delete>
     <javacard jckit="jc303_kit">
-      <!-- CallbackInterface -->
-      <cap aid="A0000004765049584C424F4F54000100" package="com.android.verifiedboot.storage" version="0.1"
+      <cap aid="A0000004765049584C424F4F540000" package="com.android.verifiedboot.storage" version="2.0"
            output="avb_storage.cap" sources="src/com/android/verifiedboot" export="export/avb_storage">
         <!-- Use supplied exp and build interface jar from the eclipse plugin targetpack. -->
         <import exps="${apidir}" jar="${apidir}/api-jcopx-4.0-R2.jar"/>
