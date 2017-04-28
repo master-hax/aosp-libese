@@ -85,7 +85,7 @@ being submitted to the applet.  If successful, the applet will have
 stored a SHA256 hash of the device data
 
 Note, LOCK\_CARRIER can only be locked (non-zero lock value) when the
-applet is in 'production' mode.
+applet is not in 'production' mode.
 
 ##### Clearing/unlocking
 
@@ -273,4 +273,88 @@ code (90 00).  The unsigned little-endian integer indicates how many seconds
 the chip needs to stay powered and unused to cooldown.  If this happens before
 the locks or rollback storage can be read, the bootloader will need to
 determine a safe delay or recovery path until boot can proceed securely.
+
+## Examples
+
+There are many ways to integrate this library and the associated applet.
+Below are some concrete examples to guide standard approach.
+
+### Configuration in factory
+
+- Install configure the secure element and install the applets  
+(outside of the scope of this document).
+- Boot to an environment to run the ese-boot-tool.
+- Leave the inBootloader() signal asserted (recommended but not required).
+- Configure the desired lock states:
+  - ese-boot-tool lock set carrier 1 modem-imei-string
+  - ese-boot-tool lock set device 1
+  - ese-boot-tool lock set boot 1
+  - ese-boot-tool lock set owner 0
+- To move from factory mode to production mode call:
+  - ese-boot-tool production set true
+
+### Configuration during repair
+
+- Boot to an environment to run the ese-boot-tool.
+- Leave inBootloader() signal asserted or implement the steps below in  
+  the bootloader.
+- Transition out of production mode:
+  - ese-boot-tool production set false
+- If a LOCK\_CARRIER problem is being repaired, it is possible to reset the  
+  internal nonce counter and all lock state with the command below.  A full  
+  lock reset is not expected in most cases.
+  - ese-boot-tool lock reset
+- Reconfigure the lock states:
+  - ese-boot-tool lock set carrier 1 modem-imei-string
+  - ese-boot-tool lock set device 1
+  - ese-boot-tool lock set boot 1
+  - ese-boot-tool lock set owner 0
+    (To clear data from the owner lock, set owner 1 must be called with  
+     4096 00s.)
+- Then move back to production mode:
+  - ese-boot-tool production set true
+
+### Use during boot
+
+Do not load any non-repair or non-factory OS without clearing the inBootloader
+signal as the applet may be transitioned out of production mode and/or the
+rollback state may be changed.
+
+#### Checking rollback values
+
+- Read and write rollback values as per libavb using the API
+  - ese\_boot\_rollback\_index\_write()
+  - ese\_boot\_rollback\_index\_read()
+- Prior to leaving the bootloader, clear the inBootloader() signal.
+
+As rollback indices can only be written when inBootloader signal is set,
+it is critical to clear it when leaving the bootloader.
+
+#### Checking locks
+
+- Read LOCK\_BOOT
+  - If LOCK\_BOOT != 0, then
+    - Read LOCK\_OWNER.
+       - If LOCK\_OWNER != 0, then
+         - Use the LOCK\_OWNER metadata as the verification key for booting.
+       - If LOCK\_OWNER == 0, then boot using the internal verification key.
+         - (E.g., as part of avb\_validate\_vbmeta\_public\_key())
+  - If LOCK\_BOOT == 0, then
+    - Perform an unverified boot.
+
+### In fastboot
+
+- LOCK\_BOOT may be toggled by a fastboot command.  If the conditions of  
+  unlock are not allowed by applet policy, it will fail.
+- LOCK\_OWNER may be toggled and set a boot key from a fastboot command  
+  or from an unlocked OS image.
+- If the verified boot design dictates that rollback indices are clear on  
+  lock/unlock, this can be done by calling
+  - ese\_boot\_rollback\_index\_write() on each slot with the value of 0.
+
+Note, LOCK\_DEVICE and LOCK\_CARRIER should not need to be used by fastboot.
+
+For debugging and support, it may be desirable to connect the
+ese\_boot\_get\_state() to allow fastboot to return the current value of
+production, inbootloader, and the lock metadata.
 
