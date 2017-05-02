@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d01b6dc_3a7a3f9d",
+        "filename": "apps/build.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-02T15:46:26Z",
+      "side": 1,
+      "message": "It doesn\u0027t - I added it rather than common, etc.  We may add support later :)",
+      "parentUuid": "0e719f4f_ed8bff54",
+      "range": {
+        "startLine": 191,
+        "startChar": 22,
+        "endLine": 191,
+        "endChar": 49
+      },
+      "revId": "695e31843b2e9341e07c9848ee8e62c454a7c884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1fb4a9e0_a7daed4b",
         "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-02T11:25:20Z",
       "side": 1,
       "message": "Can this be done now?",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 58
+      },
+      "revId": "695e31843b2e9341e07c9848ee8e62c454a7c884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5598aea_7f7b962e",
+        "filename": "apps/weaver/card/src/com/android/weaver/Weaver.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-02T15:46:26Z",
+      "side": 1,
+      "message": "I\u0027d rather land this as is since it installs and works. Then retest moving it after we have the validated version committed.\n\nThat work?",
+      "parentUuid": "1fb4a9e0_a7daed4b",
       "range": {
         "startLine": 72,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "27fbb38b_fa2487a3",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/WeaverCore.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-02T15:46:26Z",
+      "side": 1,
+      "message": "This is the partial match so we can get the first applet that matches.",
+      "parentUuid": "1deda30b_60f644f1",
+      "range": {
+        "startLine": 25,
+        "startChar": 31,
+        "endLine": 25,
+        "endChar": 49
+      },
+      "revId": "695e31843b2e9341e07c9848ee8e62c454a7c884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "45d0d608_d9c6a882",
         "filename": "apps/weaver/weaver.c",
         "patchSetId": 6
@@ -82,6 +154,30 @@
       "writtenOn": "2017-05-02T11:25:20Z",
       "side": 1,
       "message": "Is the 010101 at the end not needed?",
+      "range": {
+        "startLine": 23,
+        "startChar": 33,
+        "endLine": 25,
+        "endChar": 67
+      },
+      "revId": "695e31843b2e9341e07c9848ee8e62c454a7c884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45f1cefa_da606c12",
+        "filename": "apps/weaver/weaver.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-02T15:46:26Z",
+      "side": 1,
+      "message": "It does a partial match so we dont have to update the code for an applet change.",
+      "parentUuid": "45d0d608_d9c6a882",
       "range": {
         "startLine": 23,
         "startChar": 33,
