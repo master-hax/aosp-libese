@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f603aa3c_fdcab507",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/WeaverCore.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-02T11:25:20Z",
+      "side": 0,
+      "message": "The default implementation returns true, but this shouldn\u0027t be selectable",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 21
+      },
+      "revId": "9a0da74f133dc55955fce9f7397f199f1906aae7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
