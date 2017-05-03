@@ -71,11 +71,23 @@ int platform_toggle_bootloader(void *blob, int val) {
 
 int platform_toggle_reset(void *blob, int val) {
   const struct PlatformHandle *handle = blob;
+  int pwr = -1;
   if (!handle) {
     return -1;
   }
+  /* If there is no change, then don't bother. */
+  if (ioctl(handle->fd, ESE_GET_PWR, &pwr) == 0 && pwr == !val) {
+    return 0;
+  }
   /* 0=power and 1=no power in the kernel. */
-  return ioctl(handle->fd, ESE_SET_PWR, !val);
+  if (ioctl(handle->fd, ESE_SET_PWR, !val) != 0) {
+    return -1;
+  }
+  /* On hard power on, we sleep ~5ms to let the eSE boot. */
+  if ((!val) == 0) {
+    usleep(5000);
+  }
+  return 0;
 }
 
 void *platform_init(void *hwopts) {
