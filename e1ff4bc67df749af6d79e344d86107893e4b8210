@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf6f5ec0_cbc3e9ee",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-04T10:29:06Z",
+      "side": 1,
+      "message": "nit: you use /* */ comments everywhere else but I messed it up :(",
+      "range": {
+        "startLine": 199,
+        "startChar": 6,
+        "endLine": 216,
+        "endChar": 12
+      },
+      "revId": "e1ff4bc67df749af6d79e344d86107893e4b8210",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e38c65c9_c7b53cd4",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-04T10:29:06Z",
+      "side": 1,
+      "message": "I assume the sleep power draw is suitably low? I remember it being acceptably in the nA range.",
+      "range": {
+        "startLine": 300,
+        "startChar": 25,
+        "endLine": 300,
+        "endChar": 54
+      },
+      "revId": "e1ff4bc67df749af6d79e344d86107893e4b8210",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41115dee_e9a57432",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-04T10:29:06Z",
+      "side": 1,
+      "message": "Should this check be in the driver? There is already a dirty check on the GPIO in nqx_ese_pwr() when turning power on but only checks the overall NFC chip state when turning off the GPIO",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 81,
+        "endChar": 3
+      },
+      "revId": "e1ff4bc67df749af6d79e344d86107893e4b8210",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1bab1bc_94892d7a",
+        "filename": "libese-hw/nxp/pn80t/nq_nci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-04T10:29:06Z",
+      "side": 1,
+      "message": "Can you explain where the 5ms come from? The datasheet?",
+      "range": {
+        "startLine": 88,
+        "startChar": 11,
+        "endLine": 88,
+        "endChar": 15
+      },
+      "revId": "e1ff4bc67df749af6d79e344d86107893e4b8210",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
