@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "be7ef09b_a5cd34ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-04T17:19:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "404d4cdb_8b94dc1c",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 58
+      },
+      "revId": "540dec082fc048d0bdca5cc3b96803b5c53508dd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2c9e202b_e026497a",
         "filename": "libese-hw/nxp/pn80t/common.c",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-04T15:48:11Z",
       "side": 1,
       "message": "I think this delay is in the nq-nci driver too",
+      "range": {
+        "startLine": 112,
+        "startChar": 2,
+        "endLine": 112,
+        "endChar": 35
+      },
+      "revId": "540dec082fc048d0bdca5cc3b96803b5c53508dd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1937881b_ecd951b0",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-04T17:19:52Z",
+      "side": 1,
+      "message": "Yeah - actually it covers al ot more than just 1ms. Will ditch this.",
+      "parentUuid": "2c9e202b_e026497a",
       "range": {
         "startLine": 112,
         "startChar": 2,
