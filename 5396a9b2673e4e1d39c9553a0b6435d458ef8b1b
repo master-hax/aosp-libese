@@ -1,0 +1,9 @@
+Autosubmit+1: Paul Crowley <paulcrowley@google.com>
+Code-Review+2: Will Drewry <drewry@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Verified+1: Paul Crowley <paulcrowley@google.com>
+Submitted-by: Paul Crowley <paulcrowley@google.com>
+Submitted-at: Mon, 08 May 2017 14:32:57 +0000
+Reviewed-on: https://android-review.googlesource.com/385113
+Project: platform/external/libese
+Branch: refs/heads/master
