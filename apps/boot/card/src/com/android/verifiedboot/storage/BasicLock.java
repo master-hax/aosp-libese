@@ -249,6 +249,10 @@ class BasicLock implements LockInterface {
                 return 0x0002;
             }
         }
+        // To relock, the lock must be unlocked, then relocked.
+        if (val != (byte)0 && storage[lockOffset()] != (byte)0) {
+            return 0x0005;
+        }
         if (globalState.production() == true) {
              // Enforce only when in production.
             if (onlyInBootloader == true) {
@@ -298,20 +302,26 @@ class BasicLock implements LockInterface {
         }
         // No overruns, please.
         if (lockMetaLength > metadataLength()) {
-          return 0x0002;
+            return 0x0002;
+        }
+        // To relock, the lock must be unlocked, then relocked.
+        if (lockValue != (byte)0 && storage[lockOffset()] != (byte)0) {
+            return 0x0005;
         }
         if (metadataLength() == 0) {
-          return set(lockValue);
+            return set(lockValue);
         }
         try {
+            Util.arrayCopyNonAtomic(lockMeta, lockMetaOffset,
+                                    storage, metadataOffset(),
+                                    lockMetaLength);
+            // Lock must follow the copy, but interrupting the
+            // copy is fine as long as it is still unlocked.
             JCSystem.beginTransaction();
             storage[lockOffset()] = lockValue;
-            Util.arrayCopy(lockMeta, lockMetaOffset,
-                           storage, metadataOffset(),
-                           lockMetaLength);
             JCSystem.commitTransaction();
         } catch (CardRuntimeException e) {
-            return 0x0003;
+            return 0x0004;
         }
         return 0;
     }
