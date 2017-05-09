@@ -236,6 +236,17 @@ class GlobalStateImpl implements OwnerInterface {
     }
 
     /**
+     * Returns the external signal that feeds inBootloader().
+     */
+    public byte inBootloaderRaw() {
+        try {
+            return SystemInfo.getExternalState(SystemInfo.SYSTEMINFO_SCENARIO_0);
+        } catch (ISOException e) {
+            return (byte) 0x0;
+        }
+    }
+
+    /**
      * {@inheritDoc}
      *
      * @param val value assigned to the inProduction value.
