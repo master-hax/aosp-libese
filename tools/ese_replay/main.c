@@ -96,11 +96,13 @@ int main(int argc, char **argv) {
   struct Payload payload;
   if (!payload_init(&payload, 10 * 1024 * 1024, 1024 * 4)) {
     ALOGE("Failed to initialize payload.");
+    ese_close(&ese);
     return -1;
   }
 
   struct Buffer reply;
   buffer_init(&reply, 2048);
+  int ret = 0;
   while (!feof(stdin) && payload_read(&payload, stdin)) {
     payload_dump(&payload, stdout);
     reply.len = (uint32_t)ese_transceive(
@@ -112,12 +114,14 @@ int main(int argc, char **argv) {
         ALOGE("An error (%d) occurred: %s", ese_error_code(&ese),
               ese_error_message(&ese));
       }
+      ret = 2;
       break;
     }
     buffer_dump(&reply, "", "Response", 240, stdout);
     if (reply.len < payload.expected.len) {
       printf("Received less data than expected: %u < %u\n", reply.len,
              payload.expected.len);
+      ret = 3;
       break;
     }
 
@@ -126,6 +130,7 @@ int main(int argc, char **argv) {
                (reply.buffer + reply.len) - payload.expected.len,
                payload.expected.len)) {
       printf("Response did not match. Aborting!\n");
+      ret = 1;
       break;
     }
   }
@@ -133,5 +138,5 @@ int main(int argc, char **argv) {
   printf("Transmissions complete.\n");
   ese_close(&ese);
   release_hardware(hw);
-  return 0;
+  return ret;
 }
