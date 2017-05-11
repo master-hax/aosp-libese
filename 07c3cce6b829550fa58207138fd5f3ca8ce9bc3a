@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4eafa50_8232a856",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "Why is this so strict? The intent of calling this is to make sure the lock is locked so isn\u0027t this just a noop instead?",
+      "range": {
+        "startLine": 252,
+        "startChar": 11,
+        "endLine": 252,
+        "endChar": 52
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "514edf8a_0a01e33b",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "Why not fail if transient array allocation fails (it shouldn\u0027t happen)? And why not just use the reserved buffer if you\u0027re going to have it anyway?",
+      "range": {
+        "startLine": 421,
+        "startChar": 16,
+        "endLine": 425,
+        "endChar": 44
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20fde997_615f9237",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "Just relying on this state might lead to problems, especially if there are errors which cause the meta data to be loaded but not consumed. Looks like p1 and p2 are already being used so maybe a new instruction to split the meta/no-meta locks?\n\nIt still requires locks with meta data to \"use it right\" but I\u0027m not sure what the potential cost of that might be.",
+      "range": {
+        "startLine": 508,
+        "startChar": 16,
+        "endLine": 508,
+        "endChar": 30
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7920596_6f7be50b",
+        "filename": "apps/boot/ese_boot_tool.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "This seems quite big to put on the stack.\n\n+1 needed?",
+      "range": {
+        "startLine": 272,
+        "startChar": 38,
+        "endLine": 272,
+        "endChar": 42
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f68a6083_5da26efd",
+        "filename": "apps/build.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "Does this need to update to reflect the version bump too?",
+      "range": {
+        "startLine": 145,
+        "startChar": 16,
+        "endLine": 145,
+        "endChar": 46
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "580ef706_59d3f654",
+        "filename": "apps/build.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-11T11:03:54Z",
+      "side": 1,
+      "message": "Not for this CL, but it would be nice to use a property for the version so this doesn\u0027t get missed at some point in the future?",
+      "range": {
+        "startLine": 167,
+        "startChar": 43,
+        "endLine": 167,
+        "endChar": 44
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
