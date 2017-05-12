@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5dae87b5_5dc61329",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-12T11:34:57Z",
+      "side": 1,
+      "message": "I was wondering if this would have an impact on the FW because setting a lock again will error which isn\u0027t a behaviour documented in the HAL. It might not be a big issue but I had always assumed settings something twice would be OK and don\u0027t know if I put that assumption in the code.",
+      "parentUuid": "f20b61c5_90086d82",
+      "range": {
+        "startLine": 252,
+        "startChar": 11,
+        "endLine": 252,
+        "endChar": 52
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "514edf8a_0a01e33b",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
         "patchSetId": 2
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "I was getting occasional failures depending on RAM avail.  However, I\u0027d like to avoid making it easy to write-and-rewrite flash from userland without adding a barrier, so I figure this would best effort switch to RAM.\n\nDo you know if, when cleared, the ref goes back to null?",
       "parentUuid": "514edf8a_0a01e33b",
+      "range": {
+        "startLine": 421,
+        "startChar": 16,
+        "endLine": 425,
+        "endChar": 44
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e8e4d60_fed0ac8a",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-12T11:34:57Z",
+      "side": 1,
+      "message": "The docs on CLEAR_ON_DESELECT say \"the contents of the transient object are cleared to the default value\" so the ref is still valid and, I assume, the memory is still allocated and is only deallocated when there are no more references to the array object.\n\nIn Weaver (CoreSlots.java), I allocated a static transient array in the constructor but I\u0027m not sure what the JC best practice is.\n\n[I thought we had plenty of RAM!]",
+      "parentUuid": "88494b12_9542c6b5",
       "range": {
         "startLine": 421,
         "startChar": 16,
@@ -154,6 +202,30 @@
       "writtenOn": "2017-05-11T22:09:53Z",
       "side": 1,
       "message": "Hrm this should probably be in a transaction with the set, but that seems like a big transaction.  Maybe on entry, it will move the length to a local variable and reset the length since we don\u0027t allow concurrency, there\u0027s no chance of a race there and if setWithMeta fails, then the metadata will be cleared anyway.\n\nwdyt?",
+      "range": {
+        "startLine": 517,
+        "startChar": 16,
+        "endLine": 517,
+        "endChar": 38
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f2ffccb_9cba7f3a",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2017-05-12T11:34:57Z",
+      "side": 1,
+      "message": "1. The transaction is to make sure the the lock value and metadata value update atomically, even if there is power loss.\n2. This applet doesn\u0027t have to worry about concurrency because it doesn\u0027t implement the MultiSelectable interface.\n\nIn the event of power loss causing this to fail, when the applet is next selected, metadataLength will be set to 0 again anyway so I\u0027m not sure it particularly matters.\n\nAnother case to think about is SW errors, e.g. an invalid lock, and the state the metadata should be left in if that occurs.",
+      "parentUuid": "890a969a_60b1cfff",
       "range": {
         "startLine": 517,
         "startChar": 16,
