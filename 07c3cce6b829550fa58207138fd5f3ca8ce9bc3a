@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1a5b3013_26003376",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/BasicLock.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-15T15:36:50Z",
+      "side": 1,
+      "message": "Why don\u0027t we just have esed check if the lock state matches the request?\n\nFor Carrier Unlock, this change doesn\u0027t apply, but for device lock, it won\u0027t re-lock.  Repeated unlocks will be fine though.\n\nI could make this compare if metadata is supplied, but that seems like something better done in userland. wdyt?",
+      "parentUuid": "5dae87b5_5dc61329",
+      "range": {
+        "startLine": 252,
+        "startChar": 11,
+        "endLine": 252,
+        "endChar": 52
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "514edf8a_0a01e33b",
         "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
         "patchSetId": 2
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "The docs on CLEAR_ON_DESELECT say \"the contents of the transient object are cleared to the default value\" so the ref is still valid and, I assume, the memory is still allocated and is only deallocated when there are no more references to the array object.\n\nIn Weaver (CoreSlots.java), I allocated a static transient array in the constructor but I\u0027m not sure what the JC best practice is.\n\n[I thought we had plenty of RAM!]",
       "parentUuid": "88494b12_9542c6b5",
+      "range": {
+        "startLine": 421,
+        "startChar": 16,
+        "endLine": 425,
+        "endChar": 44
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c63f9e4_27d094c6",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-15T15:36:50Z",
+      "side": 1,
+      "message": "We have lots of RAM -- I think, I was triggering occasional failures by reallocating transient per-select ;) So it needed to GC the old space.\n\nI think I\u0027ll leave this since we can\u0027t tolerate an install/update failure as that time doesn\u0027t provide many choices for recovery with this specific applet (Weaver\u0027s reinstall could be run again).  Reserving the flash but never needing it isn\u0027t a huge deal and better to not flatten it if not.\n\nSeem like a reasonable tradeoff?",
+      "parentUuid": "2e8e4d60_fed0ac8a",
       "range": {
         "startLine": 421,
         "startChar": 16,
@@ -226,6 +274,30 @@
       "side": 1,
       "message": "1. The transaction is to make sure the the lock value and metadata value update atomically, even if there is power loss.\n2. This applet doesn\u0027t have to worry about concurrency because it doesn\u0027t implement the MultiSelectable interface.\n\nIn the event of power loss causing this to fail, when the applet is next selected, metadataLength will be set to 0 again anyway so I\u0027m not sure it particularly matters.\n\nAnother case to think about is SW errors, e.g. an invalid lock, and the state the metadata should be left in if that occurs.",
       "parentUuid": "890a969a_60b1cfff",
+      "range": {
+        "startLine": 517,
+        "startChar": 16,
+        "endLine": 517,
+        "endChar": 38
+      },
+      "revId": "07c3cce6b829550fa58207138fd5f3ca8ce9bc3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "596fd5ab_2143a804",
+        "filename": "apps/boot/card/src/com/android/verifiedboot/storage/Storage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-15T15:36:50Z",
+      "side": 1,
+      "message": "I think consuming it even on errors is ok as the support library will always re-send the metadata.\n\nFor #1, I made a minor applet change too.",
+      "parentUuid": "0f2ffccb_9cba7f3a",
       "range": {
         "startLine": 517,
         "startChar": 16,
