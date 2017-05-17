@@ -22,6 +22,30 @@
       "revId": "6fde0fa09de756d476cb7cdb685cab4189bbc0e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7199515_240f79d5",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-05-17T16:14:10Z",
+      "side": 1,
+      "message": "It makes sure we get a fresh boot -- like with a spi t\u003d1 bug.  It isn\u0027t strictly needed except for OS updates, but that is covered by the custom apdu forcing an \"error\".\n\nSeem sane?",
+      "parentUuid": "6598fdf9_90c37c9d",
+      "range": {
+        "startLine": 101,
+        "startChar": 5,
+        "endLine": 102,
+        "endChar": 10
+      },
+      "revId": "6fde0fa09de756d476cb7cdb685cab4189bbc0e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
