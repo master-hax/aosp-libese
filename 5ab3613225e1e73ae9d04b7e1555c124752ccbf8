@@ -1,0 +1,8 @@
+Code-Review+2: Andrew Scull <ascull@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Verified+1: Chih-hung Hsieh <chh@google.com>
+Submitted-by: Chih-hung Hsieh <chh@google.com>
+Submitted-at: Mon, 12 Jun 2017 16:19:22 +0000
+Reviewed-on: https://android-review.googlesource.com/409322
+Project: platform/external/libese
+Branch: refs/heads/master
