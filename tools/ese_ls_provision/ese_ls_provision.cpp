@@ -77,7 +77,20 @@ static bool static_ese_transceive(UINT8* xmitBuffer, INT32 xmitBufferSize, UINT8
 }
 
 static void static_ese_doeSE_Reset() {
-    LOG(DEBUG) << "static_ese_doeSE_Reset (doing nothing)";
+    LOG(DEBUG) << "static_ese_doeSE_Reset";
+    UINT8 resetCommand[] = {0xff, 0x01, 0x00, 0x00};
+    UINT8 response[4];
+    auto res = ese_transceive(&static_ese,
+        &resetCommand[0], sizeof(resetCommand),
+        &response[0], sizeof(response));
+    if (res < 0 || ese_error(&static_ese)) {
+        LOG(ERROR) << "ese_transceive result: " << (int) res
+            << " code " << ese_error_code(&static_ese)
+            << " message: " << ese_error_message(&static_ese);
+        LOG(ERROR) << "failed to reset ese";
+        return;
+    }
+    LOG(INFO) << "ese reset";
 }
 
 IChannel_t static_ese_ichannel = {
