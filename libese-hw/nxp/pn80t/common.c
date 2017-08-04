@@ -226,6 +226,8 @@ uint32_t nxp_pn80t_send_cooldown(struct EseInterface *ese, bool end) {
           ALOGI("- Timer 0x%.2X: %d", tag, cooldown);
           if (cooldown > max_wait) {
             max_wait = cooldown;
+            /* Wait 25ms Guard time to make sure eSE is in DPD mode */
+            usleep(25000);
           }
           break;
         default:
