@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "331e61be_0979cd37",
+        "filename": "libese-hw/nxp/pn80t/common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2017-08-10T19:11:21Z",
+      "side": 1,
+      "message": "must use platform-\u003ewait and ideally we\u0027d not put it in here, but I think it\u0027s okay.",
+      "range": {
+        "startLine": 230,
+        "startChar": 12,
+        "endLine": 230,
+        "endChar": 18
+      },
+      "revId": "d7ba05fad4b28ff7733fd6752c9e6308bf997496",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
