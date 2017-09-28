@@ -21,6 +21,7 @@ cc_binary {
     shared_libs: ["liblog", "libese"],
     host_ldlibs: ["-ldl"],
     host_supported: true,
+    cflags: ["-Wall", "-Werror"],
     target: {
         android: {
           shared_libs: ["libdl"],
