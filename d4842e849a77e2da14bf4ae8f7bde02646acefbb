@@ -1,0 +1,9 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Andrew Scull <ascull@google.com>
+Autosubmit+1: Inseob Kim <inseob@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Mon, 06 Jan 2020 00:46:17 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/external/libese/+/1199763
+Project: platform/external/libese
+Branch: refs/heads/master
