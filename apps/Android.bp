@@ -14,6 +14,10 @@
 // limitations under the License.
 //
 
+package {
+    default_applicable_licenses: ["external_libese_license"],
+}
+
 cc_library_headers {
     name: "libese-app-headers",
     host_supported: true,

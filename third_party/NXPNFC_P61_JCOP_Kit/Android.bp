@@ -1,6 +1,10 @@
 //#####################################
 // Build shared library vendor/lib/libp61-jcop-kit.so
 
+package {
+    default_applicable_licenses: ["external_libese_license"],
+}
+
 cc_library_shared {
     name: "libp61-jcop-kit",
     proprietary: true,
@@ -34,4 +38,3 @@ cc_library_shared {
     ],
 
 }
-

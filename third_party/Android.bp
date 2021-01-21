@@ -1,4 +1,7 @@
+package {
+    default_applicable_licenses: ["external_libese_license"],
+}
+
 subdirs = [
     "NXPNFC_P61_JCOP_Kit"
 ]
-

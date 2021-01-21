@@ -14,6 +14,10 @@
 // limitations under the License.
 //
 
+package {
+    default_applicable_licenses: ["external_libese_license"],
+}
+
 subdirs = [
     "ese_ls_provision",
     "ese_relay",
