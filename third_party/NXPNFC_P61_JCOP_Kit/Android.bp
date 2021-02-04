@@ -1,6 +1,14 @@
 //#####################################
 // Build shared library vendor/lib/libp61-jcop-kit.so
 
+package {
+    // http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // the below license kinds from "external_libese_license":
+    //   SPDX-license-identifier-Apache-2.0
+    default_applicable_licenses: ["external_libese_license"],
+}
+
 cc_library_shared {
     name: "libp61-jcop-kit",
     proprietary: true,
@@ -34,4 +42,3 @@ cc_library_shared {
     ],
 
 }
-
