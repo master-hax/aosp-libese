@@ -1,0 +1,12 @@
+diff --git a/target/product/gsi/current.txt b/target/product/gsi/current.txt
+index 6f4b7f1c22..e64a8496a5 100644
+--- a/target/product/gsi/current.txt
++++ b/target/product/gsi/current.txt
+@@ -135,6 +135,7 @@ VNDK-core: libgatekeeper.so
+ VNDK-core: libgui.so
+ VNDK-core: libhardware_legacy.so
+ VNDK-core: libhidlallocatorutils.so
++VNDK-core: libjc_transport.so
+ VNDK-core: libjpeg.so
+ VNDK-core: libldacBT_abr.so
+ VNDK-core: libldacBT_enc.so

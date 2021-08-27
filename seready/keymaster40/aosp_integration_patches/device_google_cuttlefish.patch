@@ -1,0 +1,37 @@
+diff --git a/shared/BoardConfig.mk b/shared/BoardConfig.mk
+index d4cf8343c..23e145ad1 100644
+--- a/shared/BoardConfig.mk
++++ b/shared/BoardConfig.mk
+@@ -213,6 +213,8 @@ BOARD_RAMDISK_USE_LZ4 := true
+ # To see full logs from init, disable ratelimiting.
+ # The default is 5 messages per second amortized, with a burst of up to 10.
+ BOARD_KERNEL_CMDLINE += printk.devkmsg=on
++BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
++
+ BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/etc/
+ 
+ BOARD_KERNEL_CMDLINE += init=/init
+diff --git a/shared/device.mk b/shared/device.mk
+index 3b0f90171..cec0137e7 100644
+--- a/shared/device.mk
++++ b/shared/device.mk
+@@ -535,6 +535,11 @@ endif
+  PRODUCT_PACKAGES += \
+     $(LOCAL_KEYMINT_PRODUCT_PACKAGE)
+ 
++PRODUCT_PACKAGES += \
++    android.hardware.keymaster@4.0-strongbox.service \
++
++
++
+ # Keymint configuration
+ PRODUCT_COPY_FILES += \
+     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+@@ -637,6 +642,7 @@ PRODUCT_PACKAGES += setup_wifi
+ PRODUCT_VENDOR_PROPERTIES += ro.vendor.wifi_impl=virt_wifi
+ endif
+ 
++
+ # Host packages to install
+ PRODUCT_HOST_PACKAGES += socket_vsock_proxy
+ 
