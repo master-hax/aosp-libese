@@ -1,0 +1,136 @@
+// Copyright (C) 2020 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+
+cc_binary {
+    name: "android.hardware.keymaster@4.0-strongbox.service",
+    relative_install_path: "hw",
+    vendor: true,
+    init_rc: ["android.hardware.keymaster@4.0-strongbox.service.rc"],
+    vintf_fragments: ["android.hardware.keymaster@4.0-strongbox.service.xml"],
+    srcs: [
+        "service.cpp",
+        "JavacardKeymaster4Device.cpp",
+        "JavacardSoftKeymasterContext.cpp",
+        "JavacardOperationContext.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libbase",
+        "libutils",
+        "libhardware",
+        "libhidlbase",
+        "libsoftkeymasterdevice",
+	"libsoft_attestation_cert",
+        "libkeymaster_messages",
+        "libkeymaster_portable",
+        "libcppbor_external",
+        "android.hardware.keymaster@4.0",
+        "libjc_transport",
+        "libjc_common",
+        "libcrypto",
+    ],
+    required: [
+        "android.hardware.strongbox_keystore.xml",
+    ],
+}
+
+cc_library {
+    name: "libJavacardKeymaster41",
+    srcs: [
+        "JavacardKeymaster4Device.cpp",
+        "CborConverter.cpp",
+        "JavacardSoftKeymasterContext.cpp",
+        "JavacardOperationContext.cpp",
+        "CommonUtils.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libbase",
+        "libutils",
+        "libhardware",
+        "libhidlbase",
+        "libsoftkeymasterdevice",
+	"libsoft_attestation_cert",
+        "libkeymaster_messages",
+        "libkeymaster_portable",
+        "libcppbor_external",
+        "android.hardware.keymaster@4.0",
+        "android.hardware.keymaster@4.0",
+        "libjc_transport",
+	"libcrypto",
+    ],
+}
+
+cc_library {
+    name: "libjc_transport",
+    host_supported: true,
+    vendor_available: true,
+    vndk: {
+        enabled: true,
+    },
+
+    srcs: [
+        "SocketTransport.cpp",
+        "OmapiTransport.cpp"
+    ],
+    export_include_dirs: [
+        "."
+    ],
+    shared_libs: [
+        "libbinder",
+        "libbase",
+        "liblog",
+    ],
+}
+
+cc_library {
+    name: "libjc_common",
+    vendor_available: true,
+    srcs: [
+        "CommonUtils.cpp",
+        "CborConverter.cpp",
+    ],
+    export_include_dirs: [
+        "."
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libbase",
+        "libutils",
+        "libhardware",
+        "libhidlbase",
+	"libsoftkeymasterdevice",
+	"libsoft_attestation_cert",
+        "libkeymaster_messages",
+	"libkeymaster_portable",
+        "libcppbor_external",
+        "android.hardware.keymaster@4.0",
+	"libcrypto",
+    ],
+}
+
+prebuilt_etc {
+    name: "android.hardware.strongbox_keystore.xml",
+    sub_dir: "permissions",
+    vendor: true,
+    src: "android.hardware.strongbox_keystore.xml",
+}
