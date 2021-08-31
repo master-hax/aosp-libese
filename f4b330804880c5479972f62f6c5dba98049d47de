@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b010c9be_621540fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2021-08-31T08:24:22Z",
+      "side": 1,
+      "message": "I\u0027m not quire sure what to do with this mammoth CL. I only have name recognition with SEReady, there isn\u0027t a bug or other context and I don\u0027t understand how it is meant to integrate with libese.",
+      "revId": "f4b330804880c5479972f62f6c5dba98049d47de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
