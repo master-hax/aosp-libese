@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3226ac38_22325563",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2021-09-24T14:57:16Z",
+      "side": 1,
+      "message": "Please copy /system/keymaster/.clang-format to here, and apply it to all of the .h and .cpp files.",
+      "revId": "98341033b14e8b7a35a29b2531822821a3af7a62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
