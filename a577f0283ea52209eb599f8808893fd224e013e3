@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ff97bbf_5fc3eccc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "This is awesome.  A few style comments on the main file. It\u0027ll take me a while to go through it all, and I will not likely check specific KM operation details out (hopefully someone more familiar with KM can do that!).",
+      "revId": "a577f0283ea52209eb599f8808893fd224e013e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ac62ce9_24b16924",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "would it make sense to put this in a separate class like\n\n    class KMAppletState {\n     ...\n    }\n    \nor StateConsts. If you make a state class, you can enforce the state edges in the class so you know no illegal transitions happen (even if messy). But if not, at least you\u0027d group the state constants into their own place.",
+      "range": {
+        "startLine": 71,
+        "startChar": 28,
+        "endLine": 71,
+        "endChar": 34
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46676cc2_a78a043b",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "Are illegal states possible?\n\nIf this stays open coded, does KM dictate the first state after init being illegal? If not, I\u0027d move it to the end and check if \u003e\u003d ILLEGAL_STATE. Or use a bitmask to check if any illegal state bits are set.",
+      "range": {
+        "startLine": 322,
+        "startChar": 50,
+        "endLine": 322,
+        "endChar": 63
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4846e14_b6b951d7",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "Given that this falls through, I recommend adding a nop default with a comment that this does not cover all provisioning instructions.",
+      "range": {
+        "startLine": 386,
+        "startChar": 6,
+        "endLine": 386,
+        "endChar": 7
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cb9ec66_cc3a8049",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "These are the only two states allowed in process() after error checking. I\u0027d recommend moving all these generally allowed instructions above the state scoped conditionals. Then you can just have a switch that covers global instructions for active and provision.",
+      "range": {
+        "startLine": 389,
+        "startChar": 50,
+        "endLine": 389,
+        "endChar": 68
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc8f31ed_19336bb7",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "a clarifying comment would be nice here to add human interpretation on this. E.g.,\n\nThis is okay in provisioning mode anytime. It is okay in active state if the device has a boot signal and it is rebooted. If the device lacks a boot signal, the boot params command can be used in either state any time.\n\nAm I reading it right? Is there a more succinct way to express it to confirm the intent of the conditional?",
+      "range": {
+        "startLine": 395,
+        "startChar": 27,
+        "endLine": 395,
+        "endChar": 34
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50da8ffa_0fc48b32",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "functionally these are \"isProvisioningComplete()\" guarded instructions. I don\u0027t see the need for the extra guard here.",
+      "range": {
+        "startLine": 411,
+        "startChar": 13,
+        "endLine": 411,
+        "endChar": 35
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81c06586_20a0ac5d",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "it\u0027d be nice to have a comment (or variable or function helper name) explaining the lengths. E.g., KMInteger.length().",
+      "range": {
+        "startLine": 556,
+        "startChar": 62,
+        "endLine": 556,
+        "endChar": 63
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b28d0088_693cab36",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "nit: resetTransientBuffers() might be more clarifying since you also deal with tmpVariables",
+      "range": {
+        "startLine": 565,
+        "startChar": 15,
+        "endLine": 565,
+        "endChar": 24
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cace2e52_86b3c491",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "Either here or in helper function, it may make sense to put a receiveIncoming(APDU apdu, short maxLc) method in place. It\u0027ll catch pathological calls more clearly than catching the memory error. (E.g., a 2.5kb seed for rng might hit an allocation error but the size was too large anyway and that would be the more useful info.)",
+      "range": {
+        "startLine": 595,
+        "startChar": 42,
+        "endLine": 595,
+        "endChar": 46
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fddd3d2_39b0a602",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "s/master/host",
+      "range": {
+        "startLine": 631,
+        "startChar": 22,
+        "endLine": 631,
+        "endChar": 28
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80ab1cb7_524a7541",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "s/master/host\n\neverywhere please",
+      "range": {
+        "startLine": 636,
+        "startChar": 51,
+        "endLine": 636,
+        "endChar": 57
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "509b79bf_7c387690",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "loving the cognitive dissonance of sendError(...OK) ;)",
+      "range": {
+        "startLine": 694,
+        "startChar": 4,
+        "endLine": 694,
+        "endChar": 13
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aeac763f_92026c9d",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "I think this is a one off, but if not, it might make sense to make subclass-able receiveIncoming() that just calls a method on each cycle to update the necessary counters.  If this is the only special case, then it\u0027s probably not worth it, but receive code is often where the off-by-ones happen!",
+      "range": {
+        "startLine": 753,
+        "startChar": 0,
+        "endLine": 753,
+        "endChar": 58
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76525435_a4aa7ecb",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "this should return an error until implemented: KMError.UNIMPLEMENTED",
+      "range": {
+        "startLine": 1001,
+        "startChar": 0,
+        "endLine": 1001,
+        "endChar": 32
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf9cb5f2_da40ea37",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "this might be nice in an applet-wide utils class",
+      "range": {
+        "startLine": 1516,
+        "startChar": 18,
+        "endLine": 1516,
+        "endChar": 25
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4913cc69_0c537a3f",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2800,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "it\u0027d be awesome to be able to use KMInteger.size()/length() for this imho",
+      "range": {
+        "startLine": 2800,
+        "startChar": 12,
+        "endLine": 2800,
+        "endChar": 13
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e595e98c_f0a59aee",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3297,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2021-09-27T17:18:03Z",
+      "side": 1,
+      "message": "nit: space",
+      "range": {
+        "startLine": 3297,
+        "startChar": 0,
+        "endLine": 3297,
+        "endChar": 36
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
