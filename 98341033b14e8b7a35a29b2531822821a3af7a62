@@ -16,6 +16,24 @@
       "message": "Please copy /system/keymaster/.clang-format to here, and apply it to all of the .h and .cpp files.",
       "revId": "98341033b14e8b7a35a29b2531822821a3af7a62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa7c32a6_cf5d0a52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-09-27T11:48:13Z",
+      "side": 1,
+      "message": "I applied /system/keymaster/.clang-format to all .h and .cpp files and uploaded the patchset",
+      "parentUuid": "3226ac38_22325563",
+      "revId": "98341033b14e8b7a35a29b2531822821a3af7a62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
