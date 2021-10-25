@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2cf8ba89_eec904a4",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Moved the states to KMAppletState as suggested.",
+      "parentUuid": "6ac62ce9_24b16924",
+      "range": {
+        "startLine": 71,
+        "startChar": 28,
+        "endLine": 71,
+        "endChar": 34
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46676cc2_a78a043b",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "Are illegal states possible?\n\nIf this stays open coded, does KM dictate the first state after init being illegal? If not, I\u0027d move it to the end and check if \u003e\u003d ILLEGAL_STATE. Or use a bitmask to check if any illegal state bits are set.",
+      "range": {
+        "startLine": 322,
+        "startChar": 50,
+        "endLine": 322,
+        "endChar": 63
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "600b2db3_28ac993d",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Update the code. Now the initial state is kept as INIT_STATE and removed the ILLEGAL_STATE as it does not make sense to keep ILLEGAL_STATE and INIT_STATE both.",
+      "parentUuid": "46676cc2_a78a043b",
       "range": {
         "startLine": 322,
         "startChar": 50,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2ce4893_555051aa",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "As per suggestion, added comment and default switch",
+      "parentUuid": "a4846e14_b6b951d7",
+      "range": {
+        "startLine": 386,
+        "startChar": 6,
+        "endLine": 386,
+        "endChar": 7
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8cb9ec66_cc3a8049",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -83,6 +155,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "These are the only two states allowed in process() after error checking. I\u0027d recommend moving all these generally allowed instructions above the state scoped conditionals. Then you can just have a switch that covers global instructions for active and provision.",
+      "range": {
+        "startLine": 389,
+        "startChar": 50,
+        "endLine": 389,
+        "endChar": 68
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e7fe2e_183459ae",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "As suggested. Moved these general instruction above the scope conditionals.",
+      "parentUuid": "8cb9ec66_cc3a8049",
       "range": {
         "startLine": 389,
         "startChar": 50,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6eea4bec_e2df6d39",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Yes you understood right. I have added the comments for this condition.",
+      "parentUuid": "bc8f31ed_19336bb7",
+      "range": {
+        "startLine": 395,
+        "startChar": 27,
+        "endLine": 395,
+        "endChar": 34
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "50da8ffa_0fc48b32",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -129,6 +249,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "functionally these are \"isProvisioningComplete()\" guarded instructions. I don\u0027t see the need for the extra guard here.",
+      "range": {
+        "startLine": 411,
+        "startChar": 13,
+        "endLine": 411,
+        "endChar": 35
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a722f7d9_e323c2cd",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "These instructions are allowed either in ACTIVE_STATE or PROVISION_STATE till provisioning not locked. The state transition from PROVISION_STATE\nto ACTIVE_STATE happens once the provision is completed and locked. So these instructions are allowed till the provisioning is locked in PROVISION_STATE and are no more allowed after provision is locked.",
+      "parentUuid": "50da8ffa_0fc48b32",
       "range": {
         "startLine": 411,
         "startChar": 13,
@@ -164,6 +308,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13ed117d_6ad83c5b",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "The timestamp is an uint64. Updated the code and changed it to specific constant.",
+      "parentUuid": "81c06586_20a0ac5d",
+      "range": {
+        "startLine": 556,
+        "startChar": 62,
+        "endLine": 556,
+        "endChar": 63
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b28d0088_693cab36",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -175,6 +343,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "nit: resetTransientBuffers() might be more clarifying since you also deal with tmpVariables",
+      "range": {
+        "startLine": 565,
+        "startChar": 15,
+        "endLine": 565,
+        "endChar": 24
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a73126ea_e1f01396",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Updated the function name as suggested.",
+      "parentUuid": "b28d0088_693cab36",
       "range": {
         "startLine": 565,
         "startChar": 15,
@@ -210,6 +402,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "005518c2_3ae02138",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "We don´t know the maximum length of the input buffer for each command. The maximum input buffer size is limited to the maximum available extended buffer size.",
+      "parentUuid": "cace2e52_86b3c491",
+      "range": {
+        "startLine": 595,
+        "startChar": 42,
+        "endLine": 595,
+        "endChar": 46
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4fddd3d2_39b0a602",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -221,6 +437,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "s/master/host",
+      "range": {
+        "startLine": 631,
+        "startChar": 22,
+        "endLine": 631,
+        "endChar": 28
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9173f302_17999d61",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Updated.",
+      "parentUuid": "4fddd3d2_39b0a602",
       "range": {
         "startLine": 631,
         "startChar": 22,
@@ -256,6 +496,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7b38504e_ec6809bd",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Updated at all the places.",
+      "parentUuid": "80ab1cb7_524a7541",
+      "range": {
+        "startLine": 636,
+        "startChar": 51,
+        "endLine": 636,
+        "endChar": 57
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "509b79bf_7c387690",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -267,6 +531,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "loving the cognitive dissonance of sendError(...OK) ;)",
+      "range": {
+        "startLine": 694,
+        "startChar": 4,
+        "endLine": 694,
+        "endChar": 13
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20480de6_4e1b84b0",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Changed the function name to sendResponse(). It was initally kept as sendError to match the keymaster specification Enum ErrorCode (https://cs.android.com/android/platform/superproject/+/master:hardware/interfaces/keymaster/4.0/types.hal;l\u003d997)",
+      "parentUuid": "509b79bf_7c387690",
       "range": {
         "startLine": 694,
         "startChar": 4,
@@ -302,6 +590,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "77ec67df_5ceac0ee",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Yes it make sense. Updated this function as per your suggestion.",
+      "parentUuid": "aeac763f_92026c9d",
+      "range": {
+        "startLine": 753,
+        "startChar": 0,
+        "endLine": 753,
+        "endChar": 58
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76525435_a4aa7ecb",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -313,6 +625,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "this should return an error until implemented: KMError.UNIMPLEMENTED",
+      "range": {
+        "startLine": 1001,
+        "startChar": 0,
+        "endLine": 1001,
+        "endChar": 32
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c57106d_a7cd35ba",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Here our intention is not to not implement it. As there is nothing to return we return OK. Basically we acknowledge that we received the command and there is nothing to delete.",
+      "parentUuid": "76525435_a4aa7ecb",
       "range": {
         "startLine": 1001,
         "startChar": 0,
@@ -348,6 +684,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17083aeb_7aeb6918",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Yes right. Moved this to KMUtil class",
+      "parentUuid": "cf9cb5f2_da40ea37",
+      "range": {
+        "startLine": 1516,
+        "startChar": 18,
+        "endLine": 1516,
+        "endChar": 25
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4913cc69_0c537a3f",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -371,6 +731,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6fb194ca_40c1c81b",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2800,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Updated the code as per your suggestion.",
+      "parentUuid": "4913cc69_0c537a3f",
+      "range": {
+        "startLine": 2800,
+        "startChar": 12,
+        "endLine": 2800,
+        "endChar": 13
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e595e98c_f0a59aee",
         "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 1
@@ -382,6 +766,30 @@
       "writtenOn": "2021-09-27T17:18:03Z",
       "side": 1,
       "message": "nit: space",
+      "range": {
+        "startLine": 3297,
+        "startChar": 0,
+        "endLine": 3297,
+        "endChar": 36
+      },
+      "revId": "faf433e8fe25c3d6e9328e1be971d96ee413b716",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "daad6892_73786b3d",
+        "filename": "seready/keymaster40/applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3297,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-10-25T20:46:30Z",
+      "side": 1,
+      "message": "Corrected the indentation.",
+      "parentUuid": "e595e98c_f0a59aee",
       "range": {
         "startLine": 3297,
         "startChar": 0,
