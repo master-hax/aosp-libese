@@ -44,6 +44,11 @@ cc_defaults {
         "liblog",
         "libese",
     ],
+    // FIXME: Clang fails to build ese-relay-fake with ThinLTO, disable for now.
+    // http://b/241722362
+    lto: {
+        never: true,
+    },
 }
 
 cc_binary {
