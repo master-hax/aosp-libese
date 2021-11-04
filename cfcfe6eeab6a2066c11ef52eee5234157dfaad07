@@ -22,6 +22,30 @@
       },
       "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ff2808_30e48c23",
+        "filename": "tools/ese_relay/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2021-11-04T03:36:20Z",
+      "side": 1,
+      "message": "Agree with this. This is probably due to the `kAtr` variable that gets defined in a couple of different places, but is marked `extern` in these files. There are definitely some visibility flags getting passed during the creation of libese.",
+      "parentUuid": "8ff4649f_b5a1d009",
+      "range": {
+        "startLine": 47,
+        "startChar": 7,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
