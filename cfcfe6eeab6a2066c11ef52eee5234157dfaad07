@@ -63,6 +63,30 @@
       },
       "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e2de7fe_26e16d92",
+        "filename": "tools/ese_relay/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2021-11-30T17:46:28Z",
+      "side": 1,
+      "message": "Seems that multiple people are asking for some action to be taken here, do you have a suitable bug that this line can reference when it comes to fixing this properly?",
+      "parentUuid": "23ff2808_30e48c23",
+      "range": {
+        "startLine": 47,
+        "startChar": 7,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
