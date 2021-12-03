@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06cb95f9_66785e75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2021-12-03T20:34:24Z",
+      "side": 1,
+      "message": "Hi Will/Shawn, We are first adding seready folder which we intend to use for all the Android Ready SE project/contribuitions coming from different partners inclduing google. ",
+      "revId": "fdc89893e8bb7b47c73947931bf78092257e7527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
