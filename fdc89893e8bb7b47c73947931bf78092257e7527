@@ -39,6 +39,30 @@
       },
       "revId": "fdc89893e8bb7b47c73947931bf78092257e7527",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "643cfc3b_4a440790",
+        "filename": "seready/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2021-12-07T21:48:05Z",
+      "side": 1,
+      "message": "Renamed the directory to readyse and updated the README file as suggested.",
+      "parentUuid": "d1b3b188_bff12a19",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 92
+      },
+      "revId": "fdc89893e8bb7b47c73947931bf78092257e7527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
