@@ -16,6 +16,29 @@
       "message": "Hi Will/Shawn, We are first adding seready folder which we intend to use for all the Android Ready SE project/contribuitions coming from different partners inclduing google. ",
       "revId": "fdc89893e8bb7b47c73947931bf78092257e7527",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1b3b188_bff12a19",
+        "filename": "seready/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2021-12-07T20:33:38Z",
+      "side": 1,
+      "message": "Let\u0027s make the directory name as \"readyse\"\n\nAlso, let\u0027s add the following text in the readme file.\n\n--------------------\nThis directory will contain the implementation of Android Ready SE Applets, HALs, testing tools, packages etc coming for different partners. \n\nThe folder structure which should be followed is: \n\nreadyse/\u003ccompany name e.g. google\u003e/\u003cproject name e.g. keymint, keymaster\u003e/\u003cproject versions e.g. KM41, KM40, KM100\u003e",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 92
+      },
+      "revId": "fdc89893e8bb7b47c73947931bf78092257e7527",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
