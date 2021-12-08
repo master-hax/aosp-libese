@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16b80fdc_e575ff10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2021-12-08T00:59:56Z",
+      "side": 1,
+      "message": "It\u0027s a nit, but please add an underscore between ready and se, i.e. ready_se.  Much more readable.",
+      "revId": "259172223dd905dc47665423229cbfe3d6c0c4dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
