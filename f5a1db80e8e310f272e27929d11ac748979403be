@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30fd5c7f_211040c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2021-12-14T21:23:07Z",
+      "side": 1,
+      "message": "Bypassing presubmit because OWNERS change can\u0027t break the build.",
+      "revId": "f5a1db80e8e310f272e27929d11ac748979403be",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
