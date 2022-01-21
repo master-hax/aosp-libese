@@ -87,6 +87,30 @@
       },
       "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08efebb4_2fcb3247",
+        "filename": "tools/ese_relay/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1010056
+      },
+      "writtenOn": "2022-01-21T02:13:45Z",
+      "side": 1,
+      "message": "Yi, can you file a bug with the reproducer for this?",
+      "parentUuid": "7e2de7fe_26e16d92",
+      "range": {
+        "startLine": 47,
+        "startChar": 7,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
