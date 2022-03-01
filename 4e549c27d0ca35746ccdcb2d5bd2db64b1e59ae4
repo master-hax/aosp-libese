@@ -1,0 +1,221 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fad438dc_50db996f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "Left few review comments. ",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76de0b70_942f6e6c",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "I think we are referring to \"VENDOR_PATCH_LEVEL\" here.",
+      "range": {
+        "startLine": 76,
+        "startChar": 28,
+        "endLine": 76,
+        "endChar": 58
+      },
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9313857b_ed9235f2",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "is this supported for both KMaster and KMint ?",
+      "range": {
+        "startLine": 81,
+        "startChar": 28,
+        "endLine": 81,
+        "endChar": 67
+      },
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "894c81dc_cae5d96a",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "add else if for kmDevice \u003d\u003d 100, if there is an unrecognized version, we should not be proceeding further.",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f2717f8_3ce889b1",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "we should only process, expected input paramters so add the validation checks",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07a8b8bd_b3631490",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "in case of KM4.0 or 4.1 upgrade, it will get set to KM_100 ?",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6430f58a_2cf117d4",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "what will happen if we get INS_PROVISION_ATTESTATION_KEY_CMD command here after locking ?",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2125fc1_038cec52",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "I think we should move this to line number 186 ?",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 7
+      },
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "923049fa_32fb83f4",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "5 arguments",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 351,
+        "endChar": 17
+      },
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4043b2fd_163fe523",
+        "filename": "ready_se/google/keymint/KM100/Applet/AndroidSEApplet/src/com/android/javacard/kmapplet/KMConfigurations.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "I see many of these in seApplet KMConfiguration also. Please remove the duplicates.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 59
+      },
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "323a8e60_f0f0b141",
+        "filename": "ready_se/google/keymint/KM100/Applet/src/com/android/javacard/kmdevice/KMKeymasterDevice.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 4599,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-03-01T16:58:55Z",
+      "side": 1,
+      "message": "where is this defined ?",
+      "revId": "4e549c27d0ca35746ccdcb2d5bd2db64b1e59ae4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
