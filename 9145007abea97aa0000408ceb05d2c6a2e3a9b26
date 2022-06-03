@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3782760_1d389975",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAESKey.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "I wonder if it\u0027s worthwhile to follow \"proper\" OO design here, rather than just making the aesKey a public member. The cumulative size impact of these getters and setters is non-trivial.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 3
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78dcd3eb_07d0c461",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Are these empty overrides necessary?  I suppose they may get optimized out anyway...",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 3
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b821a945_0a04c4bd",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Why use methods for these?  Wouldn\u0027t constants do the job, and be more space-efficient?  Again, I suppose the compiler may be smart enough to optimize the overhead out.",
+      "range": {
+        "startLine": 78,
+        "startChar": 1,
+        "endLine": 85,
+        "endChar": 3
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2e91a55_76d4f4b4",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "One general comment:  I\u0027ve known for a long time that you had to do a lot of pre-allocation of persistent objects for each of the operation slots, but reading this code has really driven it home.  Is there not some way we can avoid that by using transient operation contents?  I realize that doing that would mean that in the event the SE is power-cycled the operation contents would be lost, but is in-operation SE resetting really that common? If so, can we change something on the system side to reduce it to an acceptable level? All of this persistent pre-allocation is not only expensive in terms of flash storage, it also creates a lot of flash wear and has to really slow down operations. Dynamic allocation of transient space would consume even more-precious RAM, but we could only allocate the specific Cipher/Signature object required.  Or can those objects not be transient?",
+      "range": {
+        "startLine": 182,
+        "startChar": 9,
+        "endLine": 182,
+        "endChar": 28
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ae46778_b714026a",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Nit:  This should probably be a constant.  It\u0027s possible we could increase it in the future.",
+      "range": {
+        "startLine": 198,
+        "startChar": 58,
+        "endLine": 198,
+        "endChar": 59
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "253eec68_b3ee3769",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Nit:\n\nWhy not for(short index \u003d 0; index \u003c 4; ++index)? The for loop is a bit more compact and quite a bit more idiomatic than this totally-equivalent while construction.",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 275,
+        "endChar": 23
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60bdcfd4_15657fde",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "It\u0027s not clear to me why you\u0027re using a pooled dynamic allocation here, given that the allocated instances are persistent.  You\u0027re going to eventually allocate four of everything, so why not just pre-allocate them all?  If they were transient, that would be different.  As it is, it seems like a lot of needless complexity (and this method is complex and hard to follow -- if it really is necessary it should probably be rewritten to simplify the logic and make it easier to understand).",
+      "range": {
+        "startLine": 355,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 14
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34cf6c71_07cc47f7",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Nit:  This double-assignment is not only hard to read, it potentially results in duplicated code in the binary (depending on the effectiveness of the optimizer).  Also you assign to `object\u0027 just below, so you should just rely on that assignment to initialize `object\u0027.",
+      "range": {
+        "startLine": 378,
+        "startChar": 11,
+        "endLine": 378,
+        "endChar": 80
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9640ebe0_6f8d37f4",
+        "filename": "seready/keymaster40/applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2022-06-03T14:42:20Z",
+      "side": 1,
+      "message": "Is there some way isCipher could be true, and this be false?",
+      "range": {
+        "startLine": 393,
+        "startChar": 24,
+        "endLine": 393,
+        "endChar": 66
+      },
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
