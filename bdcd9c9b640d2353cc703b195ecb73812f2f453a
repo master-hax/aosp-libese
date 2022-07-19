@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a553d0e_393dc0a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Few minor comments while we continue to review.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28800425_74348a19",
+        "filename": "ready_se/google/keymint/KM200/HAL/ITransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Can we remove these if not needed. They are defined in KM specification.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 56
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21fd9d6d_7794b5c9",
+        "filename": "ready_se/google/keymint/KM200/HAL/ITransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Can you please check the indentation.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 2
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf2a2d34_7b2935cd",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Please make it KEYMINT_APPLET_AID",
+      "range": {
+        "startLine": 30,
+        "startChar": 18,
+        "endLine": 30,
+        "endChar": 32
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98e07f93_cedddd3f",
+        "filename": "ready_se/google/keymint/KM200/HAL/SocketTransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Remove this.",
+      "range": {
+        "startLine": 52,
+        "startChar": 1,
+        "endLine": 54,
+        "endChar": 7
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9e2fc44_14c1b79c",
+        "filename": "ready_se/google/keymint/KM200/HAL/Transport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Seems to be duplicate of ITransport.h. Please check.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88e5db2a_d6c53b30",
+        "filename": "ready_se/google/keymint/KM200/HAL/android.hardware.strongbox_keystore.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-19T21:48:26Z",
+      "side": 1,
+      "message": "Version needs to be 200.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
