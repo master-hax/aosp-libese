@@ -18,6 +18,402 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63c372b4_49c554ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Transferred swillden@ comments from Abandoned CL: aosp/1810844 to this CL.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56ab0718_8ace3728",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844 \n#include \"CborConverter.h\"\n\n#include \u003candroid-base/logging.h\u003e",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f24e73c_ad431501",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nNit:  This makes an unnecessary copy.  param should be a reference.\n\nEven better, I think would be:\n\nfor (auto\u0026 param : keyParams)...",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 47
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d801eed_71ea49a5",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nThis if statement is unnecessary.  If enum_repetition is empty, the loop won\u0027t execute. Same below.\nif (0 \u003c enum_repetition.size()) {",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94f2f3be_02b699d0",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nWhy use this?\nbool ret \u003d false;",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73743f70_8ee1d0a9",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nDefine a constant.\ngetKeyParameters(arrayItem.value(), 0); (previous)",
+      "range": {
+        "startLine": 120,
+        "startChar": 56,
+        "endLine": 120,
+        "endChar": 67
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe67aadb_dd35ee96",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nWhy not Tag? \nuint64_t key; (previous)",
+      "range": {
+        "startLine": 145,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 19
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a23542d2_0f3fabee",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nCreate a helper function \"getTagType\" or similar, unless one already exists (which seems likely).  Then you won\u0027t need the inline comment, the function name will document the purpose.\nTagType tagType \u003d static_cast\u003cTagType\u003e(key \u0026 (0xF \u003c\u003c 28)); (previous)",
+      "range": {
+        "startLine": 151,
+        "startChar": 12,
+        "endLine": 151,
+        "endChar": 34
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "204c15de_86b75bdb",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nReally?  How does this work when enum values have values \u003e\u003d 256?",
+      "range": {
+        "startLine": 153,
+        "startChar": 8,
+        "endLine": 153,
+        "endChar": 63
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3260106d_f891b27b",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nconst std::unique_ptr\u003cItem\u003e\u0026 item \u003d array-\u003eget(i);\n\nI\u0027m kind of surprised this compiles as is.",
+      "range": {
+        "startLine": 199,
+        "startChar": 12,
+        "endLine": 199,
+        "endChar": 66
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9fd73b8_ab936da7",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nHaving a default case is a bad idea.  If the list of tag types is extended, you want the compiler to diagnose the failure to handle the new ones.",
+      "range": {
+        "startLine": 250,
+        "startChar": 4,
+        "endLine": 250,
+        "endChar": 12
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0ee9c15_295a841c",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nIn this method and the next three, you need to handle endianness.",
+      "range": {
+        "startLine": 326,
+        "startChar": 20,
+        "endLine": 326,
+        "endChar": 37
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3e1d2a1_49dec119",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nNit:  Use #pragma once, rather than guards",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 12
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14c0189f_0c457969",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nhttps://engdoc.corp.google.com/eng/doc/devguide/cpp/styleguide.md?cl\u003dhead#Names_and_Order_of_Includes\n\nThis should be:\n\n#include \u003cnumeric\u003e\n#include \u003ciostream\u003e\n\n#include \u003candroid/hardware/keymaster/4.0/IKeymasterDevice.h\u003e\n#include \u003chidl/HidlSupport.h\u003e\n\n#include \u003ccppbor.h\u003e\n#include \u003ccppbor_parse.h\u003e",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 49
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd1da9e5_ca673e75",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nDon\u0027t use \"using namespace\", especially not in headers.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01fc1928_d849c54d",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nWhy this template?\n\nprevious:\n template \u003ctypename T \u003d ErrorCode\u003e\n std::tuple\u003cstd::unique_ptr\u003cItem\u003e, T\u003e decodeData(const std::vector\u003cuint8_t\u003e\u0026 \n response, bool hasErrorCode);",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 14
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdc21cce_56529b52",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nThis is needlessly complicated.  Why bother with the templating, rather than just writing two functions?  I\u0027m assuming you only pass uint64_t or int64_t as \"value\".  If you also use 32-bit integers, you have another problem, because the value may overflow.",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 9
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b12ee54d_8220e5a6",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-20T05:12:01Z",
+      "side": 1,
+      "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nGeneral comment:  I think it would be cleaner to return std::optional\u003cT\u003e (e.g. std::optional\u003cHmacSharingParameters\u003e throughout all of these methods, rather than using output arguments.",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28800425_74348a19",
