@@ -974,6 +974,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aaa3793_cee4735c",
+        "filename": "ready_se/google/keymint/KM200/HAL/SocketTransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:53Z",
+      "side": 1,
+      "message": "Removed the unnecessary comment.",
+      "parentUuid": "98e07f93_cedddd3f",
+      "range": {
+        "startLine": 52,
+        "startChar": 1,
+        "endLine": 54,
+        "endChar": 7
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9e2fc44_14c1b79c",
@@ -987,6 +1011,24 @@
       "writtenOn": "2022-07-19T21:48:26Z",
       "side": 1,
       "message": "Seems to be duplicate of ITransport.h. Please check.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64f9025c_ffd25e6e",
+        "filename": "ready_se/google/keymint/KM200/HAL/Transport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:53Z",
+      "side": 1,
+      "message": "Removed this duplicate file.",
+      "parentUuid": "e9e2fc44_14c1b79c",
       "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
