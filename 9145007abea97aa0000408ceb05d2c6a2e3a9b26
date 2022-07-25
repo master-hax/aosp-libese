@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0ffbefd_c5441657",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T22:37:25Z",
+      "side": 1,
+      "message": "As this CL was Abandoned. Transferred all the comments to this CL: aosp/2082578. ",
+      "revId": "9145007abea97aa0000408ceb05d2c6a2e3a9b26",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3782760_1d389975",
