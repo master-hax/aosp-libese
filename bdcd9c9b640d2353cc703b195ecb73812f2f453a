@@ -58,6 +58,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ae524be_f05cc2d8",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Previsously the headers were in this order:\n#include \u003candroid-base/logging.h\u003e\n#include \"CborConverter.h\"\n\nCorrected the order of the header. Removed the unused \u003candroid-base/logging.h\u003e header.",
+      "parentUuid": "56ab0718_8ace3728",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f24e73c_ad431501",
@@ -71,6 +95,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nNit:  This makes an unnecessary copy.  param should be a reference.\n\nEven better, I think would be:\n\nfor (auto\u0026 param : keyParams)...",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 47
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ac3b27_3efc212a",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Previously it used be like shown:\nfor(size_t i \u003d 0; i \u003c keyParams.size(); i++) {\n\nModified the code as per the suggestion:\nfor (auto\u0026 param : keyParams).",
+      "parentUuid": "7f24e73c_ad431501",
       "range": {
         "startLine": 58,
         "startChar": 8,
@@ -98,6 +146,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f457fe92_b1f70f79",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Previously it used to be like as shown:\nif (0 \u003c enum_repetition.size()) {\n\nNow removed this unnecessary if condition.",
+      "parentUuid": "0d801eed_71ea49a5",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94f2f3be_02b699d0",
@@ -115,6 +181,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "076f0645_7de35856",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed the unnecessary usage of bool ret \u003d false;",
+      "parentUuid": "94f2f3be_02b699d0",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73743f70_8ee1d0a9",
@@ -128,6 +212,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nDefine a constant.\ngetKeyParameters(arrayItem.value(), 0); (previous)",
+      "range": {
+        "startLine": 120,
+        "startChar": 56,
+        "endLine": 120,
+        "endChar": 67
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95cab553_70716b4b",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Defined SB_ENFORCED, HW_ENFORCED and TEE_ENFORCED constants.",
+      "parentUuid": "73743f70_8ee1d0a9",
       "range": {
         "startLine": 120,
         "startChar": 56,
@@ -161,6 +269,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5919aaf3_6c3ca04b",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed uint64_t and used keymaster_tag_t instead.",
+      "parentUuid": "fe67aadb_dd35ee96",
+      "range": {
+        "startLine": 145,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 19
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a23542d2_0f3fabee",
@@ -174,6 +306,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nCreate a helper function \"getTagType\" or similar, unless one already exists (which seems likely).  Then you won\u0027t need the inline comment, the function name will document the purpose.\nTagType tagType \u003d static_cast\u003cTagType\u003e(key \u0026 (0xF \u003c\u003c 28)); (previous)",
+      "range": {
+        "startLine": 151,
+        "startChar": 12,
+        "endLine": 151,
+        "endChar": 34
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "caf9e71a_41cd7e52",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Used the existing keymaster_tag_get_type helper function instead of doing as below TagType tagType \u003d static_cast\u003cTagType\u003e(key \u0026 (0xF \u003c\u003c 28))",
+      "parentUuid": "a23542d2_0f3fabee",
       "range": {
         "startLine": 151,
         "startChar": 12,
@@ -209,6 +365,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "96a8b9a3_1b37d9d5",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "This current implementation is according to KeyMint specification where enum repetetion values are \u003c 255. If it goes above then we need to change the logic to change to array of integers or bytes.",
+      "parentUuid": "204c15de_86b75bdb",
+      "range": {
+        "startLine": 153,
+        "startChar": 8,
+        "endLine": 153,
+        "endChar": 63
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3260106d_f891b27b",
         "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
         "patchSetId": 4
@@ -220,6 +400,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nconst std::unique_ptr\u003cItem\u003e\u0026 item \u003d array-\u003eget(i);\n\nI\u0027m kind of surprised this compiles as is.",
+      "range": {
+        "startLine": 199,
+        "startChar": 12,
+        "endLine": 199,
+        "endChar": 66
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbcea9b2_d9444753",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Previously it used to be like this:\nstd::unique_ptr\u003cItem\u003e item \u003d std::move((*array)[i]);\n\nNow modified the code as suggested:\nconst std::unique_ptr\u003cItem\u003e\u0026 item \u003d array-\u003eget(i);",
+      "parentUuid": "3260106d_f891b27b",
       "range": {
         "startLine": 199,
         "startChar": 12,
@@ -243,6 +447,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nHaving a default case is a bad idea.  If the list of tag types is extended, you want the compiler to diagnose the failure to handle the new ones.",
+      "range": {
+        "startLine": 250,
+        "startChar": 4,
+        "endLine": 250,
+        "endChar": 12
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8bff263_91a741b6",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed the default case in addKeyParamter and getKeyParamter functions.",
+      "parentUuid": "a9fd73b8_ab936da7",
       "range": {
         "startLine": 250,
         "startChar": 4,
@@ -278,6 +506,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b706a140_0876a4e2",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Endianness is handled inside the Applet. An install time configuration  value for endianess (little/big) is set to the Applet. Based on this configuration applet decides how to handle the tokens. Of course it is a good idea to handle it in the HAL itself.",
+      "parentUuid": "d0ee9c15_295a841c",
+      "range": {
+        "startLine": 326,
+        "startChar": 20,
+        "endLine": 326,
+        "endChar": 37
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3e1d2a1_49dec119",
         "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
         "patchSetId": 4
@@ -289,6 +541,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nNit:  Use #pragma once, rather than guards",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 12
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5c83165_add0f001",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Used #pragma at all the places.",
+      "parentUuid": "c3e1d2a1_49dec119",
       "range": {
         "startLine": 17,
         "startChar": 0,
@@ -322,6 +598,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ec6b061_93a0d6bc",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Order the header files in all the files.",
+      "parentUuid": "14c0189f_0c457969",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 49
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd1da9e5_ca673e75",
@@ -335,6 +635,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nDon\u0027t use \"using namespace\", especially not in headers.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fe301aa_fde7cbb6",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed using of \"using namespace\" in all the header files.",
+      "parentUuid": "cd1da9e5_ca673e75",
       "range": {
         "startLine": 35,
         "startChar": 0,
@@ -368,6 +692,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d811886_0bc62bae",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed the template in decodeData() function.",
+      "parentUuid": "01fc1928_d849c54d",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 14
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdc21cce_56529b52",
@@ -381,6 +729,30 @@
       "writtenOn": "2022-07-20T05:12:01Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1810844\nThis is needlessly complicated.  Why bother with the templating, rather than just writing two functions?  I\u0027m assuming you only pass uint64_t or int64_t as \"value\".  If you also use 32-bit integers, you have another problem, because the value may overflow.",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 9
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d6dc7e8_2adf0b13",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed the template from the getUint64() function.",
+      "parentUuid": "fdc21cce_56529b52",
       "range": {
         "startLine": 52,
         "startChar": 8,
@@ -414,6 +786,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c387085b_3afcb7ad",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Returned std::optional\u003c\u003e through all of these methods.",
+      "parentUuid": "b12ee54d_8220e5a6",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28800425_74348a19",
@@ -427,6 +823,30 @@
       "writtenOn": "2022-07-19T21:48:26Z",
       "side": 1,
       "message": "Can we remove these if not needed. They are defined in KM specification.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 56
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aaa9bf2_f34c1ca2",
+        "filename": "ready_se/google/keymint/KM200/HAL/ITransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Removed the contatnts KM_ERROR_HARDWARE_NOT_YET_AVAILABLE and KM_ERROR_HARDWRE_NOT_AVAILABLE and used from ErrorCode.aidl",
+      "parentUuid": "28800425_74348a19",
       "range": {
         "startLine": 27,
         "startChar": 0,
@@ -460,6 +880,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63eee1f0_9d30e98e",
+        "filename": "ready_se/google/keymint/KM200/HAL/ITransport.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Corrected the indentation.",
+      "parentUuid": "21fd9d6d_7794b5c9",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 2
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf2a2d34_7b2935cd",
@@ -473,6 +917,30 @@
       "writtenOn": "2022-07-19T21:48:26Z",
       "side": 1,
       "message": "Please make it KEYMINT_APPLET_AID",
+      "range": {
+        "startLine": 30,
+        "startChar": 18,
+        "endLine": 30,
+        "endChar": 32
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd7a9708_9c80917c",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Renamed to KEYMINT_APPLET_AID.",
+      "parentUuid": "cf2a2d34_7b2935cd",
       "range": {
         "startLine": 30,
         "startChar": 18,
@@ -536,6 +1004,24 @@
       "writtenOn": "2022-07-19T21:48:26Z",
       "side": 1,
       "message": "Version needs to be 200.",
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "459c67a5_f62195c9",
+        "filename": "ready_se/google/keymint/KM200/HAL/android.hardware.strongbox_keystore.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-25T19:27:02Z",
+      "side": 1,
+      "message": "Changed to 200.",
+      "parentUuid": "88e5db2a_d6c53b30",
       "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
