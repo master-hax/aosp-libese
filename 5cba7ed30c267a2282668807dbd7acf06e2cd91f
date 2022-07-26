@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c8f1ed8_e1847206",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "It is the stub implementation of the interface APIs declared in OnUpgradeListener interface. So we cannot remove these.",
+      "parentUuid": "99b667b4_962ef446",
+      "range": {
+        "startLine": 516,
+        "startChar": 2,
+        "endLine": 521,
+        "endChar": 3
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7d03abcc_1655fa1e",
         "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
         "patchSetId": 4
@@ -37,6 +61,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1833501:\n\nWhy use methods for these?  Wouldn\u0027t constants do the job, and be more space-efficient?  Again, I suppose the compiler may be smart enough to optimize the overhead out.\n\nPrevious: (The comment was for these two functions)\n\n  private short computePrimitveDataSize() {\n    // provisionStatus + keymasterState\n    return (short) 2;\n  }\n\n  private short computeObjectCount() {\n    return (short) 0;\n  }",
+      "range": {
+        "startLine": 531,
+        "startChar": 0,
+        "endLine": 531,
+        "endChar": 0
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34967744_6eb2a97a",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Where ever possible we defined constants instead of using these functions.",
+      "parentUuid": "7d03abcc_1655fa1e",
       "range": {
         "startLine": 531,
         "startChar": 0,
@@ -118,6 +166,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "687dc191_e884957c",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Moved the hard-coded to a constant variables.",
+      "parentUuid": "6f86b266_1885c83c",
+      "range": {
+        "startLine": 188,
+        "startChar": 58,
+        "endLine": 188,
+        "endChar": 81
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e75bec0_e353564b",
         "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
         "patchSetId": 4
@@ -129,6 +201,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1833501\n\nNit:\n\nWhy not for(short index \u003d 0; index \u003c 4; ++index)? The for loop is a bit more compact and quite a bit more idiomatic than this totally-equivalent while construction.\n\nPrevious:\nwhile (index \u003c 4) {",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 68
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e3efc4f_9e0ca204",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Replaces while loops with for loops.",
+      "parentUuid": "0e75bec0_e353564b",
       "range": {
         "startLine": 222,
         "startChar": 4,
@@ -187,6 +283,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9b31408a_3f626ecc",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Removed the double assigment.",
+      "parentUuid": "04a69875_c5fc1d52",
+      "range": {
+        "startLine": 493,
+        "startChar": 0,
+        "endLine": 493,
+        "endChar": 59
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8df88664_1a447766",
         "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 4
@@ -198,6 +318,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from drewry@ on Abandoned CL: aosp/1833501:\nnit: resetTransientBuffers() might be more clarifying since you also deal with tmpVariables\n\nPrevious:\nresetData();",
+      "range": {
+        "startLine": 456,
+        "startChar": 6,
+        "endLine": 456,
+        "endChar": 27
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e61b2b18_5fd864f6",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "8df88664_1a447766",
       "range": {
         "startLine": 456,
         "startChar": 6,
@@ -233,6 +377,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cff39c9b_3b3fd5b0",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "1a2d1e92_46835e42",
+      "range": {
+        "startLine": 472,
+        "startChar": 10,
+        "endLine": 472,
+        "endChar": 22
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b992cd22_9d74fa81",
         "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 4
@@ -244,6 +412,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from drewry@ on aosp/1833501:\nit\u0027d be nice to have a comment (or variable or function helper name) explaining the lengths. E.g., KMInteger.length().\n\nPrevious:\nUtil.arrayFillNonAtomic(scratchPad, (short) 0, (short) 8, (byte) 0);",
+      "range": {
+        "startLine": 783,
+        "startChar": 72,
+        "endLine": 783,
+        "endChar": 79
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40ed9026_06047692",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:20:34Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b992cd22_9d74fa81",
       "range": {
         "startLine": 783,
         "startChar": 72,
