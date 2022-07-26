@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a6f0a38_a2ffbc72",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c8f1ed8_e1847206",
+      "range": {
+        "startLine": 516,
+        "startChar": 2,
+        "endLine": 521,
+        "endChar": 3
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d03abcc_1655fa1e",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Where ever possible we defined constants instead of using these functions.",
       "parentUuid": "7d03abcc_1655fa1e",
+      "range": {
+        "startLine": 531,
+        "startChar": 0,
+        "endLine": 531,
+        "endChar": 0
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81752633_858b2365",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34967744_6eb2a97a",
       "range": {
         "startLine": 531,
         "startChar": 0,
@@ -188,6 +236,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e16e053_672965da",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "687dc191_e884957c",
+      "range": {
+        "startLine": 188,
+        "startChar": 58,
+        "endLine": 188,
+        "endChar": 81
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e75bec0_e353564b",
@@ -225,6 +297,30 @@
       "side": 1,
       "message": "Replaces while loops with for loops.",
       "parentUuid": "0e75bec0_e353564b",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 68
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3ab8418_38396c1e",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e3efc4f_9e0ca204",
       "range": {
         "startLine": 222,
         "startChar": 4,
@@ -305,6 +401,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2843c4ab_fb353ca3",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b31408a_3f626ecc",
+      "range": {
+        "startLine": 493,
+        "startChar": 0,
+        "endLine": 493,
+        "endChar": 59
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8df88664_1a447766",
@@ -342,6 +462,30 @@
       "side": 1,
       "message": "Done.",
       "parentUuid": "8df88664_1a447766",
+      "range": {
+        "startLine": 456,
+        "startChar": 6,
+        "endLine": 456,
+        "endChar": 27
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e4e33ce_ae9922e9",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e61b2b18_5fd864f6",
       "range": {
         "startLine": 456,
         "startChar": 6,
@@ -399,6 +543,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1fcbdce_7e5930d2",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cff39c9b_3b3fd5b0",
+      "range": {
+        "startLine": 472,
+        "startChar": 10,
+        "endLine": 472,
+        "endChar": 22
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b992cd22_9d74fa81",
@@ -436,6 +604,30 @@
       "side": 1,
       "message": "Done.",
       "parentUuid": "b992cd22_9d74fa81",
+      "range": {
+        "startLine": 783,
+        "startChar": 72,
+        "endLine": 783,
+        "endChar": 79
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2400fc9a_21b76334",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-07-26T05:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40ed9026_06047692",
       "range": {
         "startLine": 783,
         "startChar": 72,
