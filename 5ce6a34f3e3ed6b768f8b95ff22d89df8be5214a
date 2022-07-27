@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69e49460_0383c065",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T21:46:21Z",
+      "side": 1,
+      "message": "few more comments",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6dfac7f_15719e3a",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T21:46:21Z",
+      "side": 1,
+      "message": "how readers sizes are related to KEYMINT_APPLED_AID",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a7f65ff_70e062df",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T21:46:21Z",
+      "side": 1,
+      "message": "Won\u0027t this be better to check the reader name here itself and exit if you find it and remove code from #78 - #95 ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4bd10a2_bd26e645",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T21:46:21Z",
+      "side": 1,
+      "message": "I could not find isClosed taking an input on channel. Could you please double check ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab580a9d_fe1592f6",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T21:46:21Z",
+      "side": 1,
+      "message": "As we have only one reader, will be get null pointer expection when we call closeSessions on other readers ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
