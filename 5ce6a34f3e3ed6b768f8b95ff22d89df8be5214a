@@ -18,6 +18,120 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "074fa7af_10553a62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "few more nit commments",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae0bf154_10a13614",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "why not use unit8_t variable at declaration itself ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00440700_d78903b9",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "No error loggng here ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52dff9ea_5fb9f698",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "Why not used the same patter of sending the instruction here ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aac44c27_2ae265e2",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "is it a type in error mesaage ? \"upgradeKey\" ?",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 56
+      },
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5297153_e6275ac7",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-27T23:12:56Z",
+      "side": 1,
+      "message": "seems to be a type in error message.",
+      "range": {
+        "startLine": 430,
+        "startChar": 18,
+        "endLine": 430,
+        "endChar": 19
+      },
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6dfac7f_15719e3a",
