@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3042731f_871ed853",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-07-28T20:49:05Z",
+      "side": 1,
+      "message": "can you add a more descriptive comment here what are 2 stages we are referring ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae0bf154_10a13614",
         "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
         "patchSetId": 6
