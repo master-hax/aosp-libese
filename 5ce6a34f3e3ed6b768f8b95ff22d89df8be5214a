@@ -52,6 +52,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b50d797_2d5f1476",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Explained the two staged in the comments.",
+      "parentUuid": "3042731f_871ed853",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae0bf154_10a13614",
@@ -65,6 +83,24 @@
       "writtenOn": "2022-07-27T23:12:56Z",
       "side": 1,
       "message": "why not use unit8_t variable at declaration itself ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb83dec_b59f28f5",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Correct. Removed Uint().",
+      "parentUuid": "ae0bf154_10a13614",
       "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -86,6 +122,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd327f13_98a39f88",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Added log statement.",
+      "parentUuid": "00440700_d78903b9",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52dff9ea_5fb9f698",
@@ -103,6 +157,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81932527_b8a6a86a",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "As discussed offline. If earlyBootEnded failed for any reason JavacardSecureElement make a note of it in a flag isEarlyBootEventPending. if this flag is true It will try to send the earlyBootEnded again in computeSharedHmac and begin() operations.",
+      "parentUuid": "52dff9ea_5fb9f698",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aac44c27_2ae265e2",
@@ -116,6 +188,30 @@
       "writtenOn": "2022-07-27T23:12:56Z",
       "side": 1,
       "message": "is it a type in error mesaage ? \"upgradeKey\" ?",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 56
+      },
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07edbaff_922228ce",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Corrected.",
+      "parentUuid": "aac44c27_2ae265e2",
       "range": {
         "startLine": 375,
         "startChar": 0,
@@ -149,6 +245,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a9b896b_1aa2b945",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Corrected.",
+      "parentUuid": "f5297153_e6275ac7",
+      "range": {
+        "startLine": 430,
+        "startChar": 18,
+        "endLine": 430,
+        "endChar": 19
+      },
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6dfac7f_15719e3a",
@@ -162,6 +282,24 @@
       "writtenOn": "2022-07-27T21:46:21Z",
       "side": 1,
       "message": "how readers sizes are related to KEYMINT_APPLED_AID",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64f06912_650cdccd",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "moved int size \u003d sizeof(KEYMINT_APPLET_AID) / sizeof(KEYMINT_APPLET_AID[0]); below to avoid confusion.",
+      "parentUuid": "f6dfac7f_15719e3a",
       "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -183,6 +321,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5719710_755d3a29",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "Yes corrected the code accordingly.",
+      "parentUuid": "9a7f65ff_70e062df",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4bd10a2_bd26e645",
@@ -200,6 +356,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57b9dcd1_864c106e",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "AIDL defintion:  boolean isClosed()\nAfter compilation it gets converted as ::ndk::ScopedStatus isClosed(boolean *);",
+      "parentUuid": "b4bd10a2_bd26e645",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab580a9d_fe1592f6",
@@ -213,6 +387,24 @@
       "writtenOn": "2022-07-27T21:46:21Z",
       "side": 1,
       "message": "As we have only one reader, will be get null pointer expection when we call closeSessions on other readers ?",
+      "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "081bafd0_89625a5b",
+        "filename": "ready_se/google/keymint/KM200/HAL/OmapiTransport.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-08-01T22:02:34Z",
+      "side": 1,
+      "message": "If we close the reader using reader-\u003ecloseSessions(). then all the channels and sessions for this reader will be closed and no need to close them explicitly.",
+      "parentUuid": "ab580a9d_fe1592f6",
       "revId": "5ce6a34f3e3ed6b768f8b95ff22d89df8be5214a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
