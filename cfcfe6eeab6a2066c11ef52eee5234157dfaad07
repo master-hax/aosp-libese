@@ -111,6 +111,30 @@
       },
       "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a04e9fb2_53dc0bd2",
+        "filename": "tools/ese_relay/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1087625
+      },
+      "writtenOn": "2022-08-08T04:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08efebb4_2fcb3247",
+      "range": {
+        "startLine": 47,
+        "startChar": 7,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "cfcfe6eeab6a2066c11ef52eee5234157dfaad07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
