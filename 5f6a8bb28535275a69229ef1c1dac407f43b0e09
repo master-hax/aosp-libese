@@ -16,6 +16,23 @@
       "message": "It\u0027s not just forcing it to be aligned. It\u0027s making sure that the declarations and definitions match. We may believe that a char pointer and char array are equivalent, but they aren\u0027t. The pointer itself would be aligned, but the array address need not be. The extern declaration here specifies a pointer, while this particular source file uses an array directly, which is incompatible.",
       "revId": "5f6a8bb28535275a69229ef1c1dac407f43b0e09",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d873044_d912efc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1022354
+      },
+      "writtenOn": "2022-08-11T14:00:36Z",
+      "side": 1,
+      "message": "Thank you! I was checking out the repo to make this CL!",
+      "revId": "5f6a8bb28535275a69229ef1c1dac407f43b0e09",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
