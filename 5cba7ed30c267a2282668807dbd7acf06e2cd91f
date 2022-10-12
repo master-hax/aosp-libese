@@ -166,6 +166,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f04fce7_42adfc2d",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAESKey.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-10-12T00:59:59Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "1188df90_53bb189d",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71cf8497_509147ca",
@@ -179,6 +203,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1833501:\n\nOne general comment:  I\u0027ve known for a long time that you had to do a lot of pre-allocation of persistent objects for each of the operation slots, but reading this code has really driven it home.  Is there not some way we can avoid that by using transient operation contents?  I realize that doing that would mean that in the event the SE is power-cycled the operation contents would be lost, but is in-operation SE resetting really that common? If so, can we change something on the system side to reduce it to an acceptable level? All of this persistent pre-allocation is not only expensive in terms of flash storage, it also creates a lot of flash wear and has to really slow down operations. Dynamic allocation of transient space would consume even more-precious RAM, but we could only allocate the specific Cipher/Signature object required.  Or can those objects not be transient?",
+      "range": {
+        "startLine": 42,
+        "startChar": 13,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfbfc728_3725827a",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-10-12T00:59:59Z",
+      "side": 1,
+      "message": "Cipher/Signature instances cannot be created on transient memory.",
+      "parentUuid": "71cf8497_509147ca",
       "range": {
         "startLine": 42,
         "startChar": 13,
@@ -344,6 +392,30 @@
       "writtenOn": "2022-07-25T22:33:55Z",
       "side": 1,
       "message": "Comments from swillden@ on Abandoned CL: aosp/1833501:\nIt\u0027s not clear to me why you\u0027re using a pooled dynamic allocation here, given that the allocated instances are persistent.  You\u0027re going to eventually allocate four of everything, so why not just pre-allocate them all?  If they were transient, that would be different.  As it is, it seems like a lot of needless complexity (and this method is complex and hard to follow -- if it really is necessary it should probably be rewritten to simplify the logic and make it easier to understand).",
+      "range": {
+        "startLine": 469,
+        "startChar": 21,
+        "endLine": 469,
+        "endChar": 37
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2766a887_3ad32492",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-10-12T00:59:59Z",
+      "side": 1,
+      "message": "Simplified the logic.",
+      "parentUuid": "999281f5_b5831ce7",
       "range": {
         "startLine": 469,
         "startChar": 21,
