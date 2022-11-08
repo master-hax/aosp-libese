@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ce984fe_0d9f2ecb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-11-08T20:18:38Z",
+      "side": 1,
+      "message": "Could you please update the comment to \"migrating code from github to aosp - github link is : ..... \"",
+      "revId": "6af50c0e80ac371be26e846473acb7377bd3864d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bf19448_a0f0546f",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1632361
+      },
+      "writtenOn": "2022-11-08T20:18:38Z",
+      "side": 1,
+      "message": "@subrahmanyaman@google.com can we use byte rather than short for these. Please also apply the same comment across the code base where possible.",
+      "range": {
+        "startLine": 47,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 27
+      },
+      "revId": "6af50c0e80ac371be26e846473acb7377bd3864d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
