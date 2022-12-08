@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04196991_a440c27f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1960460
+      },
+      "writtenOn": "2022-12-08T01:09:08Z",
+      "side": 1,
+      "message": "A couple of comments :\n\n1. Almost no comments anywhere in the code base, can you please add comments so its readable (hard to do the review of something this huge without comments).\n2. Notice the use of a lot of magic numbers like  128,96.8, should those be defines ? easier to read and maintain\n\n\n if (KMInteger.cast(macLength).getSignificantShort() !\u003d 0\n            || KMInteger.cast(macLength).getShort() \u003e 128\n            || KMInteger.cast(macLength).getShort() \u003c 96\n            || (KMInteger.cast(macLength).getShort() % 8) !\u003d 0) {\n          KMException.throwIt(KMError.UNSUPPORTED_MIN_MAC_LENGTH);\n        }",
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
