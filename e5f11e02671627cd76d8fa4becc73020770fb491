@@ -35,6 +35,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0487e766_216a3c81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested by you. I will mark the comments as resolved and address all of the comments once this CL is submitted.",
+      "parentUuid": "3ec93a0c_a2faff39",
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41060b07_859095b1",
@@ -48,6 +66,30 @@
       "writtenOn": "2022-12-08T04:42:23Z",
       "side": 1,
       "message": "Is there a design doc, listing all of the supported commands, etc.?  If so, it\u0027d be good to add it as a text file.",
+      "range": {
+        "startLine": 1,
+        "startChar": 20,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27420549_1b1c4017",
+        "filename": "ready_se/google/keymint/KM200/Applet/README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "41060b07_859095b1",
       "range": {
         "startLine": 1,
         "startChar": 20,
@@ -81,6 +123,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "680c0384_5ea559e7",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMEncoder.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "e777ffd3_53fb1da0",
+      "range": {
+        "startLine": 25,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d416672_04c4b485",
@@ -94,6 +160,30 @@
       "writtenOn": "2022-12-08T04:42:23Z",
       "side": 1,
       "message": "This whole section needs more documentation, specifying the purpose and meaning of each group of constants. Perhaps that should be added in the future, though.",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ae4309_a85086c9",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "3d416672_04c4b485",
       "range": {
         "startLine": 42,
         "startChar": 5,
@@ -127,6 +217,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0a105a7_e595afda",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "b9238281_4518a18e",
+      "range": {
+        "startLine": 59,
+        "startChar": 29,
+        "endLine": 59,
+        "endChar": 38
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d67afac5_938c5dda",
@@ -140,6 +254,30 @@
       "writtenOn": "2022-12-08T04:42:23Z",
       "side": 1,
       "message": "I see 38 (CUSTOM_TAGS), why 40?  Shouldn\u0027t it be 39?\n\nNit: I\u0027d move DATA_ARRAY_SIZE to the bottom of the list, to help keep the size in sync with the contents.  It would also be nice to add a block comment explaining the high-level purpose of this data array.",
+      "range": {
+        "startLine": 78,
+        "startChar": 45,
+        "endLine": 78,
+        "endChar": 48
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c51f1034_fc7bb80e",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "d67afac5_938c5dda",
       "range": {
         "startLine": 78,
         "startChar": 45,
@@ -173,6 +311,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df52ff44_3d0c404d",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "57c7a360_ac6da053",
+      "range": {
+        "startLine": 416,
+        "startChar": 4,
+        "endLine": 416,
+        "endChar": 18
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e90e189_8642f15f",
@@ -196,6 +358,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae7dbf25_0e42dbb8",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "4e90e189_8642f15f",
+      "range": {
+        "startLine": 436,
+        "startChar": 1,
+        "endLine": 439,
+        "endChar": 5
+      },
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff40c584_d3945280",
@@ -209,6 +395,24 @@
       "writtenOn": "2022-12-08T04:42:23Z",
       "side": 1,
       "message": "Why copy the data into a scratch pad?  Why not just pass in the KDF and feed it to that?",
+      "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f7f00b_7a4d8b55",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "As suggested, I will address this in a separate CL.",
+      "parentUuid": "ff40c584_d3945280",
       "revId": "e5f11e02671627cd76d8fa4becc73020770fb491",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }

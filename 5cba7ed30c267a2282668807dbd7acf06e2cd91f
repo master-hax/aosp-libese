@@ -237,6 +237,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d19178cc_7c9241fa",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfbfc728_3725827a",
+      "range": {
+        "startLine": 42,
+        "startChar": 13,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f86b266_1885c83c",
@@ -416,6 +440,30 @@
       "side": 1,
       "message": "Simplified the logic.",
       "parentUuid": "999281f5_b5831ce7",
+      "range": {
+        "startLine": 469,
+        "startChar": 21,
+        "endLine": 469,
+        "endChar": 37
+      },
+      "revId": "5cba7ed30c267a2282668807dbd7acf06e2cd91f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a31cd42a_6b1415ea",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMPoolManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2022-12-10T20:31:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2766a887_3ad32492",
       "range": {
         "startLine": 469,
         "startChar": 21,
