@@ -56,7 +56,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
     0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E
   };
   // "KeymasterSharedMac"
-  public static final byte[] ckdfLable = {
+  public static final byte[] ckdfLabel = {
     0x4B, 0x65, 0x79, 0x6D, 0x61, 0x73, 0x74, 0x65, 0x72, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x4D,
     0x61, 0x63
   };
@@ -75,7 +75,6 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
   // which is used while creating mac for key paramters.
   public static final short MAX_KEY_PARAMS_BUF_SIZE = (short) 3072; // 3K
   // Data Dictionary items
-  public static final byte DATA_ARRAY_SIZE = 40;
   public static final byte TMP_VARIABLE_ARRAY_SIZE = 5;
   public static final byte KEY_PARAMETERS = 0;
   public static final byte KEY_CHARACTERISTICS = 1;
@@ -116,6 +115,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
   public static final byte CONFIRMATION_TOKEN = 36;
   public static final byte KEY_BLOB_VERSION_DATA_OFFSET = 37;
   public static final byte CUSTOM_TAGS = 38;
+  public static final byte DATA_ARRAY_SIZE = 39;
   // Keyblob offsets.
   public static final byte KEY_BLOB_VERSION_OFFSET = 0;
   public static final byte KEY_BLOB_SECRET = 1;
@@ -1956,9 +1956,9 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
     short keyLen =
         seProvider.cmacKDF(
             kmDataStore.getPresharedKey(),
-            ckdfLable,
+            ckdfLabel,
             (short) 0,
-            (short) ckdfLable.length,
+            (short) ckdfLabel.length,
             repository.getHeap(),
             concateBuffer,
             bufferIndex,
