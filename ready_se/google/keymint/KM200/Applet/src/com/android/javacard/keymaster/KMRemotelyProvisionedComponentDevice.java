@@ -15,8 +15,8 @@
  */
 package com.android.javacard.keymaster;
 
-import com.android.javacard.seprovider.KMDeviceUniqueKeyPair;
 import com.android.javacard.seprovider.KMException;
+import com.android.javacard.seprovider.KMKey;
 import com.android.javacard.seprovider.KMOperation;
 import com.android.javacard.seprovider.KMSEProvider;
 import javacard.framework.APDU;
@@ -25,16 +25,16 @@ import javacard.framework.ISOException;
 import javacard.framework.JCSystem;
 import javacard.framework.Util;
 
-/*
- * This class handles the remote key provisioning. Generates an RKP key and generates a certificate signing
- * request(CSR). The generation of CSR is divided amoung multiple functions to the save the memory inside
- * the Applet. The set of functions to be called sequentially in the order to complete the process of
- * generating the CSR are processBeginSendData, processUpdateKey, processUpdateEekChain,
- * processUpdateChallenge, processFinishSendData and getResponse. ProcessUpdateKey is called N times, where
- * N is the number of keys. Similarly getResponse is called is multiple times till the client receives the
- * response completely.
+/**
+ * This class handles remote key provisioning. Generates an RKP key and generates a certificate
+ * signing request(CSR). The generation of CSR is divided among multiple functions to the save the
+ * memory inside the Applet. The set of functions to be called sequentially in the order to complete
+ * the process of generating the CSR are processBeginSendData, processUpdateKey,
+ * processUpdateEekChain, processUpdateChallenge, processFinishSendData, and getResponse.
+ * ProcessUpdateKey is called Ntimes, where N is the number of keys. Similarly, getResponse is
+ * called multiple times till the client receives the response completely.
  */
-public class RemotelyProvisionedComponentDevice {
+public class KMRemotelyProvisionedComponentDevice {
 
   // Device Info labels
   public static final byte[] BRAND = {0x62, 0x72, 0x61, 0x6E, 0x64};
@@ -151,7 +151,7 @@ public class RemotelyProvisionedComponentDevice {
   private Object[] operation;
   private short[] dataIndex;
 
-  public RemotelyProvisionedComponentDevice(
+  public KMRemotelyProvisionedComponentDevice(
       KMEncoder encoder,
       KMDecoder decoder,
       KMRepository repository,
@@ -181,21 +181,21 @@ public class RemotelyProvisionedComponentDevice {
   private void createAuthorizedEEKRoot() {
     if (authorizedEekRoots == null) {
       authorizedEekRoots =
-        new Object[] {
-          new byte[] {
-            (byte) 0x04, (byte) 0xf7, (byte) 0x14, (byte) 0x8a, (byte) 0xdb, (byte) 0x97,
-            (byte) 0xf4, (byte) 0xcc, (byte) 0x53, (byte) 0xef, (byte) 0xd2, (byte) 0x64,
-            (byte) 0x11, (byte) 0xc4, (byte) 0xe3, (byte) 0x75, (byte) 0x1f, (byte) 0x66,
-            (byte) 0x1f, (byte) 0xa4, (byte) 0x71, (byte) 0x0c, (byte) 0x6c, (byte) 0xcf,
-            (byte) 0xfa, (byte) 0x09, (byte) 0x46, (byte) 0x80, (byte) 0x74, (byte) 0x87,
-            (byte) 0x54, (byte) 0xf2, (byte) 0xad, (byte) 0x5e, (byte) 0x7f, (byte) 0x5b,
-            (byte) 0xf6, (byte) 0xec, (byte) 0xe4, (byte) 0xf6, (byte) 0x19, (byte) 0xcc,
-            (byte) 0xff, (byte) 0x13, (byte) 0x37, (byte) 0xfd, (byte) 0x0f, (byte) 0xa1,
-            (byte) 0xc8, (byte) 0x93, (byte) 0xdb, (byte) 0x18, (byte) 0x06, (byte) 0x76,
-            (byte) 0xc4, (byte) 0x5d, (byte) 0xe6, (byte) 0xd7, (byte) 0x6a, (byte) 0x77,
-            (byte) 0x86, (byte) 0xc3, (byte) 0x2d, (byte) 0xaf, (byte) 0x8f
-          },
-        };
+          new Object[] {
+            new byte[] {
+              (byte) 0x04, (byte) 0xf7, (byte) 0x14, (byte) 0x8a, (byte) 0xdb, (byte) 0x97,
+              (byte) 0xf4, (byte) 0xcc, (byte) 0x53, (byte) 0xef, (byte) 0xd2, (byte) 0x64,
+              (byte) 0x11, (byte) 0xc4, (byte) 0xe3, (byte) 0x75, (byte) 0x1f, (byte) 0x66,
+              (byte) 0x1f, (byte) 0xa4, (byte) 0x71, (byte) 0x0c, (byte) 0x6c, (byte) 0xcf,
+              (byte) 0xfa, (byte) 0x09, (byte) 0x46, (byte) 0x80, (byte) 0x74, (byte) 0x87,
+              (byte) 0x54, (byte) 0xf2, (byte) 0xad, (byte) 0x5e, (byte) 0x7f, (byte) 0x5b,
+              (byte) 0xf6, (byte) 0xec, (byte) 0xe4, (byte) 0xf6, (byte) 0x19, (byte) 0xcc,
+              (byte) 0xff, (byte) 0x13, (byte) 0x37, (byte) 0xfd, (byte) 0x0f, (byte) 0xa1,
+              (byte) 0xc8, (byte) 0x93, (byte) 0xdb, (byte) 0x18, (byte) 0x06, (byte) 0x76,
+              (byte) 0xc4, (byte) 0x5d, (byte) 0xe6, (byte) 0xd7, (byte) 0x6a, (byte) 0x77,
+              (byte) 0x86, (byte) 0xc3, (byte) 0x2d, (byte) 0xaf, (byte) 0x8f
+            },
+          };
     }
   }
 
@@ -790,10 +790,7 @@ public class RemotelyProvisionedComponentDevice {
   }
 
   private short createSignedMac(
-      KMDeviceUniqueKeyPair deviceUniqueKeyPair,
-      byte[] scratchPad,
-      short deviceMapPtr,
-      short pubKeysToSign) {
+      KMKey deviceUniqueKeyPair, byte[] scratchPad, short deviceMapPtr, short pubKeysToSign) {
     // Challenge
     short dataEntryIndex = getEntry(CHALLENGE);
     short challengePtr = KMByteBlob.instance(data, dataEntryIndex, getEntryLength(CHALLENGE));
@@ -831,7 +828,7 @@ public class RemotelyProvisionedComponentDevice {
         KMKeymasterApplet.encodeToApduBuffer(
             signStructure, scratchPad, (short) 0, KMKeymasterApplet.MAX_COSE_BUF_SIZE);
     short len =
-        seProvider.ecSign256(
+        seProvider.signWithDeviceUniqueKey(
             deviceUniqueKeyPair, scratchPad, (short) 0, signStructure, scratchPad, signStructure);
     len =
         KMAsn1Parser.instance()
@@ -848,8 +845,8 @@ public class RemotelyProvisionedComponentDevice {
         protectedHeaders, unprotectedHeader, ephmeralMacKey, signStructure);
   }
 
-  private KMDeviceUniqueKeyPair createDeviceUniqueKeyPair(boolean testMode, byte[] scratchPad) {
-    KMDeviceUniqueKeyPair deviceUniqueKeyPair;
+  private KMKey createDeviceUniqueKeyPair(boolean testMode, byte[] scratchPad) {
+    KMKey deviceUniqueKeyPair;
     rkpTmpVariables[0] = 0;
     rkpTmpVariables[1] = 0;
     if (testMode) {
@@ -1362,7 +1359,7 @@ public class RemotelyProvisionedComponentDevice {
 
   private short processSignedMac(byte[] scratchPad, short pubKeysToSignMac, short deviceInfo) {
     // Construct SignedMac
-    KMDeviceUniqueKeyPair deviceUniqueKeyPair =
+    KMKey deviceUniqueKeyPair =
         createDeviceUniqueKeyPair((TRUE == data[getEntry(TEST_MODE)]) ? true : false, scratchPad);
     // Create signedMac
     short signedMac =
