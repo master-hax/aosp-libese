@@ -1,5 +1,10 @@
 package com.android.javacard.seprovider;
 
+/**
+ * This class holds different interface type constants to differentiate between the instances of
+ * KMComputedKHmacKey, KMAttestationKey, KMDeviceUniqueKeyPair, KMRkpMacKey, and KMAESKey when
+ * passed as generic objects.
+ */
 public class KMDataStoreConstants {
   // INTERFACE Types
   public static final byte INTERFACE_TYPE_COMPUTED_HMAC_KEY = 0x01;

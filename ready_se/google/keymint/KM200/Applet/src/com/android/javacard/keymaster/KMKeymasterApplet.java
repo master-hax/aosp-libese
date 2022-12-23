@@ -260,7 +260,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
   private static final byte INS_KM_VENDOR_END_CMD = (byte) 0xFF;
   // ComputeHMAC constants
   private static final byte HMAC_SHARED_PARAM_MAX_SIZE = 64;
-  protected static RemotelyProvisionedComponentDevice rkp;
+  protected static KMRemotelyProvisionedComponentDevice rkp;
   protected static KMEncoder encoder;
   protected static KMDecoder decoder;
   protected static KMRepository repository;
