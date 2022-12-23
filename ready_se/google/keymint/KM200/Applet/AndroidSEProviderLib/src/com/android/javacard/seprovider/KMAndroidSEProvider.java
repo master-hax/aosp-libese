@@ -38,6 +38,13 @@ import javacardx.crypto.Cipher;
 import org.globalplatform.upgrade.Element;
 import org.globalplatform.upgrade.UpgradeManager;
 
+/**
+ * This class implements KMSEProvider and provides all the necessary crypto operations required to
+ * support the KeyMint specification. This class supports AES, 3DES, HMAC, RSA, ECDSA, ECDH
+ * algorithms additionally it also supports ECDSA_NO_DIGEST, RSA_NO_DIGEST and RSA_OAEP_MGF1_SHA1
+ * and RSA_OAEP_MGF1_SHA256 algorithms. This class respects the model of Init-Update-Final for the
+ * crypto operations.
+ */
 public class KMAndroidSEProvider implements KMSEProvider {
 
   public static final byte AES_GCM_TAG_LENGTH = 16;
@@ -672,10 +679,10 @@ public class KMAndroidSEProvider implements KMSEProvider {
           case KMType.RSA_OAEP:
             {
               if (digest == KMType.SHA1) {
-                  /* MGF Digest is SHA1 */
+                /* MGF Digest is SHA1 */
                 return KMRsaOAEPEncoding.ALG_RSA_PKCS1_OAEP_SHA256_MGF1_SHA1;
               } else if (digest == KMType.SHA2_256) {
-                  /* MGF Digest is SHA256 */
+                /* MGF Digest is SHA256 */
                 return KMRsaOAEPEncoding.ALG_RSA_PKCS1_OAEP_SHA256_MGF1_SHA256;
               } else {
                 KMException.throwIt(KMError.UNSUPPORTED_ALGORITHM);

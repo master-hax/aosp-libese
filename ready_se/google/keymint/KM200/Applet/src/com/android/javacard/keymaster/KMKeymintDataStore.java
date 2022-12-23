@@ -15,6 +15,12 @@ import javacard.framework.JCSystem;
 import javacard.framework.Util;
 import org.globalplatform.upgrade.Element;
 
+/**
+ * This is a storage class which helps in storing the provisioned data, ROT, OS version, boot patch
+ * level, vendor patch level, HMAC nonce, computed shared secret, 8 auth tags, device locked, device
+ * locked timestamp and device locked password only. Only the provisioned data is restored back
+ * during applet upgrades and remaining data is flushed.
+ */
 public class KMKeymintDataStore implements KMUpgradable {
 
   // Data table configuration

@@ -18,6 +18,7 @@ package com.android.javacard.seprovider;
 import javacard.security.AESKey;
 import org.globalplatform.upgrade.Element;
 
+/** This is a wrapper class for AESKey. */
 public class KMAESKey implements KMMasterKey {
 
   public AESKey aesKey;

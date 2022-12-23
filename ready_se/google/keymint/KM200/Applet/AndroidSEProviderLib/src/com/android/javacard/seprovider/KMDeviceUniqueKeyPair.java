@@ -15,6 +15,11 @@
  */
 package com.android.javacard.seprovider;
 
+/**
+ * KMDeviceUniqueKeyPair is an interface and the SE Provider has to implement this interface.
+ * Internally device unique key is stored as a Javacard EC key pair object, which will provide
+ * additional security.
+ */
 public interface KMDeviceUniqueKeyPair {
 
   short getPublicKey(byte[] buf, short offset);

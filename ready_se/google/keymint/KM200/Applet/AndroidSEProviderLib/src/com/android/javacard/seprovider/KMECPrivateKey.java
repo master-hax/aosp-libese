@@ -18,6 +18,7 @@ package com.android.javacard.seprovider;
 import javacard.security.KeyPair;
 import org.globalplatform.upgrade.Element;
 
+/** This is a wrapper class for KeyPair. */
 public class KMECPrivateKey implements KMAttestationKey {
 
   public KeyPair ecKeyPair;
