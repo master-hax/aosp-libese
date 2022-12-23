@@ -19,6 +19,7 @@ import javacard.security.ECPublicKey;
 import javacard.security.KeyPair;
 import org.globalplatform.upgrade.Element;
 
+/** This is a wrapper class for KeyPair. */
 public class KMECDeviceUniqueKey implements KMDeviceUniqueKeyPair {
 
   public KeyPair ecKeyPair;
