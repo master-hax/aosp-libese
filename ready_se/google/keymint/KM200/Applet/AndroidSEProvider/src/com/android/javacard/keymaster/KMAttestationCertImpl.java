@@ -23,12 +23,12 @@ import com.android.javacard.seprovider.KMSEProvider;
 import javacard.framework.JCSystem;
 import javacard.framework.Util;
 
-// The class encodes strongbox generated amd signed attestation certificate. This only encodes
-// required fields of the certificates. It is not meant to be generic X509 cert encoder.
-// Whatever fields that are fixed are added as byte arrays. The Extensions are encoded as per
-// the values.
-// The certificate is assembled with leafs first and then the sequences.
-
+/**
+ * The class encodes strongbox generated and signed attestation certificates. It only encodes the
+ * required fields of the certificates. This class is not meant to be a generic X509 cert encoder.
+ * Any fields that are fixed are added as byte arrays. Extensions are encoded as per the values. The
+ * certificate is assembled with leafs first and then the sequences.
+ */
 public class KMAttestationCertImpl implements KMAttestationCert {
 
   private static final byte MAX_PARAMS = 30;
@@ -61,8 +61,21 @@ public class KMAttestationCertImpl implements KMAttestationCert {
   // Signature algorithm identifier - sha256WithRSAEncryption - 1.2.840.113549.1.1.11
   // SEQUENCE of alg OBJ ID and parameters = NULL.
   private static final byte[] X509RsaSignAlgIdentifier = {
-    0x30, 0x0D, 0x06, 0x09, 0x2A, (byte) 0x86, 0x48, (byte) 0x86, (byte) 0xF7, 0x0D, 0x01, 0x01,
-    0x0B, 0x05, 0x00
+    0x30,
+    0x0D,
+    0x06,
+    0x09,
+    0x2A,
+    (byte) 0x86,
+    0x48,
+    (byte) 0x86,
+    (byte) 0xF7,
+    0x0D,
+    0x01,
+    0x01,
+    0x0B,
+    0x05,
+    0x00
   };
 
   // Below are the allowed softwareEnforced Authorization tags inside the attestation certificate's

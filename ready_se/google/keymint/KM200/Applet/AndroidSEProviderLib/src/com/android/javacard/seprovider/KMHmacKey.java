@@ -18,6 +18,7 @@ package com.android.javacard.seprovider;
 import javacard.security.HMACKey;
 import org.globalplatform.upgrade.Element;
 
+/** This is a wrapper class for HMACKey. */
 public class KMHmacKey implements KMPreSharedKey, KMComputedHmacKey, KMRkpMacKey {
 
   public HMACKey hmacKey;

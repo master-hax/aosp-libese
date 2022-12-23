@@ -33,9 +33,9 @@ import javacard.security.CryptoException;
 import javacardx.apdu.ExtendedLength;
 
 /**
- * KMKeymasterApplet implements the javacard applet. It creates repository and other install time
- * objects. It also implements the keymaster state machine and handles javacard applet life cycle
- * events.
+ * KMKeymasterApplet implements the javacard applet. It creates an instance of the KMRepository
+ * and other install time objects. It also implements the keymaster state machine and handles
+ * javacard applet life cycle events.
  */
 public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLength {
 
@@ -260,7 +260,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
   private static final byte INS_KM_VENDOR_END_CMD = (byte) 0xFF;
   // ComputeHMAC constants
   private static final byte HMAC_SHARED_PARAM_MAX_SIZE = 64;
-  protected static RemotelyProvisionedComponentDevice rkp;
+  protected static KMRemotelyProvisionedComponentDevice rkp;
   protected static KMEncoder encoder;
   protected static KMDecoder decoder;
   protected static KMRepository repository;
