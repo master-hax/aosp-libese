@@ -413,6 +413,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "65a97632_b4acc0f4",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:24:40Z",
+      "side": 1,
+      "message": "The issue is that tag values greater than 256 is required to be handled if KeyMint supports that in future.",
+      "parentUuid": "bf3c5c51_b27547f0",
+      "range": {
+        "startLine": 153,
+        "startChar": 8,
+        "endLine": 153,
+        "endChar": 63
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3260106d_f891b27b",
         "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
         "patchSetId": 4
