@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4f420ab_4d6886d8",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:15:19Z",
+      "side": 1,
+      "message": "Change this to The minimum supported HMAC key size is 64 bits.",
+      "range": {
+        "startLine": 185,
+        "startChar": 8,
+        "endLine": 185,
+        "endChar": 57
+      },
+      "revId": "74fc9a8a9430f054aa08043cb77b101f6af71ecc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
