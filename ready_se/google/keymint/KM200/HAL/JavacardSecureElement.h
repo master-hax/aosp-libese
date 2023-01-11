@@ -22,6 +22,7 @@
 
 #define APDU_CLS 0x80
 #define APDU_P1 0x50
+#define APDU_KEYMINT3_P1 0x60
 #define APDU_P2 0x00
 #define APDU_RESP_STATUS_OK 0x9000
 
@@ -68,6 +69,8 @@ enum class Instruction {
     INS_UPDATE_CHALLENGE_CMD = KEYMINT_CMD_APDU_START + 32,
     INS_FINISH_SEND_DATA_CMD = KEYMINT_CMD_APDU_START + 33,
     INS_GET_RESPONSE_CMD = KEYMINT_CMD_APDU_START + 34,
+    INS_GET_UDS_CERTS_CMD = KEYMINT_CMD_APDU_START + 35,
+    INS_GET_DICE_CERT_CHAIN_CMD = KEYMINT_CMD_APDU_START + 36,
     // SE ROT Commands
     INS_GET_ROT_CHALLENGE_CMD = KEYMINT_CMD_APDU_START + 45,
     INS_GET_ROT_DATA_CMD = KEYMINT_CMD_APDU_START + 46,
@@ -76,10 +79,8 @@ enum class Instruction {
 
 class JavacardSecureElement {
   public:
-    explicit JavacardSecureElement(shared_ptr<ITransport> transport, uint32_t osVersion,
-                                   uint32_t osPatchLevel, uint32_t vendorPatchLevel)
-        : transport_(transport), osVersion_(osVersion), osPatchLevel_(osPatchLevel),
-          vendorPatchLevel_(vendorPatchLevel), isEarlyBootEventPending(false) {
+    explicit JavacardSecureElement(shared_ptr<ITransport> transport, uint32_t apdu_p1)
+        : transport_(transport), isEarlyBootEventPending(false), apdu_p1_(apdu_p1) {
         transport_->openConnection();
     }
     virtual ~JavacardSecureElement() { transport_->closeConnection(); }
@@ -105,10 +106,8 @@ class JavacardSecureElement {
     }
 
     shared_ptr<ITransport> transport_;
-    uint32_t osVersion_;
-    uint32_t osPatchLevel_;
-    uint32_t vendorPatchLevel_;
     bool isEarlyBootEventPending;
+    uint32_t apdu_p1_;
     CborConverter cbor_;
 };
 }  // namespace keymint::javacard

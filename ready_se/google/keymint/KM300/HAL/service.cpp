@@ -23,16 +23,16 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-#include "JavacardKeyMintDevice.h"
-#include "JavacardRemotelyProvisionedComponentDevice.h"
+#include "JavacardKeyMint3Device.h"
+#include "JavacardRemotelyProvisionedComponent3Device.h"
 #include "JavacardSecureElement.h"
 #include "JavacardSharedSecret.h"
 #include "OmapiTransport.h"
 #include "SocketTransport.h"
 #include "keymint_utils.h"
 
-using aidl::android::hardware::security::keymint::JavacardKeyMintDevice;
-using aidl::android::hardware::security::keymint::JavacardRemotelyProvisionedComponentDevice;
+using aidl::android::hardware::security::keymint::JavacardKeyMint3Device;
+using aidl::android::hardware::security::keymint::JavacardRemotelyProvisionedComponent3Device;
 using aidl::android::hardware::security::keymint::SecurityLevel;
 using aidl::android::hardware::security::sharedsecret::JavacardSharedSecret;
 using keymint::javacard::getOsPatchlevel;
@@ -82,13 +82,13 @@ int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);
     // Javacard Secure Element
     std::shared_ptr<JavacardSecureElement> card = std::make_shared<JavacardSecureElement>(
-        getTransportInstance(), APDU_P1);
+        getTransportInstance(), APDU_KEYMINT3_P1);
     // Add Keymint Service
-    addService<JavacardKeyMintDevice>(card);
+    addService<JavacardKeyMint3Device>(card);
     // Add Shared Secret Service
     addService<JavacardSharedSecret>(card);
     // Add Remotely Provisioned Component Service
-    addService<JavacardRemotelyProvisionedComponentDevice>(card);
+    addService<JavacardRemotelyProvisionedComponent3Device>(card);
 
     ABinderProcess_joinThreadPool();
     return EXIT_FAILURE;  // should not reach
