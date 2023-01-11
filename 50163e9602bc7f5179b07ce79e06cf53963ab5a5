@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16ff6fd3_c9775ec6",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:12:58Z",
+      "side": 1,
+      "message": "FINISH_IMPORT_WRAPPED_KEY",
+      "range": {
+        "startLine": 320,
+        "startChar": 67,
+        "endLine": 320,
+        "endChar": 93
+      },
+      "revId": "50163e9602bc7f5179b07ce79e06cf53963ab5a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
