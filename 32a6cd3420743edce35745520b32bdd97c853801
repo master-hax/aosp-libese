@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a9bcd34_502b8d06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "My comments",
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9770b513_52b95b2c",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProvider/src/com/android/javacard/keymaster/KMAndroidSEApplet.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "change this to \"...in the flash memory.\"",
+      "range": {
+        "startLine": 33,
+        "startChar": 51,
+        "endLine": 33,
+        "endChar": 52
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9fab2b0_7ac963c5",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "change this to \"follows the pattern\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 51,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02de7a61_8fcf847f",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMComputedHmacKey.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "Can you reword this sentence \"KMHmacKey implements this interface\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 51,
+        "endLine": 4,
+        "endChar": 79
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48690cf8_58d2a44e",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMDataStoreConstants.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "It will be helpful if you can elaborate as to where this is used and for what purpose?",
+      "range": {
+        "startLine": 6,
+        "startChar": 28,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b30b729_4dc1f116",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMDeviceUniqueKeyPair.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "SE Provider does not directly implement this interface. So which class implements this interface - I think it is KMDeviceUniqueKey. Also, the interface name is KeyPair and the only method is to getPublicKey. If so does the interface name correct. \n\nAlso, \"additional security\" needs to be explained in a sentence.",
+      "range": {
+        "startLine": 19,
+        "startChar": 49,
+        "endLine": 19,
+        "endChar": 61
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56d12ab8_41eefddd",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMEcdsa256NoDigestSignature.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "Mention that this done because javacard 3.0.5 does not support this.",
+      "range": {
+        "startLine": 25,
+        "startChar": 62,
+        "endLine": 25,
+        "endChar": 71
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f62bcf_5886716f",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMEcdsa256NoDigestSignature.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-01-11T22:06:45Z",
+      "side": 1,
+      "message": "Explain why you are instantiating the signature object with SHA_256 digest.",
+      "range": {
+        "startLine": 35,
+        "startChar": 43,
+        "endLine": 35,
+        "endChar": 60
+      },
+      "revId": "32a6cd3420743edce35745520b32bdd97c853801",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
