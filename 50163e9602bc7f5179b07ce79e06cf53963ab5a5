@@ -22,6 +22,30 @@
       },
       "revId": "50163e9602bc7f5179b07ce79e06cf53963ab5a5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d2869b_f0f4fa63",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-01-12T16:40:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16ff6fd3_c9775ec6",
+      "range": {
+        "startLine": 320,
+        "startChar": 67,
+        "endLine": 320,
+        "endChar": 93
+      },
+      "revId": "50163e9602bc7f5179b07ce79e06cf53963ab5a5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
