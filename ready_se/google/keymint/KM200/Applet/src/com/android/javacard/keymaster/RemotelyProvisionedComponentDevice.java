@@ -181,21 +181,21 @@ public class RemotelyProvisionedComponentDevice {
   private void createAuthorizedEEKRoot() {
     if (authorizedEekRoots == null) {
       authorizedEekRoots =
-        new Object[] {
-          new byte[] {
-            (byte) 0x04, (byte) 0xf7, (byte) 0x14, (byte) 0x8a, (byte) 0xdb, (byte) 0x97,
-            (byte) 0xf4, (byte) 0xcc, (byte) 0x53, (byte) 0xef, (byte) 0xd2, (byte) 0x64,
-            (byte) 0x11, (byte) 0xc4, (byte) 0xe3, (byte) 0x75, (byte) 0x1f, (byte) 0x66,
-            (byte) 0x1f, (byte) 0xa4, (byte) 0x71, (byte) 0x0c, (byte) 0x6c, (byte) 0xcf,
-            (byte) 0xfa, (byte) 0x09, (byte) 0x46, (byte) 0x80, (byte) 0x74, (byte) 0x87,
-            (byte) 0x54, (byte) 0xf2, (byte) 0xad, (byte) 0x5e, (byte) 0x7f, (byte) 0x5b,
-            (byte) 0xf6, (byte) 0xec, (byte) 0xe4, (byte) 0xf6, (byte) 0x19, (byte) 0xcc,
-            (byte) 0xff, (byte) 0x13, (byte) 0x37, (byte) 0xfd, (byte) 0x0f, (byte) 0xa1,
-            (byte) 0xc8, (byte) 0x93, (byte) 0xdb, (byte) 0x18, (byte) 0x06, (byte) 0x76,
-            (byte) 0xc4, (byte) 0x5d, (byte) 0xe6, (byte) 0xd7, (byte) 0x6a, (byte) 0x77,
-            (byte) 0x86, (byte) 0xc3, (byte) 0x2d, (byte) 0xaf, (byte) 0x8f
-          },
-        };
+          new Object[] {
+            new byte[] {
+              (byte) 0x04, (byte) 0xf7, (byte) 0x14, (byte) 0x8a, (byte) 0xdb, (byte) 0x97,
+              (byte) 0xf4, (byte) 0xcc, (byte) 0x53, (byte) 0xef, (byte) 0xd2, (byte) 0x64,
+              (byte) 0x11, (byte) 0xc4, (byte) 0xe3, (byte) 0x75, (byte) 0x1f, (byte) 0x66,
+              (byte) 0x1f, (byte) 0xa4, (byte) 0x71, (byte) 0x0c, (byte) 0x6c, (byte) 0xcf,
+              (byte) 0xfa, (byte) 0x09, (byte) 0x46, (byte) 0x80, (byte) 0x74, (byte) 0x87,
+              (byte) 0x54, (byte) 0xf2, (byte) 0xad, (byte) 0x5e, (byte) 0x7f, (byte) 0x5b,
+              (byte) 0xf6, (byte) 0xec, (byte) 0xe4, (byte) 0xf6, (byte) 0x19, (byte) 0xcc,
+              (byte) 0xff, (byte) 0x13, (byte) 0x37, (byte) 0xfd, (byte) 0x0f, (byte) 0xa1,
+              (byte) 0xc8, (byte) 0x93, (byte) 0xdb, (byte) 0x18, (byte) 0x06, (byte) 0x76,
+              (byte) 0xc4, (byte) 0x5d, (byte) 0xe6, (byte) 0xd7, (byte) 0x6a, (byte) 0x77,
+              (byte) 0x86, (byte) 0xc3, (byte) 0x2d, (byte) 0xaf, (byte) 0x8f
+            },
+          };
     }
   }
 
@@ -643,7 +643,6 @@ public class RemotelyProvisionedComponentDevice {
             KMCose.COSE_KEY_TYPE_EC2,
             KMType.INVALID_VALUE,
             KMCose.COSE_ALG_ES256,
-            KMType.INVALID_VALUE,
             KMCose.COSE_ECCURVE_256)) {
       KMException.throwIt(KMError.STATUS_FAILED);
     }
@@ -1253,7 +1252,6 @@ public class RemotelyProvisionedComponentDevice {
             KMInteger.uint_8(KMCose.COSE_KEY_TYPE_EC2),
             KMType.INVALID_VALUE,
             KMNInteger.uint_8(KMCose.COSE_ALG_ES256),
-            KMType.INVALID_VALUE,
             KMInteger.uint_8(KMCose.COSE_ECCURVE_256),
             data,
             pubKeyIndex,
@@ -1414,7 +1412,6 @@ public class RemotelyProvisionedComponentDevice {
             KMInteger.uint_8(KMCose.COSE_KEY_TYPE_EC2),
             KMType.INVALID_VALUE,
             KMNInteger.uint_8(KMCose.COSE_ALG_ES256),
-            KMType.INVALID_VALUE,
             KMInteger.uint_8(KMCose.COSE_ECCURVE_256),
             KMByteBlob.cast(pubKey).getBuffer(),
             KMByteBlob.cast(pubKey).getStartOff(),
