@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88eb7173_d9b19e5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-01-23T19:29:28Z",
+      "side": 1,
+      "message": "KM300 source is almost same as KM200. Below are the files changed for KM300. Reviewers can focus on reviewing below files as the remaining source is already reviewed in KM200.\n\n- KMRemotelyProvisionedComponent.java (Changes relating to RKPV3)\n\nBelow files contain minimal diff changes. Changes related removal of unnecessary code of RKPV2 and version changes.\n- KMKeymasterApplet.java\n- KMAttestationCertImpl.java\n- KMAndroidSEApplet.java\n- KMPoolManager.java\n- KMAndroidSEProvider.java",
+      "revId": "14476a621c9262b77c225aa4c7d955cfd9fc5338",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
