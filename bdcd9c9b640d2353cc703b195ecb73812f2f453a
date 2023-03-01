@@ -435,6 +435,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4538ad1_66ff97e9",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-01T20:18:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65a97632_b4acc0f4",
+      "range": {
+        "startLine": 153,
+        "startChar": 8,
+        "endLine": 153,
+        "endChar": 63
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3260106d_f891b27b",
@@ -566,6 +590,30 @@
       "side": 1,
       "message": "Endianness is handled inside the Applet. An install time configuration  value for endianess (little/big) is set to the Applet. Based on this configuration applet decides how to handle the tokens. Of course it is a good idea to handle it in the HAL itself.",
       "parentUuid": "d0ee9c15_295a841c",
+      "range": {
+        "startLine": 326,
+        "startChar": 20,
+        "endLine": 326,
+        "endChar": 37
+      },
+      "revId": "bdcd9c9b640d2353cc703b195ecb73812f2f453a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44cf2c59_88bc52b4",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-01T20:18:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b706a140_0876a4e2",
       "range": {
         "startLine": 326,
         "startChar": 20,
