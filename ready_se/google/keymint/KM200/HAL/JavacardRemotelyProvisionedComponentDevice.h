@@ -58,21 +58,21 @@ class JavacardRemotelyProvisionedComponentDevice : public BnRemotelyProvisionedC
                                                std::vector<uint8_t>* csr) override;
 
   private:
-    ScopedAStatus beginSendData(bool testMode, const std::vector<MacedPublicKey>& keysToSign);
+    ScopedAStatus beginSendData(const std::vector<MacedPublicKey>& keysToSign,
+                                const std::vector<uint8_t>& challenge, DeviceInfo* deviceInfo,
+                                uint32_t* version, std::string* certificateType);
 
-    ScopedAStatus updateMacedKey(const std::vector<MacedPublicKey>& keysToSign);
+    ScopedAStatus updateMacedKey(const std::vector<MacedPublicKey>& keysToSign,
+                                 cppbor::Array& coseKeys);
 
-    ScopedAStatus updateChallenge(const std::vector<uint8_t>& challenge);
-
-    ScopedAStatus updateEEK(const std::vector<uint8_t>& endpointEncCertChain);
-
-    ScopedAStatus finishSendData(std::vector<uint8_t>* keysToSignMac, DeviceInfo* deviceInfo,
-                                 std::vector<uint8_t>& coseEncryptProtectedHeader,
-                                 cppbor::Map& coseEncryptUnProtectedHeader,
-                                 std::vector<uint8_t>& partialCipheredData, uint32_t& respFlag);
+    ScopedAStatus finishSendData(std::vector<uint8_t>& coseEncryptProtectedHeader,
+                                 std::vector<uint8_t>& signature, uint32_t& version,
+                                 uint32_t& respFlag);
 
     ScopedAStatus getResponse(std::vector<uint8_t>& partialCipheredData,
                               cppbor::Array& recepientStructure, uint32_t& respFlag);
+    ScopedAStatus getDiceCertChain(std::vector<uint8_t>& diceCertChain);
+    ScopedAStatus getUdsCertsChain(std::vector<uint8_t>& udsCertsChain);
     std::shared_ptr<JavacardSecureElement> card_;
     CborConverter cbor_;
 };
