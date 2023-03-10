@@ -23,6 +23,7 @@ public class KMKeymintDataStore implements KMUpgradable {
   public static final short KM_APPLET_PACKAGE_VERSION_1 = 0x0100;
   public static final short KM_APPLET_PACKAGE_VERSION_2 = 0x0200;
   public static final short KM_APPLET_PACKAGE_VERSION_3 = 0x0300;
+  public static final short KM_APPLET_PACKAGE_VERSION_4 = 0x0400;
   public static final byte DATA_INDEX_SIZE = 17;
   public static final byte DATA_INDEX_ENTRY_SIZE = 4;
   public static final byte DATA_INDEX_ENTRY_LENGTH = 0;
@@ -66,8 +67,8 @@ public class KMKeymintDataStore implements KMUpgradable {
   private static final byte OLD_PROVISIONED_STATUS_OFFSET = 18;
   private static final byte SHARED_SECRET_KEY_SIZE = 32;
   private static final byte DEVICE_STATUS_FLAG_SIZE = 1;
-  private static final short ADDITIONAL_CERT_CHAIN_MAX_SIZE = 2500; // First 2 bytes for length.
-  private static final short BCC_MAX_SIZE = 512;
+  private static final short UDS_CERT_CHAIN_MAX_SIZE = 2500; // First 2 bytes for length.
+  private static final short DICE_CERT_CHAIN_MAX_SIZE = 512;
   private static KMKeymintDataStore kmDataStore;
   // Secure Boot Mode
   public byte secureBootMode;
@@ -77,6 +78,7 @@ public class KMKeymintDataStore implements KMUpgradable {
   private byte[] attIdProduct;
   private byte[] attIdSerial;
   private byte[] attIdImei;
+  private byte[] attIdSecondImei;
   private byte[] attIdMeId;
   private byte[] attIdManufacturer;
   private byte[] attIdModel;
@@ -88,14 +90,20 @@ public class KMKeymintDataStore implements KMUpgradable {
   private short bootState;
   // Challenge for Root of trust
   private byte[] challenge;
+
+  /*
+   * Applets upgrading to KeyMint3.0 may not have the second imei provisioned.
+   * So this flag is used to ignore the SECOND_IMEI tag if the previous Applet's
+   * KeyMint version is less than 3.0.
+   */
+  public boolean ignoreSecondImei;
   private short dataIndex;
   private byte[] dataTable;
   private KMSEProvider seProvider;
   private KMRepository repository;
-  private byte[] additionalCertChain;
-  private byte[] bcc;
+  private byte[] udsCertChain;
+  private byte[] diceCertChain;
   private KMKey masterKey;
-  private KMKey testDeviceUniqueKeyPair;
   private KMKey deviceUniqueKeyPair;
   private KMKey preSharedKey;
   private KMKey computedHmacKey;
@@ -110,8 +118,8 @@ public class KMKeymintDataStore implements KMUpgradable {
     initDataTable();
     // Initialize the device locked status
     if (!isUpgrading) {
-      additionalCertChain = new byte[ADDITIONAL_CERT_CHAIN_MAX_SIZE];
-      bcc = new byte[BCC_MAX_SIZE];
+      udsCertChain = new byte[UDS_CERT_CHAIN_MAX_SIZE];
+      diceCertChain = new byte[DICE_CERT_CHAIN_MAX_SIZE];
       oemRootPublicKey = new byte[65];
     }
     setDeviceLockPasswordOnly(false);
@@ -482,9 +490,9 @@ public class KMKeymintDataStore implements KMUpgradable {
     }
   }
 
-  public void persistAdditionalCertChain(byte[] buf, short offset, short len) {
-    // Input buffer contains encoded additional certificate chain as shown below.
-    //    AdditionalDKSignatures = {
+  public void persistUdsCertChain(byte[] buf, short offset, short len) {
+    // Input buffer contains encoded Uds certificate chain as shown below.
+    //    UdsDKSignatures = {
     //      + SignerName => DKCertChain
     //    }
     //    SignerName = tstr
@@ -493,34 +501,34 @@ public class KMKeymintDataStore implements KMUpgradable {
     //            // self-signed cert, leaf contains DK_pu b
     //    ]
     //    Certificate = COSE_Sign1 of a public key
-    if ((short) (len + 2) > ADDITIONAL_CERT_CHAIN_MAX_SIZE) {
+    if ((short) (len + 2) > UDS_CERT_CHAIN_MAX_SIZE) {
       KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
     }
     JCSystem.beginTransaction();
-    Util.setShort(additionalCertChain, (short) 0, (short) len);
-    Util.arrayCopyNonAtomic(buf, offset, additionalCertChain, (short) 2, len);
+    Util.setShort(udsCertChain, (short) 0, (short) len);
+    Util.arrayCopyNonAtomic(buf, offset, udsCertChain, (short) 2, len);
     JCSystem.commitTransaction();
   }
 
-  public short getAdditionalCertChainLength() {
-    return Util.getShort(additionalCertChain, (short) 0);
+  public short getUdsCertChainLength() {
+    return Util.getShort(udsCertChain, (short) 0);
   }
 
-  public byte[] getAdditionalCertChain() {
-    return additionalCertChain;
+  public byte[] getUdsCertChain() {
+    return udsCertChain;
   }
 
-  public byte[] getBootCertificateChain() {
-    return bcc;
+  public byte[] getDiceCertificateChain() {
+    return diceCertChain;
   }
 
   public void persistBootCertificateChain(byte[] buf, short offset, short len) {
-    if ((short) (len + 2) > BCC_MAX_SIZE) {
+    if ((short) (len + 2) > DICE_CERT_CHAIN_MAX_SIZE) {
       KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
     }
     JCSystem.beginTransaction();
-    Util.setShort(bcc, (short) 0, (short) len);
-    Util.arrayCopyNonAtomic(buf, offset, bcc, (short) 2, len);
+    Util.setShort(diceCertChain, (short) 0, (short) len);
+    Util.arrayCopyNonAtomic(buf, offset, diceCertChain, (short) 2, len);
     JCSystem.commitTransaction();
   }
 
@@ -579,30 +587,6 @@ public class KMKeymintDataStore implements KMUpgradable {
     return computedHmacKey;
   }
 
-  public KMKey createRkpTestDeviceUniqueKeyPair(
-      byte[] pubKey,
-      short pubKeyOff,
-      short pubKeyLen,
-      byte[] privKey,
-      short privKeyOff,
-      short privKeyLen) {
-    if (testDeviceUniqueKeyPair == null) {
-      testDeviceUniqueKeyPair =
-          seProvider.createRkpDeviceUniqueKeyPair(
-              testDeviceUniqueKeyPair,
-              pubKey,
-              pubKeyOff,
-              pubKeyLen,
-              privKey,
-              privKeyOff,
-              privKeyLen);
-    } else {
-      seProvider.createRkpDeviceUniqueKeyPair(
-          testDeviceUniqueKeyPair, pubKey, pubKeyOff, pubKeyLen, privKey, privKeyOff, privKeyLen);
-    }
-    return testDeviceUniqueKeyPair;
-  }
-
   public KMKey createRkpDeviceUniqueKeyPair(
       byte[] pubKey,
       short pubKeyOff,
@@ -621,8 +605,8 @@ public class KMKeymintDataStore implements KMUpgradable {
     return deviceUniqueKeyPair;
   }
 
-  public KMKey getRkpDeviceUniqueKeyPair(boolean testMode) {
-    return ((KMKey) (testMode ? testDeviceUniqueKeyPair : deviceUniqueKeyPair));
+  public KMKey getRkpDeviceUniqueKeyPair() {
+    return ((KMKey) deviceUniqueKeyPair);
   }
 
   public void createRkpMacKey(byte[] keydata, short offset, short length) {
@@ -663,6 +647,10 @@ public class KMKeymintDataStore implements KMUpgradable {
       case KMType.ATTESTATION_ID_IMEI:
         attestId = attIdImei;
         break;
+        // Attestation Id SECOND IMEI
+      case KMType.ATTESTATION_ID_SECOND_IMEI:
+        attestId = attIdSecondImei;
+        break;
         // Attestation Id MEID
       case KMType.ATTESTATION_ID_MEID:
         attestId = attIdMeId;
@@ -677,6 +665,12 @@ public class KMKeymintDataStore implements KMUpgradable {
         break;
     }
     if (attestId == null) {
+      /* Ignore the SECOND_IMEI tag if the previous Applet's KeyMint version is less than 3.0 and
+       * no SECOND_IMEI is provisioned.
+       */
+      if (kmDataStore.ignoreSecondImei && tag == KMType.ATTESTATION_ID_SECOND_IMEI) {
+        return (short) 0;
+      }
       KMException.throwIt(KMError.CANNOT_ATTEST_IDS);
     }
     Util.arrayCopyNonAtomic(attestId, (short) 0, buffer, start, (short) attestId.length);
@@ -720,6 +714,13 @@ public class KMKeymintDataStore implements KMUpgradable {
         Util.arrayCopyNonAtomic(buffer, (short) start, attIdImei, (short) 0, length);
         JCSystem.commitTransaction();
         break;
+        // Attestation Id SECOND IMEI
+      case KMType.ATTESTATION_ID_SECOND_IMEI:
+        JCSystem.beginTransaction();
+        attIdSecondImei = new byte[length];
+        Util.arrayCopyNonAtomic(buffer, (short) start, attIdSecondImei, (short) 0, length);
+        JCSystem.commitTransaction();
+        break;
         // Attestation Id MEID
       case KMType.ATTESTATION_ID_MEID:
         JCSystem.beginTransaction();
@@ -750,6 +751,7 @@ public class KMKeymintDataStore implements KMUpgradable {
     attIdProduct = null;
     attIdSerial = null;
     attIdImei = null;
+    attIdSecondImei = null;
     attIdMeId = null;
     attIdManufacturer = null;
     attIdModel = null;
@@ -796,7 +798,7 @@ public class KMKeymintDataStore implements KMUpgradable {
     if (verifiedHash == null) {
       verifiedHash = new byte[32];
     }
-    if (length != 32) {
+    if (length != KMKeymasterApplet.VERIFIED_BOOT_HASH_SIZE) {
       KMException.throwIt(KMError.UNKNOWN_ERROR);
     }
     Util.arrayCopy(buffer, start, verifiedHash, (short) 0, (short) 32);
@@ -806,7 +808,7 @@ public class KMKeymintDataStore implements KMUpgradable {
     if (bootKey == null) {
       bootKey = new byte[32];
     }
-    if (length != 32) {
+    if (length != KMKeymasterApplet.VERIFIED_BOOT_KEY_SIZE) {
       KMException.throwIt(KMError.UNKNOWN_ERROR);
     }
     Util.arrayCopy(buffer, start, bootKey, (short) 0, (short) 32);
@@ -889,17 +891,19 @@ public class KMKeymintDataStore implements KMUpgradable {
     // Prmitives
     element.write(provisionStatus);
     element.write(secureBootMode);
+    element.write(ignoreSecondImei);
     // Objects
     element.write(attIdBrand);
     element.write(attIdDevice);
     element.write(attIdProduct);
     element.write(attIdSerial);
     element.write(attIdImei);
+    element.write(attIdSecondImei);
     element.write(attIdMeId);
     element.write(attIdManufacturer);
     element.write(attIdModel);
-    element.write(additionalCertChain);
-    element.write(bcc);
+    element.write(udsCertChain);
+    element.write(diceCertChain);
     element.write(oemRootPublicKey);
 
     // Key Objects
@@ -913,20 +917,20 @@ public class KMKeymintDataStore implements KMUpgradable {
   @Override
   public void onRestore(Element element, short oldVersion, short currentVersion) {
     if (oldVersion <= KM_APPLET_PACKAGE_VERSION_1) {
-      // 1.0 to 3.1 Upgrade happens here.
+      // 1.0 to 4.0 Upgrade happens here.
       handlePreviousVersionUpgrade(element);
       return;
     } else if (oldVersion == KM_APPLET_PACKAGE_VERSION_2) {
       handleUpgrade(element, oldVersion);
       JCSystem.beginTransaction();
-      // While upgrading Secure Boot Mode flag from 2.0 to 3.0, implementations
+      // While upgrading Secure Boot Mode flag from 2.0 to 4.0, implementations
       // have to update the secureBootMode with the correct input.
       secureBootMode = 0;
       provisionStatus |= KMKeymasterApplet.PROVISION_STATUS_SECURE_BOOT_MODE;
       // Applet package Versions till 2 had CoseSign1 for additionalCertificateChain.
       // From package version 3, the additionalCertificateChain is in X.509 format.
       // So Unreference the old address and allocate new persistent memory.
-      additionalCertChain = new byte[ADDITIONAL_CERT_CHAIN_MAX_SIZE];
+      udsCertChain = new byte[UDS_CERT_CHAIN_MAX_SIZE];
       JCSystem.commitTransaction();
       // Request for ObjectDeletion for unreferenced address of additionalCertChain.
       JCSystem.requestObjectDeletion();
@@ -936,6 +940,8 @@ public class KMKeymintDataStore implements KMUpgradable {
   }
 
   private void handlePreviousVersionUpgrade(Element element) {
+    // set ignore Imei flag to true.
+    ignoreSecondImei = true;
     // Read Primitives
     // restore old data table index
     short oldDataIndex = element.readShort();
@@ -957,8 +963,8 @@ public class KMKeymintDataStore implements KMUpgradable {
     element.readObject(); // pop verifiedHash
     element.readObject(); // pop bootKey
     element.readObject(); // pop bootPatchLevel
-    additionalCertChain = (byte[]) element.readObject();
-    bcc = (byte[]) element.readObject();
+    udsCertChain = (byte[]) element.readObject();
+    diceCertChain = (byte[]) element.readObject();
 
     // Read Key Objects
     masterKey = (KMKey) seProvider.onRestore(element);
@@ -975,17 +981,28 @@ public class KMKeymintDataStore implements KMUpgradable {
     if (oldVersion >= KM_APPLET_PACKAGE_VERSION_3) {
       secureBootMode = element.readByte();
     }
+    /* check if KeyMint is upgrading from older HAL version to KM300
+     * and set the ignore second Imei flag
+     */
+    if (oldVersion < KM_APPLET_PACKAGE_VERSION_4) {
+      ignoreSecondImei = true;
+    } else {
+      ignoreSecondImei = element.readBoolean();
+    }
     // Read Objects
     attIdBrand = (byte[]) element.readObject();
     attIdDevice = (byte[]) element.readObject();
     attIdProduct = (byte[]) element.readObject();
     attIdSerial = (byte[]) element.readObject();
     attIdImei = (byte[]) element.readObject();
+    if (oldVersion >= KM_APPLET_PACKAGE_VERSION_4) {
+      attIdSecondImei = (byte[]) element.readObject();
+    }
     attIdMeId = (byte[]) element.readObject();
     attIdManufacturer = (byte[]) element.readObject();
     attIdModel = (byte[]) element.readObject();
-    additionalCertChain = (byte[]) element.readObject();
-    bcc = (byte[]) element.readObject();
+    udsCertChain = (byte[]) element.readObject();
+    diceCertChain = (byte[]) element.readObject();
     oemRootPublicKey = (byte[]) element.readObject();
     // Read Key Objects
     masterKey = (KMKey) seProvider.onRestore(element);
@@ -1018,7 +1035,7 @@ public class KMKeymintDataStore implements KMUpgradable {
     // Applet package Versions till 2 had CoseSign1 for additionalCertificateChain.
     // From package version 3, the additionalCertificateChain is in X.509 format.
     // So Unreference the old address and allocate new persistent memory.
-    additionalCertChain = new byte[ADDITIONAL_CERT_CHAIN_MAX_SIZE];
+    udsCertChain = new byte[UDS_CERT_CHAIN_MAX_SIZE];
     JCSystem.commitTransaction();
     repository.reclaimMemory((short) 2);
     // Request object deletion for unreferenced address for additionalCertChain
@@ -1029,8 +1046,9 @@ public class KMKeymintDataStore implements KMUpgradable {
   public short getBackupPrimitiveByteCount() {
     // provisionStatus - 2 bytes
     // secureBootMode - 1 byte
+    // Flag for ignore second Imei- 1 byte
     return (short)
-        (3
+        (4
             + seProvider.getBackupPrimitiveByteCount(KMDataStoreConstants.INTERFACE_TYPE_MASTER_KEY)
             + seProvider.getBackupPrimitiveByteCount(
                 KMDataStoreConstants.INTERFACE_TYPE_PRE_SHARED_KEY)
@@ -1042,12 +1060,12 @@ public class KMKeymintDataStore implements KMUpgradable {
 
   @Override
   public short getBackupObjectCount() {
-    // AttestationIds - 8
-    // AdditionalCertificateChain - 1
-    // BCC - 1
+    // AttestationIds - 9
+    // UdsCertificateChain - 1
+    // diceCertificateChain - 1
     // oemRootPublicKey - 1
     return (short)
-        (11
+        (12
             + seProvider.getBackupObjectCount(KMDataStoreConstants.INTERFACE_TYPE_MASTER_KEY)
             + seProvider.getBackupObjectCount(KMDataStoreConstants.INTERFACE_TYPE_PRE_SHARED_KEY)
             + seProvider.getBackupObjectCount(

@@ -59,7 +59,7 @@ public class KMPoolManager {
   // Uncompressed form
   static byte[] secp256r1_UCG;
   static byte[] secp256r1_N;
-  static final short secp256r1_H = 1;
+  static final byte secp256r1_H = 1;
   // --------------------------------------------------------------
 
   // Cipher pool
@@ -76,10 +76,8 @@ public class KMPoolManager {
   private Object[] keysPool;
   // RKP uses AESGCM and HMAC in generateCSR flow.
   KMOperation rkpOPeration;
-  Cipher rkpAesGcm;
-  Signature rkpHmac;
-  KMKeyObject rkpHmacKey;
-  KMKeyObject rkpAesKey;
+  Signature rkpEc;
+  KMKeyObject rkpEcKey;
 
   final byte[] KEY_ALGS = {
     AES_128, AES_256, KMType.DES, KMType.RSA, KMType.EC, KMType.HMAC,
@@ -210,10 +208,8 @@ public class KMPoolManager {
 
   private void initializeRKpObjects() {
     rkpOPeration = new KMOperationImpl();
-    rkpAesGcm = Cipher.getInstance(AEADCipher.ALG_AES_GCM, false);
-    rkpHmac = Signature.getInstance(Signature.ALG_HMAC_SHA_256, false);
-    rkpAesKey = createKeyObjectInstance(AES_256);
-    rkpHmacKey = createKeyObjectInstance(KMType.HMAC);
+    rkpEc = Signature.getInstance(Signature.ALG_ECDSA_SHA_256, false);
+    rkpEcKey = createKeyObjectInstance(KMType.EC);
   }
 
   private void initializeKeysPool() {
@@ -471,13 +467,9 @@ public class KMPoolManager {
     KMKeyObject keyObject = null;
 
     switch (alg) {
-      case AEADCipher.ALG_AES_GCM:
-        cryptoObj = rkpAesGcm;
-        keyObject = rkpAesKey;
-        break;
-      case Signature.ALG_HMAC_SHA_256:
-        cryptoObj = rkpHmac;
-        keyObject = rkpHmacKey;
+      case Signature.ALG_ECDSA_SHA_256:
+        cryptoObj = rkpEc;
+        keyObject = rkpEcKey;
         break;
       default:
         // Should not come here.

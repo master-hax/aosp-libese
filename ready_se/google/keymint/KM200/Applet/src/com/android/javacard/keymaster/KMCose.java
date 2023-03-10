@@ -68,13 +68,13 @@ public class KMCose {
   // AES GCM
   public static final short AES_GCM_KEY_SIZE_BITS = 256;
   // Cose key parameters.
-  public static final short COSE_KEY_KEY_TYPE = 1;
-  public static final short COSE_KEY_KEY_ID = 2;
-  public static final short COSE_KEY_ALGORITHM = 3;
-  public static final short COSE_KEY_CURVE = -1;
-  public static final short COSE_KEY_PUBKEY_X = -2;
-  public static final short COSE_KEY_PUBKEY_Y = -3;
-  public static final short COSE_KEY_PRIV_KEY = -4;
+  public static final byte COSE_KEY_KEY_TYPE = 1;
+  public static final byte COSE_KEY_KEY_ID = 2;
+  public static final byte COSE_KEY_ALGORITHM = 3;
+  public static final byte COSE_KEY_CURVE = -1;
+  public static final byte COSE_KEY_PUBKEY_X = -2;
+  public static final byte COSE_KEY_PUBKEY_Y = -3;
+  public static final byte COSE_KEY_PRIV_KEY = -4;
   public static final byte[] COSE_TEST_KEY = {
     (byte) 0xFF, (byte) 0xFE, (byte) 0xEE, (byte) 0x90
   }; // -70000
@@ -88,9 +88,6 @@ public class KMCose {
   public static final byte[] SIGNATURE1_CONTEXT = {
     0x53, 0x69, 0x67, 0x6E, 0x61, 0x74, 0x75, 0x72, 0x65, 0x31
   }; // Signature1
-  public static final byte[] ENCRYPT_CONTEXT = {
-    0x45, 0x6E, 0x63, 0x72, 0x79, 0x70, 0x74
-  }; // Encrypt
   // Certificate payload supported keys
   public static final byte ISSUER = (byte) 0x01;
   public static final byte SUBJECT = (byte) 0x02;
@@ -332,92 +329,6 @@ public class KMCose {
   }
 
   /**
-   * Construct Recipients structure for COSE_Encrypt message.
-   *
-   * @param protectedHeaders instance of KMByteBlob which contains encoded KMCoseHeaders.
-   * @param unprotectedHeaders instance of KMCoseHeaders.
-   * @param cipherText instance of KMSimple
-   * @return instance of KMArray.
-   */
-  public static short constructRecipientsStructure(
-      short protectedHeaders, short unprotectedHeaders, short cipherText) {
-    // recipients : [+COSE_recipient]
-    //  COSE_recipient = [
-    //       Headers,
-    //       ciphertext : bstr / nil,
-    //       ? recipients : [+COSE_recipient]
-    //   ]
-    short arrPtr = KMArray.instance(COSE_ENCRYPT_RECIPIENT_ENTRY_COUNT);
-    // 1 - protected headers
-    KMArray.cast(arrPtr).add((short) 0, protectedHeaders);
-    // 2 - unprotected headers
-    KMArray.cast(arrPtr).add((short) 1, unprotectedHeaders);
-    // 2 - payload
-    KMArray.cast(arrPtr).add((short) 2, cipherText);
-
-    short recipientsArrayPtr = KMArray.instance((short) 1);
-    KMArray.cast(recipientsArrayPtr).add((short) 0, arrPtr);
-    return recipientsArrayPtr;
-  }
-
-  /**
-   * Construct Encrypt structure required for COSE_Encrypt message.
-   *
-   * @param protectedHeader instance of KMByteBlob which wraps KMCoseHeaders.
-   * @param aad instance of KMByteBlob.
-   * @return instance of KMArray.
-   */
-  public static short constructCoseEncryptStructure(short protectedHeader, short aad) {
-    //  Enc_structure = [
-    //       context : "Encrypt" / "Encrypt0" / "Enc_Recipient" /
-    //           "Mac_Recipient" / "Rec_Recipient",
-    //       protected : empty_or_serialized_map,
-    //       external_aad : bstr
-    //   ]
-    short arrPtr = KMArray.instance(COSE_ENCRYPT_STRUCTURE_ENTRY_COUNT);
-    // 1 - protected headers
-    KMArray.cast(arrPtr)
-        .add(
-            (short) 0,
-            KMTextString.instance(
-                KMCose.ENCRYPT_CONTEXT, (short) 0, (short) KMCose.ENCRYPT_CONTEXT.length));
-    // 2 - unprotected headers
-    KMArray.cast(arrPtr).add((short) 1, protectedHeader);
-    // 2 - payload
-    KMArray.cast(arrPtr).add((short) 2, aad);
-    return arrPtr;
-  }
-
-  /**
-   * Constructs COSE_Encrypt message.
-   *
-   * @param protectedHeader instance of KMByteBlob which wraps KMCoseHeaders.
-   * @param unProtectedHeader instance of KMCoseHeaders.
-   * @param cipherText instance of KMByteBlob containing the cipher text.
-   * @param recipients instance of KMArray containing the recipients instance
-   * @return instance of KMArray.
-   */
-  public static short constructCoseEncrypt(
-      short protectedHeader, short unProtectedHeader, short cipherText, short recipients) {
-    // COSE_Encrypt = [
-    //      protectedHeader,
-    //      unprotectedHeader,
-    //       ciphertext : bstr / nil,
-    //       recipients : [+COSE_recipient]
-    //   ]
-    short arrPtr = KMArray.instance(KMCose.COSE_ENCRYPT_ENTRY_COUNT);
-    // 1 - protected headers
-    KMArray.cast(arrPtr).add((short) 0, protectedHeader);
-    // 2 - unprotected headers
-    KMArray.cast(arrPtr).add((short) 1, unProtectedHeader);
-    // 2 - payload
-    KMArray.cast(arrPtr).add((short) 2, cipherText);
-    // 3 - tag
-    KMArray.cast(arrPtr).add((short) 3, recipients);
-    return arrPtr;
-  }
-
-  /**
    * Constructs the instance of KMCosePair*Tag.
    *
    * @param key value of the key.
@@ -451,7 +362,7 @@ public class KMCose {
 
   /**
    * Constructs a CoseKey with the provided input parameters. Note that construction of the key_ops
-   * label is not needed to be supported. In the KeyMint2.0 specifications: The CoseKey inside
+   * label is not needed to be supported. In the KeyMint3.0 specifications: The CoseKey inside
    * MacedPublicKeys and DiceCertChain does not have key_ops label.
    *
    * @param keyType Instance of the identification of the key type.

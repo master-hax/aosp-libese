@@ -37,7 +37,7 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
   // between data before and after the magic number is used.
   private static final byte KM_MAGIC_NUMBER = (byte) 0x82;
   // MSB byte is for Major version and LSB byte is for Minor version.
-  public static final short KM_APPLET_PACKAGE_VERSION = 0x0301;
+  public static final short KM_APPLET_PACKAGE_VERSION = 0x0400;
   // This flag is used to know if card reset happened.
   private static final short POWER_RESET_MASK_FLAG = (short) 0x4000;
 
@@ -55,7 +55,7 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
   private static final byte INS_OEM_UNLOCK_PROVISIONING_CMD = INS_KEYMINT_PROVIDER_APDU_START + 12;
   private static final byte INS_PROVISION_RKP_DEVICE_UNIQUE_KEYPAIR_CMD =
       INS_KEYMINT_PROVIDER_APDU_START + 13;
-  private static final byte INS_PROVISION_RKP_ADDITIONAL_CERT_CHAIN_CMD =
+  private static final byte INS_PROVISION_RKP_UDS_CERT_CHAIN_CMD =
       INS_KEYMINT_PROVIDER_APDU_START + 14;
   private static final byte INS_PROVISION_PRESHARED_SECRET_CMD =
       INS_KEYMINT_PROVIDER_APDU_START + 15;
@@ -152,8 +152,8 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
             processProvisionRkpDeviceUniqueKeyPair(apdu);
             break;
 
-          case INS_PROVISION_RKP_ADDITIONAL_CERT_CHAIN_CMD:
-            processProvisionRkpAdditionalCertChain(apdu);
+          case INS_PROVISION_RKP_UDS_CERT_CHAIN_CMD:
+            processProvisionRkpUdsCertChain(apdu);
             break;
 
           case INS_SE_FACTORY_PROVISIONING_LOCK_CMD:
@@ -235,7 +235,7 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
         break;
 
       case INS_PROVISION_RKP_DEVICE_UNIQUE_KEYPAIR_CMD:
-      case INS_PROVISION_RKP_ADDITIONAL_CERT_CHAIN_CMD:
+      case INS_PROVISION_RKP_UDS_CERT_CHAIN_CMD:
         if (isSeFactoryProvisioningLocked()) {
           result = false;
         }
@@ -399,25 +399,28 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
     // Store the Device unique Key.
     kmDataStore.createRkpDeviceUniqueKeyPair(
         scratchPad, (short) 0, pubKeyLen, scratchPad, pubKeyLen, privKeyLen);
-    short bcc = generateBcc(false, scratchPad);
-    short len = KMKeymasterApplet.encodeToApduBuffer(bcc, scratchPad, (short) 0, MAX_COSE_BUF_SIZE);
+    short dcc = generateDiceCertChain(scratchPad);
+    short len = KMKeymasterApplet.encodeToApduBuffer(dcc, scratchPad, (short) 0, MAX_COSE_BUF_SIZE);
     kmDataStore.persistBootCertificateChain(scratchPad, (short) 0, len);
     kmDataStore.setProvisionStatus(PROVISION_STATUS_DEVICE_UNIQUE_KEYPAIR);
     sendResponse(apdu, KMError.OK);
   }
 
-  private void processProvisionRkpAdditionalCertChain(APDU apdu) {
+  private void processProvisionRkpUdsCertChain(APDU apdu) {
     // X509 certificate chain is received as shown below:
     /**
      * x509CertChain = bstr .cbor UdsCerts
      *
-     * <p>AdditionalDKSignatures = { * SignerName => DKCertChain } ; SignerName is a string
-     * identifier that indicates both the signing authority as ; well as the format of the
-     * DKCertChain SignerName = tstr
+     * <p>UdsCerts = { * SignerName => UdsCertChain }
      *
-     * <p>DKCertChain = [ 2* X509Certificate ; Root -> ... -> Leaf. "Root" is the vendor self-signed
-     * ; cert, "Leaf" contains DK_pub. There may also be ; intermediate certificates between Root
-     * and Leaf. ] ; A bstr containing a DER-encoded X.509 certificate (RSA, NIST P-curve, or edDSA)
+     * <p>; SignerName is a string identifier that indicates both the signing authority as ; well as
+     * the format of the UdsCertChain SignerName = tstr
+     *
+     * <p>UdsCertChain = [ 2* X509Certificate ; Root -> ... -> Leaf. "Root" is the vendor
+     * self-signed ; cert, "Leaf" contains UDS_Public. There may also be ; intermediate certificates
+     * between Root and Leaf. ]
+     *
+     * <p>; A bstr containing a DER-encoded X.509 certificate (RSA, NIST P-curve, or EdDSA)
      * X509Certificate = bstr
      */
     // Store the cbor encoded UdsCerts as it is in the persistent memory so cbor decoding is
@@ -437,11 +440,11 @@ public class KMAndroidSEApplet extends KMKeymasterApplet implements OnUpgradeLis
     }
     short byteHeaderLen =
         decoder.readCertificateChainHeaderLen(buffer, bufferStartOffset, bufferLength);
-    kmDataStore.persistAdditionalCertChain(
+    kmDataStore.persistUdsCertChain(
         buffer,
         (short) (bufferStartOffset + byteHeaderLen),
         (short) (bufferLength - byteHeaderLen));
-    kmDataStore.setProvisionStatus(PROVISION_STATUS_ADDITIONAL_CERT_CHAIN);
+    kmDataStore.setProvisionStatus(PROVISION_STATUS_UDS_CERT_CHAIN);
     // reclaim memory
     repository.reclaimMemory(bufferLength);
     sendResponse(apdu, KMError.OK);
