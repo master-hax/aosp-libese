@@ -96,6 +96,7 @@ public class KMAttestationCertImpl implements KMAttestationCert {
   // Below are the allowed hardwareEnforced Authorization tags inside the attestation certificate's
   // extension.
   private static final short[] hwTagIds = {
+    KMType.ATTESTATION_ID_SECOND_IMEI,
     KMType.BOOT_PATCH_LEVEL,
     KMType.VENDOR_PATCH_LEVEL,
     KMType.ATTESTATION_ID_MODEL,
@@ -133,9 +134,9 @@ public class KMAttestationCertImpl implements KMAttestationCert {
   private static final byte keyUsageKeyAgreement = (byte) 0x08; // 4th- bit
   private static final byte keyUsageCertSign = (byte) 0x04; // 5th- bit
   // KeyMint HAL Version constant.
-  private static final short KEYMINT_VERSION = 200;
+  private static final short KEYMINT_VERSION = 300;
   // Attestation version constant.
-  private static final short ATTESTATION_VERSION = 200;
+  private static final short ATTESTATION_VERSION = 300;
   // The X.509 version as per rfc5280#section-4.1.2.1
   private static final byte X509_VERSION = (byte) 0x02;
 

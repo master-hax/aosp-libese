@@ -285,6 +285,8 @@ public abstract class KMType {
   public static final short ATTESTATION_ID_SERIAL = (short) 0x02C9;
   // Attestation Id IMEI
   public static final short ATTESTATION_ID_IMEI = (short) 0x02CA;
+  // Attestation Id SECOND IMEI
+  public static final short ATTESTATION_ID_SECOND_IMEI = (short) 0x02D3;
   // Attestation Id MEID
   public static final short ATTESTATION_ID_MEID = (short) 0x02CB;
   // Attestation Id Manufacturer
@@ -306,7 +308,7 @@ public abstract class KMType {
 
   public static final byte NO_VALUE = (byte) 0xff;
   // Support Curves for Eek Chain validation.
-  public static final byte RKP_CURVE_P256 = 1;
+  public static final byte RKP_CURVE_NONE = 0;
   // Type offsets.
   public static final byte KM_TYPE_BASE_OFFSET = 0;
   public static final byte KM_ARRAY_OFFSET = KM_TYPE_BASE_OFFSET;
