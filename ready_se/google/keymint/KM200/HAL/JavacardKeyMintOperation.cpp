@@ -121,9 +121,11 @@ ScopedAStatus JavacardKeyMintOperation::abort() {
 void JavacardKeyMintOperation::blockAlign(DataView& view, uint16_t blockSize) {
     appendBufferedData(view);
     uint16_t offset = getDataViewOffset(view, blockSize);
-    if (view.buffer.empty() && !view.data.empty()) {
+    if (view.buffer.empty() && view.data.empty()) {
+        offset = 0;
+    } else if (view.buffer.empty()) {
         buffer_.insert(buffer_.end(), view.data.begin() + offset, view.data.end());
-    } else if (view.data.empty() && !view.buffer.empty()) {
+    } else if (view.data.empty()) {
         buffer_.insert(buffer_.end(), view.buffer.begin() + offset, view.buffer.end());
     } else {
         if (offset < view.buffer.size()) {
