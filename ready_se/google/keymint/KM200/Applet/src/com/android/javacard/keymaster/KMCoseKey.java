@@ -26,7 +26,7 @@ import javacard.framework.Util;
  * KMInteger and the supported value types are KMInteger, KMNInteger, KMByteBlob, KMSimpleValue. It
  * corresponds to a CBOR Map type. struct{byte TAG_TYPE; short length; short arrayPtr } where
  * arrayPtr is a pointer to array with any KMTag subtype instances. Note that construction of the
- * key_ops label is not needed to be supported. In the KeyMint2.0 specifications: The CoseKey inside
+ * key_ops label is not needed to be supported. In the KeyMint3.0 specifications: The CoseKey inside
  * MacedPublicKeys and DiceCertChain does not have key_ops label.
  */
 public class KMCoseKey extends KMCoseMap {
@@ -185,7 +185,7 @@ public class KMCoseKey extends KMCoseMap {
 
   /**
    * Verifies the KMCoseKey values against the input values. Note that construction of the key_ops
-   * label is not needed to be supported. In the KeyMint2.0 specifications: The CoseKey inside
+   * label is not needed to be supported. In the KeyMint3.0 specifications: The CoseKey inside
    * MacedPublicKeys and DiceCertChain does not have key_ops label.
    *
    * @param keyType value of the key type

@@ -828,37 +828,19 @@ public class KMAndroidSEProvider implements KMSEProvider {
       byte digest,
       byte padding,
       byte blockMode,
-      byte[] keyBuf,
-      short keyStart,
-      short keyLength,
+      KMKey keyPair,
       byte[] ivBuf,
       short ivStart,
       short ivLength,
       short macLength) {
     KMOperation opr = null;
     switch (alg) {
-      case KMType.AES:
-        // Convert macLength to bytes
-        macLength = (short) (macLength / 8);
-        opr =
-            createSymmetricCipher(
-                alg,
-                purpose,
-                macLength,
-                blockMode,
-                padding,
-                keyBuf,
-                keyStart,
-                keyLength,
-                ivBuf,
-                ivStart,
-                ivLength,
-                true /* isRKP */);
-        break;
-      case KMType.HMAC:
-        opr =
-            createHmacSignerVerifier(
-                purpose, digest, keyBuf, keyStart, keyLength, true /* isRKP */);
+      case KMType.EC:
+        // get EC private key buffer
+        ECPrivateKey ecPrivKey =
+            (ECPrivateKey) ((KMECDeviceUniqueKeyPair) keyPair).ecKeyPair.getPrivate();
+        short ecPrivKeyLen = ecPrivKey.getS(tmpArray, (short) 0);
+        opr = createEcSigner(digest, tmpArray, (short) 0, ecPrivKeyLen, true /* isRKP */);
         break;
       default:
         CryptoException.throwIt(CryptoException.NO_SUCH_ALGORITHM);
@@ -1026,18 +1008,30 @@ public class KMAndroidSEProvider implements KMSEProvider {
   }
 
   public KMOperation createEcSigner(
-      short digest, byte[] secret, short secretStart, short secretLength) {
+      short digest, byte[] secret, short secretStart, short secretLength, boolean isRkp) {
+    KMOperation operation = null;
     byte alg = mapSignature256Alg(KMType.EC, (byte) 0, (byte) digest);
-    KMOperation operation =
-        poolMgr.getOperationImpl(
-            KMType.SIGN,
-            alg,
-            KMType.EC,
-            KMType.INVALID_VALUE,
-            KMType.INVALID_VALUE,
-            KMType.INVALID_VALUE,
-            secretLength,
-            false);
+    if (isRkp) {
+      operation =
+          poolMgr.getRKpOperation(
+              KMType.SIGN,
+              Signature.ALG_ECDSA_SHA_256,
+              KMType.EC,
+              KMType.INVALID_VALUE,
+              KMType.INVALID_VALUE,
+              KMType.INVALID_VALUE);
+    } else {
+      operation =
+          poolMgr.getOperationImpl(
+              KMType.SIGN,
+              alg,
+              KMType.EC,
+              KMType.INVALID_VALUE,
+              KMType.INVALID_VALUE,
+              KMType.INVALID_VALUE,
+              secretLength,
+              false);
+    }
     KMKeyObject keyObj = operation.getKeyObject();
     ECPrivateKey key = (ECPrivateKey) ((KeyPair) (keyObj.keyObjectInst)).getPrivate();
     key.setS(secret, secretStart, secretLength);
@@ -1110,7 +1104,7 @@ public class KMAndroidSEProvider implements KMSEProvider {
     } else if (alg == KMType.EC) {
       switch (purpose) {
         case KMType.SIGN:
-          opr = createEcSigner(digest, privKeyBuf, privKeyStart, privKeyLength);
+          opr = createEcSigner(digest, privKeyBuf, privKeyStart, privKeyLength, false);
           break;
 
         case KMType.AGREE_KEY:
