@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19725415_2eb0ea2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-03-14T19:40:06Z",
+      "side": 1,
+      "message": "Verified with Venkat.",
+      "revId": "ee23096c0c2bcc42fb1fc3a99f4cc1266d0a9579",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
