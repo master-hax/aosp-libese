@@ -31,8 +31,12 @@ ScopedAStatus JavacardSharedSecret::getSharedSecretParameters(SharedSecretParame
 ScopedAStatus
 JavacardSharedSecret::computeSharedSecret(const std::vector<SharedSecretParameters>& params,
                                           std::vector<uint8_t>* secret) {
-
-    auto error = card_->sendEarlyBootEndedEvent(false);
+    auto error = card_->sendDeleteAllKeysEvent(false);
+    if (error != KM_ERROR_OK) {
+        LOG(ERROR) << "Error in sending deleteAllKeys event javacard.";
+        return keymint::km_utils::kmError2ScopedAStatus(error);
+    }
+    error = card_->sendEarlyBootEndedEvent(false);
     if (error != KM_ERROR_OK) {
         LOG(ERROR) << "Error in sending earlyBoot event javacard.";
         return keymint::km_utils::kmError2ScopedAStatus(error);

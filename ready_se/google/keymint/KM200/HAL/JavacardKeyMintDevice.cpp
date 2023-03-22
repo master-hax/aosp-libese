@@ -90,6 +90,11 @@ ScopedAStatus JavacardKeyMintDevice::generateKey(const vector<KeyParameter>& key
     cbor_.addKeyparameters(array, keyParams);
     // add attestation key if any
     cbor_.addAttestationKey(array, attestationKey);
+    // Send deleteAllKeys if there is any pending deleteAllKeys event.
+    auto retErr = card_->sendDeleteAllKeysEvent(false);
+    if (retErr != KM_ERROR_OK) {
+        return km_utils::kmError2ScopedAStatus(retErr);
+    }
     auto [item, err] = card_->sendRequest(Instruction::INS_GENERATE_KEY_CMD, array);
     if (err != KM_ERROR_OK) {
         LOG(ERROR) << "Error in sending generateKey.";
@@ -271,9 +276,9 @@ ScopedAStatus JavacardKeyMintDevice::deleteKey(const vector<uint8_t>& keyBlob) {
 }
 
 ScopedAStatus JavacardKeyMintDevice::deleteAllKeys() {
-    auto [item, err] = card_->sendRequest(Instruction::INS_DELETE_ALL_KEYS_CMD);
+    auto err = card_->sendDeleteAllKeysEvent(true);
     if (err != KM_ERROR_OK) {
-        LOG(ERROR) << "Error in sending in deleteAllKeys.";
+        LOG(ERROR) << "Error in sending deleteAllKeys.";
         return km_utils::kmError2ScopedAStatus(err);
     }
     return ScopedAStatus::ok();
@@ -302,11 +307,15 @@ ScopedAStatus JavacardKeyMintDevice::begin(KeyPurpose purpose, const std::vector
     HardwareAuthToken token = authToken.value_or(HardwareAuthToken());
     cbor_.addHardwareAuthToken(array, token);
 
-    // Send earlyBootEnded if there is any pending earlybootEnded event.
-    auto retErr = card_->sendEarlyBootEndedEvent(false);
+    // Send deleteAllKeys if there is any pending deleteAllKeys event.
+    auto retErr = card_->sendDeleteAllKeysEvent(false);
     if (retErr != KM_ERROR_OK) {
         return km_utils::kmError2ScopedAStatus(retErr);
-        ;
+    }
+    // Send earlyBootEnded if there is any pending earlybootEnded event.
+    retErr = card_->sendEarlyBootEndedEvent(false);
+    if (retErr != KM_ERROR_OK) {
+        return km_utils::kmError2ScopedAStatus(retErr);
     }
 
     auto [item, err] = card_->sendRequest(Instruction::INS_BEGIN_OPERATION_CMD, array);
@@ -365,6 +374,11 @@ ScopedAStatus JavacardKeyMintDevice::getKeyCharacteristics(
     request.add(vector<uint8_t>(keyBlob));
     request.add(vector<uint8_t>(appId));
     request.add(vector<uint8_t>(appData));
+    // Send deleteAllKeys if there is any pending deleteAllKeys event.
+    auto retErr = card_->sendDeleteAllKeysEvent(false);
+    if (retErr != KM_ERROR_OK) {
+        return km_utils::kmError2ScopedAStatus(retErr);
+    }
     auto [item, err] = card_->sendRequest(Instruction::INS_GET_KEY_CHARACTERISTICS_CMD, request);
     if (err != KM_ERROR_OK) {
         LOG(ERROR) << "Error in sending in getKeyCharacteristics.";
