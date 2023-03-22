@@ -42,19 +42,32 @@ keymaster_error_t JavacardSecureElement::initializeJavacard() {
     return err;
 }
 
-keymaster_error_t JavacardSecureElement::sendEarlyBootEndedEvent(bool eventTriggered) {
-    isEarlyBootEventPending |= eventTriggered;
-    if (!isEarlyBootEventPending) {
+keymaster_error_t JavacardSecureElement::sendEarlyBootEndedIfPending(bool eventTriggered) {
+    auto ret =
+        sendEvent(Instruction::INS_EARLY_BOOT_ENDED_CMD, &isEarlyBootEventPending, eventTriggered);
+    if (ret != KM_ERROR_OK) {
+        LOG(ERROR) << "Error in sending earlyBootEnded.";
+    }
+    return ret;
+}
+
+keymaster_error_t JavacardSecureElement::sendEvent(Instruction ins, bool* eventPending,
+                                                   bool eventTriggered) {
+    if (!(eventTriggered || *eventPending)) {
         return KM_ERROR_OK;
     }
-    auto [item, err] = sendRequest(Instruction::INS_EARLY_BOOT_ENDED_CMD);
-    if (err != KM_ERROR_OK) {
-        // Incase of failure cache the event and send in the next immediate request to Applet.
-        isEarlyBootEventPending = true;
-        return err;
+    auto [_, err] = sendRequest(ins);
+    *eventPending = (err != KM_ERROR_OK);
+    return err;
+}
+
+keymaster_error_t JavacardSecureElement::sendDeleteAllKeysIfPending(bool eventTriggered) {
+    auto ret = sendEvent(Instruction::INS_DELETE_ALL_KEYS_CMD, &isDeleteAllKeysEventPending,
+                         eventTriggered);
+    if (ret != KM_ERROR_OK) {
+        LOG(ERROR) << "Error in sending deleteAllKeys.";
     }
-    isEarlyBootEventPending = false;
-    return KM_ERROR_OK;
+    return ret;
 }
 
 keymaster_error_t JavacardSecureElement::constructApduMessage(Instruction& ins,
