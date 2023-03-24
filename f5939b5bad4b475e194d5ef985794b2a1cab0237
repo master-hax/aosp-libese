@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8984c420_7974a997",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-24T22:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "998ec73a_14484137",
+      "revId": "f5939b5bad4b475e194d5ef985794b2a1cab0237",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eff524e0_c98e9e6b",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-03-24T04:31:42Z",
       "side": 1,
       "message": "CoseEncrypt is not used in RKPV3 please once check and update the comments . Also check other comments as well.",
+      "range": {
+        "startLine": 615,
+        "startChar": 25,
+        "endLine": 615,
+        "endChar": 36
+      },
+      "revId": "f5939b5bad4b475e194d5ef985794b2a1cab0237",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3404def6_3bf8ae3c",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-24T22:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eff524e0_c98e9e6b",
       "range": {
         "startLine": 615,
         "startChar": 25,
@@ -58,6 +100,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9eadde48_af5b0591",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-24T22:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c5d64bb_0d095108",
+      "revId": "f5939b5bad4b475e194d5ef985794b2a1cab0237",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf1280b2_9735f8e7",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-03-24T04:31:42Z",
       "side": 1,
       "message": "remove acc",
+      "revId": "f5939b5bad4b475e194d5ef985794b2a1cab0237",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6719c849_777eaf6e",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-24T22:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf1280b2_9735f8e7",
       "revId": "f5939b5bad4b475e194d5ef985794b2a1cab0237",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
