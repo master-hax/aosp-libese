@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c0e9f4c_fea86e58",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMCoseKey.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "No longer exists, right?",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dedd7005_becb4f36",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2657,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "Nit: Wrap lines at 100 cols.",
+      "range": {
+        "startLine": 2657,
+        "startChar": 8,
+        "endLine": 2657,
+        "endChar": 93
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9cc17cd_e3de480a",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymintDataStore.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "Nit: Trailing whitespace.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 2
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9976c95_65e81d38",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "Nit: A lot of these inline comments simply restate what the code right below them does.  Treat inline comments as a code smell.  If they\u0027re necessary, it\u0027s an indication that the code should be improved in some way.  Taking this one for example, it can just be deleted. The variable name `versionLength` clearly expresses that it\u0027s the version length, so the comment contributes nothing and creates a potential for mismatch between comment and code. Better to just delete it and let the reader read the code.",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 52
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c448ccf_e7a3420a",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "This comment is a good example of the problem:  It\u0027s wrong.  The following line doesn\u0027t calculate the certificate type, it gets the length of the certificate type.",
+      "range": {
+        "startLine": 345,
+        "startChar": 5,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cba8e69_c440b270",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T19:14:45Z",
+      "side": 1,
+      "message": "These comments that describe a block of actions are more justifiable, but in many cases they also can be removed if you replace the block with a well-named method call, or maybe add some variables you can name to clarify, etc.\n\nOf course in the case of JavaCard code there may be good arguments for not refactoring into a method called from only one place, because of code size increase -- though ideally the compiler would notice the single usage of a private method and just inline it.",
+      "range": {
+        "startLine": 407,
+        "startChar": 4,
+        "endLine": 407,
+        "endChar": 34
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
