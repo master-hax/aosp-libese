@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eddd0083_22b56fc8",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardRemotelyProvisionedComponentDevice.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-03-29T18:41:30Z",
+      "side": 1,
+      "message": "V2 keys aren\u0027t MACed.  Shouldn\u0027t this method name be updated?",
+      "revId": "5ad7f0b2a939a1c5dde7165f2f3fed6002d67b5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
