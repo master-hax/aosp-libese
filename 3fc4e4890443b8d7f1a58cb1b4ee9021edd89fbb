@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7c252845_2c17c5f0",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMCoseKey.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:08:43Z",
+      "side": 1,
+      "message": "V2 API generateCertificateRequestV2() also uses MacedPublicKey.\nhttps://cs.android.com/android/platform/superproject/+/master:hardware/interfaces/security/rkp/aidl/android/hardware/security/keymint/IRemotelyProvisionedComponent.aidl;l\u003d310",
+      "parentUuid": "1c0e9f4c_fea86e58",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dedd7005_becb4f36",
         "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
         "patchSetId": 2
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-29T19:14:45Z",
       "side": 1,
       "message": "Nit: Wrap lines at 100 cols.",
+      "range": {
+        "startLine": 2657,
+        "startChar": 8,
+        "endLine": 2657,
+        "endChar": 93
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfb35e5e_394f31ca",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMKeymasterApplet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2657,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:08:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dedd7005_becb4f36",
       "range": {
         "startLine": 2657,
         "startChar": 8,
@@ -95,6 +143,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5022b1b6_fa05ad5f",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:08:43Z",
+      "side": 1,
+      "message": "Removed unnecessary comments.",
+      "parentUuid": "c9976c95_65e81d38",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 52
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4c448ccf_e7a3420a",
         "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
         "patchSetId": 2
@@ -118,6 +190,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "550705a2_9f518afb",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:08:43Z",
+      "side": 1,
+      "message": "Removed unnecessary comments.",
+      "parentUuid": "4c448ccf_e7a3420a",
+      "range": {
+        "startLine": 345,
+        "startChar": 5,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0cba8e69_c440b270",
         "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
         "patchSetId": 2
@@ -129,6 +225,30 @@
       "writtenOn": "2023-03-29T19:14:45Z",
       "side": 1,
       "message": "These comments that describe a block of actions are more justifiable, but in many cases they also can be removed if you replace the block with a well-named method call, or maybe add some variables you can name to clarify, etc.\n\nOf course in the case of JavaCard code there may be good arguments for not refactoring into a method called from only one place, because of code size increase -- though ideally the compiler would notice the single usage of a private method and just inline it.",
+      "range": {
+        "startLine": 407,
+        "startChar": 4,
+        "endLine": 407,
+        "endChar": 34
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37a891bb_10378e00",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:08:43Z",
+      "side": 1,
+      "message": "constructCoseSignStructure() is a common method which is used in multiple places, which can construct a full or parital Cose Sig_Strcuture. Partial construction only happens here so added comment rather than a separate function.",
+      "parentUuid": "0cba8e69_c440b270",
       "range": {
         "startLine": 407,
         "startChar": 4,
