@@ -16,6 +16,24 @@
       "message": "V2 keys aren\u0027t MACed.  Shouldn\u0027t this method name be updated?",
       "revId": "5ad7f0b2a939a1c5dde7165f2f3fed6002d67b5c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5c870bf_307249b1",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardRemotelyProvisionedComponentDevice.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-03-30T03:44:07Z",
+      "side": 1,
+      "message": "The API generateCertificateRequestV2() also uses MacedPublicKey.\nhttps://cs.android.com/android/platform/superproject/+/master:hardware/interfaces/security/rkp/aidl/android/hardware/security/keymint/IRemotelyProvisionedComponent.aidl;l\u003d310",
+      "parentUuid": "eddd0083_22b56fc8",
+      "revId": "5ad7f0b2a939a1c5dde7165f2f3fed6002d67b5c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
