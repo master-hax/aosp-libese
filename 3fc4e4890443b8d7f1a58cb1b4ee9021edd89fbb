@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f6671e3_c83bb4e1",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMCoseKey.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-04T16:07:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7c252845_2c17c5f0",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dedd7005_becb4f36",
@@ -189,6 +213,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48a48755_d95a0e4b",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-04T16:07:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5022b1b6_fa05ad5f",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 52
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c448ccf_e7a3420a",
@@ -236,6 +284,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1851d44e_6b84d805",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-04T16:07:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "550705a2_9f518afb",
+      "range": {
+        "startLine": 345,
+        "startChar": 5,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0cba8e69_c440b270",
@@ -273,6 +345,30 @@
       "side": 1,
       "message": "constructCoseSignStructure() is a common method which is used in multiple places, which can construct a full or parital Cose Sig_Strcuture. Partial construction only happens here so added comment rather than a separate function.",
       "parentUuid": "0cba8e69_c440b270",
+      "range": {
+        "startLine": 407,
+        "startChar": 4,
+        "endLine": 407,
+        "endChar": 34
+      },
+      "revId": "3fc4e4890443b8d7f1a58cb1b4ee9021edd89fbb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89dab619_372fe4b0",
+        "filename": "ready_se/google/keymint/KM200/Applet/src/com/android/javacard/keymaster/KMRemotelyProvisionedComponentDevice.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-04T16:07:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "37a891bb_10378e00",
       "range": {
         "startLine": 407,
         "startChar": 4,
