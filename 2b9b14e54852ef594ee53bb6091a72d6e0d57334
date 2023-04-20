@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "343075f1_e0ecb943",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-20T15:20:36Z",
+      "side": 1,
+      "message": "If you rename this to `sendDeleteAllKeysIfPending` you can eliminate the comment (inline comments are a code smell).",
+      "range": {
+        "startLine": 94,
+        "startChar": 25,
+        "endLine": 94,
+        "endChar": 47
+      },
+      "revId": "2b9b14e54852ef594ee53bb6091a72d6e0d57334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cd1e173_f72087e4",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-20T15:20:36Z",
+      "side": 1,
+      "message": "What is false?  At minimum add an /* eventTriggered */ comment to specify the argument name.",
+      "range": {
+        "startLine": 94,
+        "startChar": 48,
+        "endLine": 94,
+        "endChar": 53
+      },
+      "revId": "2b9b14e54852ef594ee53bb6091a72d6e0d57334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f31b96ce_1ff57231",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardKeyMintDevice.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-20T15:20:36Z",
+      "side": 1,
+      "message": "Why log only in this case?\n\nI think it would be beter to log in `sendDeleteAllKeysEvent`, then you log in all cases without cluttering the calling code.",
+      "range": {
+        "startLine": 296,
+        "startChar": 5,
+        "endLine": 296,
+        "endChar": 56
+      },
+      "revId": "2b9b14e54852ef594ee53bb6091a72d6e0d57334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad25c86e_2764fe71",
+        "filename": "ready_se/google/keymint/KM200/HAL/JavacardSecureElement.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-04-20T15:20:36Z",
+      "side": 1,
+      "message": "Non-const references are bad, and violate the C++ style guide.\n\nIf you want a mutable argument, pass a pointer.",
+      "range": {
+        "startLine": 49,
+        "startChar": 72,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "2b9b14e54852ef594ee53bb6091a72d6e0d57334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
