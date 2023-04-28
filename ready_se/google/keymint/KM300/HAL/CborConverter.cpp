@@ -104,13 +104,13 @@ bool CborConverter::addKeyparameters(Array& array, const vector<KeyParameter>& k
         }
         case KM_UINT:
             if (param.value.getTag() == KeyParameterValue::integer) {
-                auto intVal = param.value.get<KeyParameterValue::integer>();
+                uint32_t intVal = param.value.get<KeyParameterValue::integer>();
                 map.add(static_cast<uint64_t>(tag), intVal);
             }
             break;
         case KM_UINT_REP:
             if (param.value.getTag() == KeyParameterValue::integer) {
-                auto intVal = param.value.get<KeyParameterValue::integer>();
+                uint32_t intVal = param.value.get<KeyParameterValue::integer>();
                 uint_repetition[static_cast<uint64_t>(tag)].add(intVal);
             }
             break;
@@ -123,19 +123,19 @@ bool CborConverter::addKeyparameters(Array& array, const vector<KeyParameter>& k
         }
         case KM_ULONG:
             if (param.value.getTag() == KeyParameterValue::longInteger) {
-                auto longVal = param.value.get<KeyParameterValue::longInteger>();
+                uint64_t longVal = param.value.get<KeyParameterValue::longInteger>();
                 map.add(static_cast<uint64_t>(tag), longVal);
             }
             break;
         case KM_ULONG_REP:
             if (param.value.getTag() == KeyParameterValue::longInteger) {
-                auto longVal = param.value.get<KeyParameterValue::longInteger>();
+                uint64_t longVal = param.value.get<KeyParameterValue::longInteger>();
                 uint_repetition[static_cast<uint64_t>(tag & 0x00000000ffffffff)].add(longVal);
             }
             break;
         case KM_DATE:
             if (param.value.getTag() == KeyParameterValue::dateTime) {
-                auto dateVal = param.value.get<KeyParameterValue::dateTime>();
+                uint64_t dateVal = param.value.get<KeyParameterValue::dateTime>();
                 map.add(static_cast<uint64_t>(tag), dateVal);
             }
             break;
