@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c336c5e8_631e6986",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-02T20:56:40Z",
+      "side": 1,
+      "message": "Why this mask?",
+      "range": {
+        "startLine": 133,
+        "startChar": 54,
+        "endLine": 133,
+        "endChar": 78
+      },
+      "revId": "5c8cce20c91e6cc20872f9a8dd43502c7c713912",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
