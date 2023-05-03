@@ -22,6 +22,30 @@
       },
       "revId": "5c8cce20c91e6cc20872f9a8dd43502c7c713912",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bb5bc95_568a48db",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-05-03T19:30:41Z",
+      "side": 1,
+      "message": "I think this mask is used to extract the lower 32 bits of the \u0027tag\u0027 variable and cast the result to an \u0027uint64_t\u0027. Without applying this mask the sign bit of the \u0027tag\u0027 will be extended and results in a value with the most significant 32 bits set to 1 after casting to uint64_t. \nTo avoid this problem it is good to cast to uint32_t as the integer type of the Tag is int32_t.",
+      "parentUuid": "c336c5e8_631e6986",
+      "range": {
+        "startLine": 133,
+        "startChar": 54,
+        "endLine": 133,
+        "endChar": 78
+      },
+      "revId": "5c8cce20c91e6cc20872f9a8dd43502c7c713912",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
