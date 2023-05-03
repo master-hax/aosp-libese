@@ -44,9 +44,7 @@ public class KMUtils {
   public static final byte[] fourYrsMsec = {
     0, 0, 0, 0x1D, 0x63, (byte) 0xEB, 0x0C, 0x00
   }; // 126230400000
-  public static final byte[] firstJan2020 = {
-    0, 0, 0x01, 0x6F, 0x5E, 0x66, (byte) 0xE8, 0x00
-  }; // 1577836800000 msec
+  public static final byte[] firstJan1970 = {0, 0, 0, 0, 0, 0, 0, 0};
   public static final byte[] firstJan2050 = {
     0, 0, 0x02, 0x4b, (byte) 0xCE, 0x5C, (byte) 0xF0, 0x00
   }; // 2524608000000
@@ -64,7 +62,7 @@ public class KMUtils {
     0, 0, 0, 0, (byte) 0x9A, 0x7E, (byte) 0xC8, 0x00
   }; // 2592000000
   public static final short year2051 = 2051;
-  public static final short year2020 = 2020;
+  public static final short year1970 = 1970;
   // Convert to milliseconds constants
   public static final byte[] SEC_TO_MILLIS_SHIFT_POS = {9, 8, 7, 6, 5, 3};
 
@@ -78,7 +76,7 @@ public class KMUtils {
     short mmCount = 0;
     short ssCount = 0;
     byte Z = 0x5A;
-    boolean from2020 = true;
+    boolean from1970 = true;
     Util.arrayFillNonAtomic(scratchPad, (short) 0, (short) 256, (byte) 0);
     Util.arrayCopyNonAtomic(
         KMInteger.cast(time).getBuffer(),
@@ -86,9 +84,9 @@ public class KMUtils {
         scratchPad,
         (short) (8 - KMInteger.cast(time).length()),
         KMInteger.cast(time).length());
-    // If the time is less then 1 Jan 2020 then it is an error
+    // If the time is less then 1 Jan 1970 then it is an error
     if (KMInteger.unsignedByteArrayCompare(
-            scratchPad, (short) 0, firstJan2020, (short) 0, (short) 8)
+            scratchPad, (short) 0, firstJan1970, (short) 0, (short) 8)
         < 0) {
       KMException.throwIt(KMError.INVALID_ARGUMENT);
     }
@@ -102,11 +100,11 @@ public class KMUtils {
     if (KMInteger.unsignedByteArrayCompare(
             scratchPad, (short) 0, firstJan2050, (short) 0, (short) 8)
         < 0) {
-      Util.arrayCopyNonAtomic(firstJan2020, (short) 0, scratchPad, (short) 8, (short) 8);
+      Util.arrayCopyNonAtomic(firstJan1970, (short) 0, scratchPad, (short) 8, (short) 8);
       subtract(scratchPad, (short) 0, (short) 8, (short) 16, (byte) 8);
       Util.arrayCopyNonAtomic(scratchPad, (short) 16, scratchPad, (short) 0, (short) 8);
     } else {
-      from2020 = false;
+      from1970 = false;
       Util.arrayCopyNonAtomic(firstJan2050, (short) 0, scratchPad, (short) 8, (short) 8);
       subtract(scratchPad, (short) 0, (short) 8, (short) 16, (byte) 8);
       Util.arrayCopyNonAtomic(scratchPad, (short) 16, scratchPad, (short) 0, (short) 8);
@@ -123,7 +121,7 @@ public class KMUtils {
     }
 
     // Get the leap year index starting from the (base Year + yrsCount) Year.
-    short leapYrIdx = getLeapYrIndex(from2020, yrsCount);
+    short leapYrIdx = getLeapYrIndex(from1970, yrsCount);
 
     // if leap year index is 0, then the number of days for the 1st year will be 366 days.
     // if leap year index is not 0, then the number of days for the 1st year will be 365 days.
@@ -161,8 +159,8 @@ public class KMUtils {
     }
 
     // total yrs from 1970
-    if (from2020) {
-      yrsCount = (short) (year2020 + yrsCount);
+    if (from1970) {
+      yrsCount = (short) (year1970 + yrsCount);
     } else {
       yrsCount = (short) (year2051 + yrsCount);
     }
@@ -403,8 +401,8 @@ public class KMUtils {
     return false;
   }
 
-  public static short getLeapYrIndex(boolean from2020, short yrsCount) {
-    short newBaseYr = (short) (from2020 ? (year2020 + yrsCount) : (year2051 + yrsCount));
+  public static short getLeapYrIndex(boolean from1970, short yrsCount) {
+    short newBaseYr = (short) (from1970 ? (year1970 + yrsCount) : (year2051 + yrsCount));
     for (short i = 0; i < 4; i++) {
       if (isLeapYear((short) (newBaseYr + i))) {
         return i;
