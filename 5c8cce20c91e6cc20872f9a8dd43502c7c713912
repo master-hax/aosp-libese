@@ -46,6 +46,30 @@
       },
       "revId": "5c8cce20c91e6cc20872f9a8dd43502c7c713912",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c7ca5d4_ec129579",
+        "filename": "ready_se/google/keymint/KM200/HAL/CborConverter.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-10T19:30:42Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7bb5bc95_568a48db",
+      "range": {
+        "startLine": 133,
+        "startChar": 54,
+        "endLine": 133,
+        "endChar": 78
+      },
+      "revId": "5c8cce20c91e6cc20872f9a8dd43502c7c713912",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
