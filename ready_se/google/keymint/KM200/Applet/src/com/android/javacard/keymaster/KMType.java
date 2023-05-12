@@ -16,6 +16,7 @@
 
 package com.android.javacard.keymaster;
 
+import com.android.javacard.seprovider.KMSEProvider;
 import javacard.framework.ISO7816;
 import javacard.framework.ISOException;
 import javacard.framework.JCSystem;
@@ -367,13 +368,15 @@ public abstract class KMType {
   public static final byte INSTANCE_TABLE_SIZE = 30;
   protected static final byte TLV_HEADER_SIZE = 3;
   protected static KMRepository repository;
+  protected static KMSEProvider seProvider;
   protected static byte[] heap;
   protected static short[] instanceTable;
 
-  public static void initialize() {
+  public static void initialize(KMSEProvider provider) {
     instanceTable = JCSystem.makeTransientShortArray(INSTANCE_TABLE_SIZE, JCSystem.CLEAR_ON_RESET);
     KMType.repository = KMRepository.instance();
     KMType.heap = repository.getHeap();
+    seProvider = provider;
   }
 
   public static byte getType(short ptr) {

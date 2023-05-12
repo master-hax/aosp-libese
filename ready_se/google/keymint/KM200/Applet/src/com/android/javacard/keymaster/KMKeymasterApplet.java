@@ -339,7 +339,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
     boolean isUpgrading = seProvider.isUpgrading();
     repository = new KMRepository(isUpgrading);
     encoder = new KMEncoder();
-    decoder = new KMDecoder();
+    decoder = new KMDecoder(seImpl);
     kmDataStore = new KMKeymintDataStore(seProvider, repository);
     data = JCSystem.makeTransientShortArray(DATA_ARRAY_SIZE, JCSystem.CLEAR_ON_DESELECT);
     tmpVariables =
@@ -354,7 +354,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
       opTable[index] = new KMOperationState();
       index++;
     }
-    KMType.initialize();
+    KMType.initialize(seProvider);
     if (!isUpgrading) {
       kmDataStore.createMasterKey(MASTER_KEY_SIZE);
     }
@@ -3043,10 +3043,14 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
       // Increment the counter.
       Util.arrayFillNonAtomic(scratchPad, scratchPadOff, len, (byte) 0);
       Util.setShort(scratchPad, (short) (scratchPadOff + 2), (short) 1);
-      KMUtils.add(
+      seProvider.add(
           scratchPad,
           scratchPadOff,
+          (short) 8,
+          scratchPad,
           (short) (scratchPadOff + len),
+          (short) 8,
+          scratchPad,
           (short) (scratchPadOff + len * 2));
 
       kmDataStore.setRateLimitedKeyCount(
@@ -5084,7 +5088,8 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
         KMInteger.cast(timeStamp).length());
 
     // add authTime in millis to timestamp.
-    KMUtils.add(scratchPad, (short) 0, (short) 8, (short) 16);
+    seProvider.add(
+        scratchPad, (short) 0, (short) 8, scratchPad, (short) 8, (short) 8, scratchPad, (short) 16);
     return KMInteger.uint_64(scratchPad, (short) 16);
   }
 

@@ -779,4 +779,91 @@ public interface KMSEProvider {
    * @return An instance of the KMRkpMacKey.
    */
   KMKey createRkpMacKey(KMKey createComputedHmacKey, byte[] keyData, short offset, short length);
+
+  /**
+   * Converts given time in milliseconds to UTC or Generalized time format. if the input time in
+   * millis is before 2050 then UTCTime is used and is expressed as 'YYMMDDHHMMSSZ', where as if the
+   * input time greater than or equal to 2050 then GeneralizedTime is used and is expressed as
+   * 'YYYYMMDDHHMMSSZ'.
+   *
+   * @param time is the buffer containing the input time in milliseconds
+   * @param timeOff is the start of the buffer.
+   * @param timeLen is the length of the buffer.
+   * @param output is the output buffer where the converted time is copied.
+   * @param outputOff is the offset of the output buffer
+   * @return length of the UTCTime or GeneralizedTime
+   */
+  short convertToDate(byte[] time, short timeOff, short timeLen, byte[] output, short outputOff);
+
+  /**
+   * Converts a given time in seconds to milliseconds.
+   *
+   * @param time is the buffer containing the input time in seconds
+   * @param timeOff is the start of the buffer.
+   * @param timeLen is the length of the buffer.
+   * @param output is the output buffer where the converted time is copied.
+   * @param outputOff is the offset of the output buffer
+   * @return length of the output buffer.
+   */
+  short convertToMilliseconds(
+      byte[] time, short timeOff, short timeLen, byte[] output, short outputOff);
+
+  /**
+   * Calculates the Temporal count value as specified in the KeyMint Specification.
+   *
+   * @param time is the buffer containing the input time in milliseconds
+   * @param timeOff is the start of the buffer.
+   * @param timeLen is the length of the buffer.
+   * @return temporal count value
+   */
+  short countTemporalCount(byte[] time, short timeOff, short timeLen);
+
+  /**
+   * Adds two byte arrays and copies into the output buffer. The output
+   * buffer length must be 8 bytes.
+   *
+   * @param buf1 buffer containing first value.
+   * @param offset1 offset of the first buffer.
+   * @param len1 length of the first buffer.
+   * @param buf2 buffer containing second value.
+   * @param offset2 offset of the second buffer.
+   * @param len2 length of the second buffer.
+   * @param output is the output buffer where final result is copied.
+   * @param outputOff is the offset of the output buffer.
+   * @return length of the output buffer.
+   */
+  short add(
+      byte[] buf1,
+      short offset1,
+      short len1,
+      byte[] buf2,
+      short offset2,
+      short len2,
+      byte[] output,
+      short outputOff);
+
+  /**
+   * Subtract two byte arrays and copies into the output buffer.
+   *
+   * @param buf1 buffer containing first value.
+   * @param offset1 offset of the first buffer.
+   * @param len1 length of the first buffer.
+   * @param buf2 buffer containing second value.
+   * @param offset2 offset of the second buffer.
+   * @param len2 length of the second buffer.
+   * @param output is the output buffer where final result is copied.
+   * @param outputOff is the offset of the output buffer.
+   * @param typeSize highest value type size of the two operands(1 or 2 or 4 or 8)
+   * @return length of the output buffer.
+   */
+  short subtract(
+      byte[] buf1,
+      short offset1,
+      short len1,
+      byte[] buf2,
+      short offset2,
+      short len2,
+      byte[] output,
+      short outputOff,
+      byte typeSize);
 }

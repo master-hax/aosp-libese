@@ -1575,4 +1575,104 @@ public class KMAndroidSEProvider implements KMSEProvider {
   public void clearDeviceBooted(boolean resetBootFlag) {
     // To be filled
   }
+
+  @Override
+  public short convertToDate(
+      byte[] time, short timeOff, short timeLen, byte[] output, short outputOff) {
+    try {
+      if (timeLen > 8) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      short len = KMUtils.instance().convertToDate(time, timeOff, timeLen, tmpArray);
+      Util.arrayCopyNonAtomic(tmpArray, (short) 0, output, outputOff, len);
+      return len;
+    } finally {
+      clean();
+    }
+  }
+
+  @Override
+  public short convertToMilliseconds(
+      byte[] time, short timeOff, short timeLen, byte[] output, short outputOff) {
+    try {
+      if (timeLen > 8) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      short len = KMUtils.instance().convertToMilliseconds(time, timeOff, timeLen, tmpArray);
+      Util.arrayCopyNonAtomic(tmpArray, (short) 0, output, outputOff, len);
+      return len;
+    } finally {
+      clean();
+    }
+  }
+
+  @Override
+  public short countTemporalCount(byte[] time, short timeOff, short timeLen) {
+    try {
+      if (timeLen > 8) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      return KMUtils.instance().countTemporalCount(time, timeOff, timeLen, tmpArray);
+    } finally {
+      clean();
+    }
+  }
+
+  @Override
+  public short add(
+      byte[] buf1,
+      short offset1,
+      short len1,
+      byte[] buf2,
+      short offset2,
+      short len2,
+      byte[] output,
+      short outputOff) {
+    try {
+      if (len1 > 8 || len2 > 8) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      short op1 = (short) (KMUtils.UINT8 - len1);
+      short op2 = (short) (2 * KMUtils.UINT8 - len2);
+      short resultOff = (short) (2 * KMUtils.UINT8);
+      Util.arrayCopyNonAtomic(buf1, offset1, tmpArray, op1, len1);
+      Util.arrayCopyNonAtomic(buf2, offset2, tmpArray, op2, len2);
+      KMUtils.instance().add(tmpArray, op1, op2, resultOff);
+      Util.arrayCopyNonAtomic(tmpArray, resultOff, output, outputOff, KMUtils.UINT8);
+      return KMUtils.UINT8;
+    } finally {
+      clean();
+    }
+  }
+
+  @Override
+  public short subtract(
+      byte[] buf1,
+      short offset1,
+      short len1,
+      byte[] buf2,
+      short offset2,
+      short len2,
+      byte[] output,
+      short outputOff,
+      byte typeSize) {
+    try {
+      if (typeSize != 1 && typeSize != 2 && typeSize != 4 && typeSize != 8) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      if (len1 > typeSize || len2 > typeSize) {
+        KMException.throwIt(KMError.INVALID_INPUT_LENGTH);
+      }
+      short op1 = (short) (typeSize - len1);
+      short op2 = (short) (2 * typeSize - len2);
+      short resultOff = (short) (2 * typeSize);
+      Util.arrayCopyNonAtomic(buf1, offset1, tmpArray, op1, len1);
+      Util.arrayCopyNonAtomic(buf2, offset2, tmpArray, op2, len2);
+      KMUtils.instance().subtract(tmpArray, op1, op2, resultOff, typeSize);
+      Util.arrayCopyNonAtomic(tmpArray, resultOff, output, outputOff, typeSize);
+      return typeSize;
+    } finally {
+      clean();
+    }
+  }
 }

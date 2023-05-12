@@ -17,6 +17,7 @@
 package com.android.javacard.keymaster;
 
 import com.android.javacard.seprovider.KMException;
+import com.android.javacard.seprovider.KMSEProvider;
 import javacard.framework.ISO7816;
 import javacard.framework.ISOException;
 import javacard.framework.JCSystem;
@@ -55,14 +56,16 @@ public class KMDecoder {
   private static final byte TAG_KEY_OFFSET = 4;
   private Object[] bufferRef;
   private short[] scratchBuf;
+  private KMSEProvider seProvider;
 
-  public KMDecoder() {
+  public KMDecoder(KMSEProvider provider) {
     bufferRef = JCSystem.makeTransientObjectArray((short) 1, JCSystem.CLEAR_ON_RESET);
     scratchBuf = JCSystem.makeTransientShortArray(SCRATCH_BUF_SIZE, JCSystem.CLEAR_ON_RESET);
     bufferRef[0] = null;
     scratchBuf[START_OFFSET] = (short) 0;
     scratchBuf[LEN_OFFSET] = (short) 0;
     scratchBuf[TAG_KEY_OFFSET] = (short) 0;
+    seProvider = provider;
   }
 
   public short decode(short expression, byte[] buffer, short startOff, short length) {
@@ -638,8 +641,16 @@ public class KMDecoder {
       short offset = KMByteBlob.cast(scratchpad).getStartOff();
       Util.arrayFillNonAtomic(input, offset, len, (byte) -1);
       Util.arrayCopyNonAtomic(buf, startOffset, input, (short) (offset + len), len);
-      KMUtils.subtract(
-          input, offset, (short) (offset + len), (short) (offset + 2 * len), (byte) len);
+      seProvider.subtract(
+          input,
+          offset,
+          len,
+          input,
+          (short) (offset + len),
+          len,
+          input,
+          (short) (offset + 2 * len),
+          (byte) len);
       inst = KMNInteger.instance(input, (short) (offset + 2 * len), len);
       incrementStartOff(len);
     }

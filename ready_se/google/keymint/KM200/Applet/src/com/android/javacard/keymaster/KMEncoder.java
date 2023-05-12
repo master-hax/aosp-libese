@@ -465,7 +465,7 @@ public class KMEncoder {
     // For int and long values the len and offset values are always proper.
     // int - 4 bytes
     // long - 8 bytes.
-    KMUtils.computeOnesCompliment(buf, correctedOffset, correctedLen);
+    computeOnesCompliment(buf, correctedOffset, correctedLen);
   }
 
   // Encoding rule for negative Integers is taken from
@@ -772,6 +772,15 @@ public class KMEncoder {
     scratchBuf[START_OFFSET] += inc;
     if (scratchBuf[START_OFFSET] >= scratchBuf[LEN_OFFSET]) {
       ISOException.throwIt(ISO7816.SW_DATA_INVALID);
+    }
+  }
+
+  public static void computeOnesCompliment(byte[] buf, short offset, short len) {
+    short index = offset;
+    // Compute 1s compliment
+    while (index < (short) (len + offset)) {
+      buf[index] = (byte) ~buf[index];
+      index++;
     }
   }
 }

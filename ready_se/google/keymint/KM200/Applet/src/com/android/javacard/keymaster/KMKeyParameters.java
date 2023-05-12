@@ -419,7 +419,8 @@ public class KMKeyParameters extends KMType {
         scratchPad,
         (short) (offset + 8 - KMInteger.cast(authTime).length()),
         KMInteger.cast(authTime).length());
-    KMUtils.convertToMilliseconds(scratchPad, offset, (short) (offset + 8), (short) (offset + 16));
+    seProvider.convertToMilliseconds(
+        scratchPad, offset, (short) (offset + 8), scratchPad, (short) (offset + 16));
     return KMIntegerTag.instance(
         KMType.ULONG_TAG,
         KMType.AUTH_TIMEOUT_MILLIS,
