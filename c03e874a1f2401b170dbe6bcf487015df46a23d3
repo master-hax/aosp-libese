@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0d6cc10_c6f622e6",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1639,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-16T20:14:05Z",
+      "side": 1,
+      "message": "Is it really necessary to make copies before you can pass them to KMUtils.add()?",
+      "range": {
+        "startLine": 1638,
+        "startChar": 0,
+        "endLine": 1639,
+        "endChar": 66
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b96e48a9_02eb9285",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-16T20:14:05Z",
+      "side": 1,
+      "message": "In what format?  Big-endian, little-endian, CBOR, something else?",
+      "range": {
+        "startLine": 789,
+        "startChar": 12,
+        "endLine": 789,
+        "endChar": 72
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfdd9d3a_275fcd52",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-16T20:14:05Z",
+      "side": 1,
+      "message": "In what part?  Is this referring to the Tag::UNIQUE_ID temporal counter?",
+      "range": {
+        "startLine": 812,
+        "startChar": 54,
+        "endLine": 812,
+        "endChar": 83
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5e9bc77_1bac350e",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-05-16T20:14:05Z",
+      "side": 1,
+      "message": "Adds how? Numerically, I\u0027m guessing? What is the assumed representation in the buffers? More detail would be helpful.",
+      "range": {
+        "startLine": 822,
+        "startChar": 4,
+        "endLine": 822,
+        "endChar": 25
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
