@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d6e5039_0bed2302",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMAndroidSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1639,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-05-17T16:54:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0d6cc10_c6f622e6",
+      "range": {
+        "startLine": 1638,
+        "startChar": 0,
+        "endLine": 1639,
+        "endChar": 66
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b96e48a9_02eb9285",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-05-16T20:14:05Z",
       "side": 1,
       "message": "In what format?  Big-endian, little-endian, CBOR, something else?",
+      "range": {
+        "startLine": 789,
+        "startChar": 12,
+        "endLine": 789,
+        "endChar": 72
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac86b320_b1cc030d",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-05-17T16:54:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b96e48a9_02eb9285",
       "range": {
         "startLine": 789,
         "startChar": 12,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d792feda_811ab774",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-05-17T16:54:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfdd9d3a_275fcd52",
+      "range": {
+        "startLine": 812,
+        "startChar": 54,
+        "endLine": 812,
+        "endChar": 83
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5e9bc77_1bac350e",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-05-16T20:14:05Z",
       "side": 1,
       "message": "Adds how? Numerically, I\u0027m guessing? What is the assumed representation in the buffers? More detail would be helpful.",
+      "range": {
+        "startLine": 822,
+        "startChar": 4,
+        "endLine": 822,
+        "endChar": 25
+      },
+      "revId": "c03e874a1f2401b170dbe6bcf487015df46a23d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2deb6fb_cb220c85",
+        "filename": "ready_se/google/keymint/KM200/Applet/AndroidSEProviderLib/src/com/android/javacard/seprovider/KMSEProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-05-17T16:54:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5e9bc77_1bac350e",
       "range": {
         "startLine": 822,
         "startChar": 4,
