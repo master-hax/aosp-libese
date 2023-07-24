@@ -152,28 +152,24 @@ class CoreSlots implements Slots {
                 return Consts.READ_BACK_OFF;
             }
 
+            mFailureCount += 1;
+            // Start the timer on a failure
+            if (throttle(sRemainingBackoff, (short) 0, mFailureCount)) {
+                mBackoffTimer.startTimer(
+                        sRemainingBackoff, (short) 0, DSTimer.DST_POWEROFFMODE_FALLBACK);
+            } else {
+                mBackoffTimer.stopTimer();
+            }
+
             // Check the key matches in constant time and copy out the value if it does
             final byte result = (Util.arrayCompare(
                     keyBuffer, keyOffset, mKey, (short) 0, Consts.SLOT_KEY_BYTES) == 0) ?
                     Consts.READ_SUCCESS : Consts.READ_WRONG_KEY;
 
             // Keep track of the number of failures
-            if (result == Consts.READ_WRONG_KEY) {
-                if (mFailureCount != 0x7fff) {
-                    mFailureCount += 1;
-                }
-            } else {
+            if (result == Consts.READ_SUCCESS) {
                 // This read was successful so reset the failures
-                if (mFailureCount != 0) { // attempt to maintain constant time
-                    mFailureCount = 0;
-                }
-            }
-
-            // Start the timer on a failure
-            if (throttle(sRemainingBackoff, (short) 0, mFailureCount)) {
-                mBackoffTimer.startTimer(
-                        sRemainingBackoff, (short) 0, DSTimer.DST_POWEROFFMODE_FALLBACK);
-            } else {
+                mFailureCount = 0;
                 mBackoffTimer.stopTimer();
             }
 
