@@ -177,8 +177,11 @@ class CoreSlots implements Slots {
                 mBackoffTimer.stopTimer();
             }
 
-            final byte[] data = (result == Consts.READ_SUCCESS) ? mValue : sRemainingBackoff;
-            Util.arrayCopyNonAtomic(data, (short) 0, outBuffer, outOffset, Consts.SLOT_VALUE_BYTES);
+            if (result == Consts.READ_SUCCESS) {
+                Util.arrayCopyNonAtomic(mValue, (short) 0, outBuffer, outOffset, Consts.SLOT_VALUE_BYTES);
+            } else {
+                Util.arrayCopyNonAtomic(sRemainingBackoff, (short) 0, outBuffer, outOffset, (byte) 4);
+            }
 
             return result;
         }
