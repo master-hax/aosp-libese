@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6d56d40_6e5c9a26",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-07-25T16:16:07Z",
+      "side": 1,
+      "message": "It\u0027s been a while since I\u0027ve looked at this code so I\u0027ll need a little more help to understand the problem. `sRemainingBackoff` is created with a length of `Consts.SLOT_VALUE_BYTES` here so I didn\u0027t follow why there wouldn\u0027t be anything copied.",
+      "revId": "1c238125980131d6ece9749e630c2828e16e16d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
