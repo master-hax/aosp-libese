@@ -133,6 +133,11 @@ class CoreSlots implements Slots {
             JCSystem.commitTransaction();
         }
 
+        private boolean isRemainingBackOffEmpty() {
+            return (0 == Util.getShort(sRemainingBackoff, (short) 0) &&
+                    0 == Util.getShort(sRemainingBackoff, (short) 2));
+        }
+
         /**
          * Copy the slot's value to the buffer if the provided key matches the slot's key.
          *
@@ -145,15 +150,14 @@ class CoreSlots implements Slots {
         public byte read(byte[] keyBuffer, short keyOffset, byte[] outBuffer, short outOffset) {
             // Check timeout has expired or hasn't been started
             mBackoffTimer.getRemainingTime(sRemainingBackoff, (short) 0);
-            if (sRemainingBackoff[0] != 0 || sRemainingBackoff[1] != 0 ||
-                  sRemainingBackoff[2] != 0 || sRemainingBackoff[3] != 0) {
+            if (!isRemainingBackOffEmpty()) {
                 Util.arrayCopyNonAtomic(
                         sRemainingBackoff, (short) 0, outBuffer, outOffset, (byte) 4);
                 return Consts.READ_BACK_OFF;
             }
 
             // Check the key matches in constant time and copy out the value if it does
-            final byte result = (Util.arrayCompare(
+            byte result = (Util.arrayCompare(
                     keyBuffer, keyOffset, mKey, (short) 0, Consts.SLOT_KEY_BYTES) == 0) ?
                     Consts.READ_SUCCESS : Consts.READ_WRONG_KEY;
 
@@ -175,6 +179,9 @@ class CoreSlots implements Slots {
                         sRemainingBackoff, (short) 0, DSTimer.DST_POWEROFFMODE_FALLBACK);
             } else {
                 mBackoffTimer.stopTimer();
+            }
+            if (!isRemainingBackOffEmpty()) {
+                result = Consts.READ_BACK_OFF;
             }
 
             final byte[] data = (result == Consts.READ_SUCCESS) ? mValue : sRemainingBackoff;
