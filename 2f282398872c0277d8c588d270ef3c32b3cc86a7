@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "712a8980_13c27438",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-07-26T16:31:30Z",
+      "side": 1,
+      "message": "nit: I like the named helper but \"empty\" doesn\u0027t feel like quite the right word for something that is logically and integer. Maybe something like `hasRemainingBackOff()`?",
+      "revId": "2f282398872c0277d8c588d270ef3c32b3cc86a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28f2ce82_f431f1a1",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-07-26T16:31:30Z",
+      "side": 1,
+      "message": "Can you just set `result \u003d Consts.READ_BACK_OFF` in this branch rather than needing to test again afterwards?",
+      "revId": "2f282398872c0277d8c588d270ef3c32b3cc86a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
