@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8277bcaa_fb8afe2a",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-07-27T16:35:26Z",
+      "side": 1,
+      "message": "You\u0027ll also need to invert the logic with that name change. Currently, `hasRemainingBackOff()` is only true when the backoff is `0`.",
+      "parentUuid": "3d353fc1_0e4ace1b",
+      "revId": "2f282398872c0277d8c588d270ef3c32b3cc86a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28f2ce82_f431f1a1",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 2
