@@ -72,6 +72,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cd5bf6e_16739ac2",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-07-27T21:57:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d0f1944_b6ff0a23",
+      "revId": "2f282398872c0277d8c588d270ef3c32b3cc86a7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28f2ce82_f431f1a1",
