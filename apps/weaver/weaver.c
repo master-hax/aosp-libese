@@ -344,7 +344,6 @@ ESE_API EseAppResult ese_weaver_read(struct EseWeaverSession *session,
   // wrong key
   if (appletStatus == READ_WRONG_KEY) {
     ALOGI("ese_weaver_read wrong key provided");
-    *timeout = get_uint32(value) * millisInSecond;
     return ESE_WEAVER_READ_WRONG_KEY;
   }
   // backoff
