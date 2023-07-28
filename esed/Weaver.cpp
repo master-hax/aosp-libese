@@ -144,7 +144,7 @@ Return<void> Weaver::read(uint32_t slotId, const hidl_vec<uint8_t>& key, read_cb
             break;
         case ESE_WEAVER_READ_WRONG_KEY:
             status = WeaverReadStatus::INCORRECT_KEY;
-            value.resize(0);
+            timeout = 0;
             break;
         case ESE_WEAVER_READ_TIMEOUT:
             status = WeaverReadStatus::THROTTLE;
