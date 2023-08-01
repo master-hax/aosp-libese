@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7468867e_62d82546",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-08-01T13:15:12Z",
+      "side": 1,
+      "message": "nit: this is a change for security rather than optimisation?",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73cdd4f3_399ec13a",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-08-01T13:15:12Z",
+      "side": 1,
+      "message": "Is there a concern with the constant time compare? If not, could the result of the compare be used to increment `mFailureCount` by 1 or 0?",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 64
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
