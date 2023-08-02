@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c3d8fecc_257f7a6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-02T07:20:49Z",
+      "side": 1,
+      "message": "Thanks for your advice, I modified the title of this change.",
+      "parentUuid": "7468867e_62d82546",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73cdd4f3_399ec13a",
         "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
         "patchSetId": 6
@@ -37,6 +61,30 @@
       "writtenOn": "2023-08-01T13:15:12Z",
       "side": 1,
       "message": "Is there a concern with the constant time compare? If not, could the result of the compare be used to increment `mFailureCount` by 1 or 0?",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 64
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f893a37_a4de6124",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-02T07:20:49Z",
+      "side": 1,
+      "message": "Do you mean to try to ensure that in both cases, the running time of the code should be constant time?I\u0027m not sure if my understanding is correct, if so, I made a modification, you can see if it is more suitable.\n\nAnd there is another problem. I think result needs to be Consts.READ_WRONG_KEY by default while increasing the number of failures. When throttle returns true, set it to Consts.READ_BACK_OFF. Please review it. The purpose is to be consistent with change 2674855.\n\nThanks very much",
+      "parentUuid": "73cdd4f3_399ec13a",
       "range": {
         "startLine": 173,
         "startChar": 19,
