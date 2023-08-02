@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7b4ba16_14ddefce",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-08-02T13:57:13Z",
+      "side": 1,
+      "message": "I\u0027m not sure we need to worry at this point as handling of the failure has already happened and the secret values aren\u0027t being touched any more so a side channel won\u0027t reveal anything useful any more.",
+      "revId": "b5cc238e9d8d43f99efa41c5e7cb5fcc98d5e933",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

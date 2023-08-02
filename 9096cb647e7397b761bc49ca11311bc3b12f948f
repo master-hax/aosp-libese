@@ -93,6 +93,30 @@
       },
       "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8bac384_75186148",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1139038
+      },
+      "writtenOn": "2023-08-02T13:57:13Z",
+      "side": 1,
+      "message": "I\u0027m rusty on the javacard APIs so I\u0027m adding a reviewers who will have more context. I was asking whether the comparison, failure count update and timer starting can all be done in constant time. However, the generic javacard docs don\u0027t seem to be making any guarantees about constant time which would mean it depends on the implementation.\n\nWith this change, any attempt is treated as a failure until it proves to be successful so all probing attempts will throttle.\n\nThere still might need to be some changes to ensure the comparison is constant time so that probing attacks can\u0027t side channel the comparison, even if those will be throttled?",
+      "parentUuid": "8f893a37_a4de6124",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 64
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
