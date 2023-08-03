@@ -138,6 +138,17 @@ class CoreSlots implements Slots {
                 (0 != Util.getShort(sRemainingBackoff, (short) 2)));
         }
 
+        private byte timeSafeArrayCompare(byte[] src, short srcOff, byte[] dest, short destOff, short length) {
+            byte rc = 0;
+            for (short i = 0; i < length; ++i) {
+                rc = (byte)(rc | (src[(short) (srcOff + i)] ^ dest[(short) (destOff + i)]));
+            }
+            rc = (byte)((rc >> 4) | (rc & 0x0F));
+            rc = (byte)((rc >> 2) | (rc & 0x03));
+            rc = (byte)((rc >> 1) | (rc & 0x01));
+            return rc;
+        }
+
         /**
          * Copy the slot's value to the buffer if the provided key matches the slot's key.
          *
@@ -172,7 +183,7 @@ class CoreSlots implements Slots {
             }
 
             // Check the key matches in constant time and copy out the value if it does
-            result = (Util.arrayCompare(
+            result = (timeSafeArrayCompare(
                     keyBuffer, keyOffset, mKey, (short) 0, Consts.SLOT_KEY_BYTES) == 0) ?
                     Consts.READ_SUCCESS : result;
 
