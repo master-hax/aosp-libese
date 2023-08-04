@@ -22,6 +22,30 @@
       },
       "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "873c378d_3e8f6d8c",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-08-04T19:10:34Z",
+      "side": 1,
+      "message": "FYI\n[docs.oracle.com/Util.arrayCompare](https://docs.oracle.com/javacard/3.0.5/api/javacard/framework/Util.html#arrayCompare(byte[],%20short,%20byte[],%20short,%20short))\nIn the JavaCard API specification, there\u0027s no mention of the underlying implementation needing to be constant time for `Util.arrayCompare`. Thus, we can infer that the method need not abide by constant or equal time principles.",
+      "parentUuid": "55e1a8ab_1cd986b1",
+      "range": {
+        "startLine": 186,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 49
+      },
+      "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
