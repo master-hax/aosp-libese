@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55e1a8ab_1cd986b1",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1137063
+      },
+      "writtenOn": "2023-08-04T16:56:00Z",
+      "side": 1,
+      "message": "This is basically reverting https://r.android.com/383074.\n\nIf `Util.arrayCompare()` is indeed not constant-time, does it have other callers that need to be fixed too?\n\nAlso, if `Util.arrayCompare()` is indeed not constant-time, please leave a code comment clearly explaining that it is intentionally not being used for that reason.  Otherwise, someone could submit a CL like https://r.android.com/383074 again, and we\u0027d be back to square one.",
+      "range": {
+        "startLine": 186,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 49
+      },
+      "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
