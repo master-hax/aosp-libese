@@ -46,6 +46,30 @@
       },
       "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1743d251_7eeccf0f",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-07T12:08:56Z",
+      "side": 1,
+      "message": "I looked up the definition of this function, it seems to be constant time, so this change is not needed. I will abondon this change.\nThanks.",
+      "parentUuid": "873c378d_3e8f6d8c",
+      "range": {
+        "startLine": 186,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 49
+      },
+      "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
