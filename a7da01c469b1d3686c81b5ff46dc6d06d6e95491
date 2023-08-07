@@ -70,6 +70,30 @@
       },
       "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "516fba7c_92ac5b35",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1137063
+      },
+      "writtenOn": "2023-08-07T15:40:05Z",
+      "side": 1,
+      "message": "It\u0027s concerning that the method isn\u0027t documented as being constant-time.  Do you have a link to the code for the implementation being used here?",
+      "parentUuid": "1743d251_7eeccf0f",
+      "range": {
+        "startLine": 186,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 49
+      },
+      "revId": "a7da01c469b1d3686c81b5ff46dc6d06d6e95491",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
