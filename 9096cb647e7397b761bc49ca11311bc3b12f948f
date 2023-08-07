@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ba0d9bd_01054ebe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-07T12:14:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3d8fecc_257f7a6d",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73cdd4f3_399ec13a",
@@ -133,6 +157,30 @@
       "side": 1,
       "message": "I know what you mean. I think that considering whether the comparison time is a constant is another security issue that needs to be considered. Based on this change, I pushed another change 2691420 for this issue. Please review it.\n\nThis change is only used to put the failure count increment in front. After all, this code also used Util.arrayCompare before.\n\nThanks",
       "parentUuid": "a8bac384_75186148",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 64
+      },
+      "revId": "9096cb647e7397b761bc49ca11311bc3b12f948f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c71a8735_adf42ea3",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-07T12:14:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6c4eb00_ddc29584",
       "range": {
         "startLine": 173,
         "startChar": 19,

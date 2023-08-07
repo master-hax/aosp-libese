@@ -34,6 +34,24 @@
       "parentUuid": "b7b4ba16_14ddefce",
       "revId": "b5cc238e9d8d43f99efa41c5e7cb5fcc98d5e933",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3b999af_95731dea",
+        "filename": "apps/weaver/card/src/com/android/weaver/core/CoreSlots.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 2026021
+      },
+      "writtenOn": "2023-08-07T12:14:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75a377f5_877d87f3",
+      "revId": "b5cc238e9d8d43f99efa41c5e7cb5fcc98d5e933",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
