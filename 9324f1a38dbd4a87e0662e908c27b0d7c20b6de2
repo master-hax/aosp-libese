@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df45b5ec_f23fc3f4",
+        "filename": "ready_se/google/keymint/KM300/Applet/src/com/android/javacard/keymaster/KMDecoder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-08-29T16:10:02Z",
+      "side": 1,
+      "message": "`decodeEnumTag` and `decodeEnum` are 100% identical, except for the last line. Please factor the commonality out.",
+      "range": {
+        "startLine": 486,
+        "startChar": 16,
+        "endLine": 486,
+        "endChar": 29
+      },
+      "revId": "9324f1a38dbd4a87e0662e908c27b0d7c20b6de2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "966835df_c84ceab2",
+        "filename": "ready_se/google/keymint/KM300/Applet/src/com/android/javacard/keymaster/KMEnum.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2023-08-29T16:10:02Z",
+      "side": 1,
+      "message": "This is not the only valid value. Why are you looking specifically for ANY?",
+      "range": {
+        "startLine": 194,
+        "startChar": 7,
+        "endLine": 194,
+        "endChar": 54
+      },
+      "revId": "9324f1a38dbd4a87e0662e908c27b0d7c20b6de2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
