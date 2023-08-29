@@ -45,6 +45,30 @@
       },
       "revId": "9324f1a38dbd4a87e0662e908c27b0d7c20b6de2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ece6d106_03c7e035",
+        "filename": "ready_se/google/keymint/KM300/Applet/src/com/android/javacard/keymaster/KMEnum.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-08-29T16:21:17Z",
+      "side": 1,
+      "message": "This function specifically validates the Enum values which are greater than a byte. The \u0027validateEnum()\u0027 function at line 130 validates all the enum type values.",
+      "parentUuid": "966835df_c84ceab2",
+      "range": {
+        "startLine": 194,
+        "startChar": 7,
+        "endLine": 194,
+        "endChar": 54
+      },
+      "revId": "9324f1a38dbd4a87e0662e908c27b0d7c20b6de2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
