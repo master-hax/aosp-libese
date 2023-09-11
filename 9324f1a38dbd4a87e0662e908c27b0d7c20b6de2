@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd85c103_ee7b0f7c",
+        "filename": "ready_se/google/keymint/KM300/Applet/src/com/android/javacard/keymaster/KMDecoder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2023-09-11T20:40:15Z",
+      "side": 1,
+      "message": "Refactored decodeEnumTag and decodeEnum functions.",
+      "parentUuid": "df45b5ec_f23fc3f4",
+      "range": {
+        "startLine": 486,
+        "startChar": 16,
+        "endLine": 486,
+        "endChar": 29
+      },
+      "revId": "9324f1a38dbd4a87e0662e908c27b0d7c20b6de2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "966835df_c84ceab2",
