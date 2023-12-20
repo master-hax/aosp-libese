@@ -33,6 +33,24 @@
       "message": "Chirag, In the process of testing with latest application, I noticed that Swap-in fails with these element_identifiers: biometric_template_face, biometric_template_finger, biometric_template_signature_sign and biometric_template_iris. Because the element identifier is compared against \"biometric_template_xx\".",
       "revId": "ce48a1005372caadb75c4ce4ee40ee98d68e77eb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37cc7e00_9a65a07d",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2023-12-20T20:06:08Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7fd57ae6_6caf276e",
+      "revId": "ce48a1005372caadb75c4ce4ee40ee98d68e77eb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
