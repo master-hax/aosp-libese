@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9600b550_89ca6ea4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1647128
+      },
+      "writtenOn": "2024-01-24T04:11:06Z",
+      "side": 1,
+      "message": "This is the first commit of mDL Applet. Kindly provide your comments.",
+      "revId": "df7a5c63b04c2f408ee957db855afde409f6dd70",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
