@@ -90,6 +90,59 @@ class CoreSlots implements Slots {
     private static class Slot {
         private static byte[] sRemainingBackoff;
 
+        // Throttle timeouts
+        // Use two separate arrays since static initializers must be primitive types or arrays of
+        // primitive types.
+        private static final short[] THROTTLE_SECONDS_LOW = {
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            300,
+            900,
+            1800,
+            5400,
+            14580,
+            (short) 43740,
+            (short) (131220 & 0xffff),
+            (short) (393660 & 0xffff),
+            (short) (1180980 & 0xffff),
+            (short) (3542940 & 0xffff),
+            (short) (10628820 & 0xffff),
+            (short) (31886460 & 0xffff),
+            (short) (95659380 & 0xffff),
+            (short) (286978140 & 0xffff),
+            (short) (860934420 & 0xffff),
+            (short) (2582803260L & 0xffff)
+        };
+
+        private static final short[] THROTTLE_SECONDS_HIGH = {
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            (short) (131220 >> 16),
+            (short) (393660 >> 16),
+            (short) (1180980 >> 16),
+            (short) (3542940 >> 16),
+            (short) (10628820 >> 16),
+            (short) (31886460 >> 16),
+            (short) (95659380 >> 16),
+            (short) (286978140 >> 16),
+            (short) (860934420 >> 16),
+            (short) (2582803260L >> 16)
+        };
+
         private byte[] mKey = new byte[Consts.SLOT_KEY_BYTES];
         private byte[] mValue = new byte[Consts.SLOT_VALUE_BYTES];
         private short mFailureCount;
@@ -203,42 +256,28 @@ class CoreSlots implements Slots {
          * counter 'x' as follows:
          *
          * [0, 5) -> 0
-         * 5 -> 30
-         * [6, 10) -> 0
-         * [11, 30) -> 30
-         * [30, 140) -> 30 * (2^((x - 30)/10))
-         * [140, inf) -> 1 day
+         * 5 -> 60
+         * 6 -> 300
+         * 7 -> 900
+         * 8 -> 1800
+         * 9 -> 5400
+         * [10, 20] -> 60*3^(x-5)
+         * [21, inf) -> 60*3^(21-5)
          *
          * The 32-bit timeout in seconds is written to the array.
          *
          * @return Whether there is any throttle time.
          */
-        private static boolean throttle(byte[] bArray, short bOff, short failureCount) {
+        private boolean throttle(byte[] bArray, short bOff, short failureCount) {
             short highWord = 0;
             short lowWord = 0;
 
-            final short thirtySeconds = 30;
-            if (failureCount == 0) {
-                // 0s
-            } else if (failureCount > 0 && failureCount <= 10) {
-                if (failureCount % 5 == 0) {
-                    // 30s
-                  lowWord = thirtySeconds;
-                }  else {
-                    // 0s
-                }
-            } else if (failureCount < 30) {
-                // 30s
-                lowWord = thirtySeconds;
-            } else if (failureCount < 140) {
-                // 30 * (2^((x - 30)/10))
-                final short shift = (short) ((short) (failureCount - 30) / 10);
-                lowWord = (short) (thirtySeconds << shift);
-            } else {
-                // 1 day in seconds = 24 * 60 * 60 = 0x1 5180
-                highWord = 0x1;
-                lowWord = 0x5180;
+            if (failureCount >= THROTTLE_SECONDS_LOW.length) {
+                failureCount = (short) (THROTTLE_SECONDS_LOW.length - 1);
             }
+
+            highWord = THROTTLE_SECONDS_HIGH[failureCount];
+            lowWord = THROTTLE_SECONDS_LOW[failureCount];
 
             // Write the value to the buffer
             Util.setShort(bArray, bOff, highWord);
