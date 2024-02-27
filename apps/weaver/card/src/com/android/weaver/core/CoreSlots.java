@@ -30,6 +30,8 @@ class CoreSlots implements Slots {
     static final byte NUM_SLOTS = 64;
 
     private Slot[] mSlots;
+    private byte[] mCurrentGuess;
+    private KeyGuessContext mKeyGuessContext;
 
     CoreSlots() {
         // Allocate all memory up front
@@ -37,6 +39,9 @@ class CoreSlots implements Slots {
         for (short i = 0; i < NUM_SLOTS; ++i) {
             mSlots[i] = new Slot();
         }
+
+        mCurrentGuess = new byte[Consts.SLOT_KEY_BYTES];
+        mKeyGuessContext = new KeyGuessContext();
 
         // Make the same size as the value so the whole buffer can be copied in read() so there is
         // no time difference between success and failure.
@@ -53,6 +58,7 @@ class CoreSlots implements Slots {
     public void write(short rawSlotId, byte[] key, short keyOffset,
             byte[] value, short valueOffset) {
         final short slotId = validateSlotId(rawSlotId);
+        mKeyGuessContext.forget(slotId);
         mSlots[slotId].write(key, keyOffset, value, valueOffset);
     }
 
@@ -60,13 +66,26 @@ class CoreSlots implements Slots {
     public byte read(short rawSlotId, byte[] key, short keyOffset,
             byte[] outValue, short outOffset) {
         final short slotId = validateSlotId(rawSlotId);
-        return mSlots[slotId].read(key, keyOffset, outValue, outOffset);
+        boolean keySeen = mKeyGuessContext.seen(slotId, key, keyOffset);
+
+        Util.arrayCopy(key, keyOffset, mCurrentGuess, (short) 0, Consts.SLOT_KEY_BYTES);
+
+        byte result = mSlots[slotId].read(key, keyOffset, outValue, outOffset, keySeen);
+
+        if (Consts.READ_SUCCESS == result) {
+            mKeyGuessContext.forget(slotId);
+        } else {
+            mKeyGuessContext.remember(slotId, mCurrentGuess, (short) 0);
+        }
+
+        return result;
     }
 
     @Override
     public void eraseValue(short rawSlotId) {
         final short slotId = validateSlotId(rawSlotId);
         mSlots[slotId].eraseValue();
+        mKeyGuessContext.forget(slotId);
     }
 
     @Override
@@ -74,6 +93,8 @@ class CoreSlots implements Slots {
         for (short i = 0; i < NUM_SLOTS; ++i) {
             mSlots[i].erase();
         }
+
+        mKeyGuessContext.forget((short) 0);
     }
 
     /**
@@ -85,6 +106,58 @@ class CoreSlots implements Slots {
             ISOException.throwIt(Consts.SW_INVALID_SLOT_ID);
         }
         return slotId;
+    }
+
+    // Track the last 10 guesses for the most recent single slot where a read is attempted.
+    private static class KeyGuessContext {
+        static final byte NUM_KEYS = 10;
+        static final byte BYTES_PER_KEY = 4;
+        static final byte TOTAL_KEY_BYTES = NUM_KEYS * BYTES_PER_KEY;
+
+        private byte[] mKeyBytes;
+        private short mSlotId = 0;
+        private short mHistoryIndex = 0;
+
+        KeyGuessContext() {
+            mKeyBytes = new byte[TOTAL_KEY_BYTES];
+        }
+
+        public void forget(short slotId) {
+            Util.arrayFillNonAtomic(mKeyBytes, (short) 0, TOTAL_KEY_BYTES, (byte) 0);
+            mSlotId = slotId;
+        }
+
+        public boolean seen(short slotId, byte[] keyBuffer, short keyOffset) {
+            if (slotId != mSlotId) {
+                forget(slotId);
+                return false;
+            }
+
+            boolean hit = false;
+            for (short i = 0; i < NUM_KEYS; ++i) {
+                hit |= (0 == Util.arrayCompare(
+                    keyBuffer, keyOffset, mKeyBytes, (short) (i * BYTES_PER_KEY), BYTES_PER_KEY));
+            }
+
+            return hit;
+        }
+
+        public void remember(short slotId, byte[] keyBuffer, short keyOffset) {
+            if (seen(slotId, keyBuffer, keyOffset)) {
+                return;
+            }
+
+            // Since the key is the output of a KDF based on the LSKF, we can save space by using a
+            // limited number of bytes, four in this case, knowing that the values are randomly
+            // distributed.
+            Util.arrayCopy(
+                keyBuffer, keyOffset, mKeyBytes, (short) (mHistoryIndex * BYTES_PER_KEY), BYTES_PER_KEY);
+            mHistoryIndex += 1;
+
+            if (mHistoryIndex >= NUM_KEYS) {
+                mHistoryIndex = 0;
+            }
+        }
     }
 
     private static class Slot {
@@ -200,13 +273,14 @@ class CoreSlots implements Slots {
          * @param outOffset the offset into the output buffer
          * @return status code
          */
-        public byte read(byte[] keyBuffer, short keyOffset, byte[] outBuffer, short outOffset) {
+        public byte read(byte[] keyBuffer, short keyOffset, byte[] outBuffer, short outOffset,
+                boolean keySeen) {
             // Check timeout has expired or hasn't been started
             mBackoffTimer.getRemainingTime(sRemainingBackoff, (short) 0);
-            if (hasRemainingBackOff()) {
+            if (keySeen || hasRemainingBackOff()) {
                 Util.arrayCopyNonAtomic(
                         sRemainingBackoff, (short) 0, outBuffer, outOffset, (byte) 4);
-                return Consts.READ_BACK_OFF;
+                return hasRemainingBackOff() ? Consts.READ_BACK_OFF : Consts.READ_WRONG_KEY;
             }
 
             // Assume this read will fail
