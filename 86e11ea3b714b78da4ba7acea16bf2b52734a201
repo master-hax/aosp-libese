@@ -94,6 +94,30 @@
       },
       "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "599c062a_e0e16b73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1042276
+      },
+      "writtenOn": "2024-03-07T19:25:35Z",
+      "side": 1,
+      "message": "Hmm.. I\u0027m still not sure why it\u0027s better to ignore the data in this case.  I\u0027ll defer to Eran since he knows it much better than me.",
+      "parentUuid": "3c7e2c30_b45742dc",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
