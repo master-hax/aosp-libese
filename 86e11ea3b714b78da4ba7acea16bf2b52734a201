@@ -70,6 +70,30 @@
       },
       "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c7e2c30_b45742dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2024-03-07T18:56:05Z",
+      "side": 1,
+      "message": "The original/deleted code returns CANNOT_ATTEST_IDS error when requested attestation for the second imei independently of the first imei. (b/264979486)\n\nIn the case, When `attIdTag !\u003d KMType.INVALID_VALUE, where attIdTag is second imei`, we should include the attIdTag in the attestation record instead of checking if first imei is present and returning CANNOT_ATTEST_IDs.\n\nIncluding attestation ids in attestation record happens in this function addAttestationIds() at line 2645.",
+      "parentUuid": "0e63eb2d_8a808e5a",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
