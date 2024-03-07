@@ -22,6 +22,30 @@
       },
       "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "284deb73_11cad080",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2024-03-07T18:06:49Z",
+      "side": 1,
+      "message": "The test `AttestKeyTest#SecondIMEIAttestationIDSuccess`(https://cs.android.com/android/platform/superproject/main/+/main:hardware/interfaces/security/keymint/aidl/vts/functional/AttestKeyTest.cpp;l\u003d935) tests the 2nd IMEI independently, however this test case gets ignored if device does not support 2nd IMEI.",
+      "parentUuid": "c08ee24e_b2b7176f",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
