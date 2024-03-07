@@ -46,6 +46,30 @@
       },
       "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e63eb2d_8a808e5a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1042276
+      },
+      "writtenOn": "2024-03-07T18:40:20Z",
+      "side": 1,
+      "message": "I see.\n\nFor this change, what\u0027s wrong with the original/delete code?  Isn\u0027t it already conditional?  What should we expect when `attIdTag !\u003d KMType.INVALID_VALUE`, instead of ignoring the data?",
+      "parentUuid": "284deb73_11cad080",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "86e11ea3b714b78da4ba7acea16bf2b52734a201",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
