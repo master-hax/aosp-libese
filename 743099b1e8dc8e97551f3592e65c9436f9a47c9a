@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e45f03d_bce0bdec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-06-04T20:31:46Z",
+      "side": 1,
+      "message": "I think this makes sense, but could you update the commit log to explain why it\u0027s safe to leave the tokens uncleared?",
+      "revId": "743099b1e8dc8e97551f3592e65c9436f9a47c9a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
