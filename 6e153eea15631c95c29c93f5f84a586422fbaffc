@@ -16,6 +16,24 @@
       "message": "How does the OEM unlock for the RMA flow?",
       "revId": "6e153eea15631c95c29c93f5f84a586422fbaffc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "403c4a09_1803994f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-06-06T18:53:11Z",
+      "side": 1,
+      "message": "Apparently I marked this as resolved accidentally.  I\u0027d like an answer, though.",
+      "parentUuid": "f8cc61f1_b72082a8",
+      "revId": "6e153eea15631c95c29c93f5f84a586422fbaffc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
