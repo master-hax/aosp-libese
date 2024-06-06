@@ -34,6 +34,24 @@
       "parentUuid": "f8cc61f1_b72082a8",
       "revId": "6e153eea15631c95c29c93f5f84a586422fbaffc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b5f28b5_8606ea80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1887766
+      },
+      "writtenOn": "2024-06-06T19:08:47Z",
+      "side": 1,
+      "message": "1. OEM issues authenticated INS_OEM_UNLOCK_PROVISIONING_CMD command\n   - This will carry a signed token by OEM_ROOT_PRIVATE_KEY and will be validated\n      by the Strongbox against OEM_ROOT_PUBLIC_KEY (provisioned with \n      INS_PROVISION_OEM_ROOT_PUBLIC_KEY_CMD previously), before unlocking the OEM \n      provisioning.\n2. OEMs can now re-provisions device ids if needed.\n\n3. OEM issues INS_OEM_LOCK_PROVISIONING_CMD to Strongbox again.\n   - This will carry a signed token by OEM_ROOT_PRIVATE_KEY and will be validated\n     by the Strongbox against OEM_ROOT_PUBLIC_KEY (provisioned with\n     INS_PROVISION_OEM_ROOT_PUBLIC_KEY_CMD previously), before unlocking the OEM\n     provisioning.\n4. OEM validates the new configurations using all the required tests.\n5. OEM re-ships the device",
+      "parentUuid": "403c4a09_1803994f",
+      "revId": "6e153eea15631c95c29c93f5f84a586422fbaffc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
