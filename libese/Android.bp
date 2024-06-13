@@ -33,12 +33,6 @@ cc_defaults {
         "-Wall",
         "-Werror",
     ],
-
-    // This doesn't work yet, but is good documentation for when
-    // debugging is needed.
-    debug:  {
-        cflags: ["-DLOG_NDEBUG=0"],
-    },
 }
 
 cc_library_headers {
