@@ -16,6 +16,24 @@
       "message": "Do you also needs to remove this definition?",
       "revId": "8500fa51287bd633781d1cc603616508b2b5dc9a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a935fbec_13ae3274",
+        "filename": "libese/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1890456
+      },
+      "writtenOn": "2024-06-17T17:28:06Z",
+      "side": 1,
+      "message": "Yes, otherwise there will be `redefinition` errors.",
+      "parentUuid": "3ef87c75_01f726cb",
+      "revId": "8500fa51287bd633781d1cc603616508b2b5dc9a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
