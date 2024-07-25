@@ -1,0 +1,870 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3304db7_801b7c83",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "You mean for indefinite-length arrays?  Are we using those?",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 55
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "0c4f22b8_b58996d4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 73,
+                "startChar": 0,
+                "endLine": 74,
+                "endChar": 0
+              },
+              "replacement": "  // CBOR encoded break for indefinite-length arrays/maps.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e46bdd42_376e4ae7",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "It seems like the entries in mStatusWords each have specific purposes.  Maybe define some constants for the indices?",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 24
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "2af9a352_9809a7e5",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 80,
+                "startChar": 0,
+                "endLine": 81,
+                "endChar": 0
+              },
+              "replacement": "  protected short[] mStatusWords \u003d JCSystem.makeTransientShortArray((short) 3, JCSystem.CLEAR_ON_RESET);\n"
+            },
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 84,
+                "startChar": 0,
+                "endLine": 85,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "918f228c_2264f5e0",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Is this redundant with the previous init() method?",
+      "fixSuggestions": [
+        {
+          "fixId": "3859515c_ab4867a5",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 114,
+                "startChar": 0,
+                "endLine": 115,
+                "endChar": 0
+              },
+              "replacement": "   * Initializes with a given array and the given offset and length.\n"
+            },
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 145,
+                "startChar": 0,
+                "endLine": 146,
+                "endChar": 0
+              },
+              "replacement": "   * Initializes with a given array and the given offset and length.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075dba48_181ea63b",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "And this also seems redundant with the init() method that uses the APDU buffer.",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58928a7a_d53a7405",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "if none is initialized.",
+      "range": {
+        "startLine": 196,
+        "startChar": 52,
+        "endLine": 196,
+        "endChar": 73
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "d1c71395_ca115d92",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 196,
+                "startChar": 0,
+                "endLine": 197,
+                "endChar": 0
+              },
+              "replacement": "   * Returns the internal buffer or the APDU buffer if none is initialized.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfcf53b4_da2635bf",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Returns (In general, please make the verb conjugations consistent; I won\u0027t point out all of them).",
+      "fixSuggestions": [
+        {
+          "fixId": "494bdc4f_44b286e7",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 26,
+                "startChar": 0,
+                "endLine": 27,
+                "endChar": 0
+              },
+              "replacement": "   * Returns the current major type (does not increase buffer location)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61c01113_070e6dc3",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "This is an odd name.  How about \"integerLength\"?  Or \"addInfo\" would also make sense.",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca7501e8_5439509f",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "You need to add a // Falls through comment here at minimum.  It might be cleaner to refactor and make the branches separate.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 81
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "97ad5977_709eb056",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 78,
+                "startChar": 0,
+                "endLine": 78,
+                "endChar": 0
+              },
+              "replacement": "        // Falls through\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "801b913b_f4dbb705",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "This isn\u0027t true.  This code seems to handle all tags.",
+      "range": {
+        "startLine": 86,
+        "startChar": 9,
+        "endLine": 86,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "512c6aa3_1ff0c19c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 86,
+                "startChar": 0,
+                "endLine": 88,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d6fe9f_389db3c1",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Reads",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc238de2_2702df1e",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Reads",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e415fce_2846449d",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Reads",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5af6886_292a3625",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Needs Javadoc comment.  Does the caller have to do sign interpretation?",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d2669cc_11c97e3c",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "2",
+      "fixSuggestions": [
+        {
+          "fixId": "d6800cc0_735b8395",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 192,
+                "startChar": 0,
+                "endLine": 193,
+                "endChar": 0
+              },
+              "replacement": "    } else { // length information above 2 bytes not supported\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "656db597_929d7bd0",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Nit:  I think a switch is cleaner/clearer, and the unreachable return should be next to the throw.",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 16
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63203845_389bf2f7",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Reads",
+      "range": {
+        "startLine": 213,
+        "startChar": 5,
+        "endLine": 213,
+        "endChar": 9
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd1a1572_62f6c5a9",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "copies",
+      "fixSuggestions": [
+        {
+          "fixId": "486bd4b5_5777e1b8",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 213,
+                "startChar": 0,
+                "endLine": 214,
+                "endChar": 0
+              },
+              "replacement": "   * Read a byte string at the current location and copies it into the given buffer (offset will be\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d6f10ed_00bccb77",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "copies",
+      "fixSuggestions": [
+        {
+          "fixId": "5c8eb155_416d0c30",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+              "range": {
+                "startLine": 226,
+                "startChar": 0,
+                "endLine": 227,
+                "endChar": 0
+              },
+              "replacement": "   * Read the byte array at the current location and copies it into the given buffer (offset will be\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88e1adc3_b83458b7",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORDecoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Reads",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6acb4266_5bace238",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBOREncoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "\"Encodes a CBOR array header\"\n\nThe current text confused me for a moment, I couldn\u0027t figure out what it means to \"start\" a new (Java) array.",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abe5e89a_1ecde5cc",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBOREncoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "encodeArrayHeader",
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8c637fd_50b5ff3d",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBOREncoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Can\u0027t you return the return value from `encodeValue`?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 30
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bd8c991_caba4fdf",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBOREncoder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "This method seems very weird.  I don\u0027t think it does what the name says it does, especially if n2 \u003c 0.",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 3
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cda52e1_2280bec8",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBOREncoderCalc.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "You probably can\u0027t add an @Override annotation, but at least document overridden methods int he Javadoc.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2fe2b10_0faf7788",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Yes, please do that.",
+      "range": {
+        "startLine": 32,
+        "startChar": 22,
+        "endLine": 32,
+        "endChar": 72
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3737c061_497ede45",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Can you add some more explanation of what these are?  Or point to documentation elsewhere?  Same with the other sections.",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 45
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68a13022_e7a333c4",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "These various \"STRUCT\" arrays are very unclear. What are they? They seem to somehow encode something about expected structure, but how do arrays of shorts do that?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 4
+      },
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d5515e7_b8013f98",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "CBOR-encoded fixed strings.",
+      "range": {
+        "startLine": 234,
+        "startChar": 5,
+        "endLine": 234,
+        "endChar": 60
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "322889a8_4ea238e4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+              "range": {
+                "startLine": 234,
+                "startChar": 0,
+                "endLine": 235,
+                "endChar": 0
+              },
+              "replacement": "  // CBOR-encoded fixed strings.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "684ffa01_c0e612eb",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "This seems like a very important method.  Please document it.  I think the AI-suggested documentation may be a good start, actually.",
+      "range": {
+        "startLine": 423,
+        "startChar": 0,
+        "endLine": 424,
+        "endChar": 31
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "db50e7b3_ba99b8c0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/MdlSpecifications.java",
+              "range": {
+                "startLine": 424,
+                "startChar": 0,
+                "endLine": 424,
+                "endChar": 0
+              },
+              "replacement": "  /**\n   * Decodes a structure from the given buffer.\n   *\n   * @param reqType the type of the structure to be decoded\n   * @param retStructure the structure to be decoded\n   * @param buf the buffer containing the structure\n   * @param index the index of the buffer to start decoding from\n   * @param length the length of the structure to be decoded\n   * @return the index of the buffer after the structure has been decoded\n   */\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4472d724_926828d9",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/Context.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-25T17:51:37Z",
+      "side": 1,
+      "message": "Remove trailing whitespace.",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 2
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "d78ff2e6_489ee833",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/Context.java",
+              "range": {
+                "startLine": 131,
+                "startChar": 0,
+                "endLine": 132,
+                "endChar": 0
+              },
+              "replacement": "\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
