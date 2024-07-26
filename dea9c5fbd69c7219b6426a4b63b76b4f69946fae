@@ -16,6 +16,111 @@
       "message": "Thanks Shawn for the review. Two quick drive-by comments.",
       "revId": "dea9c5fbd69c7219b6426a4b63b76b4f69946fae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75fcd559_0a8991d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-26T19:54:59Z",
+      "side": 1,
+      "message": "I\u0027m not done 😊",
+      "parentUuid": "75285cff_addb4c2d",
+      "revId": "dea9c5fbd69c7219b6426a4b63b76b4f69946fae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "267c6974_9d035582",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/DocumentRequest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-26T19:54:59Z",
+      "side": 1,
+      "message": "This comment seems out of place, and incorrect.",
+      "range": {
+        "startLine": 109,
+        "startChar": 5,
+        "endLine": 110,
+        "endChar": 35
+      },
+      "revId": "dea9c5fbd69c7219b6426a4b63b76b4f69946fae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "615968a3_f6c88a78",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/DocumentRequest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-26T19:54:59Z",
+      "side": 1,
+      "message": "Generates",
+      "range": {
+        "startLine": 152,
+        "startChar": 5,
+        "endLine": 152,
+        "endChar": 13
+      },
+      "revId": "dea9c5fbd69c7219b6426a4b63b76b4f69946fae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4091b866_7d0c3994",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/DocumentRequest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1043663
+      },
+      "writtenOn": "2024-07-26T19:54:59Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 152,
+        "startChar": 14,
+        "endLine": 152,
+        "endChar": 18
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "446cff94_60260432",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/presentation/DocumentRequest.java",
+              "range": {
+                "startLine": 152,
+                "startChar": 0,
+                "endLine": 153,
+                "endChar": 0
+              },
+              "replacement": "   * Generate the sig structure and then verify the signature. detached content is as follows:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "dea9c5fbd69c7219b6426a4b63b76b4f69946fae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
