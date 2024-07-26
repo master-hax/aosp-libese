@@ -3,6 +3,47 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e6e0fbb_0bd4f09f",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2024-07-26T19:09:41Z",
+      "side": 1,
+      "message": "Please change \u0027mdl\u0027 to \u0027mdoc\u0027 here and everywhere else.",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 32
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "ce43aca9_610d4ed6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+              "range": {
+                "startLine": 17,
+                "startChar": 0,
+                "endLine": 18,
+                "endChar": 0
+              },
+              "replacement": "package com.android.javacard.mdoc;\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3304db7_801b7c83",
         "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
         "patchSetId": 4
@@ -38,6 +79,30 @@
           ]
         }
       ],
+      "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72b4f34d_8310daa2",
+        "filename": "ready_se/google/mdl/Applet/src/com/android/javacard/mdl/CBORBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1076971
+      },
+      "writtenOn": "2024-07-26T19:09:41Z",
+      "side": 1,
+      "message": "The whole indefinite-length business only really makes sense for applications with streaming data and this isn\u0027t one of those. My guess is that this constant is here for completeness only. And, FWIW, ISO/IEC 18013-5:2021 doesn\u0027t use indefinitely-length arrays and even says \"indefinite-length items shall be made into definite-length items.\"",
+      "parentUuid": "c3304db7_801b7c83",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 55
+      },
       "revId": "4ba388390b64495794b6ee789fbcb93d8102f735",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
