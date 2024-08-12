@@ -81,48 +81,4 @@ public class KMCoseCertPayload extends KMCoseMap {
   public void canonicalize() {
     KMCoseMap.canonicalize(getVals());
   }
-
-  private short getValueType(short key, short significantKey) {
-    short arr = getVals();
-    short length = length();
-    short keyPtr;
-    short valPtr = 0;
-    short index = 0;
-    short tagType;
-    boolean found = false;
-    while (index < length) {
-      tagType = KMCosePairTagType.getTagValueType(KMArray.cast(arr).get(index));
-      switch (tagType) {
-        case KMType.COSE_PAIR_BYTE_BLOB_TAG_TYPE:
-          keyPtr = KMCosePairByteBlobTag.cast(KMArray.cast(arr).get(index)).getKeyPtr();
-          if (key == KMCosePairTagType.getKeyValueShort(keyPtr)
-              && significantKey == KMCosePairTagType.getKeyValueSignificantShort(keyPtr)) {
-            valPtr = KMCosePairByteBlobTag.cast(KMArray.cast(arr).get(index)).getValuePtr();
-            found = true;
-          }
-          break;
-        case KMType.COSE_PAIR_TEXT_STR_TAG_TYPE:
-          keyPtr = KMCosePairTextStringTag.cast(KMArray.cast(arr).get(index)).getKeyPtr();
-          if (key == (byte) KMCosePairTagType.getKeyValueShort(keyPtr)) {
-            valPtr = KMCosePairTextStringTag.cast(KMArray.cast(arr).get(index)).getValuePtr();
-            found = true;
-          }
-          break;
-        default:
-          break;
-      }
-      if (found) {
-        break;
-      }
-      index++;
-    }
-    return valPtr;
-  }
-
-  public short getSubjectPublicKey() {
-    return getValueType(
-        Util.getShort(KMCose.SUBJECT_PUBLIC_KEY, (short) 2), // LSB
-        Util.getShort(KMCose.SUBJECT_PUBLIC_KEY, (short) 0) // MSB (Significant)
-        );
-  }
 }

@@ -1057,7 +1057,11 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
             KMCosePairByteBlobTag.instance(
                 KMNInteger.uint_32(KMCose.KEY_USAGE, (short) 0),
                 KMByteBlob.instance(
-                    KMCose.KEY_USAGE_SIGN, (short) 0, (short) KMCose.KEY_USAGE_SIGN.length)));
+                    KMCose.KEY_USAGE_SIGN, (short) 0, (short) KMCose.KEY_USAGE_SIGN.length)),
+            KMCosePairTextStringTag.instance(
+                KMNInteger.uint_32(KMCose.PROFILE_NAME, (short) 0),
+                KMTextString.instance(
+                    KMCose.ANDROID_14_PROFILE, (short) 0, (short) KMCose.ANDROID_14_PROFILE.length)));
     // temp temporarily holds the length of encoded cert payload.
     temp =
         KMKeymasterApplet.encodeToApduBuffer(

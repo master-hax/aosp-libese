@@ -79,6 +79,9 @@ public class KMCose {
   // Certificate payload supported keys
   public static final byte ISSUER = (byte) 0x01;
   public static final byte SUBJECT = (byte) 0x02;
+  public static final byte[] PROFILE_NAME = {
+      (byte) 0xFF, (byte) 0xB8, (byte) 0xBB, (byte) 0xA6
+    };
   public static final byte[] SUBJECT_PUBLIC_KEY = {
     (byte) 0xFF, (byte) 0xB8, (byte) 0xBB, (byte) 0xA8
   };
@@ -91,6 +94,9 @@ public class KMCose {
     0x53, 0x75, 0x62, 0x6A, 0x65, 0x63, 0x74
   }; // "Subject"
   public static final byte[] KEY_USAGE_SIGN = {0x20}; // Key usage sign
+  public static final byte[] ANDROID_14_PROFILE = {  // android.14
+      0x61, 0x6e, 0x64, 0x72, 0x6f, 0x69, 0x64, 0x2e, 0x31, 0x34
+  };
 
   public static final short[] COSE_KEY_LABELS = {
     KMCose.COSE_KEY_KEY_TYPE,
@@ -277,12 +283,13 @@ public class KMCose {
    * @return instance of KMArray.
    */
   public static short constructCoseCertPayload(
-      short issuer, short subject, short subPublicKey, short keyUsage) {
-    short certPayload = KMArray.instance((short) 4);
+      short issuer, short subject, short subPublicKey, short keyUsage, short profileName) {
+    short certPayload = KMArray.instance((short) 5);
     KMArray.cast(certPayload).add((short) 0, issuer);
     KMArray.cast(certPayload).add((short) 1, subject);
-    KMArray.cast(certPayload).add((short) 2, subPublicKey);
-    KMArray.cast(certPayload).add((short) 3, keyUsage);
+    KMArray.cast(certPayload).add((short) 2, profileName);
+    KMArray.cast(certPayload).add((short) 3, subPublicKey);
+    KMArray.cast(certPayload).add((short) 4, keyUsage);
     certPayload = KMCoseCertPayload.instance(certPayload);
     KMCoseCertPayload.cast(certPayload).canonicalize();
     return certPayload;
