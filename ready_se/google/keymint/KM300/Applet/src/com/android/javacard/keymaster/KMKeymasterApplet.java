@@ -1057,7 +1057,13 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
             KMCosePairByteBlobTag.instance(
                 KMNInteger.uint_32(KMCose.KEY_USAGE, (short) 0),
                 KMByteBlob.instance(
-                    KMCose.KEY_USAGE_SIGN, (short) 0, (short) KMCose.KEY_USAGE_SIGN.length)));
+                    KMCose.KEY_USAGE_SIGN, (short) 0, (short) KMCose.KEY_USAGE_SIGN.length)),
+            KMCosePairTextStringTag.instance(
+                KMNInteger.uint_32(KMCose.PROFILE_NAME, (short) 0),
+                KMTextString.instance(
+                    KMCose.ANDROID_14_PROFILE,
+                    (short) 0,
+                    (short) KMCose.ANDROID_14_PROFILE.length)));
     // temp temporarily holds the length of encoded cert payload.
     temp =
         KMKeymasterApplet.encodeToApduBuffer(
@@ -2276,11 +2282,7 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
     }
     data[IMPORTED_KEY_BLOB] =
         aesGCMDecrypt(
-            getWrappingKey(),
-            data[INPUT_DATA],
-            data[NONCE],
-            data[AUTH_DATA],
-            data[AUTH_TAG]);
+            getWrappingKey(), data[INPUT_DATA], data[NONCE], data[AUTH_DATA], data[AUTH_TAG]);
     resetWrappingKey();
     // Step 5 - Import decrypted key
     data[ORIGIN] = KMType.SECURELY_IMPORTED;
@@ -2341,20 +2343,21 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
 
   private short getCertificateValidityDate(short tag, byte[] scratchpad) {
     short error = KMError.UNKNOWN_ERROR;
-    switch(tag) {
-    case KMType.CERTIFICATE_NOT_AFTER:
-      error = KMError.MISSING_NOT_AFTER;
-      Util.arrayCopyNonAtomic(dec319999Ms, (short) 0, scratchpad, (short) 0, (short) dec319999Ms.length);
-      break;
-    case KMType.CERTIFICATE_NOT_BEFORE:
-      error = KMError.MISSING_NOT_BEFORE;
-      Util.arrayFillNonAtomic(scratchpad, (short) 0, (short) 8, (byte) 0);
-      break;
+    switch (tag) {
+      case KMType.CERTIFICATE_NOT_AFTER:
+        error = KMError.MISSING_NOT_AFTER;
+        Util.arrayCopyNonAtomic(
+            dec319999Ms, (short) 0, scratchpad, (short) 0, (short) dec319999Ms.length);
+        break;
+      case KMType.CERTIFICATE_NOT_BEFORE:
+        error = KMError.MISSING_NOT_BEFORE;
+        Util.arrayFillNonAtomic(scratchpad, (short) 0, (short) 8, (byte) 0);
+        break;
       default:
         KMException.throwIt(KMError.INVALID_TAG);
     }
     short datePtr = KMKeyParameters.findTag(KMType.DATE_TAG, tag, data[KEY_PARAMETERS]);
-    if (datePtr == KMType.INVALID_VALUE ) {
+    if (datePtr == KMType.INVALID_VALUE) {
       if (data[ORIGIN] == KMType.SECURELY_IMPORTED) {
         return KMInteger.instance(scratchpad, (short) 0, (short) 8);
       }
@@ -4536,7 +4539,6 @@ public class KMKeymasterApplet extends Applet implements AppletEvent, ExtendedLe
     if (KMKeyParameters.hasUnsupportedTags(data[KEY_PARAMETERS])) {
       KMException.throwIt(KMError.UNSUPPORTED_TAG);
     }
-
 
     short attKeyPurpose =
         KMKeyParameters.findTag(KMType.ENUM_ARRAY_TAG, KMType.PURPOSE, data[KEY_PARAMETERS]);

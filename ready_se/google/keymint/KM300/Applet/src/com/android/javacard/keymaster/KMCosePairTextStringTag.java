@@ -11,9 +11,19 @@ import javacard.framework.Util;
  */
 public class KMCosePairTextStringTag extends KMCosePairTagType {
 
-  public static final byte[] keys = {
-    KMCose.ISSUER, KMCose.SUBJECT,
-  };
+  public static Object[] validKeys;
+
+  private static void createValidKeys() {
+    if (validKeys == null) {
+      validKeys =
+          new Object[] {
+            (Object) new byte[] {0, 0, 0, KMCose.ISSUER},
+            (Object) new byte[] {0, 0, 0, KMCose.SUBJECT},
+            (Object) KMCose.PROFILE_NAME,
+          };
+    }
+  }
+
   private static KMCosePairTextStringTag prototype;
 
   private KMCosePairTextStringTag() {}
@@ -36,7 +46,7 @@ public class KMCosePairTextStringTag extends KMCosePairTagType {
   }
 
   public static short instance(short keyPtr, short valuePtr) {
-    if (!isKeyValueValid(KMCosePairTagType.getKeyValueShort(keyPtr))) {
+    if (!isKeyValueValid(keyPtr)) {
       ISOException.throwIt(ISO7816.SW_CONDITIONS_NOT_SATISFIED);
     }
     if (KMType.getType(valuePtr) != TEXT_STRING_TYPE) {
@@ -62,10 +72,29 @@ public class KMCosePairTextStringTag extends KMCosePairTagType {
     return proto(ptr);
   }
 
-  public static boolean isKeyValueValid(short keyVal) {
+  public static boolean isKeyValueValid(short keyPtr) {
+    createValidKeys();
+    byte type = KMType.getType(keyPtr);
+    short offset = 0;
+    switch (type) {
+      case KMType.NEG_INTEGER_TYPE:
+        offset = KMNInteger.cast(keyPtr).getStartOff();
+        break;
+      case KMType.INTEGER_TYPE:
+        offset = KMInteger.cast(keyPtr).getStartOff();
+        break;
+      default:
+        ISOException.throwIt(ISO7816.SW_CONDITIONS_NOT_SATISFIED);
+    }
     short index = 0;
-    while (index < (short) keys.length) {
-      if ((byte) (keyVal & 0xFF) == keys[index]) {
+    while (index < (short) validKeys.length) {
+      if (0
+          == KMInteger.unsignedByteArrayCompare(
+              heap,
+              offset,
+              (byte[]) validKeys[index],
+              (short) 0,
+              (short) ((byte[]) (validKeys[index])).length)) {
         return true;
       }
       index++;
