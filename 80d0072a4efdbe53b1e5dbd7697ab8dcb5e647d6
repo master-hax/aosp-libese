@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f55e7c7_73b20358",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1996085
+      },
+      "writtenOn": "2024-08-28T21:52:27Z",
+      "side": 1,
+      "message": "Reverting this should be unnecessary. Only the \"Enable\" should need to be reverted (I9a35a52a79145541bb6bb3880ae8de2d1c09c02e).",
+      "revId": "80d0072a4efdbe53b1e5dbd7697ab8dcb5e647d6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
